@@ -4,10 +4,21 @@
         <title>这里是 Torli's  Blog</title>
         <link>https://JamesLi-dev.github.io/en/blog</link>
         <description>这里是 Torli's  Blog</description>
-        <lastBuildDate>Wed, 26 Aug 2020 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 09 Mar 2023 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[2023二月被裁，一名六年前端的心路历程]]></title>
+            <link>https://JamesLi-dev.github.io/en/blog/cutstaff</link>
+            <guid>cutstaff</guid>
+            <pubDate>Thu, 09 Mar 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[2023年2月的某一天，冷清的工作群里，发来了一条这样的信息：]]></description>
+            <content:encoded><![CDATA[<p>2023年2月的某一天，冷清的工作群里，发来了一条这样的信息：</p><p>【因为公司经营XXX，现决定告知上海办公室所有员工，公司员工与公司之间的劳动合同及劳动关系于2023年2月xx日依法终止。。。。。。。。。】</p><p>虽然是意料之中的事情，但是还是心里多少有点不安，在当下大环境不好的情况下，这就是一道晴天霹雳！裁员的过程就不多赘述了，过程跌宕起伏（被恶心坏了），结果意料之中吧，拿了 N + 1 主要入职时间很短，没有什么可纠结的点。</p><p>介绍一下自己，一名工作六年的前端开发，没想到在掘金的第一篇文章竟然不是技术类文章，毕竟工作这么久，还是第一次被裁员，值得记录。</p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="入职">入职<a class="hash-link" href="#入职" title="Direct link to heading">​</a></h2><p>去年九月从上家公司离职，进入到这家公司，虽然是创业型公司，但是产品前景还是挺有看点，这也是我选择这家公司的原因，入职五个多月，时间是真的短！</p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="入职之后做了什么">入职之后做了什么？<a class="hash-link" href="#入职之后做了什么" title="Direct link to heading">​</a></h3><p>那可就做的多了，优化，重构，新功能，踩坑，建议等等等等，上线发版记录可以证明，刚入职一周每天都会有上线，天知道我是怎么肝出来的。</p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="入职创业型公司的感受">入职创业型公司的感受？<a class="hash-link" href="#入职创业型公司的感受" title="Direct link to heading">​</a></h3><p>虽然是属于创业性质的公司，但是刚入职时候，感觉还挺不错的，内部沟通效率很高，前后端沟通很直接，每天技术部门会有早会，安排日常工作，总结前一天的开发任务及进度，另外就是疫情时候的3+2，两天居家办公还是很舒服的，加班嘛，那就属于洒洒水啦，发版频率高，加班频率也不少，虽然大概率没有到很晚大概七八点钟吧，严重一点时候可能会到11-12点。</p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="离职之后">离职之后<a class="hash-link" href="#离职之后" title="Direct link to heading">​</a></h2><p>从拿到补偿金的那一秒，整个人放空了，第一想法就是出去玩几天。</p><p>第二天，一样的闹铃，一样的时间，起床洗漱吃早饭，背包出门那一刻突然想起来，自己被裁了，不用去公司了，扔下书包跑到电脑旁，开机 -&gt; EA -&gt; FIFA ...</p><p>就这样潇洒的过了几天之后，感觉没意思了，是时候开始看看新的机会了，也就是在这时候我感觉到了一丝丝的焦虑。</p><p>打开boss，修改了简历，连续点了四五家公司沟通，只是单纯的发起兴趣，等了一会儿，一条已读，两条已读，但是没有回复，mmp 这个场景有点似曾相识啊！</p><p>这样的重复操作我屡试不爽，我知道事情没那么简单了，于是我开始反思，开始找朋友了解情况。最终得到的结论就是“不妙，不好”</p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="冷静思考">冷静思考<a class="hash-link" href="#冷静思考" title="Direct link to heading">​</a></h2><p>看到了外面的水深火热，我开始思考，后面的路应该怎么走，是继续往下走，还是直接转行算了，再看看自己的钱包。</p><p>看到脉脉上著名的【前端已死】，各种论坛里的各种负面消息，我就在想，前端真的没路走了？</p><p>不会的，有的人觉得现在前端技术已经到顶了，其实不然，从近几年新出现的框架<code>Solid</code>，新出现的JS 运行时<code>Bun</code>, 新出现的打包工具 <code>vite</code>、<code>Turbopack</code>等等一系列的生态，全是在向好的方向发展，这并不意味着前端已死，而是需要前端从业者不断去学习和适应，不断接纳新的知识点，这个我相信后端的发展也是这么走过来的。
+总之，前端还是在不断发展中，大环境的影响还是很大的，就像APP，网站等一样需要的是不断去更新，迭代！</p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="总结">总结<a class="hash-link" href="#总结" title="Direct link to heading">​</a></h2><p>在不好的大环境下，在竞争激烈的当下，坚持本心才是最重要的，想想自己需要什么，想做到什么，实现什么。</p><p>扯了半天，不知道对大家来说有什么启发，到此为止！</p><p>我也该去复习知识点，准备一下八股文，算法，迎接接下来的面试了！后面我也会及时更新最近面试公司及面试题目，供大家参考。</p>]]></content:encoded>
+            <category>前端</category>
+            <category>裁员</category>
+        </item>
         <item>
             <title><![CDATA[你真的需要微服务吗？]]></title>
             <link>https://JamesLi-dev.github.io/en/blog/microservices</link>
@@ -23,15 +34,6 @@
             <pubDate>Wed, 26 Aug 2020 00:00:00 GMT</pubDate>
             <description><![CDATA[欢迎来到 Torli 的 Blogs，在这里，我会分享一些自己平时的工作项目中用到的新奇、好玩的东西，还会分享一些比较新的技术的看法等等。]]></description>
             <content:encoded><![CDATA[<p>欢迎来到 Torli 的 Blogs，在这里，我会分享一些自己平时的工作项目中用到的新奇、好玩的东西，还会分享一些比较新的技术的看法等等。</p>]]></content:encoded>
-        </item>
-        <item>
-            <title><![CDATA[MDX Blog Post]]></title>
-            <link>https://JamesLi-dev.github.io/en/blog/mdx-blog-post</link>
-            <guid>mdx-blog-post</guid>
-            <pubDate>Wed, 01 Aug 2018 00:00:00 GMT</pubDate>
-            <description><![CDATA[Blog posts support Docusaurus Markdown features, such as MDX.]]></description>
-            <content:encoded><![CDATA[<p>Blog posts support <a href="https://docusaurus.io/docs/markdown-features" target="_blank" rel="noopener noreferrer">Docusaurus Markdown features</a>, such as <a href="https://mdxjs.com/" target="_blank" rel="noopener noreferrer">MDX</a>.</p><div class="theme-admonition theme-admonition-tip alert alert--success admonition_LlT9"><div class="admonitionHeading_tbUL"><span class="admonitionIcon_kALy"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span>tip</div><div class="admonitionContent_S0QG"><p>Use the power of React to create interactive blog posts.</p><div class="language-js codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-js codeBlock_bY9V thin-scrollbar"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token operator" style="color:#393A34">&lt;</span><span class="token plain">button onClick</span><span class="token operator" style="color:#393A34">=</span><span class="token punctuation" style="color:#393A34">{</span><span class="token punctuation" style="color:#393A34">(</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"> </span><span class="token arrow operator" style="color:#393A34">=&gt;</span><span class="token plain"> </span><span class="token function" style="color:#d73a49">alert</span><span class="token punctuation" style="color:#393A34">(</span><span class="token string" style="color:#e3116c">'button clicked!'</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">}</span><span class="token operator" style="color:#393A34">&gt;</span><span class="token maybe-class-name">Click</span><span class="token plain"> me</span><span class="token operator" style="color:#393A34">!</span><span class="token operator" style="color:#393A34">&lt;</span><span class="token operator" style="color:#393A34">/</span><span class="token plain">button</span><span class="token operator" style="color:#393A34">&gt;</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg class="copyButtonIcon_y97N" viewBox="0 0 24 24"><path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg class="copyButtonSuccessIcon_LjdS" viewBox="0 0 24 24"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div><button>Click me!</button></div></div>]]></content:encoded>
-            <category>docusaurus</category>
         </item>
     </channel>
 </rss>
