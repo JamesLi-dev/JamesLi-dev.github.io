@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunktorli_website=self.webpackChunktorli_website||[]).push([[905],{7622:e=>{e.exports=JSON.parse('{"title":"\u6846\u67b6","slug":"/category/\u6846\u67b6","permalink":"/en/docs/category/\u6846\u67b6","navigation":{"previous":{"title":"Git","permalink":"/en/docs/base/git"},"next":{"title":"React","permalink":"/en/docs/category/react"}}}')}}]);

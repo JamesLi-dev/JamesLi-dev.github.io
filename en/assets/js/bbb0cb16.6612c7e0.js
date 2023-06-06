@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktorli_website=self.webpackChunktorli_website||[]).push([[67],{2077:e=>{e.exports=JSON.parse('{"label":"JS","permalink":"/en/blog/tags/js","allTagsPath":"/en/blog/tags","count":2}')}}]);
