@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktorli_website=self.webpackChunktorli_website||[]).push([[9990],{1350:e=>{e.exports=JSON.parse('{"label":"MongoDB","permalink":"/en/blog/tags/mongo-db","allTagsPath":"/en/blog/tags","count":1,"unlisted":false}')}}]);

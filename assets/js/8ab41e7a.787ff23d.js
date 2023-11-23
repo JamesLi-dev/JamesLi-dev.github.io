@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunktorli_website=self.webpackChunktorli_website||[]).push([[2375],{5710:s=>{s.exports=JSON.parse('{"label":"Mysql","permalink":"/blog/tags/mysql","allTagsPath":"/blog/tags","count":1}')}}]);
