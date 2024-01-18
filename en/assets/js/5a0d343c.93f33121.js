@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktorli_website=self.webpackChunktorli_website||[]).push([[2944],{583:e=>{e.exports=JSON.parse('{"title":"3D","description":"3D \u76f8\u5173","slug":"/category/3d","permalink":"/en/docs/category/3d","navigation":{"previous":{"title":"\u5176\u4ed6","permalink":"/en/docs/animation/"},"next":{"title":"ThreeJS","permalink":"/en/docs/3d/ThreeJS"}}}')}}]);
