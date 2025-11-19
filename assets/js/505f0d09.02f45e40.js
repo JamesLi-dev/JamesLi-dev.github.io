@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunktorli_website=self.webpackChunktorli_website||[]).push([[6489],{6526:e=>{e.exports=JSON.parse('{"title":"\u6570\u636e\u5e93","slug":"/category/\u6570\u636e\u5e93","permalink":"/docs/category/\u6570\u636e\u5e93","navigation":{"previous":{"title":"NodeJS","permalink":"/docs/nodejs/"},"next":{"title":"Mysql","permalink":"/docs/database/Mysql"}}}')}}]);
