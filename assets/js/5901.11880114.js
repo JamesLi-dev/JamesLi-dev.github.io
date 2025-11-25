@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunktorli_website=globalThis.webpackChunktorli_website||[]).push([[5901],{75901:(e,i,s)=>{s.d(i,{createTreemapServices:()=>a.d});var a=s(51633);s(87960)}}]);

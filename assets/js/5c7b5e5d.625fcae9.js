@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunktorli_website=globalThis.webpackChunktorli_website||[]).push([[3141],{25946:(e,i,s)=>{s.r(i),s.d(i,{default:()=>t});s(96540);var l=s(74848);const t=()=>(0,l.jsx)("div",{children:"11223344"})}}]);
