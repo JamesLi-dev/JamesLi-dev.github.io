@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunktorli_website=globalThis.webpackChunktorli_website||[]).push([[8800],{68800(e,i,s){s.d(i,{createInfoServices:()=>t.v});var t=s(12680);s(56100)}}]);
