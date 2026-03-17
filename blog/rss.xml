@@ -4,10 +4,80 @@
         <title>这里是 Torli's  Blog</title>
         <link>https://blog.torli.top/blog</link>
         <description>这里是 Torli's  Blog</description>
-        <lastBuildDate>Thu, 13 Nov 2025 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 20 Jan 2026 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>zh-Hans</language>
+        <item>
+            <title><![CDATA[智能体设计模式的 5 个颠覆性真相]]></title>
+            <link>https://blog.torli.top/blog/2026/01/20/blog</link>
+            <guid>https://blog.torli.top/blog/2026/01/20/blog</guid>
+            <pubDate>Tue, 20 Jan 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[告别“聊天框”：揭秘 Claude Code 与智能体设计模式的 5 个颠覆性真相]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorTargetHideOnScrollNavbar_OwCe" id="告别聊天框揭秘-claude-code-与智能体设计模式的-5-个颠覆性真相">告别“聊天框”：揭秘 Claude Code 与智能体设计模式的 5 个颠覆性真相<a href="https://blog.torli.top/blog/2026/01/20/blog#%E5%91%8A%E5%88%AB%E8%81%8A%EF%BF%BD%E5%A4%A9%E6%A1%86%E6%8F%AD%E7%A7%98-claude-code-%E4%B8%8E%E6%99%BA%E8%83%BD%E4%BD%93%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E7%9A%84-5-%E4%B8%AA%E9%A2%A0%E8%A6%86%E6%80%A7%E7%9C%9F%E7%9B%B8" class="hash-link" aria-label="告别“聊天框”：揭秘 Claude Code 与智能体设计模式的 5 个颠覆性真相的直接链接" title="告别“聊天框”：揭秘 Claude Code 与智能体设计模式的 5 个颠覆性真相的直接链接" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_OwCe" id="1-引言从复读机到自动驾驶仪的飞跃">1. 引言：从“复读机”到“自动驾驶仪”的飞跃<a href="https://blog.torli.top/blog/2026/01/20/blog#1-%E5%BC%95%E8%A8%80%E4%BB%8E%E5%A4%8D%E8%AF%BB%E6%9C%BA%E5%88%B0%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E4%BB%AA%E7%9A%84%E9%A3%9E%E8%B7%83" class="hash-link" aria-label="1. 引言：从“复读机”到“自动驾驶仪”的飞跃的直接链接" title="1. 引言：从“复读机”到“自动驾驶仪”的飞跃的直接链接" translate="no">​</a></h3>
+<p>在 AI 领域，大多数用户仍深陷“对话框依赖”：输入指令，等待回复，周而复始。这种模式本质上将 LLM 视为一种高配版的“复读机”或检索工具。然而，随着 Claude Code 的发布，AI 正在经历一场从“核心推理引擎（Level 0）”向“自主智能体（Agentic AI）”的范式转移。</p>
+<p>当我们将 Claude Code、Obsidian 与智能体设计模式（Agentic Design Patterns）深度集成时，会产生一种被称为“上帝模式（God Mode）”的化学反应。AI 不再只是坐等回答，而是具备了感知环境、拆解目标并自主执行复杂任务的能力。本文将以架构师的视角，揭秘这场效率革命背后的 5 个真相。</p>
+<hr>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_OwCe" id="2-真相一claudemd-不是配置文件而是上下文持久化的载体">2. 真相一：claude.md 不是配置文件，而是“上下文持久化”的载体<a href="https://blog.torli.top/blog/2026/01/20/blog#2-%E7%9C%9F%E7%9B%B8%E4%B8%80claudemd-%E4%B8%8D%E6%98%AF%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%80%8C%E6%98%AF%E4%B8%8A%E4%B8%8B%E6%96%87%E6%8C%81%E4%B9%85%E5%8C%96%E7%9A%84%E8%BD%BD%E4%BD%93" class="hash-link" aria-label="2. 真相一：claude.md 不是配置文件，而是“上下文持久化”的载体的直接链接" title="2. 真相一：claude.md 不是配置文件，而是“上下文持久化”的载体的直接链接" translate="no">​</a></h3>
+<p>很多开发者误以为 claude.md 只是某种简单的设置，甚至认为它能让 AI 进行“自我训练”。作为架构师，我必须指出其技术本质：它是 AI 的**“脑中之脑（Brain within a brain）”，实现的是上下文持久化（Contextual Persistence）**，而非权重训练。</p>
+<ul>
+<li class="">打破记忆瓶颈： LLM 存在严重的“短期记忆”限制。claude.md 通过在项目根目录注入证据和约定（Conventions），解决了“令牌信噪比”问题。</li>
+<li class="">个性化工程： 它记录了你的代码风格、架构偏好和项目交付标准。</li>
+<li class="">进化循环： 随着项目推进，Claude 会根据最新的对话记录主动更新该文件。这种关系随着时间推移，能让 AI 的输出精准度呈指数级提升。</li>
+</ul>
+<p>这种本地化、持久化的指令注入，远比每次对话重新输入 Prompt 更具革命性。它是智能体实现“状态管理”的第一步。</p>
+<hr>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_OwCe" id="3-真相二单体-ai-已死协作型多智能体系统level-3才是未来">3. 真相二：单体 AI 已死，协作型多智能体系统（Level 3）才是未来<a href="https://blog.torli.top/blog/2026/01/20/blog#3-%E7%9C%9F%E7%9B%B8%E4%BA%8C%E5%8D%95%E4%BD%93-ai-%E5%B7%B2%E6%AD%BB%E5%8D%8F%E4%BD%9C%E5%9E%8B%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E7%B3%BB%E7%BB%9Flevel-3%E6%89%8D%E6%98%AF%E6%9C%AA%E6%9D%A5" class="hash-link" aria-label="3. 真相二：单体 AI 已死，协作型多智能体系统（Level 3）才是未来的直接链接" title="3. 真相二：单体 AI 已死，协作型多智能体系统（Level 3）才是未来的直接链接" translate="no">​</a></h3>
+<p>在《智能体设计模式》中，协作型多智能体系统（Level 3）被视为 AI 进化的顶峰。复杂任务不再交给一个“通才型 AI”，而是通过 Sub-agents（子智能体） 模式进行分权。</p>
+<p>技术细节： 为什么要用子智能体？关键在于独立上下文窗口（Independent Context Windows）。如果让一个 Skill 审核上万行代码，上下文会因过载而“变傻”；而子智能体在独立窗口运行，只将最终结果回传给主对话。这保证了主对话的“洁净度”，避免了记忆负载引发的幻觉。</p>
+<p>在一个典型的产品发布（Level 3）场景中，智能体团队的分工如下：</p>
+<ul>
+<li class="">项目经理（PM）智能体： 负责全局调度，通过“路由模式”识别意图并分派任务。</li>
+<li class="">调研员（Researcher）智能体： 调动 MCP 协议连接搜索工具，抓取市场动态。</li>
+<li class="">执行者（Executor）智能体： 在隔离沙箱中编写代码或生成营销物料。</li>
+</ul>
+<p>这种专家组协作模式，解决了单体 AI 在面对模糊、长期目标时的溃败。</p>
+<hr>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_OwCe" id="4-真相三obsidian--claude-code--让思考过程透明化">4. 真相三：Obsidian + Claude Code —— 让思考过程“透明化”<a href="https://blog.torli.top/blog/2026/01/20/blog#4-%E7%9C%9F%E7%9B%B8%E4%B8%89obsidian--claude-code--%E8%AE%A9%E6%80%9D%E8%80%83%E8%BF%87%E7%A8%8B%E9%80%8F%E6%98%8E%E5%8C%96" class="hash-link" aria-label="4. 真相三：Obsidian + Claude Code —— 让思考过程“透明化”的直接链接" title="4. 真相三：Obsidian + Claude Code —— 让思考过程“透明化”的直接链接" translate="no">​</a></h3>
+<p>将 Claude Code 运行在 Obsidian Vault（保险库）中，是架构师构建“透明化系统”的神作。在这里，Markdown 文件成为了人类与 AI 之间的**“共享缓冲区”**。</p>
+<ul>
+<li class="">MCP 协议的视觉化： 通过 Model Context Protocol (MCP)，Claude 可以实时读写 Obsidian 里的笔记。Obsidian 的关系图谱让 AI 的推理路径（Reasoning Trajectory）可视化。</li>
+<li class="">自我改进的闭环： 运行次数越多，Markdown 记录的关于用户工作风格的证据就越多。AI 能够读取这些历史，分析哪些决策是用户满意的，从而实现持续的自我优化。</li>
+<li class="">人类参与环节（HITL）： 架构师可以在 Obsidian 中直接修改 AI 的中间分析结果。这种“人机协同”保证了系统在自动化道路上不会偏离航向。</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_OwCe" id="5-真相四dangerously-skip-permissions--效率与安全的极致拉扯">5. 真相四：/dangerously-skip-permissions —— 效率与安全的极致拉扯<a href="https://blog.torli.top/blog/2026/01/20/blog#5-%E7%9C%9F%E7%9B%B8%E5%9B%9Bdangerously-skip-permissions--%E6%95%88%E7%8E%87%E4%B8%8E%E5%AE%89%E5%85%A8%E7%9A%84%E6%9E%81%E8%87%B4%E6%8B%89%E6%89%AF" class="hash-link" aria-label="5. 真相四：/dangerously-skip-permissions —— 效率与安全的极致拉扯的直接链接" title="5. 真相四：/dangerously-skip-permissions —— 效率与安全的极致拉扯的直接链接" translate="no">​</a></h3>
+<p>为了追求极致的自动化，Claude Code 引入了 /dangerously-skip-permissions 选项。这标志着 AI 彻底释放了自我。</p>
+<p>在常规模式下，删除文件或安装依赖需要人类确认（HITL）。但在“危险模式”下，这些权限检查被跳过，AI 获得了与人类同等的终端操作权限。</p>
+<ul>
+<li class="">这是一把双刃剑： 它能极大提升大规模重构的效率，实现“全自动干活”；但也意味着极小的推理偏差可能导致不可逆的后果。</li>
+<li class="">架构师的权衡： 追求“上帝模式”不仅需要勇气，更需要严谨的幂等性（Idempotency）设计。在释放权限的同时，必须建立相应的异常恢复机制，这是迈向完全自主智能体的必经之路。</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_OwCe" id="6-真相五路由与并行化从线性思考到并发决策">6. 真相五：路由与并行化——从“线性思考”到“并发决策”<a href="https://blog.torli.top/blog/2026/01/20/blog#6-%E7%9C%9F%E7%9B%B8%E4%BA%94%E8%B7%AF%E7%94%B1%E4%B8%8E%E5%B9%B6%E8%A1%8C%E5%8C%96%E4%BB%8E%E7%BA%BF%E6%80%A7%E6%80%9D%E8%80%83%E5%88%B0%E5%B9%B6%E5%8F%91%E5%86%B3%E7%AD%96" class="hash-link" aria-label="6. 真相五：路由与并行化——从“线性思考”到“并发决策”的直接链接" title="6. 真相五：路由与并行化——从“线性思考”到“并发决策”的直接链接" translate="no">​</a></h3>
+<p>成熟的智能体设计模式离不开“路由（Routing）”与“并行化（Parallelization）”。通过 /skill-creator，Claude Code 变成了一个可以自我扩展的平台。</p>
+<p>更高级的洞察在于**“令牌转移（Token Offloading）”**。例如，我们可以设计一个复合技能：由 Claude Code 调用专门的分析引擎（如 NotebookLM）。</p>
+<p>并行化研究工作流示例：</p>
+<ul>
+<li class="">并发启动： 同时调用 YouTube 搜索工具与 PDF 提取工具。</li>
+<li class="">负载分发： 将抓取的海量数据发送至 NotebookLM 进行异步分析。</li>
+<li class="">架构优势： 这种设计允许我们在不消耗 Claude 主模型上下文和额度的情况下，处理海量长文本，极大地压缩了复杂调研的时间成本。</li>
+</ul>
+<p>这种结构化设计利用路由逻辑根据意图选择工具，利用并行化压缩执行时间，彻底告别了传统 Prompt 慢吞吞的线性思维。</p>
+<hr>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_OwCe" id="7-结语迈向智能体驱动的新经济">7. 结语：迈向“智能体驱动”的新经济<a href="https://blog.torli.top/blog/2026/01/20/blog#7-%E7%BB%93%E8%AF%AD%E8%BF%88%E5%90%91%E6%99%BA%E8%83%BD%E4%BD%93%E9%A9%B1%E5%8A%A8%E7%9A%84%E6%96%B0%E7%BB%8F%E6%B5%8E" class="hash-link" aria-label="7. 结语：迈向“智能体驱动”的新经济的直接链接" title="7. 结语：迈向“智能体驱动”的新经济的直接链接" translate="no">​</a></h3>
+<p>我们正在经历从 RAG 到 Agentic AI 的跨越。未来的核心竞争力不再是“如何写 Prompt”，而是**“如何设计智能体工作流”**。</p>
+<p>当 Claude Code 能够利用 /skill-creator 构建新能力，通过 claude.md 沉淀约定，并利用多智能体协作完成全流程业务时，我们正在见证“智能体驱动经济”的黎明。</p>
+<p>最后留下一个架构师的思考：“当 AI 能够自主重构自己的团队、优化自己的指令并设计自己的工作流时，你是在写代码，还是仅仅在给 AI 做‘客户端’？”</p>]]></content:encoded>
+            <category>AI</category>
+            <category>Claude Code</category>
+            <category>Agent</category>
+            <category>LLM</category>
+            <category>Obsidian</category>
+            <category>NotebookLM</category>
+            <category>Skills</category>
+        </item>
         <item>
             <title><![CDATA[pancake swap 集成v2/v3]]></title>
             <link>https://blog.torli.top/blog/2025/11/13/blog</link>
@@ -524,7 +594,7 @@
 <li class="">JSONP 是一种跨域解决方案，通过动态创建 script 标签，将 JSON 数据作为回调函数的参数传递。</li>
 </ul>
 <h2 class="anchor anchorTargetHideOnScrollNavbar_OwCe" id="安全">安全<a href="https://blog.torli.top/blog/2023/04/05/blog#%E5%AE%89%E5%85%A8" class="hash-link" aria-label="安全的直接链接" title="安全的直接链接" translate="no">​</a></h2>
-<h3 class="anchor anchorTargetHideOnScrollNavbar_OwCe" id="xss">XSS<a href="https://blog.torli.top/blog/2023/04/05/blog#xss" class="hash-link" aria-label="XSS的直接链接" title="XSS的直接链接" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_OwCe" id="xss">XSS<a href="https://blog.torli.top/blog/2023/04/05/blog#xss" class="hash-link" aria-label="XSS的直接链接" title="XSS的直接�链接" translate="no">​</a></h3>
 <ul>
 <li class="">XSS（跨站脚本攻击）是一种利用 Web 应用程序漏洞，向页面注入恶意脚本的攻击。</li>
 <li class="">XSS 攻击可以窃取用户的敏感信息、篡改页面内容、劫持用户会话等。</li>
@@ -674,7 +744,7 @@
 <p>希望这份指南能够帮助你复习 JavaScript！</p>
 <h2 class="anchor anchorTargetHideOnScrollNavbar_OwCe" id="git-github-or-gitlab">Git, github or gitlab<a href="https://blog.torli.top/blog/2023/04/05/blog#git-github-or-gitlab" class="hash-link" aria-label="Git, github or gitlab的直接链接" title="Git, github or gitlab的直接链接" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetHideOnScrollNavbar_OwCe" id="git-常用命令可以-看这里">Git 常用命令可以 <a class="" href="https://blog.torli.top/docs/base/git">看这里</a><a href="https://blog.torli.top/blog/2023/04/05/blog#git-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%8F%AF%E4%BB%A5-%E7%9C%8B%E8%BF%99%E9%87%8C" class="hash-link" aria-label="git-常用命令可以-看这里的直接链接" title="git-常用命令可以-看这里的直接链接" translate="no">​</a></h3>
-<h3 class="anchor anchorTargetHideOnScrollNavbar_OwCe" id="github-这里">Github <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="">这里</a><a href="https://blog.torli.top/blog/2023/04/05/blog#github-%E8%BF%99%E9%87%8C" class="hash-link" aria-label="github-这里的直接链接" title="github-这里的直接链接" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_OwCe" id="github-这里">Github <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="">这里</a><a href="https://blog.torli.top/blog/2023/04/05/blog#github-%E8%BF%99%E9%87%8C" class="hash-link" aria-label="github-��这里的直接链接" title="github-这里的直接链接" translate="no">​</a></h3>
 <h3 class="anchor anchorTargetHideOnScrollNavbar_OwCe" id="gitlab-这里">Gitlab <a href="https://gitlab.com/" target="_blank" rel="noopener noreferrer" class="">这里</a><a href="https://blog.torli.top/blog/2023/04/05/blog#gitlab-%E8%BF%99%E9%87%8C" class="hash-link" aria-label="gitlab-这里的直接链接" title="gitlab-这里的直接链接" translate="no">​</a></h3>
 <h2 class="anchor anchorTargetHideOnScrollNavbar_OwCe" id="前端框架">前端框架<a href="https://blog.torli.top/blog/2023/04/05/blog#%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6" class="hash-link" aria-label="前端框架的直接链接" title="前端框架的直接链接" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetHideOnScrollNavbar_OwCe" id="看这里-2"><a class="" href="https://blog.torli.top/docs/category/%E6%A1%86%E6%9E%B6">看这里</a><a href="https://blog.torli.top/blog/2023/04/05/blog#%E7%9C%8B%E8%BF%99%E9%87%8C-2" class="hash-link" aria-label="看这里-2的直接链接" title="看这里-2的直接链接" translate="no">​</a></h3>
@@ -751,7 +821,7 @@
 <h4 class="anchor anchorTargetHideOnScrollNavbar_OwCe" id="4void-和-never-区别">4、void 和 never 区别<a href="https://blog.torli.top/blog/2023/03/15/blog#4void-%E5%92%8C-never-%E5%8C%BA%E5%88%AB" class="hash-link" aria-label="4、void 和 never 区别的直接链接" title="4、void 和 never 区别的直接链接" translate="no">​</a></h4>
 <h4 class="anchor anchorTargetHideOnScrollNavbar_OwCe" id="5any-和-unknow-的区别">5、any 和 unknow 的区别<a href="https://blog.torli.top/blog/2023/03/15/blog#5any-%E5%92%8C-unknow-%E7%9A%84%E5%8C%BA%E5%88%AB" class="hash-link" aria-label="5、any 和 unknow 的区别的直接链接" title="5、any 和 unknow 的区别的直接链接" translate="no">​</a></h4>
 <h4 class="anchor anchorTargetHideOnScrollNavbar_OwCe" id="6类型推断">6、类型推断<a href="https://blog.torli.top/blog/2023/03/15/blog#6%E7%B1%BB%E5%9E%8B%E6%8E%A8%E6%96%AD" class="hash-link" aria-label="6、类型推断的直接链接" title="6、类型推断的直接链接" translate="no">​</a></h4>
-<h3 class="anchor anchorTargetHideOnScrollNavbar_OwCe" id="react">React<a href="https://blog.torli.top/blog/2023/03/15/blog#react" class="hash-link" aria-label="React的直接链接" title="React的直接链接" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_OwCe" id="react">React<a href="https://blog.torli.top/blog/2023/03/15/blog#react" class="hash-link" aria-label="React的直接链��接" title="React的直接链接" translate="no">​</a></h3>
 <h4 class="anchor anchorTargetHideOnScrollNavbar_OwCe" id="1fiber---diff算法---虚拟dom---事件系统">1、fiber -&gt; diff算法 -&gt; 虚拟Dom -&gt; 事件系统<a href="https://blog.torli.top/blog/2023/03/15/blog#1fiber---diff%E7%AE%97%E6%B3%95---%E8%99%9A%E6%8B%9Fdom---%E4%BA%8B%E4%BB%B6%E7%B3%BB%E7%BB%9F" class="hash-link" aria-label="1、fiber -> diff算法 -> 虚拟Dom -> 事件系统的直接链接" title="1、fiber -> diff算法 -> 虚拟Dom -> 事件系统的直接链接" translate="no">​</a></h4>
 <h4 class="anchor anchorTargetHideOnScrollNavbar_OwCe" id="2react-中key的作用">2、react 中key的作用<a href="https://blog.torli.top/blog/2023/03/15/blog#2react-%E4%B8%ADkey%E7%9A%84%E4%BD%9C%E7%94%A8" class="hash-link" aria-label="2、react 中key的作用的直接链接" title="2、react 中key的作用的直接链接" translate="no">​</a></h4>
 <h4 class="anchor anchorTargetHideOnScrollNavbar_OwCe" id="3生命周期---hooks-出现解决了什么以及他们之间的区别">3、生命周期 -&gt; hooks 出现解决了什么，以及他们之间的区别<a href="https://blog.torli.top/blog/2023/03/15/blog#3%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F---hooks-%E5%87%BA%E7%8E%B0%E8%A7%A3%E5%86%B3%E4%BA%86%E4%BB%80%E4%B9%88%E4%BB%A5%E5%8F%8A%E4%BB%96%E4%BB%AC%E4%B9%8B%E9%97%B4%E7%9A%84%E5%8C%BA%E5%88%AB" class="hash-link" aria-label="3、生命周期 -> hooks 出现解决了什么，以及他们之间的区别的直接链接" title="3、生命周期 -> hooks 出现解决了什么，以及他们之间的区别的直接链接" translate="no">​</a></h4>
@@ -773,12 +843,12 @@
 <h4 class="anchor anchorTargetHideOnScrollNavbar_OwCe" id="3描述怎么实现一个loader-或者plugin">3、描述怎么实现一个loader 或者plugin<a href="https://blog.torli.top/blog/2023/03/15/blog#3%E6%8F%8F%E8%BF%B0%E6%80%8E%E4%B9%88%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AAloader-%E6%88%96%E8%80%85plugin" class="hash-link" aria-label="3、描述怎么实现一个loader 或者plugin的直接链接" title="3、描述怎么实现一个loader 或者plugin的直接链接" translate="no">​</a></h4>
 <h4 class="anchor anchorTargetHideOnScrollNavbar_OwCe" id="4热更新-原理">4、热更新 原理<a href="https://blog.torli.top/blog/2023/03/15/blog#4%E7%83%AD%E6%9B%B4%E6%96%B0-%E5%8E%9F%E7%90%86" class="hash-link" aria-label="4、热更新 原理的直接链接" title="4、热更新 原理的直接链接" translate="no">​</a></h4>
 <h4 class="anchor anchorTargetHideOnScrollNavbar_OwCe" id="5怎么优化构建速度">5、怎么优化构建速度<a href="https://blog.torli.top/blog/2023/03/15/blog#5%E6%80%8E%E4%B9%88%E4%BC%98%E5%8C%96%E6%9E%84%E5%BB%BA%E9%80%9F%E5%BA%A6" class="hash-link" aria-label="5、怎么优化构建速度的直接链接" title="5、怎么优化构建速度的直接链接" translate="no">​</a></h4>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_OwCe" id="6文件指纹策略">6、文件指纹策略<a href="https://blog.torli.top/blog/2023/03/15/blog#6%E6%96%87%E4%BB%B6%E6%8C%87%E7%BA%B9%E7%AD%96%E7%95%A5" class="hash-link" aria-label="6、文件指纹策略的直接链接" title="6、文件指纹策略的直接链接" translate="no">​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_OwCe" id="6文件指纹策略">6、文件指纹策略<a href="https://blog.torli.top/blog/2023/03/15/blog#6%E6%96%87%E4%BB%B6%E6%8C%87%E7%BA%B9%E7%AD%96%E7%95%A5" class="hash-link" aria-label="6、文件指纹策��略的直接链接" title="6、文件指纹策略的直接链接" translate="no">​</a></h4>
 <h4 class="anchor anchorTargetHideOnScrollNavbar_OwCe" id="7和其他打包工具比如-vite-区别">7、和其他打包工具比如 vite 区别<a href="https://blog.torli.top/blog/2023/03/15/blog#7%E5%92%8C%E5%85%B6%E4%BB%96%E6%89%93%E5%8C%85%E5%B7%A5%E5%85%B7%E6%AF%94%E5%A6%82-vite-%E5%8C%BA%E5%88%AB" class="hash-link" aria-label="7、和其他打包工具比如 vite 区别的直接链接" title="7、和其他打包工具比如 vite 区别的直接链接" translate="no">​</a></h4>
 <h4 class="anchor anchorTargetHideOnScrollNavbar_OwCe" id="8babel原理">8、Babel（原理）<a href="https://blog.torli.top/blog/2023/03/15/blog#8babel%E5%8E%9F%E7%90%86" class="hash-link" aria-label="8、Babel（原理）的直接链接" title="8、Babel（原理）的直接链接" translate="no">​</a></h4>
 <h3 class="anchor anchorTargetHideOnScrollNavbar_OwCe" id="工程化模块化">工程化，模块化<a href="https://blog.torli.top/blog/2023/03/15/blog#%E5%B7%A5%E7%A8%8B%E5%8C%96%E6%A8%A1%E5%9D%97%E5%8C%96" class="hash-link" aria-label="工程化，模块化的直接链接" title="工程化，模块化的直接链接" translate="no">​</a></h3>
 <h4 class="anchor anchorTargetHideOnScrollNavbar_OwCe" id="1-脚手架-creat-react-appvue-cli等等模板管理减少框架搭建时间">1、 脚手架 creat-react-app、vue-cli等等，模板管理，减少框架搭建时间<a href="https://blog.torli.top/blog/2023/03/15/blog#1-%E8%84%9A%E6%89%8B%E6%9E%B6-creat-react-appvue-cli%E7%AD%89%E7%AD%89%E6%A8%A1%E6%9D%BF%E7%AE%A1%E7%90%86%E5%87%8F%E5%B0%91%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E6%97%B6%E9%97%B4" class="hash-link" aria-label="1、 脚手架 creat-react-app、vue-cli等等，模板管理，减少框架搭建时间的直接链接" title="1、 脚手架 creat-react-app、vue-cli等等，模板管理，减少框架搭建时间的直接链接" translate="no">​</a></h4>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_OwCe" id="2-代码规范-eslint--prettier--husky-构建pre-commit-预检规范">2、 代码规范 eslint + prettier + husky 构建pre-commit 预检规范<a href="https://blog.torli.top/blog/2023/03/15/blog#2-%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83-eslint--prettier--husky-%E6%9E%84%E5%BB%BApre-commit-%E9%A2%84%E6%A3%80%E8%A7%84%E8%8C%83" class="hash-link" aria-label="2、 代码规范 eslint + prettier + husky 构建pre-commit 预检规范的直接链接" title="2、 代码规范 eslint + prettier + husky 构建pre-commit 预检�规范的直接链接" translate="no">​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_OwCe" id="2-代码规范-eslint--prettier--husky-构建pre-commit-预检规范">2、 代码规范 eslint + prettier + husky 构建pre-commit 预检规范<a href="https://blog.torli.top/blog/2023/03/15/blog#2-%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83-eslint--prettier--husky-%E6%9E%84%E5%BB%BApre-commit-%E9%A2%84%E6%A3%80%E8%A7%84%E8%8C%83" class="hash-link" aria-label="2、 代码规范 eslint + prettier + husky 构建pre-commit 预检规范的直接链接" title="2、 代码规范 eslint + prettier + husky ��构建pre-commit 预检规范的直接链接" translate="no">​</a></h4>
 <h4 class="anchor anchorTargetHideOnScrollNavbar_OwCe" id="3-项目上线前的流程规范-git-分支管理开发分支develop-测试分支master-主干">3、 项目上线前的流程规范 git 分支管理，开发分支，develop 测试分支，master 主干<a href="https://blog.torli.top/blog/2023/03/15/blog#3-%E9%A1%B9%E7%9B%AE%E4%B8%8A%E7%BA%BF%E5%89%8D%E7%9A%84%E6%B5%81%E7%A8%8B%E8%A7%84%E8%8C%83-git-%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86%E5%BC%80%E5%8F%91%E5%88%86%E6%94%AFdevelop-%E6%B5%8B%E8%AF%95%E5%88%86%E6%94%AFmaster-%E4%B8%BB%E5%B9%B2" class="hash-link" aria-label="3、 项目上线前的流程规范 git 分支管理，开发分支，develop 测试分支，master 主干的直接链接" title="3、 项目上线前的流程规范 git 分支管理，开发分支，develop 测试分支，master 主干的直接链接" translate="no">​</a></h4>
 <h4 class="anchor anchorTargetHideOnScrollNavbar_OwCe" id="4-项目中的模块化页面组件化细化页面抽离公共组件减少单文件代码量">4、 项目中的模块化、页面组件化，细化页面，抽离公共组件，减少单文件代码量<a href="https://blog.torli.top/blog/2023/03/15/blog#4-%E9%A1%B9%E7%9B%AE%E4%B8%AD%E7%9A%84%E6%A8%A1%E5%9D%97%E5%8C%96%E9%A1%B5%E9%9D%A2%E7%BB%84%E4%BB%B6%E5%8C%96%E7%BB%86%E5%8C%96%E9%A1%B5%E9%9D%A2%E6%8A%BD%E7%A6%BB%E5%85%AC%E5%85%B1%E7%BB%84%E4%BB%B6%E5%87%8F%E5%B0%91%E5%8D%95%E6%96%87%E4%BB%B6%E4%BB%A3%E7%A0%81%E9%87%8F" class="hash-link" aria-label="4、 项目中的模块化、页面组件化，细化页面，抽离公共组件，减少单文件代码量的直接链接" title="4、 项目中的模块化、页面组件化，细化页面，抽离公共组件，减少单文件代码量的直接链接" translate="no">​</a></h4>
 <h4 class="anchor anchorTargetHideOnScrollNavbar_OwCe" id="5-mock服务mockjs-接口拦截返回模拟数据或yapiswagger">5、 mock服务，mockjs 接口拦截，返回模拟数据，或Yapi，swagger<a href="https://blog.torli.top/blog/2023/03/15/blog#5-mock%E6%9C%8D%E5%8A%A1mockjs-%E6%8E%A5%E5%8F%A3%E6%8B%A6%E6%88%AA%E8%BF%94%E5%9B%9E%E6%A8%A1%E6%8B%9F%E6%95%B0%E6%8D%AE%E6%88%96yapiswagger" class="hash-link" aria-label="5、 mock服务，mockjs 接口拦截，返回模拟数据，或Yapi，swagger的直接链接" title="5、 mock服务，mockjs 接口拦截，返回模拟数据，或Yapi，swagger的直接链接" translate="no">​</a></h4>
@@ -805,7 +875,7 @@
 <h3 class="anchor anchorTargetHideOnScrollNavbar_OwCe" id="网络制式">网络制式<a href="https://blog.torli.top/blog/2023/03/15/blog#%E7%BD%91%E7%BB%9C%E5%88%B6%E5%BC%8F" class="hash-link" aria-label="网络制式的直接链接" title="网络制式的直接链接" translate="no">​</a></h3>
 <h4 class="anchor anchorTargetHideOnScrollNavbar_OwCe" id="1常见状态码">1、常见状态码<a href="https://blog.torli.top/blog/2023/03/15/blog#1%E5%B8%B8%E8%A7%81%E7%8A%B6%E6%80%81%E7%A0%81" class="hash-link" aria-label="1、常见状态码的直接链接" title="1、常见状态码的直接链接" translate="no">​</a></h4>
 <h4 class="anchor anchorTargetHideOnScrollNavbar_OwCe" id="2浏览器存储缓存">2、浏览器存储、缓存<a href="https://blog.torli.top/blog/2023/03/15/blog#2%E6%B5%8F%E8%A7%88%E5%99%A8%E5%AD%98%E5%82%A8%E7%BC%93%E5%AD%98" class="hash-link" aria-label="2、浏览器存储、缓存的直接链接" title="2、浏览器存储、缓存的直接链接" translate="no">​</a></h4>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_OwCe" id="3跨域为什么常用解决办法">3、跨域(为什么、常用解决办法)<a href="https://blog.torli.top/blog/2023/03/15/blog#3%E8%B7%A8%E5%9F%9F%E4%B8%BA%E4%BB%80%E4%B9%88%E5%B8%B8%E7%94%A8%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95" class="hash-link" aria-label="3、跨域(为什么、常用解决办法)的直接链接" title="3、跨域(为什么、常用解决办法)的直接链接" translate="no">​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_OwCe" id="3跨域为什么常用解决办法">3、跨域(为什么、常用解决办法)<a href="https://blog.torli.top/blog/2023/03/15/blog#3%E8%B7%A8%E5%9F%9F%E4%B8%BA%E4%BB%80%E4%B9%88%E5%B8%B8%E7%94%A8%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95" class="hash-link" aria-label="3、跨域(为什么、��常用解决办法)的直接链接" title="3、跨域(为什么、常用解决办法)的直接链接" translate="no">​</a></h4>
 <h4 class="anchor anchorTargetHideOnScrollNavbar_OwCe" id="4websoket">4、websoket<a href="https://blog.torli.top/blog/2023/03/15/blog#4websoket" class="hash-link" aria-label="4、websoket的直接链接" title="4、websoket的直接链接" translate="no">​</a></h4>
 <h4 class="anchor anchorTargetHideOnScrollNavbar_OwCe" id="5httphttps">5、http，https<a href="https://blog.torli.top/blog/2023/03/15/blog#5httphttps" class="hash-link" aria-label="5、http，https的直接链接" title="5、http，https的直接链接" translate="no">​</a></h4>
 <h4 class="anchor anchorTargetHideOnScrollNavbar_OwCe" id="6安全csrfxssddos">6、安全（CSRF、XSS、DDos）<a href="https://blog.torli.top/blog/2023/03/15/blog#6%E5%AE%89%E5%85%A8csrfxssddos" class="hash-link" aria-label="6、安全（CSRF、XSS、DDos）的直接链接" title="6、安全（CSRF、XSS、DDos）的直接链接" translate="no">​</a></h4>
@@ -821,7 +891,7 @@
 <h3 class="anchor anchorTargetHideOnScrollNavbar_OwCe" id="算法">算法<a href="https://blog.torli.top/blog/2023/03/15/blog#%E7%AE%97%E6%B3%95" class="hash-link" aria-label="算法的直接链接" title="算法的直接链接" translate="no">​</a></h3>
 <h4 class="anchor anchorTargetHideOnScrollNavbar_OwCe" id="直接上链接---都在这里">直接上链接 -&gt; <a href="https://codetop.cc/home" target="_blank" rel="noopener noreferrer" title="codeTop.cc" class="">都在这里</a><a href="https://blog.torli.top/blog/2023/03/15/blog#%E7%9B%B4%E6%8E%A5%E4%B8%8A%E9%93%BE%E6%8E%A5---%E9%83%BD%E5%9C%A8%E8%BF%99%E9%87%8C" class="hash-link" aria-label="直接上链接---都在这里的直接链接" title="直接上链接---都在这里的直接链接" translate="no">​</a></h4>
 <h3 class="anchor anchorTargetHideOnScrollNavbar_OwCe" id="其他">其他<a href="https://blog.torli.top/blog/2023/03/15/blog#%E5%85%B6%E4%BB%96" class="hash-link" aria-label="其他的直接链接" title="其他的直接链接" translate="no">​</a></h3>
-<h4 class="anchor anchorTargetHideOnScrollNavbar_OwCe" id="1前端路由实现方式">1、前端路由实现方式<a href="https://blog.torli.top/blog/2023/03/15/blog#1%E5%89%8D%E7%AB%AF%E8%B7%AF%E7%94%B1%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F" class="hash-link" aria-label="1、前端路由实现方式的直接链接" title="1、前端路由实现方式的直接链接" translate="no">​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_OwCe" id="1前端路由实现方式">1、前端路由实现方式<a href="https://blog.torli.top/blog/2023/03/15/blog#1%E5%89%8D%EF%BF%BD%EF%BF%BD%E7%AB%AF%E8%B7%AF%E7%94%B1%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F" class="hash-link" aria-label="1、前端路由实现方式的直接链接" title="1、前端路由实现方式的直接链接" translate="no">​</a></h4>
 <h4 class="anchor anchorTargetHideOnScrollNavbar_OwCe" id="2taro-vs-uni-app-优缺点">2、Taro VS uni-app 优缺点<a href="https://blog.torli.top/blog/2023/03/15/blog#2taro-vs-uni-app-%E4%BC%98%E7%BC%BA%E7%82%B9" class="hash-link" aria-label="2、Taro VS uni-app 优缺点的直接链接" title="2、Taro VS uni-app 优缺点的直接链接" translate="no">​</a></h4>
 <h4 class="anchor anchorTargetHideOnScrollNavbar_OwCe" id="3谈谈微信小程序">3、谈谈微信小程序<a href="https://blog.torli.top/blog/2023/03/15/blog#3%E8%B0%88%E8%B0%88%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F" class="hash-link" aria-label="3、谈谈微信小程序的直接链接" title="3、谈谈微信小程序的直接链接" translate="no">​</a></h4>
 <h4 class="anchor anchorTargetHideOnScrollNavbar_OwCe" id="4代码发布之后怎么确保用户访问到的是最新的">4、代码发布之后，怎么确保用户访问到的是最新的<a href="https://blog.torli.top/blog/2023/03/15/blog#4%E4%BB%A3%E7%A0%81%E5%8F%91%E5%B8%83%E4%B9%8B%E5%90%8E%E6%80%8E%E4%B9%88%E7%A1%AE%E4%BF%9D%E7%94%A8%E6%88%B7%E8%AE%BF%E9%97%AE%E5%88%B0%E7%9A%84%E6%98%AF%E6%9C%80%E6%96%B0%E7%9A%84" class="hash-link" aria-label="4、代码发布之后，怎么确保用户访问到的是最新的的直接链接" title="4、代码发布之后，怎么确保用户访问到的是最新的的直接链接" translate="no">​</a></h4>
