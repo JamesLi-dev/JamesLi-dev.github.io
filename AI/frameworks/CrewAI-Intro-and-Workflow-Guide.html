@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="zh-Hans" dir="ltr" class="docs-wrapper plugin-docs plugin-id-ai docs-version-current docs-doc-page docs-doc-id-frameworks/CrewAI-Intro-and-Workflow-Guide" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.10.1">
+<title data-rh="true">CrewAI 入门与 Workflow 实战定位 | 这里是 Torli&#x27;s </title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://blog.torli.top/AI/frameworks/CrewAI-Intro-and-Workflow-Guide"><meta data-rh="true" property="og:locale" content="zh_Hans"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" name="docusaurus_locale" content="zh-Hans"><meta data-rh="true" name="docsearch:language" content="zh-Hans"><meta data-rh="true" name="keywords" content="cooking, blog"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-ai-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-ai-current"><meta data-rh="true" property="og:title" content="CrewAI 入门与 Workflow 实战定位 | 这里是 Torli&#x27;s "><meta data-rh="true" name="description" content="这篇文档主要回答一个实际问题："><meta data-rh="true" property="og:description" content="这篇文档主要回答一个实际问题："><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://blog.torli.top/AI/frameworks/CrewAI-Intro-and-Workflow-Guide"><link data-rh="true" rel="alternate" href="https://blog.torli.top/AI/frameworks/CrewAI-Intro-and-Workflow-Guide" hreflang="zh-Hans"><link data-rh="true" rel="alternate" href="https://blog.torli.top/en/AI/frameworks/CrewAI-Intro-and-Workflow-Guide" hreflang="en"><link data-rh="true" rel="alternate" href="https://blog.torli.top/AI/frameworks/CrewAI-Intro-and-Workflow-Guide" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"框架与 SDK","item":"https://blog.torli.top/AI/frameworks/"},{"@type":"ListItem","position":2,"name":"CrewAI 入门与 Workflow 实战定位","item":"https://blog.torli.top/AI/frameworks/CrewAI-Intro-and-Workflow-Guide"}]}</script><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="这里是 Torli&#39;s  RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="这里是 Torli&#39;s  Atom Feed"><link rel="stylesheet" href="/assets/css/styles.a3b9aef2.css">
+<script src="/assets/js/runtime~main.5a1d3d49.js" defer="defer"></script>
+<script src="/assets/js/main.41eb4bf8.js" defer="defer"></script>
+</head>
+<body>
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="跳到主要内容"><a class="skipToContent_U9sP" href="#__docusaurus_skipToContent_fallback">跳到主要内容</a></div><nav aria-label="主导航" class="theme-layout-navbar navbar navbar--fixed-top navbarHideable_PT2D"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="切换导航栏" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/logo2.png" alt="My Site Logo" class="themedComponent_QNor themedComponent--light_EqDK"><img src="/img/logo2.png" alt="My Site Logo" class="themedComponent_QNor themedComponent--dark_H0PK"></div><b class="navbar__title text--truncate">Torli&#x27;s Blog</b></a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a class="navbar__link" aria-haspopup="true" aria-expanded="false" role="button" href="/docs/intro">知识库</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/docs/foundations">基础语言</a></li><li><a class="dropdown__link" href="/docs/browser-network">浏览器与网络</a></li><li><a class="dropdown__link" href="/docs/engineering">工程化</a></li><li><a class="dropdown__link" href="/docs/frameworks">前端框架</a></li><li><a class="dropdown__link" href="/docs/node-server">Node 与服务端</a></li><li><a class="dropdown__link" href="/docs/data-backend">数据库与后端服务</a></li><li><a class="dropdown__link" href="/docs/state-management">状态管理</a></li><li><a class="dropdown__link" href="/docs/ui-interaction">UI 与交互</a></li><li><a class="dropdown__link" href="/docs/dev-tools">效率工具与开发环境</a></li><li><a class="dropdown__link" href="/docs/frontier">前沿专题</a></li></ul></div><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a aria-current="page" class="navbar__link active" aria-haspopup="true" aria-expanded="false" role="button" href="/AI">AI 学习</a><ul class="dropdown__menu"><li><a aria-current="page" class="dropdown__link dropdown__link--active" href="/AI">开始这里：AI 首页</a></li><li><a class="dropdown__link" href="/AI/AI-Agent-Docs-Index">专题索引：AI Agent 文档总索引</a></li><li><a class="dropdown__link" href="/AI/AI-Agent-Chapter-to-Framework-Map">专题索引：章节与框架映射</a></li><li><a class="dropdown__link" href="/AI/foundations/Prompt-Engineering-Glossary">基础能力：Prompt Engineering</a></li><li><a class="dropdown__link" href="/AI/foundations/Context-Engineering-Guide">基础能力：Context Engineering</a></li><li><a class="dropdown__link" href="/AI/foundations/RAG-Intro-and-Practice">基础能力：RAG</a></li><li><a class="dropdown__link" href="/AI/agent-engineering/Agent-Engineering-Intro">Agent 与工程化：Agent Engineering</a></li><li><a class="dropdown__link" href="/AI/agent-engineering/Workflow-vs-Agent">Agent 与工程化：Workflow vs Agent</a></li><li><a class="dropdown__link" href="/AI/agent-engineering/Agent-Memory-and-State">Agent 与工程化：Memory and State</a></li><li><a class="dropdown__link" href="/AI/agent-engineering/Harness-Engineering-Guide">Agent 与工程化：Harness Engineering</a></li><li><a class="dropdown__link" href="/AI/frameworks/OpenAI-Agents-SDK-Guide">框架与 SDK：OpenAI Agents SDK</a></li><li><a class="dropdown__link" href="/AI/frameworks/LangGraph-Intro-and-Orchestration">框架与 SDK：LangGraph</a></li><li><a class="dropdown__link" href="/AI/frameworks/LangSmith-Observability-and-Evals">框架与 SDK：LangSmith</a></li><li><a class="dropdown__link" href="/AI/frameworks/Vercel-AI-SDK-Guide">框架与 SDK：Vercel AI SDK</a></li><li><a class="dropdown__link" href="/AI/frameworks/Mastra-Guide">框架与 SDK：Mastra</a></li><li><a class="dropdown__link" href="/AI/frameworks/Google-ADK-Guide">框架与 SDK：Google ADK</a></li><li><a class="dropdown__link" href="/AI/overview/AI-App-Architecture-Map">全局视角：AI 应用整体架构</a></li><li><a class="dropdown__link" href="/AI/overview/Minimal-Agent-Demo-From-0-to-1">全局视角：最小 Agent Demo</a></li><li><a class="dropdown__link" href="/AI/overview/Minimal-Agent-Code-Implementation-Examples">全局视角：最小 Agent 代码示例</a></li><li><a class="dropdown__link" href="/AI/overview/AI-Agent-Tech-Stack-and-Framework-Comparison">全局视角：技术栈与框架对比</a></li></ul></div><a class="navbar__item navbar__link" href="/blog">日常 Blog</a><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a class="navbar__link" aria-haspopup="true" aria-expanded="false" role="button" href="/docs/engineering">工程化</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/docs/engineering/build-tools">构建与转译</a></li><li><a class="dropdown__link" href="/docs/engineering/code-quality">代码规范</a></li><li><a class="dropdown__link" href="/docs/engineering/package-management">包管理与环境管理</a></li><li><a class="dropdown__link" href="/docs/engineering/data-fetching">请求与数据层</a></li><li><a class="dropdown__link" href="/docs/engineering/package-management/pnpm">pnpm</a></li><li><a class="dropdown__link" href="/docs/engineering/package-management/fnm">fnm</a></li></ul></div><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a class="navbar__link" aria-haspopup="true" aria-expanded="false" role="button" href="/docs/dev-tools">工具与环境</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/docs/dev-tools/apps/KeyboardMaestro">Keyboard Maestro</a></li><li><a class="dropdown__link" href="/docs/dev-tools/apps/Warp">Warp</a></li><li><a class="dropdown__link" href="/docs/dev-tools/apps/Ghostty">Ghostty</a></li><li><a class="dropdown__link" href="/docs/dev-tools/apps/Zed">Zed</a></li><li><a class="dropdown__link" href="/docs/dev-tools/apps/GitButler">GitButler</a></li><li><a class="dropdown__link" href="/docs/dev-tools/apps/Switzy">Switzy</a></li><li><a class="dropdown__link" href="/docs/dev-tools/apps/Craft-Agents">Craft Agents</a></li></ul></div><a href="https://github.com/JamesLi-dev" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_BlfO"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_bW1k colorModeToggle_D8sl"><button class="clean-btn toggleButton_qiU8 toggleButtonDisabled_xinJ" type="button" disabled="" title="system mode" aria-label="切换浅色/暗黑模式（当前为system mode）"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_X9Tk lightToggleIcon_y62u"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_X9Tk darkToggleIcon_Dj8C"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_X9Tk systemToggleIcon_T2ve"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_e2eJ"><div class="navbar__search searchBarContainer_Mqfy"><input placeholder="搜索" aria-label="Search" class="navbar__search-input" value=""><div class="loadingRing_r319 searchBarLoadingRing_Kn2r"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_kzBE"><div class="docsWrapper_Jb1X"><button aria-label="回到顶部" class="clean-btn theme-back-to-top-button backToTopButton_W_UZ" type="button"></button><div class="docRoot_AAe1"><aside class="theme-doc-sidebar-container docSidebarContainer_RSuS"><div class="sidebarViewport_pYEE"><div class="sidebar_G_8g sidebarWithHideableNavbar__FNA"><a tabindex="-1" class="sidebarLogo_hLnz" href="/"><img src="/img/logo2.png" alt="My Site Logo" class="themedComponent_QNor themedComponent--light_EqDK"><img src="/img/logo2.png" alt="My Site Logo" class="themedComponent_QNor themedComponent--dark_H0PK"><b>Torli&#x27;s Blog</b></a><nav aria-label="文档侧边栏" class="menu thin-scrollbar menu_k9TG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/AI"><span title="AI" class="linkLabel_vgcd">AI</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/AI/AI-Agent-Docs-Index"><span title="AI Agent 文档总索引" class="linkLabel_vgcd">AI Agent 文档总索引</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_jNm8 menu__link menu__link--sublist" href="/AI/foundations"><span title="基础能力" class="categoryLinkLabel_ayea">基础能力</span></a><button aria-label="展开侧边栏分类 &#x27;基础能力&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/AI/AI-Agent-Chapter-to-Framework-Map"><span title="AI Agent 专题章节与框架映射" class="linkLabel_vgcd">AI Agent 专题章节与框架映射</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_jNm8 menu__link menu__link--sublist" href="/AI/agent-engineering"><span title="Agent 与工程化" class="categoryLinkLabel_ayea">Agent 与工程化</span></a><button aria-label="展开侧边栏分类 &#x27;Agent 与工程化&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_jNm8 menu__link menu__link--sublist menu__link--active" href="/AI/frameworks"><span title="框架与 SDK" class="categoryLinkLabel_ayea">框架与 SDK</span></a><button aria-label="折叠侧边栏分类 &#x27;框架与 SDK&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/AI/frameworks/OpenAI-Agents-SDK-Guide"><span title="OpenAI Agents SDK 指南" class="linkLabel_vgcd">OpenAI Agents SDK 指南</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/AI/frameworks/LangChain-Intro-and-Practice"><span title="LangChain 入门与实践" class="linkLabel_vgcd">LangChain 入门与实践</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/AI/frameworks/LangGraph-Intro-and-Orchestration"><span title="LangGraph 入门与编排设计" class="linkLabel_vgcd">LangGraph 入门与编排设计</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/AI/frameworks/LangSmith-Observability-and-Evals"><span title="LangSmith：Observability、Evals 与 Deployment 指南" class="linkLabel_vgcd">LangSmith：Observability、Evals 与 Deployment 指南</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/AI/frameworks/Microsoft-Agent-Framework-and-AutoGen-Status"><span title="Microsoft Agent Framework / AutoGen 状态指南" class="linkLabel_vgcd">Microsoft Agent Framework / AutoGen 状态指南</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/AI/frameworks/CrewAI-Intro-and-Workflow-Guide"><span title="CrewAI 入门与 Workflow 实战定位" class="linkLabel_vgcd">CrewAI 入门与 Workflow 实战定位</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/AI/frameworks/Vercel-AI-SDK-Guide"><span title="Vercel AI SDK 指南" class="linkLabel_vgcd">Vercel AI SDK 指南</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/AI/frameworks/Mastra-Guide"><span title="Mastra 指南" class="linkLabel_vgcd">Mastra 指南</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/AI/frameworks/Google-ADK-Guide"><span title="Google ADK 指南" class="linkLabel_vgcd">Google ADK 指南</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/AI/frameworks/LlamaIndex-Agent-and-Workflow-Guide"><span title="LlamaIndex Agent / Workflow 指南" class="linkLabel_vgcd">LlamaIndex Agent / Workflow 指南</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/AI/frameworks/Azure-AI-Foundry-Agent-Service-Guide"><span title="Azure AI Foundry Agent Service 指南" class="linkLabel_vgcd">Azure AI Foundry Agent Service 指南</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_jNm8 menu__link menu__link--sublist" href="/AI/overview"><span title="全局视角" class="categoryLinkLabel_ayea">全局视角</span></a><button aria-label="展开侧边栏分类 &#x27;全局视角&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li></ul></nav><button type="button" data-torli-sidebar-toggle="collapse" title="收起侧边栏" aria-label="收起侧边栏" class="button button--secondary button--outline collapseSidebarButton_JQG6"><svg class="collapseSidebarButtonIcon_Iseg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"></rect><path d="M13 9L10 12L13 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></button></div></div></aside><main class="docMainContainer_hjYf"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_uYg3"><div class="docItemContainer_jngG"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_lBfN" aria-label="页面路径"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="主页面" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_ebxl"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/AI/frameworks"><span>框架与 SDK</span></a></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">CrewAI 入门与 Workflow 实战定位</span></li></ul></nav><div class="tocCollapsible_VI1r theme-doc-toc-mobile tocMobile_iude"><button type="button" class="clean-btn tocCollapsibleButton_LJEZ">本页总览</button></div><div class="theme-doc-markdown markdown"><header><h1>CrewAI 入门与 Workflow 实战定位</h1></header>
+<p>这篇文档主要回答一个实际问题：</p>
+<p><code>CrewAI 在 AI Agent、multi-agent、workflow 和 human-in-the-loop 这条线上处在什么位置，适合承载什么问题，又该怎么放进技术栈判断里。</code></p>
+<p>本文以 CrewAI 官方文档当前的定位为基础来整理，不把它写成“全场景通吃框架”。</p>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="1-它是什么">1. 它是什么<a href="#1-它是什么" class="hash-link" aria-label="1. 它是什么的直接链接" title="1. 它是什么的直接链接" translate="no">​</a></h2>
+<p>按照 CrewAI 官方文档当前的介绍，CrewAI 是一套面向 <code>agents</code>、<code>crews</code> 和 <code>flows</code> 的框架与平台，强调：</p>
+<ul>
+<li class="">multi-agent 协作</li>
+<li class="">production-ready workflow</li>
+<li class="">guardrails</li>
+<li class="">memory</li>
+<li class="">knowledge</li>
+<li class="">observability</li>
+</ul>
+<p>它不是单纯把一次模型调用包起来，而是更偏向：</p>
+<ul>
+<li class="">用 <code>Agent</code> 表示角色化执行单元</li>
+<li class="">用 <code>Task</code> 表示具体任务</li>
+<li class="">用 <code>Crew</code> 组织多 agent 协作</li>
+<li class="">用 <code>Flow</code> 编排更明确、可控、可恢复的自动化流程</li>
+</ul>
+<p>核心定位可以先概括成一句话：</p>
+<p><code>CrewAI 更接近一个把 agent 协作和业务流程放在一起组织的承载层。</code></p>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="2-它适合什么问题">2. 它适合什么问题<a href="#2-它适合什么问题" class="hash-link" aria-label="2. 它适合什么问题的直接链接" title="2. 它适合什么问题的直接链接" translate="no">​</a></h2>
+<p>结合 CrewAI 官方文档里的 <code>Agents</code>、<code>Crews</code>、<code>Flows</code>、<code>Processes</code>、<code>Human in the Loop</code>、<code>Memory</code> 等内容，可以把适用场景理解成下面几类。</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="21-适合任务天然可以拆角色">2.1 适合任务天然可以拆角色<a href="#21-适合任务天然可以拆角色" class="hash-link" aria-label="2.1 适合任务天然可以拆角色的直接链接" title="2.1 适合任务天然可以拆角色的直接链接" translate="no">​</a></h3>
+<p>如果问题本身就很容易拆成：</p>
+<ul>
+<li class="">研究员</li>
+<li class="">规划者</li>
+<li class="">执行者</li>
+<li class="">审核者</li>
+</ul>
+<p>或者：</p>
+<ul>
+<li class="">总控 agent</li>
+<li class="">specialist agents</li>
+<li class="">人工审批节点</li>
+</ul>
+<p>那 CrewAI 会比“只写一个大 agent”更自然。</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="22-适合业务流程明确但又不想全写死">2.2 适合业务流程明确，但又不想全写死<a href="#22-适合业务流程明确但又不想全写死" class="hash-link" aria-label="2.2 适合业务流程明确，但又不想全写死的直接链接" title="2.2 适合业务流程明确，但又不想全写死的直接链接" translate="no">​</a></h3>
+<p>CrewAI 里 <code>Flows</code> 和 <code>Processes</code> 的定位很清楚：</p>
+<ul>
+<li class=""><code>Sequential</code></li>
+<li class=""><code>Hierarchical</code></li>
+<li class=""><code>Conditional</code></li>
+<li class="">事件驱动的 flow</li>
+</ul>
+<p>因此它比较适合：</p>
+<ul>
+<li class="">步骤大体清楚</li>
+<li class="">但某些步骤仍然想交给 agent 自主完成</li>
+<li class="">并且希望状态在流程里被保留下来</li>
+</ul>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="23-适合想把-memory--knowledge--tools-放进一套运行时">2.3 适合想把 memory / knowledge / tools 放进一套运行时<a href="#23-适合想把-memory--knowledge--tools-放进一套运行时" class="hash-link" aria-label="2.3 适合想把 memory / knowledge / tools 放进一套运行时的直接链接" title="2.3 适合想把 memory / knowledge / tools 放进一套运行时的直接链接" translate="no">​</a></h3>
+<p>CrewAI 官方现在把下面这些能力都放得比较靠前：</p>
+<ul>
+<li class="">memory</li>
+<li class="">knowledge</li>
+<li class="">custom tools</li>
+<li class="">human-in-the-loop</li>
+<li class="">observability</li>
+</ul>
+<p>所以它比较适合那种“希望框架本身就把这些能力当一 等公民”的团队。</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="24-适合拿来练-multi-agent-思维">2.4 适合拿来练 multi-agent 思维<a href="#24-适合拿来练-multi-agent-思维" class="hash-link" aria-label="2.4 适合拿来练 multi-agent 思维的直接链接" title="2.4 适合拿来练 multi-agent 思维的直接链接" translate="no">​</a></h3>
+<p>如果目标不是马上上线复杂系统，而是想先建立：</p>
+<ul>
+<li class="">agent 角色怎么拆</li>
+<li class="">task 怎么定义</li>
+<li class="">crew 怎么组织</li>
+<li class="">flow 怎么承载流程</li>
+</ul>
+<p>那 CrewAI 的学习曲线其实比较友好，因为它把这些概念摆得很显式。</p>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="3-它不太适合什么问题">3. 它不太适合什么问题<a href="#3-它不太适合什么问题" class="hash-link" aria-label="3. 它不太适合什么问题的直接链接" title="3. 它不太适合什么问题的直接链接" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="31-不适合只做一次简单调用">3.1 不适合只做一次简单调用<a href="#31-不适合只做一次简单调用" class="hash-link" aria-label="3.1 不适合只做一次简单调用的直接链接" title="3.1 不适合只做一次简单调用的直接链接" translate="no">​</a></h3>
+<p>如果只是要：</p>
+<ul>
+<li class="">一次摘要</li>
+<li class="">一次抽取</li>
+<li class="">一次普通问答</li>
+</ul>
+<p>那直接用 OpenAI 官方 client，或者一层很薄的封装，通常更合适。</p>
+<p>CrewAI 在这种场景里会偏重。</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="32-不适合还没分清-workflow-和-agent-的阶段">3.2 不适合还没分清 workflow 和 agent 的阶段<a href="#32-不适合还没分清-workflow-和-agent-的阶段" class="hash-link" aria-label="3.2 不适合还没分清 workflow 和 agent 的阶段的直接链接" title="3.2 不适合还没分清 workflow 和 agent 的阶段的直接链接" translate="no">​</a></h3>
+<p>CrewAI 的优势之一恰恰是它把 <code>agents / crews / flows / tasks / processes</code> 都摆出来了。</p>
+<p>但反过来看，如果还没分清：</p>
+<ul>
+<li class="">哪些步骤应当写死</li>
+<li class="">哪些步骤该交给模型决定</li>
+<li class="">哪些地方必须人工确认</li>
+</ul>
+<p>那很容易在 CrewAI 里过早搭出一个“看起来很完整、实际边界很糊”的系统。</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="33-不适合把多-agent-当成默认答案">3.3 不适合把多 agent 当成默认答案<a href="#33-不适合把多-agent-当成默认答案" class="hash-link" aria-label="3.3 不适合把多 agent 当成默认答案的直接链接" title="3.3 不适合把多 agent 当成默认答案的直接链接" translate="no">​</a></h3>
+<p>CrewAI 很容易让人一开始就想把系统拆成很多角色。</p>
+<p>但真实项目里，很多场景更适合：</p>
+<ul>
+<li class="">单 agent + tools</li>
+<li class="">单 workflow + 少量模型步骤</li>
+</ul>
+<p>所以它更适合作为“已经确认需要多角色或流程编排”的工具，而不是默认起点。</p>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="4-核心概念">4. 核心概念<a href="#4-核心概念" class="hash-link" aria-label="4. 核心概念的直接链接" title="4. 核心概念的直接链接" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="41-agent">4.1 Agent<a href="#41-agent" class="hash-link" aria-label="4.1 Agent的直接链接" title="4.1 Agent的直接链接" translate="no">​</a></h2>
+<p>在 CrewAI 里，<code>Agent</code> 是一个有角色、有目标、有可用工具的执行单元。</p>
+<p>可以把它理解成：</p>
+<p><code>一个被明确定义职责边界的模型角色。</code></p>
+<p>适合放在 agent 身上的内容通常包括：</p>
+<ul>
+<li class="">role</li>
+<li class="">goal</li>
+<li class="">backstory</li>
+<li class="">tools</li>
+<li class="">memory / knowledge 能力</li>
+</ul>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="42-task">4.2 Task<a href="#42-task" class="hash-link" aria-label="4.2 Task的直接链接" title="4.2 Task的直接链接" translate="no">​</a></h2>
+<p><code>Task</code> 是交给某个 agent 去完成的具体任务。</p>
+<p>它的价值在于把“执行目标”显式化：</p>
+<ul>
+<li class="">任务描述是什么</li>
+<li class="">期望输出是什么</li>
+<li class="">需要哪些工具</li>
+<li class="">由谁负责</li>
+</ul>
+<p>这一层可以拿来训练任务边界拆分能力。</p>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="43-crew">4.3 Crew<a href="#43-crew" class="hash-link" aria-label="4.3 Crew的直接链接" title="4.3 Crew的直接链接" translate="no">​</a></h2>
+<p><code>Crew</code> 是一组 agent 和 tasks 的协作组织方式。</p>
+<p>官方文档里常见的 process 有：</p>
+<ul>
+<li class=""><code>sequential</code></li>
+<li class=""><code>hierarchical</code></li>
+</ul>
+<p>因此 <code>Crew</code> 更偏多 agent 协作策略，而不是底层事件编排。</p>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="44-flow">4.4 Flow<a href="#44-flow" class="hash-link" aria-label="4.4 Flow的直接链接" title="4.4 Flow的直接链接" translate="no">​</a></h2>
+<p><code>Flow</code> 是 CrewAI 里很值得关注的一层。</p>
+<p>官方文档当前把它强调为：</p>
+<ul>
+<li class="">结构化</li>
+<li class="">事件驱动</li>
+<li class="">可共享状态</li>
+<li class="">可恢复</li>
+</ul>
+<p>所以 <code>Flow</code> 更接近：</p>
+<p><code>把 agent 能力放进真实自动化流程里的承载层。</code></p>
+<p>如果正在看 <code>workflow vs agent</code>，CrewAI 的 <code>Flow</code> 是个很好的参照物。</p>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="45-memory--knowledge--hitl">4.5 Memory / Knowledge / HITL<a href="#45-memory--knowledge--hitl" class="hash-link" aria-label="4.5 Memory / Knowledge / HITL的直接链接" title="4.5 Memory / Knowledge / HITL的直接链接" translate="no">​</a></h2>
+<p>CrewAI 当前文档把：</p>
+<ul>
+<li class=""><code>Memory</code></li>
+<li class=""><code>Knowledge</code></li>
+<li class=""><code>Human in the Loop</code></li>
+<li class=""><code>Observability</code></li>
+</ul>
+<p>都放在比较靠前的位置。</p>
+<p>这说明它不是把 agent 看成一次调用，而是把 agent 当成一个会长期参与系统运行的组件。</p>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="5-和其他主流框架怎么分">5. 和其他主流框架怎么分<a href="#5-和其他主流框架怎么分" class="hash-link" aria-label="5. 和其他主流框架怎么分的直接链接" title="5. 和其他主流框架怎么分的直接链接" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="51-和-openai-agents-sdk-的区别">5.1 和 OpenAI Agents SDK 的区别<a href="#51-和-openai-agents-sdk-的区别" class="hash-link" aria-label="5.1 和 OpenAI Agents SDK 的区别的直接链接" title="5.1 和 OpenAI Agents SDK 的区别的直接链接" translate="no">​</a></h3>
+<ul>
+<li class=""><code>OpenAI Agents SDK</code> 更靠近官方原语与 agent runtime</li>
+<li class=""><code>CrewAI</code> 属于更完整的 agent 组织与 workflow 承载层</li>
+</ul>
+<p>如果想先理解最基础的 <code>tools / handoffs / guardrails / traces</code>，更适合先看 OpenAI 官方路线。</p>
+<p>如果想更快进入“角色协作 + 任务组织 + 流程运行”，CrewAI 会更直观。</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="52-和-langchain-的区别">5.2 和 LangChain 的区别<a href="#52-和-langchain-的区别" class="hash-link" aria-label="5.2 和 LangChain 的区别的直接链接" title="5.2 和 LangChain 的区别的直接链接" translate="no">​</a></h3>
+<ul>
+<li class=""><code>LangChain</code> 更适合快速起一个单 agent 或工具型 agent</li>
+<li class=""><code>CrewAI</code> 更适合把多个 agent、tasks、processes 显式摆出来</li>
+</ul>
+<p>所以：</p>
+<ul>
+<li class="">想快起步，先看 <code>LangChain</code></li>
+<li class="">想明显训练 multi-agent / workflow 思维，再看 <code>CrewAI</code></li>
+</ul>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="53-和-langgraph-的区别">5.3 和 LangGraph 的区别<a href="#53-和-langgraph-的区别" class="hash-link" aria-label="5.3 和 LangGraph 的区别的直接链接" title="5.3 和 LangGraph 的区别的直接链接" translate="no">​</a></h3>
+<ul>
+<li class=""><code>LangGraph</code> 更偏低层、可控、状态化编排</li>
+<li class=""><code>CrewAI</code> 更偏高层 agent 协作和 workflow 产品化体验</li>
+</ul>
+<p>如果更关心：</p>
+<ul>
+<li class="">graph 节点</li>
+<li class="">分支路由</li>
+<li class="">长任务状态</li>
+<li class="">更细粒度 orchestration</li>
+</ul>
+<p><code>LangGraph</code> 通常更合适。</p>
+<p>如果更关心：</p>
+<ul>
+<li class="">角色化协作</li>
+<li class="">crew / task / process</li>
+<li class="">flow 驱动业务自动化</li>
+</ul>
+<p><code>CrewAI</code> 会更顺手。</p>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="6-阅读顺序">6. 阅读顺序<a href="#6-阅读顺序" class="hash-link" aria-label="6. 阅读顺序的直接链接" title="6. 阅读顺序的直接链接" translate="no">​</a></h2>
+<p>更稳的顺序是：</p>
+<ol>
+<li class="">先学 <a class="" href="/AI/frameworks/OpenAI-Agents-SDK-Guide">OpenAI Agents SDK 指南</a></li>
+<li class="">再学 <a class="" href="/AI/frameworks/LangChain-Intro-and-Practice">LangChain 入门与实践</a></li>
+<li class="">再学 <a class="" href="/AI/frameworks/LangGraph-Intro-and-Orchestration">LangGraph 入门与编排设计</a></li>
+<li class="">最后再看 <code>CrewAI</code></li>
+</ol>
+<p>这样会更容易分清：</p>
+<ul>
+<li class="">官方原语是什么</li>
+<li class="">agent runtime 是什么</li>
+<li class="">编排层在解决什么问题</li>
+<li class=""><code>Crew / Task / Flow</code> 为什么会有价值</li>
+</ul>
+<p>如果一上来就学 CrewAI，也不是不行，但最好先记住一个原则：</p>
+<p><code>先问自己是不是真的需要多角色协作和 flow 编排，再决定要不要把系统组织成 crew。</code></p>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="7-和本专题哪些章节最对应">7. 和本专题哪些章节最对应<a href="#7-和本专题哪些章节最对应" class="hash-link" aria-label="7. 和本专题哪些章节最对应的直接链接" title="7. 和本专题哪些章节最对应的直接链接" translate="no">​</a></h2>
+<p>CrewAI 最适合拿来对应这些主题：</p>
+<ul>
+<li class=""><code>Workflow vs Agent</code></li>
+<li class=""><code>Tool-Using Agent</code></li>
+<li class=""><code>Research Agent</code></li>
+<li class=""><code>Guardrails / Human-in-the-Loop</code></li>
+<li class=""><code>Memory / Knowledge</code></li>
+<li class=""><code>多角色协作</code></li>
+</ul>
+<p>不太建议一开始就用它来替代这些章节本身：</p>
+<ul>
+<li class=""><code>Prompt Engineering</code></li>
+<li class=""><code>Context Engineering</code></li>
+<li class=""><code>Harness Engineering</code></li>
+</ul>
+<p>因为这些章节更该先掌握方法论，再决定是否交给某个框架承载。</p>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="8-小结">8. 小结<a href="#8-小结" class="hash-link" aria-label="8. 小结的直接链接" title="8. 小结的直接链接" translate="no">​</a></h2>
+<p>如果想学的是：</p>
+<ul>
+<li class="">怎么把多个角色组织起来</li>
+<li class="">怎么把 agent 放进结构化 workflow</li>
+<li class="">怎么把 memory、knowledge、HITL 和 observability 一起带进系统</li>
+</ul>
+<p>那 <code>CrewAI</code> 会是很有参考价值的一条路线。</p>
+<p>但如果还在建立最小 agent 原语，或者只是做单步工具调用，它通常不是第一站。</p></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="文件选项卡"><a class="pagination-nav__link pagination-nav__link--prev" href="/AI/frameworks/Microsoft-Agent-Framework-and-AutoGen-Status"><div class="pagination-nav__sublabel">上一页</div><div class="pagination-nav__label">Microsoft Agent Framework / AutoGen 状态指南</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/AI/frameworks/Vercel-AI-SDK-Guide"><div class="pagination-nav__sublabel">下一页</div><div class="pagination-nav__label">Vercel AI SDK 指南</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_v08c thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#1-它是什么" class="table-of-contents__link toc-highlight">1. 它是什么</a></li><li><a href="#2-它适合什么问题" class="table-of-contents__link toc-highlight">2. 它适合什么问题</a><ul><li><a href="#21-适合任务天然可以拆角色" class="table-of-contents__link toc-highlight">2.1 适合任务天然可以拆角色</a></li><li><a href="#22-适合业务流程明确但又不想全写死" class="table-of-contents__link toc-highlight">2.2 适合业务流程明确，但又不想全写死</a></li><li><a href="#23-适合想把-memory--knowledge--tools-放进一套运行时" class="table-of-contents__link toc-highlight">2.3 适合想把 memory / knowledge / tools 放进一套运行时</a></li><li><a href="#24-适合拿来练-multi-agent-思维" class="table-of-contents__link toc-highlight">2.4 适合拿来练 multi-agent 思维</a></li></ul></li><li><a href="#3-它不太适合什么问题" class="table-of-contents__link toc-highlight">3. 它不太适合什么问题</a><ul><li><a href="#31-不适合只做一次简单调用" class="table-of-contents__link toc-highlight">3.1 不适合只做一次简单调用</a></li><li><a href="#32-不适合还没分清-workflow-和-agent-的阶段" class="table-of-contents__link toc-highlight">3.2 不适合还没分清 workflow 和 agent 的阶段</a></li><li><a href="#33-不适合把多-agent-当成  默认答案" class="table-of-contents__link toc-highlight">3.3 不适合把多 agent 当成默认答案</a></li></ul></li><li><a href="#4-核心概念" class="table-of-contents__link toc-highlight">4. 核心概念</a></li><li><a href="#41-agent" class="table-of-contents__link toc-highlight">4.1 Agent</a></li><li><a href="#42-task" class="table-of-contents__link toc-highlight">4.2 Task</a></li><li><a href="#43-crew" class="table-of-contents__link toc-highlight">4.3 Crew</a></li><li><a href="#44-flow" class="table-of-contents__link toc-highlight">4.4 Flow</a></li><li><a href="#45-memory--knowledge--hitl" class="table-of-contents__link toc-highlight">4.5 Memory / Knowledge / HITL</a></li><li><a href="#5-和其他主流框架怎么分" class="table-of-contents__link toc-highlight">5. 和其他主流框架怎么分</a><ul><li><a href="#51-和-openai-agents-sdk-的区别" class="table-of-contents__link toc-highlight">5.1 和 OpenAI Agents SDK 的区别</a></li><li><a href="#52-和-langchain-的区别" class="table-of-contents__link toc-highlight">5.2 和 LangChain 的区别</a></li><li><a href="#53-和-langgraph-的区别" class="table-of-contents__link toc-highlight">5.3 和 LangGraph 的区别</a></li></ul></li><li><a href="#6-阅读顺序" class="table-of-contents__link toc-highlight">6. 阅读顺序</a></li><li><a href="#7-和本专题哪些章节最对应" class="table-of-contents__link toc-highlight">7. 和本专题哪些章节最对应</a></li><li><a href="#8-小结" class="table-of-contents__link toc-highlight">8. 小结</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">入口</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/intro">知识库</a></li><li class="footer__item"><a class="footer__link-item" href="/blog">日常 Blog</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/engineering">工程化</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/dev-tools">工具与环境</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">更多</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/JamesLi-dev" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_BlfO"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Torli, Inc. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>

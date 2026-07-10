@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunktorli_website=globalThis.webpackChunktorli_website||[]).push([[8029],{37960:s=>{s.exports=JSON.parse('{"name":"docusaurus-plugin-content-docs","id":"ai"}')}}]);

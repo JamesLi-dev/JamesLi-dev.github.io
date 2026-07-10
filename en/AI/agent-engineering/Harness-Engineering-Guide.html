@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-ai docs-version-current docs-doc-page docs-doc-id-agent-engineering/Harness-Engineering-Guide" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.10.1">
+<title data-rh="true">Harness Engineering | 这里是 Torli&#x27;s </title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://blog.torli.top/en/AI/agent-engineering/Harness-Engineering-Guide"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" property="og:locale:alternate" content="zh_Hans"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="keywords" content="cooking, blog"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-ai-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-ai-current"><meta data-rh="true" property="og:title" content="Harness Engineering | 这里是 Torli&#x27;s "><meta data-rh="true" name="description" content="如果说 Agent Engineering 解决的是“如何把模型、工具、状态和流程组织成一个能持续执行任务的系统”，那么 Harness Engineering 解决的就是另一个更工程化的问题："><meta data-rh="true" property="og:description" content="如果说 Agent Engineering 解决的是“如何把模型、工具、状态和流程组织成一个能持续执行任务的系统”，那么 Harness Engineering 解决的就是另一个更工程化的问题："><link data-rh="true" rel="icon" href="/en/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://blog.torli.top/en/AI/agent-engineering/Harness-Engineering-Guide"><link data-rh="true" rel="alternate" href="https://blog.torli.top/AI/agent-engineering/Harness-Engineering-Guide" hreflang="zh-Hans"><link data-rh="true" rel="alternate" href="https://blog.torli.top/en/AI/agent-engineering/Harness-Engineering-Guide" hreflang="en"><link data-rh="true" rel="alternate" href="https://blog.torli.top/AI/agent-engineering/Harness-Engineering-Guide" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Agent 与工程化","item":"https://blog.torli.top/en/AI/agent-engineering/"},{"@type":"ListItem","position":2,"name":"Harness Engineering","item":"https://blog.torli.top/en/AI/agent-engineering/Harness-Engineering-Guide"}]}</script><link rel="alternate" type="application/rss+xml" href="/en/blog/rss.xml" title="这里是 Torli&#39;s  RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/en/blog/atom.xml" title="这里是 Torli&#39;s  Atom Feed"><link rel="stylesheet" href="/en/assets/css/styles.a3b9aef2.css">
+<script src="/en/assets/js/runtime~main.56ff528f.js" defer="defer"></script>
+<script src="/en/assets/js/main.f68a3aad.js" defer="defer"></script>
+</head>
+<body>
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_U9sP" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top navbarHideable_PT2D"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/en/"><div class="navbar__logo"><img src="/en/img/logo2.png" alt="My Site Logo" class="themedComponent_QNor themedComponent--light_EqDK"><img src="/en/img/logo2.png" alt="My Site Logo" class="themedComponent_QNor themedComponent--dark_H0PK"></div><b class="navbar__title text--truncate">Torli&#x27;s Blog</b></a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a class="navbar__link" aria-haspopup="true" aria-expanded="false" role="button" href="/en/docs/intro">知识库</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/en/docs/foundations">基础语言</a></li><li><a class="dropdown__link" href="/en/docs/browser-network">浏览器与网络</a></li><li><a class="dropdown__link" href="/en/docs/engineering">工程化</a></li><li><a class="dropdown__link" href="/en/docs/frameworks">前端框架</a></li><li><a class="dropdown__link" href="/en/docs/node-server">Node 与服务端</a></li><li><a class="dropdown__link" href="/en/docs/data-backend">数据库与后端服务</a></li><li><a class="dropdown__link" href="/en/docs/state-management">状态管理</a></li><li><a class="dropdown__link" href="/en/docs/ui-interaction">UI 与交互</a></li><li><a class="dropdown__link" href="/en/docs/dev-tools">效率工具与开发环境</a></li><li><a class="dropdown__link" href="/en/docs/frontier">前沿专题</a></li></ul></div><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a aria-current="page" class="navbar__link active" aria-haspopup="true" aria-expanded="false" role="button" href="/en/AI">AI 学习</a><ul class="dropdown__menu"><li><a aria-current="page" class="dropdown__link dropdown__link--active" href="/en/AI">开始这里：AI 首页</a></li><li><a class="dropdown__link" href="/en/AI/AI-Agent-Docs-Index">专题索引：AI Agent 文档总索引</a></li><li><a class="dropdown__link" href="/en/AI/AI-Agent-Chapter-to-Framework-Map">专题索引：章节与框架映射</a></li><li><a class="dropdown__link" href="/en/AI/foundations/Prompt-Engineering-Glossary">基础能力：Prompt Engineering</a></li><li><a class="dropdown__link" href="/en/AI/foundations/Context-Engineering-Guide">基础能力：Context Engineering</a></li><li><a class="dropdown__link" href="/en/AI/foundations/RAG-Intro-and-Practice">基础能力：RAG</a></li><li><a class="dropdown__link" href="/en/AI/agent-engineering/Agent-Engineering-Intro">Agent 与工程化：Agent Engineering</a></li><li><a class="dropdown__link" href="/en/AI/agent-engineering/Workflow-vs-Agent">Agent 与工程化：Workflow vs Agent</a></li><li><a class="dropdown__link" href="/en/AI/agent-engineering/Agent-Memory-and-State">Agent 与工程化：Memory and State</a></li><li><a aria-current="page" class="dropdown__link dropdown__link--active" href="/en/AI/agent-engineering/Harness-Engineering-Guide">Agent 与工程化：Harness Engineering</a></li><li><a class="dropdown__link" href="/en/AI/frameworks/OpenAI-Agents-SDK-Guide">框架与 SDK：OpenAI Agents SDK</a></li><li><a class="dropdown__link" href="/en/AI/frameworks/LangGraph-Intro-and-Orchestration">框架与 SDK：LangGraph</a></li><li><a class="dropdown__link" href="/en/AI/frameworks/LangSmith-Observability-and-Evals">框架与 SDK：LangSmith</a></li><li><a class="dropdown__link" href="/en/AI/frameworks/Vercel-AI-SDK-Guide">框 架与 SDK：Vercel AI SDK</a></li><li><a class="dropdown__link" href="/en/AI/frameworks/Mastra-Guide">框架与 SDK：Mastra</a></li><li><a class="dropdown__link" href="/en/AI/frameworks/Google-ADK-Guide">框架与 SDK：Google ADK</a></li><li><a class="dropdown__link" href="/en/AI/overview/AI-App-Architecture-Map">全局视角：AI 应用整体架构</a></li><li><a class="dropdown__link" href="/en/AI/overview/Minimal-Agent-Demo-From-0-to-1">全局视角：最小 Agent Demo</a></li><li><a class="dropdown__link" href="/en/AI/overview/Minimal-Agent-Code-Implementation-Examples">全局视角：最小 Agent 代码示例</a></li><li><a class="dropdown__link" href="/en/AI/overview/AI-Agent-Tech-Stack-and-Framework-Comparison">全局视角：技术栈与框架对比</a></li></ul></div><a class="navbar__item navbar__link" href="/en/blog">日常 Blog</a><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a class="navbar__link" aria-haspopup="true" aria-expanded="false" role="button" href="/en/docs/engineering">工程化</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/en/docs/engineering/build-tools">构建与转译</a></li><li><a class="dropdown__link" href="/en/docs/engineering/code-quality">代码规范</a></li><li><a class="dropdown__link" href="/en/docs/engineering/package-management">包管理与环境管理</a></li><li><a class="dropdown__link" href="/en/docs/engineering/data-fetching">请求与数据层</a></li><li><a class="dropdown__link" href="/en/docs/engineering/package-management/pnpm">pnpm</a></li><li><a class="dropdown__link" href="/en/docs/engineering/package-management/fnm">fnm</a></li></ul></div><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a class="navbar__link" aria-haspopup="true" aria-expanded="false" role="button" href="/en/docs/dev-tools">工具与环境</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/en/docs/dev-tools/apps/KeyboardMaestro">Keyboard Maestro</a></li><li><a class="dropdown__link" href="/en/docs/dev-tools/apps/Warp">Warp</a></li><li><a class="dropdown__link" href="/en/docs/dev-tools/apps/Ghostty">Ghostty</a></li><li><a class="dropdown__link" href="/en/docs/dev-tools/apps/Zed">Zed</a></li><li><a class="dropdown__link" href="/en/docs/dev-tools/apps/GitButler">GitButler</a></li><li><a class="dropdown__link" href="/en/docs/dev-tools/apps/Switzy">Switzy</a></li><li><a class="dropdown__link" href="/en/docs/dev-tools/apps/Craft-Agents">Craft Agents</a></li></ul></div><a href="https://github.com/JamesLi-dev" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_BlfO"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_bW1k colorModeToggle_D8sl"><button class="clean-btn toggleButton_qiU8 toggleButtonDisabled_xinJ" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_X9Tk lightToggleIcon_y62u"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_X9Tk darkToggleIcon_Dj8C"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_X9Tk systemToggleIcon_T2ve"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_e2eJ"><div class="navbar__search searchBarContainer_Mqfy"><input placeholder="Search" aria-label="Search" class="navbar__search-input" value=""><div class="loadingRing_r319 searchBarLoadingRing_Kn2r"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_kzBE"><div class="docsWrapper_Jb1X"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_W_UZ" type="button"></button><div class="docRoot_AAe1"><aside class="theme-doc-sidebar-container docSidebarContainer_RSuS"><div class="sidebarViewport_pYEE"><div class="sidebar_G_8g sidebarWithHideableNavbar__FNA"><a tabindex="-1" class="sidebarLogo_hLnz" href="/en/"><img src="/en/img/logo2.png" alt="My Site Logo" class="themedComponent_QNor themedComponent--light_EqDK"><img src="/en/img/logo2.png" alt="My Site Logo" class="themedComponent_QNor themedComponent--dark_H0PK"><b>Torli&#x27;s Blog</b></a><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_k9TG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/en/AI"><span title="AI" class="linkLabel_vgcd">AI</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/en/AI/AI-Agent-Docs-Index"><span title="AI Agent 文档总索引" class="linkLabel_vgcd">AI Agent 文档总索引</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_jNm8 menu__link menu__link--sublist" href="/en/AI/foundations"><span title="基础能力" class="categoryLinkLabel_ayea">基础能力</span></a><button aria-label="Expand sidebar category &#x27;基础能力&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/en/AI/AI-Agent-Chapter-to-Framework-Map"><span title="AI Agent 专题章节与框架映射" class="linkLabel_vgcd">AI Agent 专题章节与框架映射</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_jNm8 menu__link menu__link--sublist menu__link--active" href="/en/AI/agent-engineering"><span title="Agent 与工程化" class="categoryLinkLabel_ayea">Agent 与工程化</span></a><button aria-label="Collapse sidebar category &#x27;Agent 与工程化&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/en/AI/agent-engineering/Agent-Engineering-Intro"><span title="Agent Engineering" class="linkLabel_vgcd">Agent Engineering</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/en/AI/agent-engineering/Evaluation-and-Evals-Intro"><span title="Evaluation / Evals" class="linkLabel_vgcd">Evaluation / Evals</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/en/AI/agent-engineering/Workflow-vs-Agent"><span title="Workflow vs Agent" class="linkLabel_vgcd">Workflow vs Agent</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/en/AI/agent-engineering/Router-and-Triage-Design"><span title="Router 与 Triage 设计" class="linkLabel_vgcd">Router 与 Triage 设计</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/en/AI/agent-engineering/Agent-Memory-and-State"><span title="Agent Memory and State" class="linkLabel_vgcd">Agent Memory and State</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/en/AI/agent-engineering/Prompt-Injection-and-Agent-Security"><span title="Prompt Injection 与 Agent 安全" class="linkLabel_vgcd">Prompt Injection 与 Agent 安全</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/en/AI/agent-engineering/Agent-Planning-Patterns"><span title="Agent Planning Patterns" class="linkLabel_vgcd">Agent Planning Patterns</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/en/AI/agent-engineering/Multi-Agent-Systems-Design"><span title="多 Agent 系统设计" class="linkLabel_vgcd">多 Agent 系统设计</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/en/AI/agent-engineering/Agent-Handoffs-Agents-as-Tools-and-A2A"><span title="Handoff、Agents as Tools 与 A2A" class="linkLabel_vgcd">Handoff、Agents as Tools 与 A2A</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/en/AI/agent-engineering/Harness-Engineering-Guide"><span title="Harness Engineering" class="linkLabel_vgcd">Harness Engineering</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/en/AI/agent-engineering/Agent-Memory-and-RAG-Data-Governance"><span title="Agent Memory 与 RAG 数据治理" class="linkLabel_vgcd">Agent Memory 与 RAG 数据治理</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/en/AI/agent-engineering/Agent-Latency-Cost-and-Reliability"><span title="AI Agent 的延迟、成本与稳定性优化" class="linkLabel_vgcd">AI Agent 的延迟、成本与稳定性优化</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/en/AI/agent-engineering/Agent-Observability-and-Debugging"><span title="Agent Observability and Debugging" class="linkLabel_vgcd">Agent Observability and Debugging</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/en/AI/agent-engineering/Multi-Agent-Evaluations"><span title="Multi-Agent Evaluations" class="linkLabel_vgcd">Multi-Agent Evaluations</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/en/AI/agent-engineering/Agent-Failure-Triage"><span title="Agent Failure Triage" class="linkLabel_vgcd">Agent Failure Triage</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/en/AI/agent-engineering/Guardrails-and-Human-in-the-Loop"><span title="Guardrails and Human-in-the-Loop" class="linkLabel_vgcd">Guardrails and Human-in-the-Loop</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/en/AI/agent-engineering/Agent-Runtime-State-Machine"><span title="Agent Runtime State Machine" class="linkLabel_vgcd">Agent Runtime State Machine</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/en/AI/agent-engineering/Long-Running-Agents-and-Durable-Execution"><span title="Long-Running Agents 与 Durable Execution" class="linkLabel_vgcd">Long-Running Agents 与 Durable Execution</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/en/AI/agent-engineering/Queues-Retry-Backoff-and-Dead-Letter"><span title="Queues、Retry、Backoff 与 Dead Letter" class="linkLabel_vgcd">Queues、Retry、Backoff 与 Dead Letter</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/en/AI/agent-engineering/Approval-and-Human-Review-Workflows"><span title="Approval 与 Human Review Workflow" class="linkLabel_vgcd">Approval 与 Human Review Workflow</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/en/AI/agent-engineering/Tool-Approval-Interrupt-and-Resume"><span title="Tool Approval、Interrupt 与 Resume" class="linkLabel_vgcd">Tool Approval、Interrupt 与 Resume</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/en/AI/agent-engineering/Browser-and-Computer-Use-Agents"><span title="Browser and Computer Use Agents" class="linkLabel_vgcd">Browser and Computer Use Agents</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/en/AI/agent-engineering/AI-Agent-Anti-Patterns"><span title="AI Agent 常见反模式" class="linkLabel_vgcd">AI Agent 常见反模式</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/en/AI/agent-engineering/Agent-Evals-and-Harness-Templates"><span title="Agent Evals / Harness 模板" class="linkLabel_vgcd">Agent Evals / Harness 模板</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/en/AI/agent-engineering/Agent-Evals-Markdown-Table-Templates"><span title="Agent Evals Markdown 表格模板" class="linkLabel_vgcd">Agent Evals Markdown 表格模板</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/en/AI/agent-engineering/Harness-Markdown-Table-Templates"><span title="Harness Markdown 表格模板" class="linkLabel_vgcd">Harness Markdown 表格模板</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/en/AI/agent-engineering/Minimal-Agent-TypeScript-Template"><span title="Minimal Agent TypeScript 模板" class="linkLabel_vgcd">Minimal Agent TypeScript 模板</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/en/AI/agent-engineering/Tool-Using-Agent-TypeScript-Template"><span title="Tool-Using Agent TypeScript 模板" class="linkLabel_vgcd">Tool-Using Agent TypeScript 模板</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/en/AI/agent-engineering/RAG-Agent-TypeScript-Template"><span title="RAG Agent TypeScript 模板" class="linkLabel_vgcd">RAG Agent TypeScript 模板</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/en/AI/agent-engineering/Research-Agent-TypeScript-Template"><span title="Research Agent TypeScript 模板" class="linkLabel_vgcd">Research Agent TypeScript 模板</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/en/AI/agent-engineering/TypeScript-in-Agent-Projects"><span title="Agent 项目里的 TypeScript 落地实践" class="linkLabel_vgcd">Agent 项目里的 TypeScript 落地实践</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_jNm8 menu__link menu__link--sublist" href="/en/AI/frameworks"><span title="框架与 SDK" class="categoryLinkLabel_ayea">框架与 SDK</span></a><button aria-label="Expand sidebar category &#x27;框架与 SDK&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_jNm8 menu__link menu__link--sublist" href="/en/AI/overview"><span title="全局视角" class="categoryLinkLabel_ayea">全局视角</span></a><button aria-label="Expand sidebar category &#x27;全局视角&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li></ul></nav><button type="button" data-torli-sidebar-toggle="collapse" title="Collapse sidebar" aria-label="Collapse sidebar" class="button button--secondary button--outline collapseSidebarButton_JQG6"><svg class="collapseSidebarButtonIcon_Iseg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"></rect><path d="M13 9L10 12L13 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></button></div></div></aside><main class="docMainContainer_hjYf"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_uYg3"><div class="docItemContainer_jngG"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_lBfN" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/en/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_ebxl"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/en/AI/agent-engineering"><span>Agent 与工程化</span></a></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Harness Engineering</span></li></ul></nav><div class="tocCollapsible_VI1r theme-doc-toc-mobile tocMobile_iude"><button type="button" class="clean-btn tocCollapsibleButton_LJEZ">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Harness Engineering</h1></header>
+<p>如果说 <code>Agent Engineering</code> 解决的是“如何把模型、工具、状态和流程组织成一个能持续执行任务的系统”，那么 <code>Harness Engineering</code> 解决的就是另一个更工程化的问题：</p>
+<p><code>当 Agent 已经能跑起来之后，怎么让它变得可测试、可观测、可比较、可回归、 可持续优化。</code></p>
+<p>很多团队做到 <code>Agent</code> 这一步时，都会遇到一个非常现实的拐点：</p>
+<ul>
+<li class="">demo 能跑</li>
+<li class="">单次效果看起来不错</li>
+<li class="">也能接工具、接知识库、接工作流</li>
+</ul>
+<p>但一旦任务变复杂、样本变多、版本开始迭代，问题就会马上出现：</p>
+<ul>
+<li class="">为什么这次改 prompt 之后整体变差了</li>
+<li class="">为什么某个工具调用偶尔失败，却很难复现</li>
+<li class="">为什么同一个任务在测试环境和真实用户环境表现不一致</li>
+<li class="">为什么看起来每个模块都没问题，但整体完成率还是不稳定</li>
+</ul>
+<p>这时候会发现，真正缺的不是“再写一个更好的 prompt”，而是缺一层能把任务运行、轨迹记录、评测分析和回归验证组织起来的工程支架。</p>
+<p>这层支架，就是 <code>Harness</code>。</p>
+<p>一句话说：</p>
+<p><code>Harness Engineering</code> 研究的是“如何为 Agent 系统搭建一个可运行、可观测、可评估、可迭代的工程底座”。`</p>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="1-什么是-harness-engineering">1. 什么是 Harness Engineering<a href="#1-什么是-harness-engineering" class="hash-link" aria-label="Direct link to 1. 什么是 Harness Engineering" title="Direct link to 1. 什么是 Harness Engineering" translate="no">​</a></h2>
+<p><code>Harness</code> 原本可以理解为一种“测试支架”或“运行支架”。</p>
+<p>放到 AI / Agent 系统里，它不是单个 prompt，不是某个 eval 工具，也不只是一个脚本，而是围绕任务执行建立起来的一整套运行与验证框架。</p>
+<p>它通常会把下面这些东西接起来：</p>
+<ul>
+<li class="">任务输入</li>
+<li class="">样本集合</li>
+<li class="">Prompt / Context 配置</li>
+<li class="">模型调用参数</li>
+<li class="">工具调用过程</li>
+<li class="">中间轨迹</li>
+<li class="">最终输出</li>
+<li class="">评分规则</li>
+<li class="">对比结果</li>
+<li class="">回归记录</li>
+</ul>
+<p>所以 <code>Harness</code> 的核心价值，不是“让系统多一个能力”，而是：</p>
+<ul>
+<li class="">让系统能被系统化地运行</li>
+<li class="">让结果能被重复拿来比较</li>
+<li class="">让问题能被拆开定位</li>
+<li class="">让优化不再只靠感觉</li>
+</ul>
+<p>可以把它理解成：</p>
+<ul>
+<li class=""><code>Agent</code> 决定“怎么做事”</li>
+<li class=""><code>Harness</code> 决定“怎么把做事过程跑起来、记下来、评起来、比起来”</li>
+</ul>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="2-为什么它是-agent-engineering-的进阶能力">2. 为什么它是 Agent Engineering 的进阶能力<a href="#2-为什么它是-agent-engineering-的进阶能力" class="hash-link" aria-label="Direct link to 2. 为什么它是 Agent Engineering 的进阶能力" title="Direct link to 2. 为什么它是 Agent Engineering 的进阶能力" translate="no">​</a></h2>
+<p>很多人学完 <code>Prompt</code>、<code>Context</code>、<code>RAG</code>、<code>Tool Use</code> 和 <code>Agent</code> 之后，会自然觉得：</p>
+<p>“我已经能搭系统了，接下来就是继续调效果。”</p>
+<p>但真实工程里，最大的难点通常不是“搭出来”，而是“持续把它调稳”。</p>
+<p>而一个复杂 Agent 系统，恰恰最容易出现下面这些问题：</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="21-多变量同时变化">2.1 多变量同时变化<a href="#21-多变量同时变化" class="hash-link" aria-label="Direct link to 2.1 多变量同时变化" title="Direct link to 2.1 多变量同时变化" translate="no">​</a></h3>
+<p>一次结果变好或变差，可能来自很多地方：</p>
+<ul>
+<li class="">prompt 改了</li>
+<li class="">context 组装方式改了</li>
+<li class="">工具参数变了</li>
+<li class="">检索结果变了</li>
+<li class="">模型版本变了</li>
+<li class="">planner 策略变了</li>
+</ul>
+<p>如果没有 <code>Harness</code>，你往往不知道到底是哪一层在起作用。</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="22-单次成功不代表系统稳定">2.2 单次成功不代表系统稳定<a href="#22-单次成功不代表系统稳定" class="hash-link" aria-label="Direct link to 2.2 单次成功不代表系统稳定" title="Direct link to 2.2 单次成功不代表系统稳定" translate="no">​</a></h3>
+<p>很多 demo 的误区在于：</p>
+<ul>
+<li class="">跑通了 3 个例子</li>
+<li class="">看起来很聪明</li>
+<li class="">就以为系统已经成立</li>
+</ul>
+<p>但 Agent 的真实难点通常是：</p>
+<ul>
+<li class="">是否在不同任务上都稳</li>
+<li class="">是否在边界条件下也稳</li>
+<li class="">是否在失败时能留下足够证据让你定位问题</li>
+</ul>
+<p>这已经不是单次 prompt 调优能解决的，而是系统工程问题。</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="23-agent-的问题往往藏在轨迹里">2.3 Agent 的问题往往藏在“轨迹”里<a href="#23-agent-的问题往往藏在轨迹里" class="hash-link" aria-label="Direct link to 2.3 Agent 的问题往往藏在“轨迹”里" title="Direct link to 2.3 Agent 的问题往往藏在“轨迹”里" translate="no">​</a></h3>
+<p>很多最终失败结果，只看最后答案是定位不出来的。</p>
+<p>你真正需要知道的是：</p>
+<ul>
+<li class="">它为什么选了这个工具</li>
+<li class="">为什么在第 2 步就偏航了</li>
+<li class="">为什么读取了正确文档却没有用进最终答案</li>
+<li class="">为什么在第 4 步重复循环</li>
+</ul>
+<p><code>Agent</code> 的调试对象不只是最终输出，而是整条执行轨迹。</p>
+<p>而 <code>Harness</code> 的价值之一，就是把这些轨迹变成可记录、可检查、可评估的工程对象。</p>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="3-harness-和几个相邻概念的  区别">3. Harness 和几个相邻概念的区别<a href="#3-harness-和几个相邻概念的区别" class="hash-link" aria-label="Direct link to 3. Harness 和几个相邻概念的区别" title="Direct link to 3. Harness 和几个相邻概念的区别" translate="no">​</a></h2>
+<p>这个概念很容易和其他词混在一起，最好先分清边界。</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="31-它不等于-prompt-engineering">3.1 它不等于 Prompt Engineering<a href="#31-它不等于-prompt-engineering" class="hash-link" aria-label="Direct link to 3.1 它不等于 Prompt Engineering" title="Direct link to 3.1 它不等于 Prompt Engineering" translate="no">​</a></h3>
+<p><code>Prompt Engineering</code> 关注的是：</p>
+<ul>
+<li class="">指令怎么写</li>
+<li class="">示例怎么给</li>
+<li class="">输出怎么约束</li>
+</ul>
+<p>而 <code>Harness Engineering</code> 关注的是：</p>
+<ul>
+<li class="">用哪些任务来跑</li>
+<li class="">怎么记录运行过程</li>
+<li class="">怎么比较不同 prompt 版本</li>
+<li class="">怎么做回归验证</li>
+</ul>
+<p>所以前者更接近“优化输入内容”，后者更接近“组织运行与验证系统”。</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="32-它不等于-agent-framework">3.2 它不等于 Agent Framework<a href="#32-它不等于-agent-framework" class="hash-link" aria-label="Direct link to 3.2 它不等于 Agent Framework" title="Direct link to 3.2 它不等于 Agent Framework" translate="no">​</a></h3>
+<p><code>Agent Framework</code> 更偏运行时编排，比如：</p>
+<ul>
+<li class="">任务怎么循环</li>
+<li class="">工具怎么注册</li>
+<li class="">状态怎么传递</li>
+</ul>
+<p>而 <code>Harness</code> 更偏实验与质量支撑，比如：</p>
+<ul>
+<li class="">用什么任务集反复跑这个 Agent</li>
+<li class="">每次运行保留哪些日志</li>
+<li class="">怎么打分</li>
+<li class="">怎么对比两个版本</li>
+</ul>
+<p>框架更接近“发动机  ”，<code>Harness</code> 更接近“测试台 + 仪表盘 + 回归系统”。</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="33-它不等于-evals">3.3 它不等于 Evals<a href="#33-它不等于-evals" class="hash-link" aria-label="Direct link to 3.3 它不等于 Evals" title="Direct link to 3.3 它不等于 Evals" translate="no">​</a></h3>
+<p><code>Evals</code> 解决的是“怎么评估好坏”。</p>
+<p>而 <code>Harness</code> 解决的是“怎么把任务运行、轨迹收集、结果整理、评分执行串起来”。</p>
+<p>所以：</p>
+<ul>
+<li class=""><code>Evals</code> 是评分逻辑</li>
+<li class=""><code>Harness</code> 是承载评分执行的运行框架</li>
+</ul>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="34-它不等于-observability">3.4 它不等于 Observability<a href="#34-它不等于-observability" class="hash-link" aria-label="Direct link to 3.4 它不等于 Observability" title="Direct link to 3.4 它不等于 Observability" translate="no">​</a></h3>
+<p><code>Observability</code> 更关注：</p>
+<ul>
+<li class="">日志</li>
+<li class="">指标</li>
+<li class="">Trace</li>
+<li class="">线上诊断</li>
+</ul>
+<p>而 <code>Harness</code> 更关注：</p>
+<ul>
+<li class="">任务集运行</li>
+<li class="">实验可重复</li>
+<li class="">离线对比</li>
+<li class="">回归验证</li>
+</ul>
+<p>两者经常协同，但不完全一样。</p>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="4-harness-的核心组成">4. Harness 的核心组成<a href="#4-harness-的核心组成" class="hash-link" aria-label="Direct link to 4. Harness 的核心组成" title="Direct link to 4. Harness 的核心组成" translate="no">​</a></h2>
+<p>一个比较完整的 <code>Harness</code>，通常至少包含下面几块。</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="41-task-set">4.1 Task Set<a href="#41-task-set" class="hash-link" aria-label="Direct link to 4.1 Task Set" title="Direct link to 4.1 Task Set" translate="no">​</a></h3>
+<p>也就是任务集合。</p>
+<p>你不能只拿一个例子反复试，而应该准备一批有代表性的任务。</p>
+<p>常见维度包括：</p>
+<ul>
+<li class="">常规任务</li>
+<li class="">困难任务</li>
+<li class="">边界任务</li>
+<li class="">容易失败的历史案例</li>
+<li class="">线上真实回放样本</li>
+</ul>
+<p>这决定了这次优化到底是在“局部变好”，还是“整体真的提升”。</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="42-runtime-configuration">4.2 Runtime Configuration<a href="#42-runtime-configuration" class="hash-link" aria-label="Direct link to 4.2 Runtime Configuration" title="Direct link to 4.2 Runtime Configuration" translate="no">​</a></h3>
+<p>也就是运行配置。</p>
+<p>包括：</p>
+<ul>
+<li class="">使用哪个模型</li>
+<li class="">用哪版系统提示词</li>
+<li class="">用哪套工具定义</li>
+<li class="">检索参数是什么</li>
+<li class="">planner 策略是什么</li>
+</ul>
+<p>如果这些配置不能稳定记录，你之后就无法解释实验结果。</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="43-execution-runner">4.3 Execution Runner<a href="#43-execution-runner" class="hash-link" aria-label="Direct link to 4.3 Execution Runner" title="Direct link to 4.3 Execution Runner" translate="no">​</a></h3>
+<p>也就是执行器。</p>
+<p>它负责：</p>
+<ul>
+<li class="">逐个任务运行</li>
+<li class="">驱动 Agent loop</li>
+<li class="">捕获每一步输入和输出</li>
+<li class="">记录工具调用与中间状态</li>
+<li class="">汇总最终结果</li>
+</ul>
+<p>这是 <code>Harness</code> 的运行骨架。</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="44-trace-collection">4.4 Trace Collection<a href="#44-trace-collection" class="hash-link" aria-label="Direct link to 4.4 Trace Collection" title="Direct link to 4.4 Trace Collection" translate="no">​</a></h3>
+<p>也就是轨迹采集。</p>
+<p>对于 Agent 系统，建议至少记录：</p>
+<ul>
+<li class="">每一步的目标和决策</li>
+<li class="">选择了哪个工具</li>
+<li class="">工具参数是什么</li>
+<li class="">工具返回了什么</li>
+<li class="">中间上下文如何变化</li>
+<li class="">最终为什么停止</li>
+</ul>
+<p>没有这些轨迹，很多问题根本无法复盘。</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="45-evaluation-layer">4.5 Evaluation Layer<a href="#45-evaluation-layer" class="hash-link" aria-label="Direct link to 4.5 Evaluation Layer" title="Direct link to 4.5 Evaluation Layer" translate="no">​</a></h3>
+<p>也就是评估层。</p>
+<p>它可以包含：</p>
+<ul>
+<li class="">最终答案评分</li>
+<li class="">工具调用正确率</li>
+<li class="">任务完成率</li>
+<li class="">步数是否过多</li>
+<li class="">是否使用了错误证据</li>
+<li class="">是否命中关键约束</li>
+</ul>
+<p>对 Agent 来说，评估最好分层看：</p>
+<ul>
+<li class=""><code>结果层</code>：任务最终有没有完成</li>
+<li class=""><code>过程层</code>：中间步骤是否合理</li>
+<li class=""><code>系统层</code>：成本、延迟、稳定性是否可接受</li>
+</ul>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="46-comparison-and-regression">4.6 Comparison and Regression<a href="#46-comparison-and-regression" class="hash-link" aria-label="Direct link to 4.6 Comparison and Regression" title="Direct link to 4.6 Comparison and Regression" translate="no">​</a></h3>
+<p>也就是版本对比和回归检查。</p>
+<p>这一步很关键，因为真实团队不是只跑一次，而是会不断修改：</p>
+<ul>
+<li class="">prompt</li>
+<li class="">工具 schema</li>
+<li class="">routing 策略</li>
+<li class="">memory 机制</li>
+<li class="">检索逻辑</li>
+<li class="">模型版本</li>
+</ul>
+<p>每次改动之后，你都需要知道：</p>
+<ul>
+<li class="">哪些任务变好了</li>
+<li class="">哪些任务退化了</li>
+<li class="">退化集中在哪类场景</li>
+</ul>
+<p>这就是 <code>Harness</code>  真正进入工程阶段的标志。</p>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="5-一个典型的-harness-执行闭环">5. 一个典型的 Harness 执行闭环<a href="#5-一个典型的-harness-执行闭环" class="hash-link" aria-label="Direct link to 5. 一个典型的 Harness 执行闭环" title="Direct link to 5. 一个典型的 Harness 执行闭环" translate="no">​</a></h2>
+<p>很多 <code>Harness</code> 最后都可以抽象成下面这个闭环：</p>
+<!-- -->
+<p>这条链路的含义其实非常直白：</p>
+<ol>
+<li class="">先准备一组任务</li>
+<li class="">用某个版本配置去跑</li>
+<li class="">把过程和结果记下来</li>
+<li class="">对结果做评估</li>
+<li class="">和旧版本比较</li>
+<li class="">根据问题定位去修改系统</li>
+<li class="">再重新进入下一轮</li>
+</ol>
+<p>可以看到，这已经不再是“问一次模型看看好不好”，而是一个完整的工程优化回路。</p>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="6-agent-和-harness-的关系">6. Agent 和 Harness 的关系<a href="#6-agent-和-harness-的关系" class="hash-link" aria-label="Direct link to 6. Agent 和 Harness 的关系" title="Direct link to 6. Agent 和 Harness 的关系" translate="no">​</a></h2>
+<p>可以把两者关系理解成下面这样：</p>
+<!-- -->
+<p>这里最关键的理解是：</p>
+<ul>
+<li class=""><code>Agent</code> 面向的是“完成任务”</li>
+<li class=""><code>Harness</code> 面向的是“让任务完成过程可工程化”</li>
+</ul>
+<p>没有 <code>Agent</code>，<code>Harness</code> 没有执行对象。</p>
+<p>没有 <code>Harness</code>，<code>Agent</code> 很容易永远停留在：</p>
+<ul>
+<li class="">靠个人经验调参数</li>
+<li class="">靠临时案例做判断</li>
+<li class="">靠主观感觉做结论</li>
+</ul>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="7-实战里应该怎么搭-harness">7. 实战里应该怎么搭 Harness<a href="#7-实战里应该怎么搭-harness" class="hash-link" aria-label="Direct link to 7. 实战里应该怎么搭 Harness" title="Direct link to 7. 实战里应该怎么搭 Harness" translate="no">​</a></h2>
+<p>如果在真实项目里要落地，可以优先从一个轻量版本开始，不需要一开始就做得特别重。</p>
+<p>一个比较实用的起步方式是：</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="71-先定义任务集">7.1 先定义任务集<a href="#71-先定义任务集" class="hash-link" aria-label="Direct link to 7.1 先定义任务集" title="Direct link to 7.1 先定义任务集" translate="no">​</a></h3>
+<p>先别急着优化系统，先准备一批能代表真实问题的任务样本。</p>
+<p>建议至少包含：</p>
+<ul>
+<li class="">10 到 20 个常规任务</li>
+<li class="">几个高价值任务</li>
+<li class="">几个历史失败案例</li>
+<li class="">几个边界场景</li>
+</ul>
+<p>如果连任务集都没有，后面的优化很容易失焦。</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="72-固化每次运行配置">7.2 固化每次运行配置<a href="#72-固化每次运行配置" class="hash-link" aria-label="Direct link to 7.2 固化每次运行配置" title="Direct link to 7.2 固化每次运行配置" translate="no">​</a></h3>
+<p>确保每次实验都能回答下面这些问题：</p>
+<ul>
+<li class="">用的是哪个模型</li>
+<li class="">prompt 版本是什么</li>
+<li class="">工具 schema 版本是什么</li>
+<li class="">检索参数是什么</li>
+<li class="">是否开启了某种 memory 策略</li>
+</ul>
+<p>否则你很快就会进入“结果变了，但不知道为什么”的状态。</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="73-记录完整轨迹而不只记录最终答案">7.3 记录完整轨迹，而不只记录最终答案<a href="#73-记录完整轨迹而不只记录最终答案" class="hash-link" aria-label="Direct link to 7.3 记录完整轨迹，而不只记录最终答案" title="Direct link to 7.3 记录完整轨迹，而 不只记录最终答案" translate="no">​</a></h3>
+<p>对于 Agent，这通常应该尽早做。</p>
+<p>如果只能先补一个增强点，可以先补：</p>
+<ul>
+<li class="">保留 step-by-step trace</li>
+<li class="">保留工具调用输入输出</li>
+<li class="">保留停止原因</li>
+</ul>
+<p>因为很多关键问题都藏在这里。</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="74-把评估拆成多层">7.4 把评估拆成多层<a href="#74-把评估拆成多层" class="hash-link" aria-label="Direct link to 7.4 把评估拆成多层" title="Direct link to 7.4 把评估拆成多层" translate="no">​</a></h3>
+<p>不要只问“答案对不对”，还要问：</p>
+<ul>
+<li class="">它有没有选对工具</li>
+<li class="">有没有引用错误信息</li>
+<li class="">是否走了很多无效步骤</li>
+<li class="">是否成本过高</li>
+<li class="">是否在该停止的时候停下来了</li>
+</ul>
+<p>Agent 的好坏，经常不是一个单一分数能解释清楚的。</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="75-做版本对比而不是孤立看单次结果">7.5 做版本对比，而不是孤立看单次结果<a href="#75-做版本对比而不是孤立看单次结果" class="hash-link" aria-label="Direct link to 7.5 做版本对比，而不是孤立看单次结果" title="Direct link to 7.5 做版本对比，而不是孤立看单次结果" translate="no">​</a></h3>
+<p>工程上最重要的问题通常不是：</p>
+<p>“这个结果好不好”</p>
+<p>而是：</p>
+<p>“这个版本和上个版本比，到底哪里变好了，哪里变差了”</p>
+<p>所以 <code>Harness</code> 最终最好产出的是：</p>
+<ul>
+<li class="">总体指标变化</li>
+<li class="">分类任务变化</li>
+<li class="">失败案例变化</li>
+<li class="">典型轨迹差异</li>
+</ul>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="8-一个非常常见的实战场景">8. 一个非常常见的实战场景<a href="#8-一个非常常见的实战场景" class="hash-link" aria-label="Direct link to 8. 一个非常常见的实战场景" title="Direct link to 8. 一个非常常见的实战场景" translate="no">​</a></h2>
+<p>比如你在做一个“会检索文档、调用内部 API、自动整理报告”的 Agent。</p>
+<p>这时候可以把 <code>Harness</code> 设计成这样：</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="81-输入层">8.1 输入层<a href="#81-输入层" class="hash-link" aria-label="Direct link to 8.1 输入层" title="Direct link to 8.1 输入层" translate="no">​</a></h3>
+<ul>
+<li class="">用户任务样本</li>
+<li class="">相关文档</li>
+<li class="">工具定义</li>
+<li class="">任务期望结果</li>
+</ul>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="82-运行层">8.2 运行层<a href="#82-运行层" class="hash-link" aria-label="Direct link to 8.2 运行层" title="Direct link to 8.2 运行层" translate="no">​</a></h3>
+<ul>
+<li class="">固定某个 Agent workflow</li>
+<li class="">运行每个任务</li>
+<li class="">记录每一步决策和工具调用</li>
+</ul>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="83-评估层">8.3 评估层<a href="#83-评估层" class="hash-link" aria-label="Direct link to 8.3 评估层" title="Direct link to 8.3 评估层" translate="no">​</a></h3>
+<ul>
+<li class="">是否拿到了关键事实</li>
+<li class="">是否正确调用 API</li>
+<li class="">最终报告是否覆盖核心点</li>
+<li class="">是否出现幻觉</li>
+<li class="">步数和成本是否可接受</li>
+</ul>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="84-对比层">8.4 对比层<a href="#84-对比层" class="hash-link" aria-label="Direct link to 8.4 对比层" title="Direct link to 8.4 对比层" translate="no">​</a></h3>
+<ul>
+<li class="">比较旧 prompt 和新 prompt</li>
+<li class="">比较旧 planner 和新 planner</li>
+<li class="">比较不同模型版本</li>
+<li class="">比较不同检索策略</li>
+</ul>
+<p>这样你就不再是“凭感觉觉得这个 Agent 更聪明了”，而是能明确知道：</p>
+<ul>
+<li class="">哪类任务提升了</li>
+<li class="">哪类任务变差了</li>
+<li class="">改动影响发生在任务流程的哪一段</li>
+</ul>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="9-常见误区">9. 常见误区<a href="#9-常见误区" class="hash-link" aria-label="Direct link to 9. 常见误区" title="Direct link to 9. 常见误区" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="91-把-harness-理解成一份测试脚本">9.1 把 Harness 理解成一份测试脚本<a href="#91-把-harness-理解成一份测试脚本" class="hash-link" aria-label="Direct link to 9.1 把 Harness 理解成一份测试脚本" title="Direct link to 9.1 把 Harness 理解成一份测试脚本" translate="no">​</a></h3>
+<p>测试脚本只是其中一小部分。</p>
+<p>真正的 <code>Harness</code> 是一层贯穿运行、记录、评估和回归的实验底座。</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="92-只看最终答案不看执行轨迹">9.2 只看最终答案，不看执行轨迹<a href="#92-只看最终答案不看执行轨迹" class="hash-link" aria-label="Direct link to 9.2 只看最终答案，不看执行轨迹" title="Direct link to 9.2 只看最终答案，不看执行轨迹" translate="no">​</a></h3>
+<p>这对普通问答还勉强够用，但对 Agent 往往不够。</p>
+<p>因为很多失败不是“最后一句答错了”，而是前面几步决策就已经偏了。</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="93-没有固定任务集就一直调系统">9.3 没有固定任务集，就一直调系统<a href="#93-没有固定任务集就一直调系统" class="hash-link" aria-label="Direct link to 9.3 没有固定任务集，就一直调系统" title="Direct link to 9.3 没有固定任务集，就一直调系统" translate="no">​</a></h3>
+<p>这会导致你每次都像在打移动靶。</p>
+<p>没有稳定任务集，就很难知道优化是不  是有效。</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="94-只做结果评估不做回归对比">9.4 只做结果评估，不做回归对比<a href="#94-只做结果评估不做回归对比" class="hash-link" aria-label="Direct link to 9.4 只做结果评估，不做回归对比" title="Direct link to 9.4 只做结果评估，不做回归对比" translate="no">​</a></h3>
+<p>很多改动会带来“局部提升 + 另一部分退化”。</p>
+<p>如果没有版本对比，你很容易只看到变好的地方，看不到代价。</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="95-一开始就把-harness-做得过重">9.5 一开始就把 Harness 做得过重<a href="#95-一开始就把-harness-做得过重" class="hash-link" aria-label="Direct link to 9.5 一开始就把 Harness 做得过重" title="Direct link to 9.5 一开始就把 Harness 做得过重" translate="no">​</a></h3>
+<p>真实做法通常不是先造一个超级平台，而是先从轻量闭环开始：</p>
+<ul>
+<li class="">一批任务</li>
+<li class="">一个 runner</li>
+<li class="">一套轨迹记录</li>
+<li class="">一层基础评估</li>
+<li class="">一个版本对比表</li>
+</ul>
+<p>先跑起来，再逐步扩展。</p>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="10-可以怎么判断-harness-是否开始发挥作用">10. 可以怎么判断 Harness 是否开始发挥作用<a href="#10-可以怎么判断-harness-是否开始发挥作用" class="hash-link" aria-label="Direct link to 10. 可以怎么判断 Harness 是否开始发挥作用" title="Direct link to 10. 可以怎么判断 Harness 是否开始发挥作用" translate="no">​</a></h2>
+<p>当一个团队开始具备下面这些能力时，通常说明 <code>Harness</code> 已经开始真正产生价值了：</p>
+<ul>
+<li class="">能稳定复现某类失败</li>
+<li class="">能比较两个版本的优劣，而不只是靠主观感觉</li>
+<li class="">能从轨迹里定位问题发生在哪一步</li>
+<li class="">能把线上问  题沉淀成回归样本</li>
+<li class="">能在改系统后快速验证有没有引入新退化</li>
+</ul>
+<p>从这个角度看，<code>Harness Engineering</code> 的意义并不是“多学一个新名词”，而是让 Agent 系统真正进入可持续演进的工程状态。</p>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="11-一句话总结">11. 一句话总结<a href="#11-一句话总结" class="hash-link" aria-label="Direct link to 11. 一句话总结" title="Direct link to 11. 一句话总结" translate="no">​</a></h2>
+<p>如果说：</p>
+<ul>
+<li class=""><code>Prompt Engineering</code> 是优化表达</li>
+<li class=""><code>Context Engineering</code> 是优化信息环境</li>
+<li class=""><code>Tool Use</code> 是增强执行能力</li>
+<li class=""><code>Agent Engineering</code> 是组织多步任务流程</li>
+<li class=""><code>Evals</code> 是判断系统好坏</li>
+</ul>
+<p>那么：</p>
+<p><code>Harness Engineering</code> 就是在这些能力之上，搭出一套能反复运行、持续评估、稳定回归和高效迭代的工程闭环。`</p>
+<p>它是很多 Agent 系统从“能演示”走向“能交付”的关键一步。</p></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/en/AI/agent-engineering/Agent-Handoffs-Agents-as-Tools-and-A2A"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Handoff、Agents as Tools 与 A2A</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/en/AI/agent-engineering/Agent-Memory-and-RAG-Data-Governance"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Agent Memory 与 RAG 数据治理</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_v08c thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#1-什么是-harness-engineering" class="table-of-contents__link toc-highlight">1. 什么是 Harness Engineering</a></li><li><a href="#2-为什么它是-agent-engineering-的进阶能力" class="table-of-contents__link toc-highlight">2. 为什么它是 Agent Engineering 的进阶能力</a><ul><li><a href="#21-多变量同时变化" class="table-of-contents__link toc-highlight">2.1 多变量同时变化</a></li><li><a href="#22-单次成功不代表系统稳定" class="table-of-contents__link toc-highlight">2.2 单次成功不代表系统稳定</a></li><li><a href="#23-agent-的问题往往藏在轨迹里" class="table-of-contents__link toc-highlight">2.3 Agent 的问题往往藏在“轨迹”里</a></li></ul></li><li><a href="#3-harness-和几个相邻概念的区别" class="table-of-contents__link toc-highlight">3. Harness 和几个相邻概念的区别</a><ul><li><a href="#31-它不等于-prompt-engineering" class="table-of-contents__link toc-highlight">3.1 它不等于 Prompt Engineering</a></li><li><a href="#32-它不等于-agent-framework" class="table-of-contents__link toc-highlight">3.2 它不等于 Agent Framework</a></li><li><a href="#33-它不等于-evals" class="table-of-contents__link toc-highlight">3.3 它不等于 Evals</a></li><li><a href="#34-它不等于-observability" class="table-of-contents__link toc-highlight">3.4 它不等于 Observability</a></li></ul></li><li><a href="#4-harness-的核心组成" class="table-of-contents__link toc-highlight">4. Harness 的核心组成</a><ul><li><a href="#41-task-set" class="table-of-contents__link toc-highlight">4.1 Task Set</a></li><li><a href="#42-runtime-configuration" class="table-of-contents__link toc-highlight">4.2 Runtime Configuration</a></li><li><a href="#43-execution-runner" class="table-of-contents__link toc-highlight">4.3 Execution Runner</a></li><li><a href="#44-trace-collection" class="table-of-contents__link toc-highlight">4.4 Trace Collection</a></li><li><a href="#45-evaluation-layer" class="table-of-contents__link toc-highlight">4.5 Evaluation Layer</a></li><li><a href="#46-comparison-and-regression" class="table-of-contents__link toc-highlight">4.6 Comparison and Regression</a></li></ul></li><li><a href="#5-一个典型的-harness-执行闭环" class="table-of-contents__link toc-highlight">5. 一个典型的 Harness 执行闭环</a></li><li><a href="#6-agent-和-harness-的关系" class="table-of-contents__link toc-highlight">6. Agent 和 Harness 的关系</a></li><li><a href="#7-实战里应该怎么搭-harness" class="table-of-contents__link toc-highlight">7. 实战里应该怎么搭 Harness</a><ul><li><a href="#71-先定义任务集" class="table-of-contents__link toc-highlight">7.1 先定义任务集</a></li><li><a href="#72-固化每次运行配置" class="table-of-contents__link toc-highlight">7.2 固化每次运行配置</a></li><li><a href="#73-记录完整轨迹而不只记录最终答案" class="table-of-contents__link toc-highlight">7.3 记录完整轨迹，而不只记录最终答案</a></li><li><a href="#74-把评估拆成多层" class="table-of-contents__link toc-highlight">7.4 把评估拆成多层</a></li><li><a href="#75-做版本对比而不是孤立看单次结果" class="table-of-contents__link toc-highlight">7.5 做版本对比，而不是孤立看单次结果</a></li></ul></li><li><a href="#8-一个非常常见的实战场景" class="table-of-contents__link toc-highlight">8. 一个非常常见的实战场景</a><ul><li><a href="#81-输入层" class="table-of-contents__link toc-highlight">8.1 输入层</a></li><li><a href="#82-运行层" class="table-of-contents__link toc-highlight">8.2 运行层</a></li><li><a href="#83-评估层" class="table-of-contents__link toc-highlight">8.3 评估层</a></li><li><a href="#84-对比层" class="table-of-contents__link toc-highlight">8.4 对比层</a></li></ul></li><li><a href="#9-常见误区" class="table-of-contents__link toc-highlight">9. 常见误区</a><ul><li><a href="#91-把-harness-理解成一份测试脚本" class="table-of-contents__link toc-highlight">9.1 把 Harness 理解成一份测试脚本</a></li><li><a href="#92-只看最终答案不看执  行轨迹" class="table-of-contents__link toc-highlight">9.2 只看最终答案，不看执行轨迹</a></li><li><a href="#93-没有固定任务集就一直调系统" class="table-of-contents__link toc-highlight">9.3 没有固定任务集，就一直调系统</a></li><li><a href="#94-只做结果评估不做回归对比" class="table-of-contents__link toc-highlight">9.4 只做结果评估，不做回归对比</a></li><li><a href="#95-一开始就把-harness-做得过重" class="table-of-contents__link toc-highlight">9.5 一开始就把 Harness 做得过重</a></li></ul></li><li><a href="#10-可以怎么判断-harness-是否开始发挥作用" class="table-of-contents__link toc-highlight">10. 可以怎么判断 Harness 是否开始发挥作用</a></li><li><a href="#11-一句话总结" class="table-of-contents__link toc-highlight">11. 一句话总结</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">入口</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/en/docs/intro">知识库</a></li><li class="footer__item"><a class="footer__link-item" href="/en/blog">日常 Blog</a></li><li class="footer__item"><a class="footer__link-item" href="/en/docs/engineering">工程化</a></li><li class="footer__item"><a class="footer__link-item" href="/en/docs/dev-tools">工具与环境</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">更多</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/JamesLi-dev" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_BlfO"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Torli, Inc. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>

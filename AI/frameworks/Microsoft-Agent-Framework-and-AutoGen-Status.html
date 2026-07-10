@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="zh-Hans" dir="ltr" class="docs-wrapper plugin-docs plugin-id-ai docs-version-current docs-doc-page docs-doc-id-frameworks/Microsoft-Agent-Framework-and-AutoGen-Status" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.10.1">
+<title data-rh="true">Microsoft Agent Framework / AutoGen 状态指南 | 这里是 Torli&#x27;s </title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://blog.torli.top/AI/frameworks/Microsoft-Agent-Framework-and-AutoGen-Status"><meta data-rh="true" property="og:locale" content="zh_Hans"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" name="docusaurus_locale" content="zh-Hans"><meta data-rh="true" name="docsearch:language" content="zh-Hans"><meta data-rh="true" name="keywords" content="cooking, blog"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-ai-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-ai-current"><meta data-rh="true" property="og:title" content="Microsoft Agent Framework / AutoGen 状态指南 | 这里是 Torli&#x27;s "><meta data-rh="true" name="description" content="这篇文档只回答一个核心问题："><meta data-rh="true" property="og:description" content="这篇文档只回答一个核心问题："><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://blog.torli.top/AI/frameworks/Microsoft-Agent-Framework-and-AutoGen-Status"><link data-rh="true" rel="alternate" href="https://blog.torli.top/AI/frameworks/Microsoft-Agent-Framework-and-AutoGen-Status" hreflang="zh-Hans"><link data-rh="true" rel="alternate" href="https://blog.torli.top/en/AI/frameworks/Microsoft-Agent-Framework-and-AutoGen-Status" hreflang="en"><link data-rh="true" rel="alternate" href="https://blog.torli.top/AI/frameworks/Microsoft-Agent-Framework-and-AutoGen-Status" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"框架与 SDK","item":"https://blog.torli.top/AI/frameworks/"},{"@type":"ListItem","position":2,"name":"Microsoft Agent Framework / AutoGen 状态指南","item":"https://blog.torli.top/AI/frameworks/Microsoft-Agent-Framework-and-AutoGen-Status"}]}</script><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="这里是 Torli&#39;s  RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="这里是 Torli&#39;s  Atom Feed"><link rel="stylesheet" href="/assets/css/styles.a3b9aef2.css">
+<script src="/assets/js/runtime~main.5a1d3d49.js" defer="defer"></script>
+<script src="/assets/js/main.41eb4bf8.js" defer="defer"></script>
+</head>
+<body>
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="跳到主要内容"><a class="skipToContent_U9sP" href="#__docusaurus_skipToContent_fallback">跳到主要内容</a></div><nav aria-label="主导航" class="theme-layout-navbar navbar navbar--fixed-top navbarHideable_PT2D"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="切换导航栏" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/logo2.png" alt="My Site Logo" class="themedComponent_QNor themedComponent--light_EqDK"><img src="/img/logo2.png" alt="My Site Logo" class="themedComponent_QNor themedComponent--dark_H0PK"></div><b class="navbar__title text--truncate">Torli&#x27;s Blog</b></a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a class="navbar__link" aria-haspopup="true" aria-expanded="false" role="button" href="/docs/intro">知识库</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/docs/foundations">基础语言</a></li><li><a class="dropdown__link" href="/docs/browser-network">浏览器与网络</a></li><li><a class="dropdown__link" href="/docs/engineering">工程化</a></li><li><a class="dropdown__link" href="/docs/frameworks">前端框架</a></li><li><a class="dropdown__link" href="/docs/node-server">Node 与服务端</a></li><li><a class="dropdown__link" href="/docs/data-backend">数据库与后端服务</a></li><li><a class="dropdown__link" href="/docs/state-management">状态管理</a></li><li><a class="dropdown__link" href="/docs/ui-interaction">UI 与交互</a></li><li><a class="dropdown__link" href="/docs/dev-tools">效率工具与开发环境</a></li><li><a class="dropdown__link" href="/docs/frontier">前沿专题</a></li></ul></div><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a aria-current="page" class="navbar__link active" aria-haspopup="true" aria-expanded="false" role="button" href="/AI">AI 学习</a><ul class="dropdown__menu"><li><a aria-current="page" class="dropdown__link dropdown__link--active" href="/AI">开始这里：AI 首页</a></li><li><a class="dropdown__link" href="/AI/AI-Agent-Docs-Index">专题索引：AI Agent 文档总索引</a></li><li><a class="dropdown__link" href="/AI/AI-Agent-Chapter-to-Framework-Map">专题索引：章节与框架映射</a></li><li><a class="dropdown__link" href="/AI/foundations/Prompt-Engineering-Glossary">基础能力：Prompt Engineering</a></li><li><a class="dropdown__link" href="/AI/foundations/Context-Engineering-Guide">基础能力：Context Engineering</a></li><li><a class="dropdown__link" href="/AI/foundations/RAG-Intro-and-Practice">基础能力：RAG</a></li><li><a class="dropdown__link" href="/AI/agent-engineering/Agent-Engineering-Intro">Agent 与工程化：Agent Engineering</a></li><li><a class="dropdown__link" href="/AI/agent-engineering/Workflow-vs-Agent">Agent 与工程化：Workflow vs Agent</a></li><li><a class="dropdown__link" href="/AI/agent-engineering/Agent-Memory-and-State">Agent 与工程化：Memory and State</a></li><li><a class="dropdown__link" href="/AI/agent-engineering/Harness-Engineering-Guide">Agent 与工程化：Harness Engineering</a></li><li><a class="dropdown__link" href="/AI/frameworks/OpenAI-Agents-SDK-Guide">框架与 SDK：OpenAI Agents SDK</a></li><li><a class="dropdown__link" href="/AI/frameworks/LangGraph-Intro-and-Orchestration">框架与 SDK：LangGraph</a></li><li><a class="dropdown__link" href="/AI/frameworks/LangSmith-Observability-and-Evals">框架与 SDK：LangSmith</a></li><li><a class="dropdown__link" href="/AI/frameworks/Vercel-AI-SDK-Guide">框架与 SDK：Vercel AI SDK</a></li><li><a class="dropdown__link" href="/AI/frameworks/Mastra-Guide">框架与 SDK：Mastra</a></li><li><a class="dropdown__link" href="/AI/frameworks/Google-ADK-Guide">框架与 SDK：Google ADK</a></li><li><a class="dropdown__link" href="/AI/overview/AI-App-Architecture-Map">全局视角：AI 应用整体架构</a></li><li><a class="dropdown__link" href="/AI/overview/Minimal-Agent-Demo-From-0-to-1">全局视角：最小 Agent Demo</a></li><li><a class="dropdown__link" href="/AI/overview/Minimal-Agent-Code-Implementation-Examples">全局视角：最小 Agent 代码示例</a></li><li><a class="dropdown__link" href="/AI/overview/AI-Agent-Tech-Stack-and-Framework-Comparison">全局视角：技术栈与框架对比</a></li></ul></div><a class="navbar__item navbar__link" href="/blog">日常 Blog</a><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a class="navbar__link" aria-haspopup="true" aria-expanded="false" role="button" href="/docs/engineering">工程化</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/docs/engineering/build-tools">构建与转译</a></li><li><a class="dropdown__link" href="/docs/engineering/code-quality">代码规范</a></li><li><a class="dropdown__link" href="/docs/engineering/package-management">包管理与环境管理</a></li><li><a class="dropdown__link" href="/docs/engineering/data-fetching">请求与数据层</a></li><li><a class="dropdown__link" href="/docs/engineering/package-management/pnpm">pnpm</a></li><li><a class="dropdown__link" href="/docs/engineering/package-management/fnm">fnm</a></li></ul></div><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a class="navbar__link" aria-haspopup="true" aria-expanded="false" role="button" href="/docs/dev-tools">工具与环境</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/docs/dev-tools/apps/KeyboardMaestro">Keyboard Maestro</a></li><li><a class="dropdown__link" href="/docs/dev-tools/apps/Warp">Warp</a></li><li><a class="dropdown__link" href="/docs/dev-tools/apps/Ghostty">Ghostty</a></li><li><a class="dropdown__link" href="/docs/dev-tools/apps/Zed">Zed</a></li><li><a class="dropdown__link" href="/docs/dev-tools/apps/GitButler">GitButler</a></li><li><a class="dropdown__link" href="/docs/dev-tools/apps/Switzy">Switzy</a></li><li><a class="dropdown__link" href="/docs/dev-tools/apps/Craft-Agents">Craft Agents</a></li></ul></div><a href="https://github.com/JamesLi-dev" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_BlfO"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_bW1k colorModeToggle_D8sl"><button class="clean-btn toggleButton_qiU8 toggleButtonDisabled_xinJ" type="button" disabled="" title="system mode" aria-label="切换浅色/暗黑模式（当前为system mode）"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_X9Tk lightToggleIcon_y62u"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_X9Tk darkToggleIcon_Dj8C"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_X9Tk systemToggleIcon_T2ve"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_e2eJ"><div class="navbar__search searchBarContainer_Mqfy"><input placeholder="搜索" aria-label="Search" class="navbar__search-input" value=""><div class="loadingRing_r319 searchBarLoadingRing_Kn2r"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_kzBE"><div class="docsWrapper_Jb1X"><button aria-label="回到顶部" class="clean-btn theme-back-to-top-button backToTopButton_W_UZ" type="button"></button><div class="docRoot_AAe1"><aside class="theme-doc-sidebar-container docSidebarContainer_RSuS"><div class="sidebarViewport_pYEE"><div class="sidebar_G_8g sidebarWithHideableNavbar__FNA"><a tabindex="-1" class="sidebarLogo_hLnz" href="/"><img src="/img/logo2.png" alt="My Site Logo" class="themedComponent_QNor themedComponent--light_EqDK"><img src="/img/logo2.png" alt="My Site Logo" class="themedComponent_QNor themedComponent--dark_H0PK"><b>Torli&#x27;s Blog</b></a><nav aria-label="文档侧边栏" class="menu thin-scrollbar menu_k9TG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/AI"><span title="AI" class="linkLabel_vgcd">AI</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/AI/AI-Agent-Docs-Index"><span title="AI Agent 文档总索引" class="linkLabel_vgcd">AI Agent 文档总索引</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_jNm8 menu__link menu__link--sublist" href="/AI/foundations"><span title="基础能力" class="categoryLinkLabel_ayea">基础能力</span></a><button aria-label="展开侧边栏分类 &#x27;基础能力&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/AI/AI-Agent-Chapter-to-Framework-Map"><span title="AI Agent 专题章节与框架映射" class="linkLabel_vgcd">AI Agent 专题章节与框架映射</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_jNm8 menu__link menu__link--sublist" href="/AI/agent-engineering"><span title="Agent 与工程化" class="categoryLinkLabel_ayea">Agent 与工程化</span></a><button aria-label="展开侧边栏分类 &#x27;Agent 与工程化&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_jNm8 menu__link menu__link--sublist menu__link--active" href="/AI/frameworks"><span title="框架与 SDK" class="categoryLinkLabel_ayea">框架与 SDK</span></a><button aria-label="折叠侧边栏分类 &#x27;框架与 SDK&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/AI/frameworks/OpenAI-Agents-SDK-Guide"><span title="OpenAI Agents SDK 指南" class="linkLabel_vgcd">OpenAI Agents SDK 指南</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/AI/frameworks/LangChain-Intro-and-Practice"><span title="LangChain 入门与实践" class="linkLabel_vgcd">LangChain 入门与实践</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/AI/frameworks/LangGraph-Intro-and-Orchestration"><span title="LangGraph 入门与编排设计" class="linkLabel_vgcd">LangGraph 入门与编排设计</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/AI/frameworks/LangSmith-Observability-and-Evals"><span title="LangSmith：Observability、Evals 与 Deployment 指南" class="linkLabel_vgcd">LangSmith：Observability、Evals 与 Deployment 指南</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/AI/frameworks/Microsoft-Agent-Framework-and-AutoGen-Status"><span title="Microsoft Agent Framework / AutoGen 状态指南" class="linkLabel_vgcd">Microsoft Agent Framework / AutoGen 状态指南</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/AI/frameworks/CrewAI-Intro-and-Workflow-Guide"><span title="CrewAI 入门与 Workflow 实战定位" class="linkLabel_vgcd">CrewAI 入门与 Workflow 实战定位</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/AI/frameworks/Vercel-AI-SDK-Guide"><span title="Vercel AI SDK 指南" class="linkLabel_vgcd">Vercel AI SDK 指南</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/AI/frameworks/Mastra-Guide"><span title="Mastra 指南" class="linkLabel_vgcd">Mastra 指南</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/AI/frameworks/Google-ADK-Guide"><span title="Google ADK 指南" class="linkLabel_vgcd">Google ADK 指南</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/AI/frameworks/LlamaIndex-Agent-and-Workflow-Guide"><span title="LlamaIndex Agent / Workflow 指南" class="linkLabel_vgcd">LlamaIndex Agent / Workflow 指南</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/AI/frameworks/Azure-AI-Foundry-Agent-Service-Guide"><span title="Azure AI Foundry Agent Service 指南" class="linkLabel_vgcd">Azure AI Foundry Agent Service 指南</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_jNm8 menu__link menu__link--sublist" href="/AI/overview"><span title="全局视角" class="categoryLinkLabel_ayea">全局视角</span></a><button aria-label="展开侧边栏分类 &#x27;全局视角&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li></ul></nav><button type="button" data-torli-sidebar-toggle="collapse" title="收起侧边栏" aria-label="收起侧边栏" class="button button--secondary button--outline collapseSidebarButton_JQG6"><svg class="collapseSidebarButtonIcon_Iseg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"></rect><path d="M13 9L10 12L13 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></button></div></div></aside><main class="docMainContainer_hjYf"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_uYg3"><div class="docItemContainer_jngG"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_lBfN" aria-label="页面路径"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="主页面" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_ebxl"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/AI/frameworks"><span>框架与 SDK</span></a></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Microsoft Agent Framework / AutoGen 状态指南</span></li></ul></nav><div class="tocCollapsible_VI1r theme-doc-toc-mobile tocMobile_iude"><button type="button" class="clean-btn tocCollapsibleButton_LJEZ">本页总览</button></div><div class="theme-doc-markdown markdown"><header><h1>Microsoft Agent Framework / AutoGen 状态指南</h1></header>
+<p>这篇文档只回答一个核心问题：</p>
+<p><code>如果今天要在微软系生态里做 Agent，新项目到底应该看 Microsoft Agent Framework，还是继续看 AutoGen？</code></p>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="先看结论">先看结论<a href="#先看结论" class="hash-link" aria-label="先看 结论的直接链接" title="先看结论的直接链接" translate="no">​</a></h2>
+<p>截至 <code>2026-04-30</code>，如果要问“微软官方现在把哪条路线当成主线”，答案已经很明确：</p>
+<ul>
+<li class=""><code>Microsoft Agent Framework</code> 是微软当前主推的统一 Agent 开发框架</li>
+<li class=""><code>AutoGen</code> 已经进入 <code>maintenance mode</code></li>
+<li class="">新项目默认应优先评估 <code>Microsoft Agent Framework</code></li>
+<li class=""><code>AutoGen</code> 仍然有参考价值，但更适合拿来理解历史模式、复用存量项目经验、或维护已有系统</li>
+</ul>
+<p>可以直接概括成：</p>
+<p><code>AutoGen 不是“不能看”，但它已经不再是微软官方给新项目的默认首选。</code></p>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="1-microsoft-agent-framework-当前定位">1. Microsoft Agent Framework 当前定位<a href="#1-microsoft-agent-framework-当前定位" class="hash-link" aria-label="1. Microsoft Agent Framework 当前定位的直接链接" title="1. Microsoft Agent Framework 当前定位的直接链接" translate="no">​</a></h2>
+<p>根据 Microsoft Learn 的官方概述页，<code>Microsoft Agent Framework</code> 的定位不是“又一个新的 Agent 库”，而是一个统一的、多语言的 Agent 与 Workflow 开发框架，用来承接此前 <code>Semantic Kernel</code> 和 <code>AutoGen</code> 两条路线的经验与能力。</p>
+<p>官方在概述中讲得很直接：</p>
+<ul>
+<li class="">它提供两大能力域：<code>Agents</code> 与 <code>Workflows</code></li>
+<li class="">它是 <code>Semantic Kernel</code> 与 <code>AutoGen</code> 的 <code>direct successor</code></li>
+<li class="">它把 AutoGen 偏“Agent 抽象”和 Semantic Kernel 偏“企业级能力”的部分合并到了同一个框架里</li>
+</ul>
+<p>从工程视角看，可以把它理解成：</p>
+<ul>
+<li class="">往下，提供模型客户端、会话状态、上下文、工具接入、MCP、middleware、telemetry 等基础设施</li>
+<li class="">往上，提供单 Agent 能力与多步骤 Workflow 编排能力</li>
+<li class="">在中间，用统一的编程模型把“开放式 Agent 行为”和“可控的业务流程”接起来</li>
+</ul>
+<p>这和早期很多 Agent 框架只强调“多智能体对话”不同。<code>Microsoft Agent Framework</code> 更明显是在往“生产级 Agent 应用框架”靠。</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="11-当前成熟度怎么理解">1.1 当前成熟度怎么理解<a href="#11-当前成熟度怎么理解" class="hash-link" aria-label="1.1 当前成熟度怎么理解的直接链接" title="1.1 当前成熟度怎么理解的直接链接" translate="no">​</a></h3>
+<p>这里有一个值得注意的现实细节。</p>
+<p>截至 <code>2026-04-30</code>，官方信息里存在两个信号：</p>
+<ul>
+<li class="">Microsoft Learn 概述页在 <code>2026-04-06</code> 更新时，仍把 Agent Framework 标注为 <code>public preview</code></li>
+<li class="">但官方 GitHub 仓库与 release 已经出现 <code>1.x</code> 版本节奏，README 也已经按正式主线产品来组织文档与安装方式</li>
+</ul>
+<p>因此：</p>
+<ul>
+<li class=""><code>路线方向</code> 已经非常明确，微软已经把它当作 AutoGen / Semantic Kernel 之后的统一主线</li>
+<li class=""><code>生产采用判断</code> 仍然要结合你实际依赖的语言、包、托管方式、合规要求来核对具体版本成熟度，而不是只看一句宣传文案</li>
+</ul>
+<p>如果是做内部项目或技术预研，这通常已经足够开始。
+如果是做强合规、长生命周期、严格采购流程的项目，建议在立项时再核对一次实际要用的 Python / .NET 包、托管组件与支持承诺。</p>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="2-agents-vs-workflows这套框架最重要的设计分层">2. Agents vs Workflows：这套框架最重要的设计分层<a href="#2-agents-vs-workflows这套框架最 重要的设计分层" class="hash-link" aria-label="2. Agents vs Workflows：这套框架最重要的设计分层的直接链接" title="2. Agents vs Workflows：这套框架最重要的设计分层的直接链接" translate="no">​</a></h2>
+<p><code>Microsoft Agent Framework</code> 官方最需要注意的地方，不是它支持多少模型，而是它把 <code>Agent</code> 和 <code>Workflow</code> 明确拆成了两种不同的能力。</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="21-agents-是什么">2.1 Agents 是什么<a href="#21-agents-是什么" class="hash-link" aria-label="2.1 Agents 是什么的直接链接" title="2.1 Agents 是什么的直接链接" translate="no">​</a></h3>
+<p>官方定义里的 <code>Agents</code>，本质上是：</p>
+<ul>
+<li class="">由 <code>LLM</code> 驱动</li>
+<li class="">能处理输入</li>
+<li class="">能调用工具与 <code>MCP servers</code></li>
+<li class="">能基于上下文动态决定下一步</li>
+</ul>
+<p>所以 Agent 适合的不是“每一步都已知”的流程，而是：</p>
+<ul>
+<li class="">开放式任务</li>
+<li class="">对话型任务</li>
+<li class="">需要动态工具选择</li>
+<li class="">需要一定自主规划能力的任务</li>
+</ul>
+<p><code>Agent</code> 更接近“围绕目标进行动态决策的执行体”。</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="22-workflows-是什么">2.2 Workflows 是什么<a href="#22-workflows-是什么" class="hash-link" aria-label="2.2 Workflows 是什么的直接链接" title="2.2 Workflows 是什么的直接链接" translate="no">​</a></h3>
+<p>官方定义里的 <code>Workflows</code>，本质上是：</p>
+<ul>
+<li class="">基于图的多步骤编排</li>
+<li class="">能把 <code>agents</code>、普通函数、子流程连接起来</li>
+<li class="">支持 <code>type-safe routing</code></li>
+<li class="">支持 <code>checkpointing</code></li>
+<li class="">支持 <code>human-in-the-loop</code></li>
+</ul>
+<p>所以 Workflow 适合的是：</p>
+<ul>
+<li class="">步骤相对明确</li>
+<li class="">顺序、并发、分支可设计</li>
+<li class="">需要更强可控性与可恢复性</li>
+<li class="">需要长期运行、暂停、恢复、人工审批的业务流程</li>
+</ul>
+<p>这时你并不是把所有行为都交给模型，而是让模型只在需要智能判断的节点发挥作用。</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="23-两者最本质的区别">2.3 两者最本质的区别<a href="#23-两者最本质的区别" class="hash-link" aria-label="2.3 两者最本质的区别的直接链接" title="2.3 两者最本质的区别的直接链接" translate="no">​</a></h3>
+<p>可以用一句话记住：</p>
+<ul>
+<li class=""><code>Agent</code> 负责动态决策</li>
+<li class=""><code>Workflow</code> 负责显式编排</li>
+</ul>
+<p>官方概述页甚至直接提醒了一句非常重要的话：</p>
+<p><code>如果一个普通函数就能解决问题，那就先不要用 AI Agent。</code></p>
+<p>这句话背后的工程含义很关键：</p>
+<ul>
+<li class="">不要为了“看起来高级”把确定性任务全做成 Agent</li>
+<li class="">先把确定性的部分沉到函数和 Workflow</li>
+<li class="">只把真正需要模型判断的部分交给 Agent</li>
+</ul>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="24-一个实用理解方式">2.4 一个实用理解方式<a href="#24-一个实用理解方式" class="hash-link" aria-label="2.4 一个实用理解方式的直接链接" title="2.4 一个实用理解方式的直接链接" translate="no">​</a></h3>
+<p>如果做的是下面这些事，通常更接近 <code>Agent</code>：</p>
+<ul>
+<li class="">研究型问答</li>
+<li class="">复杂调研</li>
+<li class="">需要边搜边想边调整策略的任务</li>
+<li class="">需要多工具动态切换的任务</li>
+</ul>
+<p>如果做的是下面这些事，通常更接近 <code>Workflow</code>：</p>
+<ul>
+<li class="">审批流</li>
+<li class="">多步骤数据处理</li>
+<li class="">带人工确认的执行  流程</li>
+<li class="">有暂停、恢复、检查点需求的长任务</li>
+<li class="">多个代理与函数之间有稳定输入输出关系的系统</li>
+</ul>
+<p>所以 <code>Microsoft Agent Framework</code> 的一个核心价值，就是它没有把这两类问题混成一个抽象。</p>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="3-为什么它可以视为-autogen-的后续路线">3. 为什么它可以视为 AutoGen 的后续路线<a href="#3-为什么它可以视为-autogen-的后续路线" class="hash-link" aria-label="3. 为什么它可以视为 AutoGen 的后续路线的直接链接" title="3. 为什么它可以视为 AutoGen 的后续路线的直接链接" translate="no">​</a></h2>
+<p>这个判断不是社区猜测，而是微软官方自己给出来的。</p>
+<p>Microsoft Learn 概述页明确写到：</p>
+<ul>
+<li class=""><code>Semantic Kernel</code> 和 <code>AutoGen</code> 是先行者</li>
+<li class=""><code>Microsoft Agent Framework</code> 是它们的 <code>direct successor</code></li>
+<li class="">新框架吸收了 AutoGen 的简单 agent abstraction</li>
+<li class="">同时加入了 Semantic Kernel 更偏企业级的状态管理、类型安全、过滤器、中间件、遥测等能力</li>
+<li class="">在此基础上，再加入 graph-based workflows 作为更明确的多 Agent / 多步骤编排方式</li>
+</ul>
+<p>从演进逻辑上看，可以这样理解。</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="31-autogen-解决了什么问题">3.1 AutoGen 解决了什么问题<a href="#31-autogen-解决了什么问题" class="hash-link" aria-label="3.1 AutoGen 解决了什么问题的直接链接" title="3.1 AutoGen 解决了什么问题的直接链接" translate="no">​</a></h3>
+<p>AutoGen 最早重要的贡献，是把很多人第一次真正带进了这些模式：</p>
+<ul>
+<li class="">多 Agent 协作</li>
+<li class="">GroupChat</li>
+<li class="">agent-as-tool</li>
+<li class="">event-driven runtime</li>
+<li class="">面向研究和原型验证的多  智能体实验</li>
+</ul>
+<p>它让“多个代理彼此对话、协作解决任务”这件事更容易被快速搭起来。</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="32-autogen-暴露了什么边界">3.2 AutoGen 暴露了什么边界<a href="#32-autogen-暴露了什么边界" class="hash-link" aria-label="3.2 AutoGen 暴露了什么边界的直接链接" title="3.2 AutoGen 暴露了什么边界的直接链接" translate="no">​</a></h3>
+<p>但当系统从 demo、研究、实验走向真实业务时，大家会越来越在意：</p>
+<ul>
+<li class="">状态怎么长期管理</li>
+<li class="">流程怎么暂停与恢复</li>
+<li class="">执行链路怎么观察</li>
+<li class="">类型和数据流怎么更稳定</li>
+<li class="">人工干预怎么纳入运行时</li>
+<li class="">多步骤协作怎么避免全靠隐式对话推进</li>
+</ul>
+<p>这些问题并不是 AutoGen 完全不能做，而是它的核心抽象更偏“agentic interaction”，没有把“生产级可控流程”作为同等一等公民来设计。</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="33-agent-framework-做了什么统一">3.3 Agent Framework 做了什么统一<a href="#33-agent-framework-做了什么统一" class="hash-link" aria-label="3.3 Agent Framework 做了什么统一的直接链接" title="3.3 Agent Framework 做了什么统一的直接链接" translate="no">​</a></h3>
+<p><code>Microsoft Agent Framework</code> 可以视为后续路线，关键就在于它不是简单“重命名 AutoGen”，而是做了三层升级：</p>
+<ul>
+<li class="">把 <code>AutoGen</code> 的 agent 经验保留下来</li>
+<li class="">把 <code>Semantic Kernel</code> 的企业工程能力合并进来</li>
+<li class="">把 <code>Workflow</code> 提升为核心一级抽象，用来承接更可控的业务编排</li>
+</ul>
+<p>所以如果以前把 AutoGen 理解成“主要帮助搭 agent 与多 agent 对话”，那现在可以把 Agent Framework 理解成：</p>
+<p><code>它试图成为微软系 Agent   应用的统一底座，而不只是一个多智能体实验框架。</code></p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="34-迁移文档也在强化这个信号">3.4 迁移文档也在强化这个信号<a href="#34-迁移文档也在强化这个信号" class="hash-link" aria-label="3.4 迁移文档也在强化这个信号的直接链接" title="3.4 迁移文档也在强化这个信号的直接链接" translate="no">​</a></h3>
+<p>微软已经提供从 <code>AutoGen</code> 到 <code>Microsoft Agent Framework</code> 的官方迁移指南。迁移指南里强调的重点包括：</p>
+<ul>
+<li class="">单 Agent 侧的模型客户端、消息、工具、流式输出映射</li>
+<li class="">多 Agent 侧从 AutoGen 的 <code>Team / GraphFlow</code> 到 Agent Framework <code>Workflow</code> 的思路迁移</li>
+<li class=""><code>request-response</code>、<code>checkpointing</code>、更强工作流能力等新增设计</li>
+</ul>
+<p>这说明官方不是在维护两条平行主线，而是在明确引导迁移。</p>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="4-autogen-当前状态">4. AutoGen 当前状态<a href="#4-autogen-当前状态" class="hash-link" aria-label="4. AutoGen 当前状态的直接链接" title="4. AutoGen 当前状态的直接链接" translate="no">​</a></h2>
+<p>截至 <code>2026-04-30</code>，<code>microsoft/autogen</code> 官方 GitHub 仓库首页已经把项目状态写得很清楚：</p>
+<ul>
+<li class=""><code>AutoGen is now in maintenance mode</code></li>
+<li class="">不再接收新的 feature 或 enhancement</li>
+<li class="">项目将主要由社区继续维护</li>
+<li class="">新用户应从 <code>Microsoft Agent Framework</code> 开始</li>
+<li class="">现有用户应参考官方迁移指南逐步迁移</li>
+</ul>
+<p>这几个信号放在一起，含义其实非常明确：</p>
+<p><code>AutoGen 还活着，但它已经不再是微软官方持续加码的新能力主阵地。</code></p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="41-这不代表-autogen-没价值">4.1 这不代表 AutoGen 没价值<a href="#41-这不代表-autogen-没价值" class="hash-link" aria-label="4.1 这不代表 AutoGen 没价值的直接链接" title="4.1 这不代表 AutoGen 没价值的直接链接" translate="no">​</a></h3>
+<p>要注意，<code>maintenance mode</code> 不等于“立刻不可用”。</p>
+<p>AutoGen 仍然有：</p>
+<ul>
+<li class="">完整的官方文档站</li>
+<li class="">明确的 Python 分层结构，如 <code>AgentChat</code>、<code>Core</code>、<code>Extensions</code></li>
+<li class="">丰富的历史样例与社区讨论</li>
+<li class="">一些非常有代表性的多 Agent 交互模式</li>
+</ul>
+<p>所以它依然是一个很重要的“理解 Agent 编排历史与模式”的资料库。</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="42-但它的角色已经变了">4.2 但它的角色已经变了<a href="#42-但它的角色已经变了" class="hash-link" aria-label="4.2 但它的角色已经变了的直接链接" title="4.2 但它的角色已经变了的直接链接" translate="no">​</a></h3>
+<p>以前你可能会把 AutoGen 当成：</p>
+<ul>
+<li class="">新项目框架候选</li>
+<li class="">微软官方 Agent 主力方向</li>
+<li class="">多 Agent 实践的默认入口</li>
+</ul>
+<p>现在更合适的理解是：</p>
+<ul>
+<li class="">它是一个仍可用、但进入维护态的成熟历史项目</li>
+<li class="">它更接近“存量资产 + 模式参考 + 迁移来源”</li>
+<li class="">它不是微软官方未来主线的第一推荐入口</li>
+</ul>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="5-什么时候-autogen-仍然适合参考">5. 什么时候 AutoGen 仍然适合参考<a href="#5-什么时候-autogen-仍然适合参考" class="hash-link" aria-label="5. 什么时候 AutoGen 仍然适合参考的直接链接" title="5. 什么时候 AutoGen 仍然适合参考的直接链接" translate="no">​</a></h2>
+<p>虽然新项目不建议默认首选 AutoGen，但下面这些场景 仍然值得参考它。</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="51-你在维护已有-autogen-系统">5.1 你在维护已有 AutoGen 系统<a href="#51-你在维护已有-autogen-系统" class="hash-link" aria-label="5.1 你在维护已有 AutoGen 系统的直接链接" title="5.1 你在维护已有 AutoGen 系统的直接链接" translate="no">​</a></h3>
+<p>如果系统已经基于 AutoGen 跑起来，短期最现实的事情通常不是“全部推翻重写”，而是：</p>
+<ul>
+<li class="">先继续维护</li>
+<li class="">识别哪些能力已经稳定</li>
+<li class="">识别哪些能力未来要迁移到 Agent Framework</li>
+<li class="">把迁移分成阶段来做</li>
+</ul>
+<p>这时 AutoGen 官方文档、示例和迁移指南都很有价值。</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="52-想学习多-agent-经典模式">5.2 想学习多 Agent 经典模式<a href="#52-想学习多-agent-经典模式" class="hash-link" aria-label="5.2 想学习多 Agent 经典模式的直接链接" title="5.2 想学习多 Agent 经典模式的直接链接" translate="no">​</a></h3>
+<p>AutoGen 对这些概念的传播影响很大：</p>
+<ul>
+<li class=""><code>GroupChat</code></li>
+<li class=""><code>RoundRobinGroupChat</code></li>
+<li class=""><code>Magentic-One</code></li>
+<li class=""><code>agent-as-tool</code></li>
+<li class="">事件驱动代理运行时</li>
+</ul>
+<p>如果想理解很多后来框架为什么这样设计，看 AutoGen 依然非常有帮助。</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="53-在做研究原型或教学材料">5.3 在做研究原型或教学材料<a href="#53-在做研究原型或教学材料" class="hash-link" aria-label="5.3 在做研究原型或教学材料的直接链接" title="5.3 在做研究原型或教学材料的直接链接" translate="no">​</a></h3>
+<p>如果目标是：</p>
+<ul>
+<li class="">研究多代理协作行为</li>
+<li class="">给团队讲解多 Agent 历史脉络</li>
+<li class="">对比不  同编排范式</li>
+<li class="">复现实验性论文或旧项目</li>
+</ul>
+<p>AutoGen 依然是很好的参考对象，因为它保留了许多“模式原型期”的思路。</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="54-需要借鉴它的-api-分层与模式设计">5.4 需要借鉴它的 API 分层与模式设计<a href="#54-需要借鉴它的-api-分层与模式设计" class="hash-link" aria-label="5.4 需要借鉴它的 API 分层与模式设计的直接链接" title="5.4 需要借鉴它的 API 分层与模式设计的直接链接" translate="no">​</a></h3>
+<p>AutoGen 的 <code>Core / AgentChat / Extensions</code> 分层，以及它对对话型编排、多代理协作的包装，仍然值得借鉴。哪怕最终不用 AutoGen 本身，这些设计经验也能帮助你理解后来框架的取舍。</p>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="6-什么时候不建议把-autogen-当作新项目首选">6. 什么时候不建议把 AutoGen 当作新项目首选<a href="#6-什么时候不建议把-autogen-当作新项目首选" class="hash-link" aria-label="6. 什么时候不建议把 AutoGen 当作新项目首选的直接链接" title="6. 什么时候不建议把 AutoGen 当作新项目首选的直接链接" translate="no">​</a></h2>
+<p>下面这些情况里，我不建议把 AutoGen 作为新项目默认第一选择。</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="61-要启动一个新的微软系-agent-项目">6.1 要启动一个新的微软系 Agent 项目<a href="#61-要启动一个新的微软系-agent-项目" class="hash-link" aria-label="6.1 要启动一个新的微软系 Agent 项目的直接链接" title="6.1 要启动一个新的微软系 Agent 项目的直接链接" translate="no">​</a></h3>
+<p>如果这是一个 <code>2026</code> 年新立项的项目，而且你本来就在微软生态里看方案，那么默认优先级应该是：</p>
+<ol>
+<li class="">先看 <code>Microsoft Agent Framework</code></li>
+<li class="">再评估是否真  的有理由回到 AutoGen</li>
+</ol>
+<p>因为官方路线、迁移方向和后续能力沉淀都已经更偏向 Agent Framework。</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="62-你很在意长期主线支持">6.2 你很在意长期主线支持<a href="#62-你很在意长期主线支持" class="hash-link" aria-label="6.2 你很在意长期主线支持的直接链接" title="6.2 你很在意长期主线支持的直接链接" translate="no">​</a></h3>
+<p>如果关注的是：</p>
+<ul>
+<li class="">后续新能力会先落在哪</li>
+<li class="">官方文档会重点维护哪边</li>
+<li class="">团队未来招聘与交接时更该押哪条路线</li>
+<li class="">与微软后续产品整合时哪边更顺滑</li>
+</ul>
+<p>那答案大概率也会偏向 <code>Microsoft Agent Framework</code>。</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="63-你需要更强的流程可控性">6.3 你需要更强的流程可控性<a href="#63-你需要更强的流程可控性" class="hash-link" aria-label="6.3 你需要更强的流程可控性的直接链接" title="6.3 你需要更强的流程可控性的直接链接" translate="no">​</a></h3>
+<p>如果核心诉求不是“让多个 agent 聊起来”，而是：</p>
+<ul>
+<li class="">类型安全的数据流</li>
+<li class="">显式工作流</li>
+<li class="">checkpoint / resume</li>
+<li class="">human-in-the-loop</li>
+<li class="">更强 observability</li>
+<li class="">更清晰的生产级运行边界</li>
+</ul>
+<p>那 <code>Microsoft Agent Framework</code> 明显更符合官方现在的设计重心。</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="64-你不想把未来迁移成本前置成技术债">6.4 你不想把未来迁移成本前置成技术债<a href="#64-你不想把未来迁移成本前置成技术债" class="hash-link" aria-label="6.4 你不想把未来迁移成本前置成技术债的直接链接" title="6.4 你不想把未来迁移成本前置成技术债的直接链接" translate="no">​</a></h3>
+<p>今 天新开一个 AutoGen 项目，最大的风险通常不是“它马上不能跑”，而是：</p>
+<ul>
+<li class="">你一开始就站在一条非主线轨道上</li>
+<li class="">后续越做越深，迁移成本越高</li>
+<li class="">新能力、官方样例、生态注意力会越来越往 Agent Framework 倾斜</li>
+</ul>
+<p>所以从技术债视角看，新项目直接从主线开始，通常更划算。</p>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="7-一个简单选型建议">7. 一个简单选型建议<a href="#7-一个简单选型建议" class="hash-link" aria-label="7. 一个简单选型建议的直接链接" title="7. 一个简单选型建议的直接链接" translate="no">​</a></h2>
+<p>如果只想要一个实用判断，可以直接看这个表。</p>
+<table><thead><tr><th>场景</th><th>更建议看什么</th></tr></thead><tbody><tr><td>新项目，准备在微软系生态里长期做 Agent</td><td><code>Microsoft Agent Framework</code></td></tr><tr><td>需要显式 Workflow、checkpoint、人工审批、生产级编排</td><td><code>Microsoft Agent Framework</code></td></tr><tr><td>维护已有 AutoGen 项目</td><td><code>继续参考 AutoGen，同时规划迁移</code></td></tr><tr><td>学习多 Agent 历史模式与经典抽象</td><td><code>AutoGen</code></td></tr><tr><td>复现旧教程、旧样例、旧研究项目</td><td><code>AutoGen</code></td></tr><tr><td>要押微软官方后续主线</td><td><code>Microsoft Agent Framework</code></td></tr></tbody></table>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="8-最后一句判断">8. 最后一句判断<a href="#8-最后一句判断" class="hash-link" aria-label="8. 最后一句判断的直接链接" title="8. 最后一句判断的直接链接" translate="no">​</a></h2>
+<p>如果必须把这篇文档压缩成一句话，我会这样说：</p>
+<p><code>Microsoft Agent Framework 是微软当前对 Agent 与 Workflow 统一编排的主线框架，而 AutoGen 已从“新项目候选”转为“存量维护与  模式参考”。</code></p>
+<p>所以：</p>
+<ul>
+<li class="">想跟微软官方后续路线走，新项目优先看 <code>Microsoft Agent Framework</code></li>
+<li class="">想理解多 Agent 历史脉络、维护已有系统、吸收经典模式，<code>AutoGen</code> 仍然值得看</li>
+<li class="">但如果没有明确理由，不建议把 <code>AutoGen</code> 作为 <code>2026</code> 年新项目的默认第一选择</li>
+</ul>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="参考资料">参考资料<a href="#参考资料" class="hash-link" aria-label="参考资料的直接链接" title="参考资料的直接链接" translate="no">​</a></h2>
+<ul>
+<li class=""><a href="https://learn.microsoft.com/en-us/agent-framework/overview/" target="_blank" rel="noopener noreferrer" class="">Microsoft Agent Framework Overview</a></li>
+<li class=""><a href="https://learn.microsoft.com/en-us/agent-framework/user-guide/workflows/overview" target="_blank" rel="noopener noreferrer" class="">Microsoft Agent Framework Workflows Overview</a></li>
+<li class=""><a href="https://learn.microsoft.com/en-us/agent-framework/migration-guide/from-autogen/" target="_blank" rel="noopener noreferrer" class="">AutoGen to Microsoft Agent Framework Migration Guide</a></li>
+<li class=""><a href="https://github.com/microsoft/agent-framework" target="_blank" rel="noopener noreferrer" class="">microsoft/agent-framework 官方仓库</a></li>
+<li class=""><a href="https://github.com/microsoft/autogen" target="_blank" rel="noopener noreferrer" class="">microsoft/autogen 官方仓库</a></li>
+<li class=""><a href="https://microsoft.github.io/autogen/stable/" target="_blank" rel="noopener noreferrer" class="">AutoGen 官方文档</a></li>
+</ul></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="文件选项卡"><a class="pagination-nav__link pagination-nav__link--prev" href="/AI/frameworks/LangSmith-Observability-and-Evals"><div class="pagination-nav__sublabel">上一页</div><div class="pagination-nav__label">LangSmith：Observability、Evals 与 Deployment 指南</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/AI/frameworks/CrewAI-Intro-and-Workflow-Guide"><div class="pagination-nav__sublabel">下一页</div><div class="pagination-nav__label">CrewAI 入门与 Workflow 实战定位</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_v08c thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#先看结论" class="table-of-contents__link toc-highlight">先看结论</a></li><li><a href="#1-microsoft-agent-framework-当前定位" class="table-of-contents__link toc-highlight">1. Microsoft Agent Framework 当前定位</a><ul><li><a href="#11-当前成熟度怎么理解" class="table-of-contents__link toc-highlight">1.1 当前成熟度怎么理解</a></li></ul></li><li><a href="#2-agents-vs-workflows这套框架最重要的设计分层" class="table-of-contents__link toc-highlight">2. Agents vs Workflows：这套框架最重要的设计分层</a><ul><li><a href="#21-agents-是什么" class="table-of-contents__link toc-highlight">2.1 Agents 是什么</a></li><li><a href="#22-workflows-是什么" class="table-of-contents__link toc-highlight">2.2 Workflows 是什么</a></li><li><a href="#23-两者最本质的区别" class="table-of-contents__link toc-highlight">2.3 两者最本质的区别</a></li><li><a href="#24-一个实用理解方式" class="table-of-contents__link toc-highlight">2.4 一个实用理解方式</a></li></ul></li><li><a href="#3-为什么它可以视为-autogen-的后续路线" class="table-of-contents__link toc-highlight">3. 为什么它可以视为 AutoGen 的后续路线</a><ul><li><a href="#31-autogen-解决了什么问题" class="table-of-contents__link toc-highlight">3.1 AutoGen 解决了什么问题</a></li><li><a href="#32-autogen-暴露了什么边界" class="table-of-contents__link toc-highlight">3.2 AutoGen 暴露了什么边界</a></li><li><a href="#33-agent-framework-做了什么统一" class="table-of-contents__link toc-highlight">3.3 Agent Framework 做了什么统一</a></li><li><a href="#34-迁移文档也在强化这个信号" class="table-of-contents__link toc-highlight">3.4 迁移文档也在强化这个信号</a></li></ul></li><li><a href="#4-autogen-当前状态" class="table-of-contents__link toc-highlight">4. AutoGen 当前状态</a><ul><li><a href="#41-这不代表-autogen-没价值" class="table-of-contents__link toc-highlight">4.1 这不代表 AutoGen 没价值</a></li><li><a href="#42-但它的角色已经变了" class="table-of-contents__link toc-highlight">4.2 但它的角色已经变了</a></li></ul></li><li><a href="#5-什么时候-autogen-仍然适合参考" class="table-of-contents__link toc-highlight">5. 什么时候 AutoGen 仍然适合参考</a><ul><li><a href="#51-你在维护已有-autogen-系统" class="table-of-contents__link toc-highlight">5.1 你在维护已有 AutoGen 系统</a></li><li><a href="#52-想学习多-agent-经典模式" class="table-of-contents__link toc-highlight">5.2 想学习多 Agent 经典模式</a></li><li><a href="#53-在做研究原型或教学材料" class="table-of-contents__link toc-highlight">5.3 在做研究原型或教学材料</a></li><li><a href="#54-需要借鉴它的-api-分层与模式设计" class="table-of-contents__link toc-highlight">5.4 需要借鉴它的 API 分层与模式设计</a></li></ul></li><li><a href="#6-什么时候不建议把-autogen-当作新项目首选" class="table-of-contents__link toc-highlight">6. 什么时候不建议把 AutoGen 当作新项目首选</a><ul><li><a href="#61-要启动一个新的微软系-agent-项目" class="table-of-contents__link toc-highlight">6.1 要启动一个新的微软系 Agent 项目</a></li><li><a href="#62-你很在意长期主线支持" class="table-of-contents__link toc-highlight">6.2 你很在意长期主线支持</a></li><li><a href="#63-你需要更强的流程可控性" class="table-of-contents__link toc-highlight">6.3 你需要更强的流程可控性</a></li><li><a href="#64-你不想把未来迁移成本前置成技术债" class="table-of-contents__link toc-highlight">6.4 你不想把未来迁移成本前置成技术债</a></li></ul></li><li><a href="#7-一个简单选型建议" class="table-of-contents__link toc-highlight">7. 一个简单选型建议</a></li><li><a href="#8-最后一句判断" class="table-of-contents__link toc-highlight">8. 最后一句判断</a></li><li><a href="#参考资料" class="table-of-contents__link toc-highlight">参考资料</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">入口</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/intro">知识库</a></li><li class="footer__item"><a class="footer__link-item" href="/blog">日常 Blog</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/engineering">工程化</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/dev-tools">工具与环境</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">更多</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/JamesLi-dev" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_BlfO"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Torli, Inc. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>

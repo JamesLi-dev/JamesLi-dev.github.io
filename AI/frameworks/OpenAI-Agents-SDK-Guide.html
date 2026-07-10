@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="zh-Hans" dir="ltr" class="docs-wrapper plugin-docs plugin-id-ai docs-version-current docs-doc-page docs-doc-id-frameworks/OpenAI-Agents-SDK-Guide" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.10.1">
+<title data-rh="true">OpenAI Agents SDK 指南 | 这里是 Torli&#x27;s </title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://blog.torli.top/AI/frameworks/OpenAI-Agents-SDK-Guide"><meta data-rh="true" property="og:locale" content="zh_Hans"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" name="docusaurus_locale" content="zh-Hans"><meta data-rh="true" name="docsearch:language" content="zh-Hans"><meta data-rh="true" name="keywords" content="cooking, blog"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-ai-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-ai-current"><meta data-rh="true" property="og:title" content="OpenAI Agents SDK 指南 | 这里是 Torli&#x27;s "><meta data-rh="true" name="description" content="本文聚焦 OpenAI Agents SDK 在 TypeScript 项目中的定位、适用边界和基础学习顺序。"><meta data-rh="true" property="og:description" content="本文聚焦 OpenAI Agents SDK 在 TypeScript 项目中的定位、适用边界和基础学习顺序。"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://blog.torli.top/AI/frameworks/OpenAI-Agents-SDK-Guide"><link data-rh="true" rel="alternate" href="https://blog.torli.top/AI/frameworks/OpenAI-Agents-SDK-Guide" hreflang="zh-Hans"><link data-rh="true" rel="alternate" href="https://blog.torli.top/en/AI/frameworks/OpenAI-Agents-SDK-Guide" hreflang="en"><link data-rh="true" rel="alternate" href="https://blog.torli.top/AI/frameworks/OpenAI-Agents-SDK-Guide" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"框架与 SDK","item":"https://blog.torli.top/AI/frameworks/"},{"@type":"ListItem","position":2,"name":"OpenAI Agents SDK 指南","item":"https://blog.torli.top/AI/frameworks/OpenAI-Agents-SDK-Guide"}]}</script><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="这里是 Torli&#39;s  RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="这里是 Torli&#39;s  Atom Feed"><link rel="stylesheet" href="/assets/css/styles.a3b9aef2.css">
+<script src="/assets/js/runtime~main.5a1d3d49.js" defer="defer"></script>
+<script src="/assets/js/main.41eb4bf8.js" defer="defer"></script>
+</head>
+<body>
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="跳到主要内容"><a class="skipToContent_U9sP" href="#__docusaurus_skipToContent_fallback">跳到主要内容</a></div><nav aria-label="主导航" class="theme-layout-navbar navbar navbar--fixed-top navbarHideable_PT2D"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="切换导航栏" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/logo2.png" alt="My Site Logo" class="themedComponent_QNor themedComponent--light_EqDK"><img src="/img/logo2.png" alt="My Site Logo" class="themedComponent_QNor themedComponent--dark_H0PK"></div><b class="navbar__title text--truncate">Torli&#x27;s Blog</b></a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a class="navbar__link" aria-haspopup="true" aria-expanded="false" role="button" href="/docs/intro">知识库</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/docs/foundations">基础语言</a></li><li><a class="dropdown__link" href="/docs/browser-network">浏览器与网络</a></li><li><a class="dropdown__link" href="/docs/engineering">工程化</a></li><li><a class="dropdown__link" href="/docs/frameworks">前端框架</a></li><li><a class="dropdown__link" href="/docs/node-server">Node 与服务端</a></li><li><a class="dropdown__link" href="/docs/data-backend">数据库与后端服务</a></li><li><a class="dropdown__link" href="/docs/state-management">状态管理</a></li><li><a class="dropdown__link" href="/docs/ui-interaction">UI 与交互</a></li><li><a class="dropdown__link" href="/docs/dev-tools">效率工具与开发环境</a></li><li><a class="dropdown__link" href="/docs/frontier">前沿专题</a></li></ul></div><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a aria-current="page" class="navbar__link active" aria-haspopup="true" aria-expanded="false" role="button" href="/AI">AI 学习</a><ul class="dropdown__menu"><li><a aria-current="page" class="dropdown__link dropdown__link--active" href="/AI">开始这里：AI 首页</a></li><li><a class="dropdown__link" href="/AI/AI-Agent-Docs-Index">专题索引：AI Agent 文档总索引</a></li><li><a class="dropdown__link" href="/AI/AI-Agent-Chapter-to-Framework-Map">专题索引：章节与框架映射</a></li><li><a class="dropdown__link" href="/AI/foundations/Prompt-Engineering-Glossary">基础能力：Prompt Engineering</a></li><li><a class="dropdown__link" href="/AI/foundations/Context-Engineering-Guide">基础能力：Context Engineering</a></li><li><a class="dropdown__link" href="/AI/foundations/RAG-Intro-and-Practice">基础能力：RAG</a></li><li><a class="dropdown__link" href="/AI/agent-engineering/Agent-Engineering-Intro">Agent 与工程化：Agent Engineering</a></li><li><a class="dropdown__link" href="/AI/agent-engineering/Workflow-vs-Agent">Agent 与工程化：Workflow vs Agent</a></li><li><a class="dropdown__link" href="/AI/agent-engineering/Agent-Memory-and-State">Agent 与工程化：Memory and State</a></li><li><a class="dropdown__link" href="/AI/agent-engineering/Harness-Engineering-Guide">Agent 与工程化：Harness Engineering</a></li><li><a aria-current="page" class="dropdown__link dropdown__link--active" href="/AI/frameworks/OpenAI-Agents-SDK-Guide">框架与 SDK：OpenAI Agents SDK</a></li><li><a class="dropdown__link" href="/AI/frameworks/LangGraph-Intro-and-Orchestration">框架与 SDK：LangGraph</a></li><li><a class="dropdown__link" href="/AI/frameworks/LangSmith-Observability-and-Evals">框架与 SDK：LangSmith</a></li><li><a class="dropdown__link" href="/AI/frameworks/Vercel-AI-SDK-Guide">框架与 SDK：Vercel AI SDK</a></li><li><a class="dropdown__link" href="/AI/frameworks/Mastra-Guide">框架与 SDK：Mastra</a></li><li><a class="dropdown__link" href="/AI/frameworks/Google-ADK-Guide">框架与 SDK：Google ADK</a></li><li><a class="dropdown__link" href="/AI/overview/AI-App-Architecture-Map">全局视角：AI 应用整体架构</a></li><li><a class="dropdown__link" href="/AI/overview/Minimal-Agent-Demo-From-0-to-1">全局视角：最小 Agent Demo</a></li><li><a class="dropdown__link" href="/AI/overview/Minimal-Agent-Code-Implementation-Examples">全局视角：最小 Agent 代码示例</a></li><li><a class="dropdown__link" href="/AI/overview/AI-Agent-Tech-Stack-and-Framework-Comparison">全局视角：技术栈与框架对比</a></li></ul></div><a class="navbar__item navbar__link" href="/blog">日常 Blog</a><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a class="navbar__link" aria-haspopup="true" aria-expanded="false" role="button" href="/docs/engineering">工程化</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/docs/engineering/build-tools">构建与转译</a></li><li><a class="dropdown__link" href="/docs/engineering/code-quality">代码规范</a></li><li><a class="dropdown__link" href="/docs/engineering/package-management">包管理与环境管理</a></li><li><a class="dropdown__link" href="/docs/engineering/data-fetching">请求与数据层</a></li><li><a class="dropdown__link" href="/docs/engineering/package-management/pnpm">pnpm</a></li><li><a class="dropdown__link" href="/docs/engineering/package-management/fnm">fnm</a></li></ul></div><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a class="navbar__link" aria-haspopup="true" aria-expanded="false" role="button" href="/docs/dev-tools">工具与环境</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/docs/dev-tools/apps/KeyboardMaestro">Keyboard Maestro</a></li><li><a class="dropdown__link" href="/docs/dev-tools/apps/Warp">Warp</a></li><li><a class="dropdown__link" href="/docs/dev-tools/apps/Ghostty">Ghostty</a></li><li><a class="dropdown__link" href="/docs/dev-tools/apps/Zed">Zed</a></li><li><a class="dropdown__link" href="/docs/dev-tools/apps/GitButler">GitButler</a></li><li><a class="dropdown__link" href="/docs/dev-tools/apps/Switzy">Switzy</a></li><li><a class="dropdown__link" href="/docs/dev-tools/apps/Craft-Agents">Craft Agents</a></li></ul></div><a href="https://github.com/JamesLi-dev" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_BlfO"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_bW1k colorModeToggle_D8sl"><button class="clean-btn toggleButton_qiU8 toggleButtonDisabled_xinJ" type="button" disabled="" title="system mode" aria-label="切换浅色/暗黑模式（当前为system mode）"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_X9Tk lightToggleIcon_y62u"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_X9Tk darkToggleIcon_Dj8C"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_X9Tk systemToggleIcon_T2ve"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_e2eJ"><div class="navbar__search searchBarContainer_Mqfy"><input placeholder="搜索" aria-label="Search" class="navbar__search-input" value=""><div class="loadingRing_r319 searchBarLoadingRing_Kn2r"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_kzBE"><div class="docsWrapper_Jb1X"><button aria-label="回到顶部" class="clean-btn theme-back-to-top-button backToTopButton_W_UZ" type="button"></button><div class="docRoot_AAe1"><aside class="theme-doc-sidebar-container docSidebarContainer_RSuS"><div class="sidebarViewport_pYEE"><div class="sidebar_G_8g sidebarWithHideableNavbar__FNA"><a tabindex="-1" class="sidebarLogo_hLnz" href="/"><img src="/img/logo2.png" alt="My Site Logo" class="themedComponent_QNor themedComponent--light_EqDK"><img src="/img/logo2.png" alt="My Site Logo" class="themedComponent_QNor themedComponent--dark_H0PK"><b>Torli&#x27;s Blog</b></a><nav aria-label="文档侧边栏" class="menu thin-scrollbar menu_k9TG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/AI"><span title="AI" class="linkLabel_vgcd">AI</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/AI/AI-Agent-Docs-Index"><span title="AI Agent 文档总索引" class="linkLabel_vgcd">AI Agent 文档总索引</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_jNm8 menu__link menu__link--sublist" href="/AI/foundations"><span title="基础能力" class="categoryLinkLabel_ayea">基础能力</span></a><button aria-label="展开侧边栏分类 &#x27;基础能力&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/AI/AI-Agent-Chapter-to-Framework-Map"><span title="AI Agent 专题章节与框架映射" class="linkLabel_vgcd">AI Agent 专题章节与框架映射</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_jNm8 menu__link menu__link--sublist" href="/AI/agent-engineering"><span title="Agent 与工程化" class="categoryLinkLabel_ayea">Agent 与工程化</span></a><button aria-label="展开侧边栏分类 &#x27;Agent 与工程化&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_jNm8 menu__link menu__link--sublist menu__link--active" href="/AI/frameworks"><span title="框架与 SDK" class="categoryLinkLabel_ayea">框架与 SDK</span></a><button aria-label="折叠侧边栏分类 &#x27;框架与 SDK&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/AI/frameworks/OpenAI-Agents-SDK-Guide"><span title="OpenAI Agents SDK 指南" class="linkLabel_vgcd">OpenAI Agents SDK 指南</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/AI/frameworks/LangChain-Intro-and-Practice"><span title="LangChain 入门与实践" class="linkLabel_vgcd">LangChain 入门与实践</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/AI/frameworks/LangGraph-Intro-and-Orchestration"><span title="LangGraph 入门与编排设计" class="linkLabel_vgcd">LangGraph 入门与编排设计</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/AI/frameworks/LangSmith-Observability-and-Evals"><span title="LangSmith：Observability、Evals 与 Deployment 指南" class="linkLabel_vgcd">LangSmith：Observability、Evals 与 Deployment 指南</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/AI/frameworks/Microsoft-Agent-Framework-and-AutoGen-Status"><span title="Microsoft Agent Framework / AutoGen 状态指南" class="linkLabel_vgcd">Microsoft Agent Framework / AutoGen 状态指南</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/AI/frameworks/CrewAI-Intro-and-Workflow-Guide"><span title="CrewAI 入门与 Workflow 实战定位" class="linkLabel_vgcd">CrewAI 入门与 Workflow 实战定位</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/AI/frameworks/Vercel-AI-SDK-Guide"><span title="Vercel AI SDK 指南" class="linkLabel_vgcd">Vercel AI SDK 指南</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/AI/frameworks/Mastra-Guide"><span title="Mastra 指南" class="linkLabel_vgcd">Mastra 指南</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/AI/frameworks/Google-ADK-Guide"><span title="Google ADK 指南" class="linkLabel_vgcd">Google ADK 指南</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/AI/frameworks/LlamaIndex-Agent-and-Workflow-Guide"><span title="LlamaIndex Agent / Workflow 指南" class="linkLabel_vgcd">LlamaIndex Agent / Workflow 指南</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/AI/frameworks/Azure-AI-Foundry-Agent-Service-Guide"><span title="Azure AI Foundry Agent Service 指南" class="linkLabel_vgcd">Azure AI Foundry Agent Service 指南</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_jNm8 menu__link menu__link--sublist" href="/AI/overview"><span title="全局视角" class="categoryLinkLabel_ayea">全局视角</span></a><button aria-label="展开侧边栏分类 &#x27;全局视角&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li></ul></nav><button type="button" data-torli-sidebar-toggle="collapse" title="收起侧边栏" aria-label="收起侧边栏" class="button button--secondary button--outline collapseSidebarButton_JQG6"><svg class="collapseSidebarButtonIcon_Iseg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"></rect><path d="M13 9L10 12L13 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></button></div></div></aside><main class="docMainContainer_hjYf"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_uYg3"><div class="docItemContainer_jngG"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_lBfN" aria-label="页面路径"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="主页面" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_ebxl"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/AI/frameworks"><span>框架与 SDK</span></a></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">OpenAI Agents SDK 指南</span></li></ul></nav><div class="tocCollapsible_VI1r theme-doc-toc-mobile tocMobile_iude"><button type="button" class="clean-btn tocCollapsibleButton_LJEZ">本页总览</button></div><div class="theme-doc-markdown markdown"><header><h1>OpenAI Agents SDK 指南</h1></header>
+<p>本文聚焦 OpenAI Agents SDK 在 TypeScript 项目中的定位、适用边界和基础学习顺序。</p>
+<p>内容只基于 OpenAI 官方文档整理，不凭印象补定义。</p>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="1-定位">1. 定位<a href="#1-定位" class="hash-link" aria-label="1. 定位的直接链接" title="1. 定位的直接链接" translate="no">​</a></h2>
+<p>按照 OpenAI 官方文档，<code>Agents SDK</code> 是一套用于“在代码里构建 agent”的 SDK。OpenAI 在官方概览里把它描述为：适合从代码优先的 agent 应用起步，并在需要时逐步扩展到更高级的运行时模式。</p>
+<p>它可以视为一层 agent 应用运行框架，而不只是一次模型调用封装。</p>
+<p>它要解决的不是：</p>
+<ul>
+<li class="">只发一次 prompt 拿一次回答</li>
+</ul>
+<p>而是更偏向：</p>
+<ul>
+<li class="">让一个系统围绕目标做多步工作</li>
+<li class="">在过程中调工具</li>
+<li class="">必要时切换给别的 specialist agent</li>
+<li class="">对输入/输出做 guardrails</li>
+<li class="">保留 trace 方便调试与观测</li>
+</ul>
+<p>OpenAI 官方文档对 agent 的定义也很清楚：agent 是一个配置好的 LLM，至少包含：</p>
+<ul>
+<li class=""><code>instructions</code></li>
+<li class=""><code>model</code></li>
+<li class=""><code>tools</code></li>
+</ul>
+<p>从这个定义出发，Agents SDK 关心的核心已经不是“单次补全文本”，而是“如何把模型、工具、协作、状态和运行过程组织成一个可执行系统”。</p>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="2-它适合什么问题">2. 它适合什么问题<a href="#2-它适合什么问题" class="hash-link" aria-label="2. 它适合什么问题的直接链接" title="2. 它适合什么问题的直接链接" translate="no">​</a></h2>
+<p>结合 OpenAI 官方 Agents 概览、Quickstart、Tools、Agent Orchestration 文档，可以把适用问题理解为下面几类。</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="21-适合多步任务">2.1 适合多步任务<a href="#21-适合多步任务" class="hash-link" aria-label="2.1 适合多步任务的直接链接" title="2.1 适合多步任务的直接链接" translate="no">​</a></h3>
+<p>如果任务不是一步生成，而是：</p>
+<ul>
+<li class="">先理解目标</li>
+<li class="">再决定是否调用工具</li>
+<li class="">根据工具结果继续推进</li>
+<li class="">最后再组织最终输出</li>
+</ul>
+<p>那就是 Agents SDK 的典型适用区间。</p>
+<p>例如：</p>
+<ul>
+<li class="">调研助手</li>
+<li class="">内部知识助手</li>
+<li class="">客服分流与 specialist 协作</li>
+<li class="">带工具的数据处理/执行助手</li>
+<li class="">需要运行过程可追踪的 agent 工作流</li>
+</ul>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="22-适合工具使用明显的任务">2.2 适合工具使用明显的任务<a href="#22-适合工具使用明显的任务" class="hash-link" aria-label="2.2 适合工具使用明显的任务的直接链接" title="2.2 适合工具使用明显的任务的直接链接" translate="no">​</a></h3>
+<p>OpenAI 官方 Tools 文档明确把工具分成多类：</p>
+<ul>
+<li class="">Hosted OpenAI tools</li>
+<li class="">Built-in execution tools</li>
+<li class="">Function tools</li>
+<li class="">Agents as tools</li>
+<li class="">MCP servers</li>
+<li class="">Experimental: Codex tool</li>
+</ul>
+<p>因此 SDK 的一个核心价值就是：</p>
+<p><code>不是只让模型“回答”，而是让模型在受控边界内“做事”。</code></p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="23-适合多-agent-协作">2.3 适合多 agent 协作<a href="#23-适合多-agent-协作" class="hash-link" aria-label="2.3 适合多 agent 协作的直接链接" title="2.3 适合多 agent 协作的直接链接" translate="no">​</a></h3>
+<p>如果系统已经开始出现下面这些需求：</p>
+<ul>
+<li class="">一个 agent 负责总控</li>
+<li class="">某些子任务要交给 specialist</li>
+<li class="">有时 specialist 只是子工具</li>
+<li class="">有时 specialist 要正式接管当前对话</li>
+</ul>
+<p>那 Agents SDK 的 <code>agents as tools</code> 和 <code>handoffs</code> 就开始有价值了。</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="24-适合需要可观测性的任务">2.4 适合需要可观测性的  任务<a href="#24-适合需要可观测性的任务" class="hash-link" aria-label="2.4 适合需要可观测性的任务的直接链接" title="2.4 适合需要可观测性的任务的直接链接" translate="no">​</a></h3>
+<p>OpenAI 官方 Tracing 文档说明，SDK 内置 tracing，会记录：</p>
+<ul>
+<li class="">LLM generations</li>
+<li class="">tool calls</li>
+<li class="">handoffs</li>
+<li class="">guardrails</li>
+<li class="">custom events</li>
+</ul>
+<p>这对真实项目非常关键，因为 agent 系统最怕“能跑，但出了问题不知道为什么”。</p>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="3-它不适合什么问题">3. 它不适合什么问题<a href="#3-它不适合什么问题" class="hash-link" aria-label="3. 它不适合什么问题的直接链接" title="3. 它不适合什么问题的直接链接" translate="no">​</a></h2>
+<p>这部分官方文档不会直接给你一个“禁用清单”，但从 OpenAI 的页面定位可以反推得很明确。</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="31-不适合只有一次生成的简单场景">3.1 不适合只有一次生成的简单场景<a href="#31-不适合只有一次生成的简单场景" class="hash-link" aria-label="3.1 不适合只有一次生成的简单场景的直接链接" title="3.1 不适合只有一次生成的简单场景的直接链接" translate="no">​</a></h3>
+<p>如果任务只是：</p>
+<ul>
+<li class="">简单问答</li>
+<li class="">一次文案生成</li>
+<li class="">一次结构化抽取</li>
+<li class="">没有工具、没有多步决策、没有协作</li>
+</ul>
+<p>那通常直接用 OpenAI client library 调 <code>Responses API</code> 就够了，不一定需要引入 Agents SDK 这层运行框架。</p>
+<p>OpenAI 在 Agents SDK 概览里也区分了：</p>
+<ul>
+<li class="">直接 API client 适合直接模型请求</li>
+<li class="">Agents SDK 适合应用自己掌握 orchestration、tool execution、approvals 和 state 的情况</li>
+</ul>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="32-不适合必须完全确定性的流程">3.2 不适合必须完全确定性的流程<a href="#32-不适合必须完全确定性的流程" class="hash-link" aria-label="3.2 不适合必须完全确定性的流程的直接链接" title="3.2 不适合必须完全确定性的流程的直接链接" translate="no">​</a></h3>
+<p>如果业务流程是：</p>
+<ul>
+<li class="">步骤固定</li>
+<li class="">路由固定</li>
+<li class="">不希望模型决定下一步</li>
+<li class="">每一步都应由代码显式编排</li>
+</ul>
+<p>那更适合把模型作为某个步骤里的能力，而不是把整个流程交给 agent 决策。</p>
+<p>OpenAI 官方 Agent Orchestration 文档也明确区分了两种方向：</p>
+<ul>
+<li class="">让 LLM 决定流程</li>
+<li class="">由代码决定流程</li>
+</ul>
+<p>所以不是“用了 Agents SDK 就必须全自动”，但如果任务本身根本不需要 agent 决策，直接 workflow 往往更稳。</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="33-不适合一上来就堆很多通用-agent">3.3 不适合一上来就堆很多通用 agent<a href="#33-不适合一上来就堆很多通用-agent" class="hash-link" aria-label="3.3 不适合一上来就堆很多通用 agent的直接链接" title="3.3 不适合一上来就堆很多通用 agent的直接链接" translate="no">​</a></h3>
+<p>官方编排文档强调：</p>
+<ul>
+<li class="">要投资在 good prompts</li>
+<li class="">要有 specialized agents</li>
+<li class="">要持续监控与迭代</li>
+<li class="">要做 evals</li>
+</ul>
+<p>这背后其实说明了一件事：</p>
+<p><code>Agents SDK 适合做边界清楚的 agent 系统，不适合一开始就做一个“什么都能做”的大总管。</code></p>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="4-核心概念">4. 核心概念<a href="#4-核心概念" class="hash-link" aria-label="4. 核心概念的直接链接" title="4. 核心概念的直接链接" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="41-agent">4.1 Agent<a href="#41-agent" class="hash-link" aria-label="4.1 Agent的直接链接" title="4.1 Agent的直接链接" translate="no">​</a></h2>
+<p>官方 Agents 文档将 <code>Agent</code> 定义为配置好的 LLM，核心包括：</p>
+<ul>
+<li class=""><code>instructions</code></li>
+<li class=""><code>model</code></li>
+<li class=""><code>tools</code></li>
+</ul>
+<p>其中：</p>
+<ul>
+<li class=""><code>instructions</code> 决定角色、目标和行为约束</li>
+<li class=""><code>model</code> 决定用哪个模型及其参数</li>
+<li class=""><code>tools</code> 决定它可以调用哪些能力</li>
+</ul>
+<p><code>Agent</code> 可以理解为一个带职责说明、模型配置和能力边界的智能执行单元。</p>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="42-tools">4.2 Tools<a href="#42-tools" class="hash-link" aria-label="4.2 Tools的直接链接" title="4.2 Tools的直接链接" translate="no">​</a></h2>
+<p>官方 Tools 文档把工具能力分层得很清楚。对大多数 TypeScript 项目，最常见的是下面四类：</p>
+<ul>
+<li class=""><code>function tools</code>：把本地函数包装成模型可调用工具</li>
+<li class=""><code>hosted tools</code>：比如 web search、file search</li>
+<li class=""><code>agents as tools</code>：把另一个 agent 暴露成一个可调用工具</li>
+<li class=""><code>MCP servers</code>：接入外部或本地 MCP 能力</li>
+</ul>
+<p><code>tool</code> 是 agent 对外部世界采取动作的边界。</p>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="43-handoffs">4.3 Handoffs<a href="#43-handoffs" class="hash-link" aria-label="4.3 Handoffs的直接链接" title="4.3 Handoffs的直接链接" translate="no">​</a></h2>
+<p>官方 Handoffs 文档的定义是：<code>handoff</code> 让一个 agent 把对话的一部分委托给另一个 agent。</p>
+<p>它和 <code>agent.asTool()</code> 的差别非常重要。</p>
+<ul>
+<li class=""><code>agents as tools</code>：manager 还掌控全局，specialist 只是帮它做子任务</li>
+<li class=""><code>handoffs</code>：specialist 会接管当前这一段对话，成为新的 active agent</li>
+</ul>
+<p>OpenAI 官方编排文档给出的判断标准如下：</p>
+<ul>
+<li class="">如果 specialist 只是子任务帮手，不该接管用户对话，用 <code>agents as tools</code></li>
+<li class="">如果 routing 本身就是流程的一部分，而且 specialist 应该接管后续对话，用 <code>handoffs</code></li>
+</ul>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="44-guardrails">4.4 Guardrails<a href="#44-guardrails" class="hash-link" aria-label="4.4 Guardrails的直接链接" title="4.4 Guardrails的直接链接" translate="no">​</a></h2>
+<p>官方 Guardrails 文档把 guardrails 分成：</p>
+<ul>
+<li class=""><code>input guardrails</code></li>
+<li class=""><code>output guardrails</code></li>
+<li class=""><code>tool guardrails</code></li>
+</ul>
+<p>它们的用途不是“让系统更聪明”，而是“让系统更可控”。</p>
+<p>几个关键边界要特别记住：</p>
+<ul>
+<li class="">input guardrails 只在链路里的第一个 agent 上生效</li>
+<li class="">output guardrails 只在最终产出结果的 agent 上生效</li>
+<li class="">tool guardrails 是围绕每次 function-tool 调用执行的</li>
+</ul>
+<p>所以如果工作流里有 manager、handoff、多次工具调用，往往不能只靠 agent 级 input/output guardrails，还要考虑 tool guardrails。</p>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="45-tracing">4.5 Tracing<a href="#45-tracing" class="hash-link" aria-label="4.5 Tracing的直接链接" title="4.5 Tracing的直接链接" translate="no">​</a></h2>
+<p>官方 Tracing 文档说明，Agents SDK 内置 tracing，并且在服务端运行时默认开启。</p>
+<p>默认 trace 里会记录：</p>
+<ul>
+<li class="">整个 <code>run()</code></li>
+<li class="">每次 agent run</li>
+<li class="">每次模型生成</li>
+<li class="">每次 function tool 调用</li>
+<li class="">每次 guardrail</li>
+<li class="">每次 handoff</li>
+</ul>
+<p>因此 tracing 不是“后期锦上添花”，而是 SDK 的原生能力之一。</p>
+<p>如果 agent 已经进入真实业务场景，tracing 通常应尽早接入，而不是等问题出现后再补。</p>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="5-prompting-在-agents-sdk-里为什么重要">5. Prompting 在 Agents SDK 里为什么重要<a href="#5-prompting-在-agents-sdk-里为什么重要" class="hash-link" aria-label="5. Prompting 在 Agents SDK 里为什么重要的直接链接" title="5. Prompting 在 Agents SDK 里为什么重要的直接链接" translate="no">​</a></h2>
+<p>虽然 Agents SDK 负责运行时组织，但 agent 的行为稳定性仍然高度依赖 prompt 设计。这里应直接参考 OpenAI 官方 prompting 文档。</p>
+<p>至少有四条对 Agents SDK 很实用：</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="51-角色与总行为约束放在高优先级指令中">5.1 角色与总行为约束放在高优先级指令中<a href="#51-角色与总行为约束放在高优先级指令中" class="hash-link" aria-label="5.1 角色与总行为约束放在高优先级指令中的直接链接" title="5.1 角色与总行为约束放在高优先级指令中的直接链接" translate="no">​</a></h3>
+<p>OpenAI 官方 Prompting 文档建议：</p>
+<ul>
+<li class="">把整体语气、角色指导放在 system message</li>
+<li class="">把任务细节和例子放在 user messages</li>
+</ul>
+<p>映射到 Agents SDK 里，最直接的做法就是：</p>
+<ul>
+<li class="">把 agent 的长期身份、职责边界、何时调用工具、何时交接 handoff，放进 <code>instructions</code></li>
+<li class="">把本轮任务数据放到每次 <code>run()</code> 的输入</li>
+</ul>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="52-few-shot-示例要短而清晰">5.2 few-shot 示例要短而清晰<a href="#52-few-shot-示例要短而清晰" class="hash-link" aria-label="5.2 few-shot 示  例要短而清晰的直接链接" title="5.2 few-shot 示例要短而清晰的直接链接" translate="no">​</a></h3>
+<p>官方文档建议 few-shot 示例用简洁、易扫描的块组织。</p>
+<p>对 agent 来说，这尤其重要，因为：</p>
+<ul>
+<li class="">tool use 规则太散会影响调用稳定性</li>
+<li class="">handoff 条件太模糊会影响路由稳定性</li>
+<li class="">输出格式要求不集中会影响结果一致性</li>
+</ul>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="53-prompt-应版本化而不是到处散落">5.3 prompt 应版本化，而不是到处散落<a href="#53-prompt-应版本化而不是到处散落" class="hash-link" aria-label="5.3 prompt 应版本化，而不是到处散落的直接链接" title="5.3 prompt 应版本化，而不是到处散落的直接链接" translate="no">​</a></h3>
+<p>OpenAI 官方 Prompting 文档强调 prompt 对象支持：</p>
+<ul>
+<li class="">versioning</li>
+<li class="">templating</li>
+<li class="">eval 对比</li>
+</ul>
+<p>当 agent 已进入多人协作或持续迭代阶段，不宜把所有 instructions 都硬编码成一大段字符串并分散复制。</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="54-prompt-改动要配-eval">5.4 prompt 改动要配 eval<a href="#54-prompt-改动要配-eval" class="hash-link" aria-label="5.4 prompt 改动要配 eval的直接链接" title="5.4 prompt 改动要配 eval的直接链接" translate="no">​</a></h3>
+<p>官方 Prompting 文档明确建议：每次发布 prompt 都重新跑 eval。</p>
+<p>这对 agent 系统尤其关键，因为你改的不只是文案，往往还会改变：</p>
+<ul>
+<li class="">是否调用工具</li>
+<li class="">调哪个工具</li>
+<li class="">是否触发 handoff</li>
+<li class="">是否更容易越权或漏答</li>
+</ul>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="6-最小-typescript-结构">6. 最小 TypeScript 结构<a href="#6-最小-typescript-结构" class="hash-link" aria-label="6. 最小 TypeScript 结构的  直接链接" title="6. 最小 TypeScript 结构的直接链接" translate="no">​</a></h2>
+<p>下面这个例子刻意保持“最小可理解”，主要基于 OpenAI 官方 Quickstart 和 Tools 文档整理。</p>
+<div class="language-ts codeBlockContainer_AXfa theme-code-block" style="--prism-color:#403f53;--prism-background-color:#FBFBFB"><div class="codeBlockContent_GInB"><pre tabindex="0" class="prism-code language-ts codeBlock_vnrn thin-scrollbar" style="color:#403f53;background-color:#FBFBFB"><code class="codeBlockLines_YheM"><div class="token-line" style="color:#403f53"><span class="token keyword" style="color:rgb(12, 150, 155)">import</span><span class="token plain"> </span><span class="token punctuation" style="color:rgb(153, 76, 195)">{</span><span class="token plain"> Agent</span><span class="token punctuation" style="color:rgb(153, 76, 195)">,</span><span class="token plain"> run</span><span class="token punctuation" style="color:rgb(153, 76, 195)">,</span><span class="token plain"> tool </span><span class="token punctuation" style="color:rgb(153, 76, 195)">}</span><span class="token plain"> </span><span class="token keyword" style="color:rgb(12, 150, 155)">from</span><span class="token plain"> </span><span class="token string" style="color:rgb(72, 118, 214)">&#x27;@openai/agents&#x27;</span><span class="token punctuation" style="color:rgb(153, 76, 195)">;</span><span class="token plain"></span><br></div><div class="token-line" style="color:#403f53"><span class="token plain"></span><span class="token keyword" style="color:rgb(12, 150, 155)">import</span><span class="token plain"> </span><span class="token punctuation" style="color:rgb(153, 76, 195)">{</span><span class="token plain"> z </span><span class="token punctuation" style="color:rgb(153, 76, 195)">}</span><span class="token plain"> </span><span class="token keyword" style="color:rgb(12, 150, 155)">from</span><span class="token plain"> </span><span class="token string" style="color:rgb(72, 118, 214)">&#x27;zod&#x27;</span><span class="token punctuation" style="color:rgb(153, 76, 195)">;</span><span class="token plain"></span><br></div><div class="token-line" style="color:#403f53"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#403f53"><span class="token plain"></span><span class="token keyword" style="color:rgb(12, 150, 155)">const</span><span class="token plain"> lookupPolicy </span><span class="token operator" style="color:rgb(12, 150, 155)">=</span><span class="token plain"> </span><span class="token function" style="color:rgb(153, 76, 195);font-style:italic">tool</span><span class="token punctuation" style="color:rgb(153, 76, 195)">(</span><span class="token punctuation" style="color:rgb(153, 76, 195)">{</span><span class="token plain"></span><br></div><div class="token-line" style="color:#403f53"><span class="token plain">  name</span><span class="token operator" style="color:rgb(12, 150, 155)">:</span><span class="token plain"> </span><span class="token string" style="color:rgb(72, 118, 214)">&#x27;lookup_policy&#x27;</span><span class="token punctuation" style="color:rgb(153, 76, 195)">,</span><span class="token plain"></span><br></div><div class="token-line" style="color:#403f53"><span class="token plain">  description</span><span class="token operator" style="color:rgb(12, 150, 155)">:</span><span class="token plain"> </span><span class="token string" style="color:rgb(72, 118, 214)">&#x27;根据主题返回内部政策摘要&#x27;</span><span class="token punctuation" style="color:rgb(153, 76, 195)">,</span><span class="token plain"></span><br></div><div class="token-line" style="color:#403f53"><span class="token plain">  parameters</span><span class="token operator" style="color:rgb(12, 150, 155)">:</span><span class="token plain"> z</span><span class="token punctuation" style="color:rgb(153, 76, 195)">.</span><span class="token function" style="color:rgb(153, 76, 195);font-style:italic">object</span><span class="token punctuation" style="color:rgb(153, 76, 195)">(</span><span class="token punctuation" style="color:rgb(153, 76, 195)">{</span><span class="token plain"></span><br></div><div class="token-line" style="color:#403f53"><span class="token plain">    topic</span><span class="token operator" style="color:rgb(12, 150, 155)">:</span><span class="token plain"> z</span><span class="token punctuation" style="color:rgb(153, 76, 195)">.</span><span class="token function" style="color:rgb(153, 76, 195);font-style:italic">string</span><span class="token punctuation" style="color:rgb(153, 76, 195)">(</span><span class="token punctuation" style="color:rgb(153, 76, 195)">)</span><span class="token punctuation" style="color:rgb(153, 76, 195)">,</span><span class="token plain"></span><br></div><div class="token-line" style="color:#403f53"><span class="token plain">  </span><span class="token punctuation" style="color:rgb(153, 76, 195)">}</span><span class="token punctuation" style="color:rgb(153, 76, 195)">)</span><span class="token punctuation" style="color:rgb(153, 76, 195)">,</span><span class="token plain"></span><br></div><div class="token-line" style="color:#403f53"><span class="token plain">  </span><span class="token function-variable function" style="color:rgb(153, 76, 195);font-style:italic">execute</span><span class="token operator" style="color:rgb(12, 150, 155)">:</span><span class="token plain"> </span><span class="token keyword" style="color:rgb(12, 150, 155)">async</span><span class="token plain"> </span><span class="token punctuation" style="color:rgb(153, 76, 195)">(</span><span class="token punctuation" style="color:rgb(153, 76, 195)">{</span><span class="token plain"> topic </span><span class="token punctuation" style="color:rgb(153, 76, 195)">}</span><span class="token punctuation" style="color:rgb(153, 76, 195)">)</span><span class="token plain"> </span><span class="token operator" style="color:rgb(12, 150, 155)">=&gt;</span><span class="token plain"> </span><span class="token punctuation" style="color:rgb(153, 76, 195)">{</span><span class="token plain"></span><br></div><div class="token-line" style="color:#403f53"><span class="token plain">    </span><span class="token keyword" style="color:rgb(12, 150, 155)">if</span><span class="token plain"> </span><span class="token punctuation" style="color:rgb(153, 76, 195)">(</span><span class="token plain">topic</span><span class="token punctuation" style="color:rgb(153, 76, 195)">.</span><span class="token function" style="color:rgb(153, 76, 195);font-style:italic">includes</span><span class="token punctuation" style="color:rgb(153, 76, 195)">(</span><span class="token string" style="color:rgb(72, 118, 214)">&#x27;refund&#x27;</span><span class="token punctuation" style="color:rgb(153, 76, 195)">)</span><span class="token punctuation" style="color:rgb(153, 76, 195)">)</span><span class="token plain"> </span><span class="token punctuation" style="color:rgb(153, 76, 195)">{</span><span class="token plain"></span><br></div><div class="token-line" style="color:#403f53"><span class="token plain">      </span><span class="token keyword" style="color:rgb(12, 150, 155)">return</span><span class="token plain"> </span><span class="token string" style="color:rgb(72, 118, 214)">&#x27;退款政策：7 天内可申请，超过 7 天需人工审批。&#x27;</span><span class="token punctuation" style="color:rgb(153, 76, 195)">;</span><span class="token plain"></span><br></div><div class="token-line" style="color:#403f53"><span class="token plain">    </span><span class="token punctuation" style="color:rgb(153, 76, 195)">}</span><span class="token plain"></span><br></div><div class="token-line" style="color:#403f53"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#403f53"><span class="token plain">    </span><span class="token keyword" style="color:rgb(12, 150, 155)">return</span><span class="token plain"> </span><span class="token string" style="color:rgb(72, 118, 214)">&#x27;未命中政策，请转人工处理。&#x27;</span><span class="token punctuation" style="color:rgb(153, 76, 195)">;</span><span class="token plain"></span><br></div><div class="token-line" style="color:#403f53"><span class="token plain">  </span><span class="token punctuation" style="color:rgb(153, 76, 195)">}</span><span class="token punctuation" style="color:rgb(153, 76, 195)">,</span><span class="token plain"></span><br></div><div class="token-line" style="color:#403f53"><span class="token plain"></span><span class="token punctuation" style="color:rgb(153, 76, 195)">}</span><span class="token punctuation" style="color:rgb(153, 76, 195)">)</span><span class="token punctuation" style="color:rgb(153, 76, 195)">;</span><span class="token plain"></span><br></div><div class="token-line" style="color:#403f53"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#403f53"><span class="token plain"></span><span class="token keyword" style="color:rgb(12, 150, 155)">const</span><span class="token plain"> supportAgent </span><span class="token operator" style="color:rgb(12, 150, 155)">=</span><span class="token plain"> </span><span class="token keyword" style="color:rgb(12, 150, 155)">new</span><span class="token plain"> </span><span class="token class-name" style="color:rgb(17, 17, 17)">Agent</span><span class="token punctuation" style="color:rgb(153, 76, 195)">(</span><span class="token punctuation" style="color:rgb(153, 76, 195)">{</span><span class="token plain"></span><br></div><div class="token-line" style="color:#403f53"><span class="token plain">  name</span><span class="token operator" style="color:rgb(12, 150, 155)">:</span><span class="token plain"> </span><span class="token string" style="color:rgb(72, 118, 214)">&#x27;Support Policy Agent&#x27;</span><span class="token punctuation" style="color:rgb(153, 76, 195)">,</span><span class="token plain"></span><br></div><div class="token-line" style="color:#403f53"><span class="token plain">  instructions</span><span class="token operator" style="color:rgb(12, 150, 155)">:</span><span class="token plain"></span><br></div><div class="token-line" style="color:#403f53"><span class="token plain">    </span><span class="token string" style="color:rgb(72, 118, 214)">&#x27;你是一个内部支持助手。优先使用工具查政策，再根据工具结果给出简洁结论。若证据不足，明确说明不确定。&#x27;</span><span class="token punctuation" style="color:rgb(153, 76, 195)">,</span><span class="token plain"></span><br></div><div class="token-line" style="color:#403f53"><span class="token plain">  tools</span><span class="token operator" style="color:rgb(12, 150, 155)">:</span><span class="token plain"> </span><span class="token punctuation" style="color:rgb(153, 76, 195)">[</span><span class="token plain">lookupPolicy</span><span class="token punctuation" style="color:rgb(153, 76, 195)">]</span><span class="token punctuation" style="color:rgb(153, 76, 195)">,</span><span class="token plain"></span><br></div><div class="token-line" style="color:#403f53"><span class="token plain"></span><span class="token punctuation" style="color:rgb(153, 76, 195)">}</span><span class="token punctuation" style="color:rgb(153, 76, 195)">)</span><span class="token punctuation" style="color:rgb(153, 76, 195)">;</span><span class="token plain"></span><br></div><div class="token-line" style="color:#403f53"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#403f53"><span class="token plain"></span><span class="token keyword" style="color:rgb(12, 150, 155)">const</span><span class="token plain"> result </span><span class="token operator" style="color:rgb(12, 150, 155)">=</span><span class="token plain"> </span><span class="token keyword" style="color:rgb(12, 150, 155)">await</span><span class="token plain"> </span><span class="token function" style="color:rgb(153, 76, 195);font-style:italic">run</span><span class="token punctuation" style="color:rgb(153, 76, 195)">(</span><span class="token plain"></span><br></div><div class="token-line" style="color:#403f53"><span class="token plain">  supportAgent</span><span class="token punctuation" style="color:rgb(153, 76, 195)">,</span><span class="token plain"></span><br></div><div class="token-line" style="color:#403f53"><span class="token plain">  </span><span class="token string" style="color:rgb(72, 118, 214)">&#x27;用户想知道 refund 相关规则，请先查政策再总结。&#x27;</span><span class="token punctuation" style="color:rgb(153, 76, 195)">,</span><span class="token plain"></span><br></div><div class="token-line" style="color:#403f53"><span class="token plain"></span><span class="token punctuation" style="color:rgb(153, 76, 195)">)</span><span class="token punctuation" style="color:rgb(153, 76, 195)">;</span><span class="token plain"></span><br></div><div class="token-line" style="color:#403f53"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#403f53"><span class="token plain"></span><span class="token builtin" style="color:rgb(72, 118, 214)">console</span><span class="token punctuation" style="color:rgb(153, 76, 195)">.</span><span class="token function" style="color:rgb(153, 76, 195);font-style:italic">log</span><span class="token punctuation" style="color:rgb(153, 76, 195)">(</span><span class="token plain">result</span><span class="token punctuation" style="color:rgb(153, 76, 195)">.</span><span class="token plain">finalOutput</span><span class="token punctuation" style="color:rgb(153, 76, 195)">)</span><span class="token punctuation" style="color:rgb(153, 76, 195)">;</span><br></div></code></pre></div></div>
+<p>这段代码可以拆成 4 个最小部件：</p>
+<ul>
+<li class=""><code>tool(...)</code>：定义 agent 可调用的函数工具</li>
+<li class=""><code>new Agent(...)</code>：定义 agent 的名称、职责和工具边界</li>
+<li class=""><code>run(agent, input)</code>：启动一次 agent run</li>
+<li class=""><code>result.finalOutput</code>：拿最终产出</li>
+</ul>
+<p>从最小示例继续演进时，通常会进入下 面几步：</p>
+<ol>
+<li class="">把本地函数工具换成真实数据源</li>
+<li class="">给 agent 增加更明确的 instructions</li>
+<li class="">加一个 specialist agent，试一次 <code>agent.asTool()</code></li>
+<li class="">再决定是否需要 <code>handoffs</code></li>
+<li class="">接上 tracing 和 eval</li>
+</ol>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="7-和本专题现有文档的对应关系">7. 和本专题现有文档的对应关系<a href="#7-和本专题现有文档的对应关系" class="hash-link" aria-label="7. 和本专题现有文档的对应关系的直接链接" title="7. 和本专题现有文档的对应关系的直接链接" translate="no">​</a></h2>
+<p>如果已经在这个专题里按顺序看过现有文档，可以这样对齐。</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="71-对应-minimal">7.1 对应 Minimal<a href="#71-对应-minimal" class="hash-link" aria-label="7.1 对应 Minimal的直接链接" title="7.1 对应 Minimal的直接链接" translate="no">​</a></h3>
+<p>可对应：</p>
+<ul>
+<li class=""><a class="" href="/AI/overview/Minimal-Agent-Demo-From-0-to-1">Minimal-Agent-Demo-From-0-to-1</a></li>
+<li class=""><a class="" href="/AI/overview/Minimal-Agent-Code-Implementation-Examples">Minimal-Agent-Code-Implementation-Examples</a></li>
+<li class=""><a class="" href="/AI/agent-engineering/Minimal-Agent-TypeScript-Template">Minimal-Agent-TypeScript-Template</a></li>
+</ul>
+<p>关系可以理解为：</p>
+<ul>
+<li class=""><code>Minimal</code> 更接近在讲 agent 闭环最小骨架</li>
+<li class=""><code>OpenAI Agents SDK</code> 是把这个最小骨架落到 OpenAI 官方 SDK 原语上</li>
+</ul>
+<p>也就是：</p>
+<p><code>Minimal</code> 回答“最少要有什么”，本篇回答“如果用 OpenAI 官方 SDK，这些东西分别落在哪些 API 上”。</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="72-对应-tool">7.2 对应 Tool<a href="#72-对应-tool" class="hash-link" aria-label="7.2 对应 Tool的直接链接" title="7.2 对应 Tool的直接链接" translate="no">​</a></h3>
+<p>可对应：</p>
+<ul>
+<li class=""><a class="" href="/AI/overview/Tool-Using-Agent-Code-Implementation-Examples">Tool-Using-Agent-Code-Implementation-Examples</a></li>
+<li class=""><a class="" href="/AI/agent-engineering/Tool-Using-Agent-TypeScript-Template">Tool-Using-Agent-TypeScript-Template</a></li>
+<li class=""><a class="" href="/AI/foundations/Tool-Use-and-Function-Calling">Tool-Use-and-Function-Calling</a></li>
+</ul>
+<p>关系是：</p>
+<ul>
+<li class="">工具型 agent 的抽象设计，在现有文档里已经讲了“为什么要工具、循环怎么组织”</li>
+<li class="">本篇补的是“OpenAI 官方 SDK 里 tool / hosted tools / agent.asTool / MCP / guardrails 怎么对应”</li>
+</ul>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="73-对应-research">7.3 对应 Research<a href="#73-对应-research" class="hash-link" aria-label="7.3 对应 Research的直接链接" title="7.3 对应 Research的直接链接" translate="no">​</a></h3>
+<p>可对应：</p>
+<ul>
+<li class=""><a class="" href="/AI/overview/Research-Agent-Code-Implementation-Examples">Research-Agent-Code-Implementation-Examples</a></li>
+<li class=""><a class="" href="/AI/agent-engineering/Research-Agent-TypeScript-Template">Research-Agent-TypeScript-Template</a></li>
+</ul>
+<p>关系是：</p>
+<ul>
+<li class=""><code>Research</code> 文档强调研究循环、证据补全、来源组织</li>
+<li class="">本篇补的是用 OpenAI 官方 agent 原语来承载这套研究流程时，该优先理解哪些能力</li>
+</ul>
+<p>例如 Research agent 很常会用到：</p>
+<ul>
+<li class="">tools</li>
+<li class="">agents as tools 或 handoffs</li>
+<li class="">tracing</li>
+<li class="">prompt + eval 持续迭代</li>
+</ul>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="74-对应-rag">7.4 对应 RAG<a href="#74-对应-rag" class="hash-link" aria-label="7.4 对应 RAG的直接链接" title="7.4 对应 RAG的直接链接" translate="no">​</a></h3>
+<p>可对应：</p>
+<ul>
+<li class=""><a class="" href="/AI/overview/RAG-Agent-Code-Implementation-Examples">RAG-Agent-Code-Implementation-Examples</a></li>
+<li class=""><a class="" href="/AI/agent-engineering/RAG-Agent-TypeScript-Template">RAG-Agent-TypeScript-Template</a></li>
+<li class=""><a class="" href="/AI/foundations/RAG-Intro-and-Practice">RAG-Intro-and-Practice</a></li>
+</ul>
+<p>关系是：</p>
+<ul>
+<li class=""><code>RAG</code> 文档更强调检索、grounding、信息充分性</li>
+<li class="">本篇补的是：如果用 OpenAI Agents SDK 做 RAG Agent，那么 retrieval/file search/tooling/orchestration/trace 分别怎么落位</li>
+</ul>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="8-阅读顺序">8. 阅读顺序<a href="#8-阅读顺序" class="hash-link" aria-label="8. 阅读顺序的直接链接" title="8. 阅读顺序的直接链接" translate="no">​</a></h2>
+<p>第一次接触这个主题时，可按下面顺序阅读。</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="81-第一步先搞清-agent-最小闭环">8.1 第一步：先搞清 agent 最小闭环<a href="#81-第一步先搞清-agent-最小闭环" class="hash-link" aria-label="8.1 第一步：先搞清 agent 最小闭环的直接链接" title="8.1 第一步：先搞清 agent 最小闭环的直接链接" translate="no">​</a></h3>
+<p>先看：</p>
+<ul>
+<li class=""><a class="" href="/AI/overview/Minimal-Agent-Demo-From-0-to-1">Minimal-Agent-Demo-From-0-to-1</a></li>
+<li class=""><a class="" href="/AI/overview/Minimal-Agent-Code-Implementation-Examples">Minimal-Agent-Code-Implementation-Examples</a></li>
+</ul>
+<p>目标不是记框架，而是搞清：</p>
+<ul>
+<li class="">目标</li>
+<li class="">决策</li>
+<li class="">工具</li>
+<li class="">状态</li>
+<li class="">停止条件</li>
+</ul>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="82-第二步再看这篇-openai-agents-sdk-指南">8.2 第二步：再看这篇 OpenAI Agents SDK 指南<a href="#82-第二步再看这篇-openai-agents-sdk-指南" class="hash-link" aria-label="8.2 第二步：再看这篇 OpenAI Agents SDK 指南的直接链接" title="8.2 第二步：再看这篇 OpenAI Agents SDK 指南的直接链接" translate="no">​</a></h3>
+<p>这一步要建立的是“官方原语映射”：</p>
+<ul>
+<li class="">最小 agent 在 SDK 里怎么写</li>
+<li class="">tool 在 SDK 里怎么定义</li>
+<li class="">agent 协作时是 <code>asTool</code> 还是 <code>handoff</code></li>
+<li class="">guardrails 和 tracing 分别负责什么</li>
+</ul>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="83-第三步进入-tool-agent">8.3 第三步：进入 Tool Agent<a href="#83-第三步进入-tool-agent" class="hash-link" aria-label="8.3 第三步：进入 Tool Agent的直接链接" title="8.3 第三步：进入 Tool Agent的直接链接" translate="no">​</a></h3>
+<p>再看：</p>
+<ul>
+<li class=""><a class="" href="/AI/overview/Tool-Using-Agent-Code-Implementation-Examples">Tool-Using-Agent-Code-Implementation-Examples</a></li>
+<li class=""><a class="" href="/AI/agent-engineering/Tool-Using-Agent-TypeScript-Template">Tool-Using-Agent-TypeScript-Template</a></li>
+</ul>
+<p>因为大多数真实 agent 项目，第一步通常都是从 tool use 长出来的。</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="84-第四步按任务类型分流到-research-或-rag">8.4 第四步：按任务类型分流到 Research 或 RAG<a href="#84-第四步按任务类型分流到-research-或-rag" class="hash-link" aria-label="8.4 第四步：按任务类型分流到 Research 或 RAG的直接链接" title="8.4 第四步：按任务类型分流到 Research 或 RAG的直接链接" translate="no">​</a></h3>
+<p>如果目标是：</p>
+<ul>
+<li class="">多来源调研、形成判断</li>
+</ul>
+<p>优先看：</p>
+<ul>
+<li class=""><a class="" href="/AI/overview/Research-Agent-Code-Implementation-Examples">Research-Agent-Code-Implementation-Examples</a></li>
+<li class=""><a class="" href="/AI/agent-engineering/Research-Agent-TypeScript-Template">Research-Agent-TypeScript-Template</a></li>
+</ul>
+<p>如果目标是：</p>
+<ul>
+<li class="">私有知识检索、grounded answer、检索不足时继续补查</li>
+</ul>
+<p>优先看：</p>
+<ul>
+<li class=""><a class="" href="/AI/overview/RAG-Agent-Code-Implementation-Examples">RAG-Agent-Code-Implementation-Examples</a></li>
+<li class=""><a class="" href="/AI/agent-engineering/RAG-Agent-TypeScript-Template">RAG-Agent-TypeScript-Template</a></li>
+</ul>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="85-第五步最后补-guardrailstracingeval">8.5 第五步：最后补 guardrails、tracing、eval<a href="#85-第五步最后补-guardrailstracingeval" class="hash-link" aria-label="8.5 第五步：最后补 guardrails、tracing、eval的直接链接" title="8.5 第五步：最后补 guardrails、tracing、eval的直接链接" translate="no">​</a></h3>
+<p>很多人会先学“更复杂的多 agent 编排”，但其实更稳的顺序通常是：</p>
+<ul>
+<li class="">先让系统能跑</li>
+<li class="">再让系统会调工具</li>
+<li class="">再让系统会协作</li>
+<li class="">最后补可控性、观测性和评估</li>
+</ul>
+<p>从 OpenAI 官方文档的结构看，这个顺序也更自然。</p>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="9-一个实用判断什么时候该用-handoff什么时候该用-agent-as-tool">9. 一个实用判断：什么时候该用 handoff，什么时候该用 agent as tool<a href="#9-一个实用判断什么时候该用-handoff什么时候该用-agent-as-tool" class="hash-link" aria-label="9. 一个实用判断：什么时候该用 handoff，什么时候该用 agent as tool的直接链接" title="9. 一个实用判断：什么时候该用 handoff，什么时候该用 agent as tool的直接链接" translate="no">​</a></h2>
+<p>如果在设计阶段只想快速判断，可以直接用这个经验法则。</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="用-agentastool-当">用 <code>agent.asTool()</code> 当：<a href="#用-agentastool-当" class="hash-link" aria-label="用-agentastool-当的直接链接" title="用-agentastool-当的直接链接" translate="no">​</a></h3>
+<ul>
+<li class="">你希望 manager 一直掌控最终回答</li>
+<li class="">specialist 只是完成一个边界明确的子任务</li>
+<li class="">需要统一 guardrails、统一输出风格、统一对用户说话的人设</li>
+</ul>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="用-handoff-当">用 <code>handoff</code> 当：<a href="#用-handoff-当" class="hash-link" aria-label="用-handoff-当的直接链接" title="用-handoff-当的直接链接" translate="no">​</a></h3>
+<ul>
+<li class="">routing 本身就是流程的一部分</li>
+<li class="">specialist 应该接管后续对话</li>
+<li class="">你希望 specialist 使用完全不同的 instructions 或 model</li>
+<li class="">你希望每个 specialist 以更短、更聚焦的 prompt 工作</li>
+</ul>
+<p>这正是 OpenAI 官方 Agents、Handoffs、Agent Orchestration 三份文档共同强调的分界线。</p>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="10-小结">10. 小结<a href="#10-小结" class="hash-link" aria-label="10. 小结的直接链接" title="10. 小结的直接链接" translate="no">​</a></h2>
+<p><code>OpenAI Agents SDK 适合把“模型 + 工具 + 协作 + guardrails + tracing”组织成真实可运行的 agent 系统；如果任务只是一次生成，就不必急着上这层框架。</code></p>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="11-官方依据">11. 官方依据<a href="#11-官方依据" class="hash-link" aria-label="11. 官方依据的直接链接" title="11. 官方依据的直接链接" translate="no">​</a></h2>
+<p>本文内容主要依据以下 OpenAI 官方文档：</p>
+<ul>
+<li class="">OpenAI API Docs: Agents SDK 概览<!-- -->
+<ul>
+<li class=""><a href="https://developers.openai.com/api/docs/guides/agents" target="_blank" rel="noopener noreferrer" class="">https://developers.openai.com/api/docs/guides/agents</a></li>
+</ul>
+</li>
+<li class="">OpenAI Agents SDK TypeScript 文档首页<!-- -->
+<ul>
+<li class=""><a href="https://openai.github.io/openai-agents-js/" target="_blank" rel="noopener noreferrer" class="">https://openai.github.io/openai-agents-js/</a></li>
+</ul>
+</li>
+<li class="">OpenAI Agents SDK Quickstart<!-- -->
+<ul>
+<li class=""><a href="https://openai.github.io/openai-agents-js/guides/quickstart/" target="_blank" rel="noopener noreferrer" class="">https://openai.github.io/openai-agents-js/guides/quickstart/</a></li>
+</ul>
+</li>
+<li class="">OpenAI Agents SDK Agents<!-- -->
+<ul>
+<li class=""><a href="https://openai.github.io/openai-agents-js/guides/agents/" target="_blank" rel="noopener noreferrer" class="">https://openai.github.io/openai-agents-js/guides/agents/</a></li>
+</ul>
+</li>
+<li class="">OpenAI Agents SDK Tools<!-- -->
+<ul>
+<li class=""><a href="https://openai.github.io/openai-agents-js/guides/tools/" target="_blank" rel="noopener noreferrer" class="">https://openai.github.io/openai-agents-js/guides/tools/</a></li>
+</ul>
+</li>
+<li class="">OpenAI Agents SDK Handoffs<!-- -->
+<ul>
+<li class=""><a href="https://openai.github.io/openai-agents-js/guides/handoffs/" target="_blank" rel="noopener noreferrer" class="">https://openai.github.io/openai-agents-js/guides/handoffs/</a></li>
+</ul>
+</li>
+<li class="">OpenAI Agents SDK Guardrails<!-- -->
+<ul>
+<li class=""><a href="https://openai.github.io/openai-agents-js/guides/guardrails/" target="_blank" rel="noopener noreferrer" class="">https://openai.github.io/openai-agents-js/guides/guardrails/</a></li>
+</ul>
+</li>
+<li class="">OpenAI Agents SDK Tracing<!-- -->
+<ul>
+<li class=""><a href="https://openai.github.io/openai-agents-js/guides/tracing/" target="_blank" rel="noopener noreferrer" class="">https://openai.github.io/openai-agents-js/guides/tracing/</a></li>
+</ul>
+</li>
+<li class="">OpenAI API Docs: Prompting<!-- -->
+<ul>
+<li class=""><a href="https://developers.openai.com/api/docs/guides/prompting" target="_blank" rel="noopener noreferrer" class="">https://developers.openai.com/api/docs/guides/prompting</a></li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="12-文内关键依据摘记">12. 文内关键依据摘记<a href="#12-文内关键依据摘记" class="hash-link" aria-label="12. 文内关键依据摘记的直接链接" title="12. 文内关键依据摘记的直接链接" translate="no">​</a></h2>
+<p>为方便回查，这里把本文最关键的依据点再列一遍：</p>
+<ul>
+<li class="">Agents SDK 概览说明 agent 应用会“plan, call tools, collaborate across specialists, and keep enough state to complete multi-step work”。</li>
+<li class="">Quickstart 说明 TS 安装方式为 <code>npm install @openai/agents zod</code>。</li>
+<li class="">Agents 文档说明 agent 的核心是 <code>instructions</code>、<code>model</code>、<code>tools</code>。</li>
+<li class="">Tools 文档说明 SDK 支持 hosted tools、built-in execution tools、function tools、agents as tools、MCP servers 等能力。</li>
+<li class="">Handoffs 文档说明 handoff 是把对话委托给另一个 agent，并且对 LLM 来说 handoff 以 tool 的形式出现。</li>
+<li class="">Guardrails 文档说明 input/output/tool guardrails 的边界不同，尤其是 tool guardrails 适合围绕每次 function-tool 调用做检查。</li>
+<li class="">Tracing 文档说明 tracing 在服务端默认开启，并默认记录 agent run、tool call、guardrail、handoff 等事件。</li>
+<li class="">Prompting 文档说明 prompt 应版本化、可评估，并建议把整体角色指导放在 system message，把任务细节和例子放在 user messages。</li>
+</ul></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="文件选项卡"><a class="pagination-nav__link pagination-nav__link--prev" href="/AI/frameworks"><div class="pagination-nav__sublabel">上一页</div><div class="pagination-nav__label">框架与 SDK</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/AI/frameworks/LangChain-Intro-and-Practice"><div class="pagination-nav__sublabel">下一页</div><div class="pagination-nav__label">LangChain 入门与实践</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_v08c thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#1-定位" class="table-of-contents__link toc-highlight">1. 定位</a></li><li><a href="#2-它适合什么问题" class="table-of-contents__link toc-highlight">2. 它适合什么问题</a><ul><li><a href="#21-适合多步任务" class="table-of-contents__link toc-highlight">2.1 适合多步任务</a></li><li><a href="#22-适合工具使用明显的任务" class="table-of-contents__link toc-highlight">2.2 适合工具使用明显的任务</a></li><li><a href="#23-适合多-agent-协作" class="table-of-contents__link toc-highlight">2.3 适合多 agent 协作</a></li><li><a href="#24-适合需要可观测性的任务" class="table-of-contents__link toc-highlight">2.4 适合需要可观测性的任务</a></li></ul></li><li><a href="#3-它不适合什么问题" class="table-of-contents__link toc-highlight">3. 它不适合什么问题</a><ul><li><a href="#31-不适合只有一次生成的简单场景" class="table-of-contents__link toc-highlight">3.1 不适合只有一次生成的简单场景</a></li><li><a href="#32-不适合必须完全确定性的流程" class="table-of-contents__link toc-highlight">3.2 不适合必须完全确定性的流程</a></li><li><a href="#33-不适合一上来就堆很多通用-agent" class="table-of-contents__link toc-highlight">3.3 不适合一上来就堆很多通用 agent</a></li></ul></li><li><a href="#4-核心概念" class="table-of-contents__link toc-highlight">4. 核心概念</a></li><li><a href="#41-agent" class="table-of-contents__link toc-highlight">4.1 Agent</a></li><li><a href="#42-tools" class="table-of-contents__link toc-highlight">4.2 Tools</a></li><li><a href="#43-handoffs" class="table-of-contents__link toc-highlight">4.3 Handoffs</a></li><li><a href="#44-guardrails" class="table-of-contents__link toc-highlight">4.4 Guardrails</a></li><li><a href="#45-tracing" class="table-of-contents__link toc-highlight">4.5 Tracing</a></li><li><a href="#5-prompting-在-agents-sdk-里为什么重要" class="table-of-contents__link toc-highlight">5. Prompting 在 Agents SDK 里为什么重要</a><ul><li><a href="#51-角色与总行为约束放在高优先级指令中" class="table-of-contents__link toc-highlight">5.1 角色与总行为约束放在高优先级指令中</a></li><li><a href="#52-few-shot-示例要短而清晰" class="table-of-contents__link toc-highlight">5.2 few-shot 示例要短而清晰</a></li><li><a href="#53-prompt-应版本化而不是到处散落" class="table-of-contents__link toc-highlight">5.3 prompt 应版本化，而不是到处散落</a></li><li><a href="#54-prompt-改动要配-eval" class="table-of-contents__link toc-highlight">5.4 prompt 改动要配 eval</a></li></ul></li><li><a href="#6-最小-typescript-结构" class="table-of-contents__link toc-highlight">6. 最小 TypeScript 结构</a></li><li><a href="#7-和本专题现有文档的对应关系" class="table-of-contents__link toc-highlight">7. 和本专题现有文档的对应关系</a><ul><li><a href="#71-对应-minimal" class="table-of-contents__link toc-highlight">7.1 对应 Minimal</a></li><li><a href="#72-对应-tool" class="table-of-contents__link toc-highlight">7.2 对应 Tool</a></li><li><a href="#73-对应-research" class="table-of-contents__link toc-highlight">7.3 对应 Research</a></li><li><a href="#74-对应-rag" class="table-of-contents__link toc-highlight">7.4 对应 RAG</a></li></ul></li><li><a href="#8-阅读顺序" class="table-of-contents__link toc-highlight">8. 阅读顺序</a><ul><li><a href="#81-第一步先搞清-agent-最小闭环" class="table-of-contents__link toc-highlight">8.1 第一步：先搞清 agent 最小闭环</a></li><li><a href="#82-第二步再看这篇-openai-agents-sdk-指南" class="table-of-contents__link toc-highlight">8.2 第二步：再看这篇 OpenAI Agents SDK 指南</a></li><li><a href="#83-第三步进入-tool-agent" class="table-of-contents__link toc-highlight">8.3 第三步：进入 Tool Agent</a></li><li><a href="#84-第四步按任务类型分流到-research-或-rag" class="table-of-contents__link toc-highlight">8.4 第四步：按任务类型分流到 Research 或 RAG</a></li><li><a href="#85-第五步最后补-guardrailstracingeval" class="table-of-contents__link toc-highlight">8.5 第五步：最后补 guardrails、tracing、eval</a></li></ul></li><li><a href="#9-一个实用判断什么时候该用-handoff什么时候该用-agent-as-tool" class="table-of-contents__link toc-highlight">9. 一个实用判断：什么时候该用 handoff，什么时候该用 agent as tool</a><ul><li><a href="#用-agentastool-当" class="table-of-contents__link toc-highlight">用 <code>agent.asTool()</code> 当：</a></li><li><a href="#用-handoff-当" class="table-of-contents__link toc-highlight">用 <code>handoff</code> 当：</a></li></ul></li><li><a href="#10-小结" class="table-of-contents__link toc-highlight">10. 小结</a></li><li><a href="#11-官方依据" class="table-of-contents__link toc-highlight">11. 官方依据</a></li><li><a href="#12-文内关键依据摘记" class="table-of-contents__link toc-highlight">12. 文内关键依据摘记</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">入口</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/intro">知识库</a></li><li class="footer__item"><a class="footer__link-item" href="/blog">日常 Blog</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/engineering">工程化</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/dev-tools">工具与环境</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">更多</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/JamesLi-dev" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_BlfO"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Torli, Inc. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>

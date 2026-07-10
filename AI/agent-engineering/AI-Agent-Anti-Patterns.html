@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="zh-Hans" dir="ltr" class="docs-wrapper plugin-docs plugin-id-ai docs-version-current docs-doc-page docs-doc-id-agent-engineering/AI-Agent-Anti-Patterns" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.10.1">
+<title data-rh="true">AI Agent 常见反模式 | 这里是 Torli&#x27;s </title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://blog.torli.top/AI/agent-engineering/AI-Agent-Anti-Patterns"><meta data-rh="true" property="og:locale" content="zh_Hans"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" name="docusaurus_locale" content="zh-Hans"><meta data-rh="true" name="docsearch:language" content="zh-Hans"><meta data-rh="true" name="keywords" content="cooking, blog"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-ai-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-ai-current"><meta data-rh="true" property="og:title" content="AI Agent 常见反模式 | 这里是 Torli&#x27;s "><meta data-rh="true" name="description" content="学 AI Agent 的时候，很多人最开始关注的都是："><meta data-rh="true" property="og:description" content="学 AI Agent 的时候，很多人最开始关注的都是："><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://blog.torli.top/AI/agent-engineering/AI-Agent-Anti-Patterns"><link data-rh="true" rel="alternate" href="https://blog.torli.top/AI/agent-engineering/AI-Agent-Anti-Patterns" hreflang="zh-Hans"><link data-rh="true" rel="alternate" href="https://blog.torli.top/en/AI/agent-engineering/AI-Agent-Anti-Patterns" hreflang="en"><link data-rh="true" rel="alternate" href="https://blog.torli.top/AI/agent-engineering/AI-Agent-Anti-Patterns" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Agent 与工程化","item":"https://blog.torli.top/AI/agent-engineering/"},{"@type":"ListItem","position":2,"name":"AI Agent 常见反模式","item":"https://blog.torli.top/AI/agent-engineering/AI-Agent-Anti-Patterns"}]}</script><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="这里是 Torli&#39;s  RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="这里是 Torli&#39;s  Atom Feed"><link rel="stylesheet" href="/assets/css/styles.a3b9aef2.css">
+<script src="/assets/js/runtime~main.5a1d3d49.js" defer="defer"></script>
+<script src="/assets/js/main.41eb4bf8.js" defer="defer"></script>
+</head>
+<body>
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="跳到主要内容"><a class="skipToContent_U9sP" href="#__docusaurus_skipToContent_fallback">跳到主要内容</a></div><nav aria-label="主导航" class="theme-layout-navbar navbar navbar--fixed-top navbarHideable_PT2D"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="切换导航栏" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/logo2.png" alt="My Site Logo" class="themedComponent_QNor themedComponent--light_EqDK"><img src="/img/logo2.png" alt="My Site Logo" class="themedComponent_QNor themedComponent--dark_H0PK"></div><b class="navbar__title text--truncate">Torli&#x27;s Blog</b></a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a class="navbar__link" aria-haspopup="true" aria-expanded="false" role="button" href="/docs/intro">知识库</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/docs/foundations">基础语言</a></li><li><a class="dropdown__link" href="/docs/browser-network">浏览器与网络</a></li><li><a class="dropdown__link" href="/docs/engineering">工程化</a></li><li><a class="dropdown__link" href="/docs/frameworks">前端框架</a></li><li><a class="dropdown__link" href="/docs/node-server">Node 与服务端</a></li><li><a class="dropdown__link" href="/docs/data-backend">数据库与后端服务</a></li><li><a class="dropdown__link" href="/docs/state-management">状态管理</a></li><li><a class="dropdown__link" href="/docs/ui-interaction">UI 与交互</a></li><li><a class="dropdown__link" href="/docs/dev-tools">效率工具与开发环境</a></li><li><a class="dropdown__link" href="/docs/frontier">前沿专题</a></li></ul></div><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a aria-current="page" class="navbar__link active" aria-haspopup="true" aria-expanded="false" role="button" href="/AI">AI 学习</a><ul class="dropdown__menu"><li><a aria-current="page" class="dropdown__link dropdown__link--active" href="/AI">开始这里：AI 首页</a></li><li><a class="dropdown__link" href="/AI/AI-Agent-Docs-Index">专题索引：AI Agent 文档总索引</a></li><li><a class="dropdown__link" href="/AI/AI-Agent-Chapter-to-Framework-Map">专题索引：章节与框架映射</a></li><li><a class="dropdown__link" href="/AI/foundations/Prompt-Engineering-Glossary">基础能力：Prompt Engineering</a></li><li><a class="dropdown__link" href="/AI/foundations/Context-Engineering-Guide">基础能力：Context Engineering</a></li><li><a class="dropdown__link" href="/AI/foundations/RAG-Intro-and-Practice">基础能力：RAG</a></li><li><a class="dropdown__link" href="/AI/agent-engineering/Agent-Engineering-Intro">Agent 与工程化：Agent Engineering</a></li><li><a class="dropdown__link" href="/AI/agent-engineering/Workflow-vs-Agent">Agent 与工程化：Workflow vs Agent</a></li><li><a class="dropdown__link" href="/AI/agent-engineering/Agent-Memory-and-State">Agent 与工程化：Memory and State</a></li><li><a class="dropdown__link" href="/AI/agent-engineering/Harness-Engineering-Guide">Agent 与工程化：Harness Engineering</a></li><li><a class="dropdown__link" href="/AI/frameworks/OpenAI-Agents-SDK-Guide">框架与 SDK：OpenAI Agents SDK</a></li><li><a class="dropdown__link" href="/AI/frameworks/LangGraph-Intro-and-Orchestration">框架与 SDK：LangGraph</a></li><li><a class="dropdown__link" href="/AI/frameworks/LangSmith-Observability-and-Evals">框架与 SDK：LangSmith</a></li><li><a class="dropdown__link" href="/AI/frameworks/Vercel-AI-SDK-Guide">框架与 SDK：Vercel AI SDK</a></li><li><a class="dropdown__link" href="/AI/frameworks/Mastra-Guide">框架与 SDK：Mastra</a></li><li><a class="dropdown__link" href="/AI/frameworks/Google-ADK-Guide">框架与 SDK：Google ADK</a></li><li><a class="dropdown__link" href="/AI/overview/AI-App-Architecture-Map">全局视角：AI 应用整体架构</a></li><li><a class="dropdown__link" href="/AI/overview/Minimal-Agent-Demo-From-0-to-1">全局视角：最小 Agent Demo</a></li><li><a class="dropdown__link" href="/AI/overview/Minimal-Agent-Code-Implementation-Examples">全局视角：最小 Agent 代码示例</a></li><li><a class="dropdown__link" href="/AI/overview/AI-Agent-Tech-Stack-and-Framework-Comparison">全局视角：技术栈与框架对比</a></li></ul></div><a class="navbar__item navbar__link" href="/blog">日常 Blog</a><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a class="navbar__link" aria-haspopup="true" aria-expanded="false" role="button" href="/docs/engineering">工程化</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/docs/engineering/build-tools">构建与转译</a></li><li><a class="dropdown__link" href="/docs/engineering/code-quality">代码规范</a></li><li><a class="dropdown__link" href="/docs/engineering/package-management">包管理与环境管理</a></li><li><a class="dropdown__link" href="/docs/engineering/data-fetching">请求与数据层</a></li><li><a class="dropdown__link" href="/docs/engineering/package-management/pnpm">pnpm</a></li><li><a class="dropdown__link" href="/docs/engineering/package-management/fnm">fnm</a></li></ul></div><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a class="navbar__link" aria-haspopup="true" aria-expanded="false" role="button" href="/docs/dev-tools">工具与环境</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/docs/dev-tools/apps/KeyboardMaestro">Keyboard Maestro</a></li><li><a class="dropdown__link" href="/docs/dev-tools/apps/Warp">Warp</a></li><li><a class="dropdown__link" href="/docs/dev-tools/apps/Ghostty">Ghostty</a></li><li><a class="dropdown__link" href="/docs/dev-tools/apps/Zed">Zed</a></li><li><a class="dropdown__link" href="/docs/dev-tools/apps/GitButler">GitButler</a></li><li><a class="dropdown__link" href="/docs/dev-tools/apps/Switzy">Switzy</a></li><li><a class="dropdown__link" href="/docs/dev-tools/apps/Craft-Agents">Craft Agents</a></li></ul></div><a href="https://github.com/JamesLi-dev" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_BlfO"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_bW1k colorModeToggle_D8sl"><button class="clean-btn toggleButton_qiU8 toggleButtonDisabled_xinJ" type="button" disabled="" title="system mode" aria-label="切换浅色/暗黑模式（当前为system mode）"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_X9Tk lightToggleIcon_y62u"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_X9Tk darkToggleIcon_Dj8C"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_X9Tk systemToggleIcon_T2ve"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_e2eJ"><div class="navbar__search searchBarContainer_Mqfy"><input placeholder="搜索" aria-label="Search" class="navbar__search-input" value=""><div class="loadingRing_r319 searchBarLoadingRing_Kn2r"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_kzBE"><div class="docsWrapper_Jb1X"><button aria-label="回到顶部" class="clean-btn theme-back-to-top-button backToTopButton_W_UZ" type="button"></button><div class="docRoot_AAe1"><aside class="theme-doc-sidebar-container docSidebarContainer_RSuS"><div class="sidebarViewport_pYEE"><div class="sidebar_G_8g sidebarWithHideableNavbar__FNA"><a tabindex="-1" class="sidebarLogo_hLnz" href="/"><img src="/img/logo2.png" alt="My Site Logo" class="themedComponent_QNor themedComponent--light_EqDK"><img src="/img/logo2.png" alt="My Site Logo" class="themedComponent_QNor themedComponent--dark_H0PK"><b>Torli&#x27;s Blog</b></a><nav aria-label="文档侧边栏" class="menu thin-scrollbar menu_k9TG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/AI"><span title="AI" class="linkLabel_vgcd">AI</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/AI/AI-Agent-Docs-Index"><span title="AI Agent 文档总索引" class="linkLabel_vgcd">AI Agent 文档总索引</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_jNm8 menu__link menu__link--sublist" href="/AI/foundations"><span title="基础能力" class="categoryLinkLabel_ayea">基础能力</span></a><button aria-label="展开侧边栏分类 &#x27;基础能力&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/AI/AI-Agent-Chapter-to-Framework-Map"><span title="AI Agent 专题章节与框架映射" class="linkLabel_vgcd">AI Agent 专题章节与框架映射</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_jNm8 menu__link menu__link--sublist menu__link--active" href="/AI/agent-engineering"><span title="Agent 与工程化" class="categoryLinkLabel_ayea">Agent 与工程化</span></a><button aria-label="折叠侧边栏分类 &#x27;Agent 与工程化&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/AI/agent-engineering/Agent-Engineering-Intro"><span title="Agent Engineering" class="linkLabel_vgcd">Agent Engineering</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/AI/agent-engineering/Evaluation-and-Evals-Intro"><span title="Evaluation / Evals" class="linkLabel_vgcd">Evaluation / Evals</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/AI/agent-engineering/Workflow-vs-Agent"><span title="Workflow vs Agent" class="linkLabel_vgcd">Workflow vs Agent</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/AI/agent-engineering/Router-and-Triage-Design"><span title="Router 与 Triage 设计" class="linkLabel_vgcd">Router 与 Triage 设计</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/AI/agent-engineering/Agent-Memory-and-State"><span title="Agent Memory and State" class="linkLabel_vgcd">Agent Memory and State</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/AI/agent-engineering/Prompt-Injection-and-Agent-Security"><span title="Prompt Injection 与 Agent 安全" class="linkLabel_vgcd">Prompt Injection 与 Agent 安全</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/AI/agent-engineering/Agent-Planning-Patterns"><span title="Agent Planning Patterns" class="linkLabel_vgcd">Agent Planning Patterns</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/AI/agent-engineering/Multi-Agent-Systems-Design"><span title="多 Agent 系统设计" class="linkLabel_vgcd">多 Agent 系统设计</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/AI/agent-engineering/Agent-Handoffs-Agents-as-Tools-and-A2A"><span title="Handoff、Agents as Tools 与 A2A" class="linkLabel_vgcd">Handoff、Agents as Tools 与 A2A</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/AI/agent-engineering/Harness-Engineering-Guide"><span title="Harness Engineering" class="linkLabel_vgcd">Harness Engineering</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/AI/agent-engineering/Agent-Memory-and-RAG-Data-Governance"><span title="Agent Memory 与 RAG 数据治理" class="linkLabel_vgcd">Agent Memory 与 RAG 数据治理</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/AI/agent-engineering/Agent-Latency-Cost-and-Reliability"><span title="AI Agent 的延迟、成本与稳定性优化" class="linkLabel_vgcd">AI Agent 的延迟、成本与稳定性优化</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/AI/agent-engineering/Agent-Observability-and-Debugging"><span title="Agent Observability and Debugging" class="linkLabel_vgcd">Agent Observability and Debugging</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/AI/agent-engineering/Multi-Agent-Evaluations"><span title="Multi-Agent Evaluations" class="linkLabel_vgcd">Multi-Agent Evaluations</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/AI/agent-engineering/Agent-Failure-Triage"><span title="Agent Failure Triage" class="linkLabel_vgcd">Agent Failure Triage</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/AI/agent-engineering/Guardrails-and-Human-in-the-Loop"><span title="Guardrails and Human-in-the-Loop" class="linkLabel_vgcd">Guardrails and Human-in-the-Loop</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/AI/agent-engineering/Agent-Runtime-State-Machine"><span title="Agent Runtime State Machine" class="linkLabel_vgcd">Agent Runtime State Machine</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/AI/agent-engineering/Long-Running-Agents-and-Durable-Execution"><span title="Long-Running Agents 与 Durable Execution" class="linkLabel_vgcd">Long-Running Agents 与 Durable Execution</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/AI/agent-engineering/Queues-Retry-Backoff-and-Dead-Letter"><span title="Queues、Retry、Backoff 与 Dead Letter" class="linkLabel_vgcd">Queues、Retry、Backoff 与 Dead Letter</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/AI/agent-engineering/Approval-and-Human-Review-Workflows"><span title="Approval 与 Human Review Workflow" class="linkLabel_vgcd">Approval 与 Human Review Workflow</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/AI/agent-engineering/Tool-Approval-Interrupt-and-Resume"><span title="Tool Approval、Interrupt 与 Resume" class="linkLabel_vgcd">Tool Approval、Interrupt 与 Resume</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/AI/agent-engineering/Browser-and-Computer-Use-Agents"><span title="Browser and Computer Use Agents" class="linkLabel_vgcd">Browser and Computer Use Agents</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/AI/agent-engineering/AI-Agent-Anti-Patterns"><span title="AI Agent 常见反模式" class="linkLabel_vgcd">AI Agent 常见反模式</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/AI/agent-engineering/Agent-Evals-and-Harness-Templates"><span title="Agent Evals / Harness 模板" class="linkLabel_vgcd">Agent Evals / Harness 模板</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/AI/agent-engineering/Agent-Evals-Markdown-Table-Templates"><span title="Agent Evals Markdown 表格模板" class="linkLabel_vgcd">Agent Evals Markdown 表格模板</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/AI/agent-engineering/Harness-Markdown-Table-Templates"><span title="Harness Markdown 表格模板" class="linkLabel_vgcd">Harness Markdown 表格模板</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/AI/agent-engineering/Minimal-Agent-TypeScript-Template"><span title="Minimal Agent TypeScript 模板" class="linkLabel_vgcd">Minimal Agent TypeScript 模板</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/AI/agent-engineering/Tool-Using-Agent-TypeScript-Template"><span title="Tool-Using Agent TypeScript 模板" class="linkLabel_vgcd">Tool-Using Agent TypeScript 模板</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/AI/agent-engineering/RAG-Agent-TypeScript-Template"><span title="RAG Agent TypeScript 模板" class="linkLabel_vgcd">RAG Agent TypeScript 模板</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/AI/agent-engineering/Research-Agent-TypeScript-Template"><span title="Research Agent TypeScript 模板" class="linkLabel_vgcd">Research Agent TypeScript 模板</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/AI/agent-engineering/TypeScript-in-Agent-Projects"><span title="Agent 项目里的 TypeScript 落地实践" class="linkLabel_vgcd">Agent 项目里的 TypeScript 落地实践</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_jNm8 menu__link menu__link--sublist" href="/AI/frameworks"><span title="框架与 SDK" class="categoryLinkLabel_ayea">框架与 SDK</span></a><button aria-label="展开侧边栏分类 &#x27;框架与 SDK&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_jNm8 menu__link menu__link--sublist" href="/AI/overview"><span title="全局视角" class="categoryLinkLabel_ayea">全局视角</span></a><button aria-label="展开侧边栏分类 &#x27;全局视角&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li></ul></nav><button type="button" data-torli-sidebar-toggle="collapse" title="收起侧边栏" aria-label="收起侧边栏" class="button button--secondary button--outline collapseSidebarButton_JQG6"><svg class="collapseSidebarButtonIcon_Iseg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"></rect><path d="M13 9L10 12L13 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></button></div></div></aside><main class="docMainContainer_hjYf"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_uYg3"><div class="docItemContainer_jngG"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_lBfN" aria-label="页面路径"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="主页面" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_ebxl"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/AI/agent-engineering"><span>Agent 与工程化</span></a></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">AI Agent 常见反模式</span></li></ul></nav><div class="tocCollapsible_VI1r theme-doc-toc-mobile tocMobile_iude"><button type="button" class="clean-btn tocCollapsibleButton_LJEZ">本页总览</button></div><div class="theme-doc-markdown markdown"><header><h1>AI Agent 常见反模式</h1></header>
+<p>学 <code>AI Agent</code> 的时候，很多人最开始关注的都是：</p>
+<ul>
+<li class="">怎么让系统跑起来</li>
+<li class="">怎么接工具</li>
+<li class="">怎么让它多步执行</li>
+</ul>
+<p>但做着做着就会发现，真正让系统难以变稳的，往往不是“不会搭”，而是：</p>
+<p><code>用了很多看起来合理、实际上会把系统拖向不可控状态的错误模式。</code></p>
+<p>这些错误模式，也就是 <code>Anti-Patterns</code>。</p>
+<p>这篇文档的目标，是把做 Agent 时最常见的一批反模式拆清楚，帮助你更早建立判断力。</p>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="1-什么是-anti-pattern">1. 什么是 Anti-Pattern<a href="#1-什么是-anti-pattern" class="hash-link" aria-label="1. 什么是 Anti-Pattern的直接链接" title="1. 什么是 Anti-Pattern的直接链接" translate="no">​</a></h2>
+<p><code>Anti-Pattern</code> 可以理解为：</p>
+<p><code>表面上像解决方案，实际上会持续制造问题的一类做法。</code></p>
+<p>它和普通 bug 不一样。</p>
+<p>bug 往往是单点错误；anti-pattern 则是一种系统性习惯：</p>
+<ul>
+<li class="">一开始看起来能跑</li>
+<li class="">短期内甚至挺省事</li>
+<li class="">但随着复杂度上升，会不断放大成本和混乱</li>
+</ul>
+<p>所以学 Agent 时，知道“什么是好的模式”很重要，知道“哪些看似方便的路不要走”同样重要。</p>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="2-为什么-agent-特别容易出现反模式">2. 为什么 Agent 特别容易出现反模式<a href="#2-为什么-agent-特别容易出现反模式" class="hash-link" aria-label="2. 为什么 Agent 特别容易出现反模式的直接链接" title="2. 为什么 Agent 特别容易出现反模式的直接链接" translate="no">​</a></h2>
+<p>因为 Agent 系统天然具备几个特点：</p>
+<ul>
+<li class="">行为不确定性更强</li>
+<li class="">多变量同时变化</li>
+<li class="">中间步骤比最终结果更重要</li>
+<li class="">很多问题不是立即爆炸，而是慢慢积累</li>
+</ul>
+<p>这会导致团队很容易采用一些“先跑通再说”的做法。</p>
+<p>这些做法在原型期没问题，但如果不及时识别，后面会越来越难收拾。</p>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="3-反模式一把所有复杂任务都默认做成-agent">3. 反模式一：把所有复杂任务都默认做成 Agent<a href="#3-反 模式一把所有复杂任务都默认做成-agent" class="hash-link" aria-label="3. 反模式一：把所有复杂任务都默认做成 Agent的直接链接" title="3. 反模式一：把所有复杂任务都默认做成 Agent的直接链接" translate="no">​</a></h2>
+<p>这是最常见的一种。</p>
+<p>表面思路是：</p>
+<ul>
+<li class="">任务复杂</li>
+<li class="">所以用 Agent</li>
+</ul>
+<p>但真实情况往往是：</p>
+<ul>
+<li class="">很多任务其实只需要固定 Workflow</li>
+<li class="">上 Agent 只会增加不确定性和调试成本</li>
+</ul>
+<p>怎么识别：</p>
+<ul>
+<li class="">路径其实 80% 能提前写出来</li>
+<li class="">中间决策很少</li>
+<li class="">主要问题是流程而不是推理</li>
+</ul>
+<p>更好的做法：</p>
+<ul>
+<li class="">先用 Workflow</li>
+<li class="">只把真正需要运行时决策的节点 Agent 化</li>
+</ul>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="4-反模式二把多步执行误当成-agent">4. 反模式二：把多步执行误当成 Agent<a href="#4-反模式二把多步执行误当成-agent" class="hash-link" aria-label="4. 反模式二：把多步执行误当成 Agent的直接链接" title="4. 反模式二：把多步执行误当成 Agent的直接链接" translate="no">​</a></h2>
+<p>系统做了：</p>
+<ol>
+<li class="">检索</li>
+<li class="">调工具</li>
+<li class="">输出答案</li>
+</ol>
+<p>很多人就会说“这是个 Agent”。</p>
+<p>但它可能只是一个多步 Workflow。</p>
+<p>问题在于，如果定义都没分清，后面很多设计判断都会错位：</p>
+<ul>
+<li class="">会过度设计 state</li>
+<li class="">过度设计 memory</li>
+<li class="">过度引入 planning</li>
+</ul>
+<p>更好的做法：</p>
+<ul>
+<li class="">先区分 <code>Workflow</code> 和 <code>Agent</code></li>
+<li class="">明确“下一步是谁决定的”</li>
+</ul>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="5-反模式三一上来就多-agent">5. 反模式三：一上来就多 Agent<a href="#5-反模式三一上来就多-agent" class="hash-link" aria-label="5. 反模式三：一上来就多 Agent的直接链接" title="5. 反模式三：一上来就多 Agent的直接链接" translate="no">​</a></h2>
+<p>很多人会天然觉得：</p>
+<ul>
+<li class="">一个 Agent 已经不错了</li>
+<li class="">多个 Agent 分工协作应该更强</li>
+</ul>
+<p>但现实通常是：</p>
+<ul>
+<li class="">协调复杂度先上来了</li>
+<li class="">状态同步更难了</li>
+<li class="">责任边界更模糊了</li>
+<li class="">问题更难排查了</li>
+</ul>
+<p>更好的做法：</p>
+<ul>
+<li class="">先把单 Agent 做稳</li>
+<li class="">明确单 Agent 的瓶颈在哪</li>
+<li class="">只有当分工收益真的明显时，再考虑多 Agent</li>
+</ul>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="6-反模式四没有状态管理只靠历史消息硬撑">6. 反模式四：没有状态管理，只靠历史消息硬撑<a href="#6-反模式四没有状态管理只靠历史消息硬撑" class="hash-link" aria-label="6. 反模式四：没有状态管理，只靠历史消息硬撑的直接链接" title="6. 反模式四：没有状态管理，只靠历史消息硬撑的直接链接" translate="no">​</a></h2>
+<p>很多初版系统会把“多轮对话历史”直接当成状态管理。</p>
+<p>短期看起来没问题，长期就会出现：</p>
+<ul>
+<li class="">失忆</li>
+<li class="">重复动作</li>
+<li class="">状态污染</li>
+<li class="">重点信息淹没</li>
+</ul>
+<p>更好的做法：</p>
+<ul>
+<li class="">显式维护 <code>State</code></li>
+<li class="">区分历史消息、当前状态、长期记忆</li>
+</ul>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="7-反模式五什么都记成-memory">7. 反模式五：什么都记成 Memory<a href="#7-反模式五什么都记成-memory" class="hash-link" aria-label="7. 反模式五：什么都记成 Memory的直接链接" title="7. 反模式五：什么都记成 Memory的直接链接" translate="no">​</a></h2>
+<p>一旦开始学 Memory，很多系统就会进入“尽量多记”的倾向。</p>
+<p>但结果往往是：</p>
+<ul>
+<li class="">临时偏好变长期规则</li>
+<li class="">错误信息被写成事实</li>
+<li class="">历史信息不断污染当前任务</li>
+</ul>
+<p>更好的做法：</p>
+<ul>
+<li class="">先把 <code>State</code> 管清楚</li>
+<li class="">只有稳定、可复用的信息才进入 <code>Memory</code></li>
+<li class="">给 memory 写入设置明确规则</li>
+</ul>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="8-反模式六所有问题都靠改-prompt">8. 反模式六：所有问题都靠改 Prompt<a href="#8-反模式六所有问题都靠改-prompt" class="hash-link" aria-label="8. 反模式六：所有问题都靠改 Prompt的直接链接" title="8. 反模式六：所有问题都靠改 Prompt的直接链接" translate="no">​</a></h2>
+<p>这是 Agent 项目里非常高频的误判。</p>
+<p>一看到系统表现不好，就立即：</p>
+<ul>
+<li class="">改 prompt</li>
+<li class="">加规则</li>
+<li class="">再塞更多说明</li>
+</ul>
+<p>但很多问题根本不是 prompt 问题，而是：</p>
+<ul>
+<li class="">工具 schema 差</li>
+<li class="">状态设计不清</li>
+<li class="">编排逻辑有问题</li>
+<li class="">停止条件不明确</li>
+</ul>
+<p>更好的做法：</p>
+<p>先分层判断问题属于哪一层：</p>
+<ul>
+<li class="">Prompt</li>
+<li class="">Tool</li>
+<li class="">State</li>
+<li class="">Orchestration</li>
+<li class="">Evaluation</li>
+</ul>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="9-反模式七不做评估只凭感觉优化">9. 反模式七：不做评估，只凭感觉优化<a href="#9-反模式七不做评估只凭感觉优化" class="hash-link" aria-label="9. 反模式七：不做评估，只凭感觉优化的直接链接" title="9. 反模式七：不做评估，只凭感觉优化的直接链接" translate="no">​</a></h2>
+<p>很多系统迭代方式是：</p>
+<ul>
+<li class="">改一版</li>
+<li class="">问  几个问题</li>
+<li class="">觉得还不错</li>
+<li class="">就继续往前走</li>
+</ul>
+<p>这会直接导致：</p>
+<ul>
+<li class="">不知道哪次优化真的有效</li>
+<li class="">看不到局部提升以外的退化</li>
+<li class="">无法积累回归能力</li>
+</ul>
+<p>更好的做法：</p>
+<ul>
+<li class="">建立最小任务集</li>
+<li class="">保留失败案例</li>
+<li class="">做版本对比</li>
+</ul>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="10-反模式八只看最终答案不看轨迹">10. 反模式八：只看最终答案，不看轨迹<a href="#10-反模式八只看最终答案不看轨迹" class="hash-link" aria-label="10. 反模式八：只看最终答案，不看轨迹的直接链接" title="10. 反模式八：只看最终答案，不看轨迹的直接链接" translate="no">​</a></h2>
+<p>对普通问答来说，很多时候看结果就够了。</p>
+<p>但对 Agent 来说，很多核心问题都藏在过程里：</p>
+<ul>
+<li class="">为什么选了这个工具</li>
+<li class="">为什么多跑了 4 步</li>
+<li class="">为什么明明拿到证据却没用上</li>
+</ul>
+<p>更好的做法：</p>
+<ul>
+<li class="">记录 step trace</li>
+<li class="">记录工具调用</li>
+<li class="">记录状态变化</li>
+<li class="">记录停止原因</li>
+</ul>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="11-反模式九没有明确停止条件">11. 反模式九：没有明确停止条件<a href="#11-反模式九没有明确停止条件" class="hash-link" aria-label="11. 反模式九：没有明确停止条件的直接链接" title="11. 反模式九：没有明确停止条件的直接链接" translate="no">​</a></h2>
+<p>如果系统没有：</p>
+<ul>
+<li class="">最大步数</li>
+<li class="">重试上限</li>
+<li class="">完成条件</li>
+</ul>
+<p>那它就很容易：</p>
+<ul>
+<li class="">无意义循环</li>
+<li class="">多次重复同类操作</li>
+<li class="">成本飙升</li>
+</ul>
+<p>更好的做法：</p>
+<ul>
+<li class="">设置最大步  数</li>
+<li class="">设置重试限制</li>
+<li class="">定义任务完成标准</li>
+</ul>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="12-反模式十高风险动作默认自动执行">12. 反模式十：高风险动作默认自动执行<a href="#12-反模式十高风险动作默认自动执行" class="hash-link" aria-label="12. 反模式十：高风险动作默认自动执行的直接链接" title="12. 反模式十：高风险动作默认自动执行的直接链接" translate="no">​</a></h2>
+<p>当 Agent 开始具备行动能力时，这个问题会非常危险。</p>
+<p>比如：</p>
+<ul>
+<li class="">写库</li>
+<li class="">发消息</li>
+<li class="">删除数据</li>
+<li class="">调高风险 API</li>
+</ul>
+<p>如果默认全自动，会把风险快速放大。</p>
+<p>更好的做法：</p>
+<ul>
+<li class="">做风险分层</li>
+<li class="">引入 guardrails</li>
+<li class="">对高风险动作加入 human-in-the-loop</li>
+</ul>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="13-反模式十一过早上重框架">13. 反模式十一：过早上重框架<a href="#13-反模式十一过早上重框架" class="hash-link" aria-label="13. 反模式十一：过早上重框架的直接链接" title="13. 反模式十一：过早上重框架的直接链接" translate="no">​</a></h2>
+<p>很多人刚学 Agent 就想：</p>
+<ul>
+<li class="">先选一个最强框架</li>
+<li class="">再往里面塞需求</li>
+</ul>
+<p>这很容易带来：</p>
+<ul>
+<li class="">抽象太厚</li>
+<li class="">很多行为看不懂</li>
+<li class="">调试难度上升</li>
+</ul>
+<p>更好的做法：</p>
+<ul>
+<li class="">先搞清系统本质</li>
+<li class="">先用最小实现把主链跑通</li>
+<li class="">真遇到复杂度瓶颈时，再加框架</li>
+</ul>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="14-反模式十二没有-demo-和生产的边界意识">14. 反模式十二：没有 Demo 和生产的边界意识<a href="#14-反模式十二没有-demo-和生产的边界意识" class="hash-link" aria-label="14. 反模式十二：没有 Demo 和生产的边界意识的直接链接" title="14. 反模式十二：没有 Demo 和生产的边界意识的直接链接" translate="no">​</a></h2>
+<p>有些系统在 demo 阶段能跑得很好，但团队会不知不觉把 demo 逻辑直接带进生产。</p>
+<p>这时就会缺很多关键东西：</p>
+<ul>
+<li class="">evals</li>
+<li class="">harness</li>
+<li class="">observability</li>
+<li class="">guardrails</li>
+<li class="">fallback</li>
+</ul>
+<p>更好的做法：</p>
+<ul>
+<li class="">明确区分原型、实验、生产阶段</li>
+<li class="">每进入下一阶段就补齐对应工程能力</li>
+</ul>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="15-一个很实用的自检清单">15. 一个很实用的自检清单<a href="#15-一个很实用的自检清单" class="hash-link" aria-label="15. 一个很实用的自检清单的直接链接" title="15. 一个很实用的自检清单的直接链接" translate="no">​</a></h2>
+<p>如果想快速判断系统有没有掉进反模式，可以问：</p>
+<ol>
+<li class="">我们是不是把 Workflow 误做成了 Agent</li>
+<li class="">我们是不是在用 prompt 掩盖结构问题</li>
+<li class="">我们是不是没有显式状态</li>
+<li class="">我们是不是没有任务集和回归验证</li>
+<li class="">我们是不是只看最终答案</li>
+<li class="">我们是不是对高风险动作缺少边界</li>
+</ol>
+<p>如果这里面好几项都答不上来，通常说明系统已经在反模式边缘了。</p>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="16-一句话总结">16. 一句话总结<a href="#16-一句话总结" class="hash-link" aria-label="16. 一句话总结的直接链接" title="16. 一句话总结的直接链接" translate="no">​</a></h2>
+<p>很多 Agent 失败，不是因为模型不够强，而是因为系统一步步滑进了反模式：</p>
+<ul>
+<li class="">该简单时做复杂</li>
+<li class="">该分层时全混在一起</li>
+<li class="">  该记录时没记录</li>
+<li class="">该评估时凭感觉</li>
+<li class="">该设边界时放任自动化</li>
+</ul>
+<p>所以真正成熟的 Agent 工程能力，除了知道怎么搭系统，也包括：</p>
+<p><code>尽早识别哪些做法虽然一时省事，但会让系统越来越难稳。</code></p></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="文件选项卡"><a class="pagination-nav__link pagination-nav__link--prev" href="/AI/agent-engineering/Browser-and-Computer-Use-Agents"><div class="pagination-nav__sublabel">上一页</div><div class="pagination-nav__label">Browser and Computer Use Agents</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/AI/agent-engineering/Agent-Evals-and-Harness-Templates"><div class="pagination-nav__sublabel">下一页</div><div class="pagination-nav__label">Agent Evals / Harness 模板</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_v08c thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#1-什么是-anti-pattern" class="table-of-contents__link toc-highlight">1. 什么是 Anti-Pattern</a></li><li><a href="#2-为什么-agent-特别容易出现反模式" class="table-of-contents__link toc-highlight">2. 为什么 Agent 特别容易出现反模式</a></li><li><a href="#3-反模式一把所有复杂任务都默认做成-agent" class="table-of-contents__link toc-highlight">3. 反模式一：把所有复杂任务都默认做成 Agent</a></li><li><a href="#4-反模式二把多步执行误当成-agent" class="table-of-contents__link toc-highlight">4. 反模式二：把多步执行误当成 Agent</a></li><li><a href="#5-反模式三一上来就多-agent" class="table-of-contents__link toc-highlight">5. 反模式三：一上来就多 Agent</a></li><li><a href="#6-反模式四没有状态管理只靠历史消息硬撑" class="table-of-contents__link toc-highlight">6. 反模式四：没有状态管理，只靠历史消息硬撑</a></li><li><a href="#7-反模式五什么都记成-memory" class="table-of-contents__link toc-highlight">7. 反模式五：什么都记成 Memory</a></li><li><a href="#8-反模式六所有问题都靠改-prompt" class="table-of-contents__link toc-highlight">8. 反模式六：所有问题都靠改 Prompt</a></li><li><a href="#9-反模式七不做评估只凭感觉优化" class="table-of-contents__link toc-highlight">9. 反模式七：不做评估，只凭感觉优化</a></li><li><a href="#10-反模式八只看最终答案不看轨迹" class="table-of-contents__link toc-highlight">10. 反模式八：只看最终答案，不看轨迹</a></li><li><a href="#11-反模式九没有明确停止条件" class="table-of-contents__link toc-highlight">11. 反模式九：没有明确停止条件</a></li><li><a href="#12-反模式十高风险动作默认自动执行" class="table-of-contents__link toc-highlight">12. 反模式十：高风险动作默认自动执行</a></li><li><a href="#13-反模式十一过早上重框架" class="table-of-contents__link toc-highlight">13. 反模式十一：过早上重框架</a></li><li><a href="#14-反模式十二没有-demo-和生产的边界意识" class="table-of-contents__link toc-highlight">14. 反模式十二：没有 Demo 和生产的边界意识</a></li><li><a href="#15-一个很实用的自检清单" class="table-of-contents__link toc-highlight">15. 一个很实用的自检清单</a></li><li><a href="#16-一句话总结" class="table-of-contents__link toc-highlight">16. 一句话总结</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">入口</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/intro">知识库</a></li><li class="footer__item"><a class="footer__link-item" href="/blog">日常 Blog</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/engineering">工程化</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/dev-tools">工具与环境</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">更多</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/JamesLi-dev" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_BlfO"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Torli, Inc. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>

@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-ai docs-version-current docs-doc-page docs-doc-id-foundations/Context-Engineering-Guide" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.10.1">
+<title data-rh="true">Context Engineering | 这里是 Torli&#x27;s </title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://blog.torli.top/en/AI/foundations/Context-Engineering-Guide"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" property="og:locale:alternate" content="zh_Hans"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="keywords" content="cooking, blog"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-ai-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-ai-current"><meta data-rh="true" property="og:title" content="Context Engineering | 这里是 Torli&#x27;s "><meta data-rh="true" name="description" content="如果说 Prompt Engineering 关注的是“怎么把一句指令写清楚”，那么 Context Engineering 关注的就是“在模型回答之前，到底应该把哪些信息送进上下文，以及这些信息该怎么组织”。"><meta data-rh="true" property="og:description" content="如果说 Prompt Engineering 关注的是“怎么把一句指令写清楚”，那么 Context Engineering 关注的就是“在模型回答之前，到底应该把哪些信息送进上下文，以及这些信息该怎么组织”。"><link data-rh="true" rel="icon" href="/en/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://blog.torli.top/en/AI/foundations/Context-Engineering-Guide"><link data-rh="true" rel="alternate" href="https://blog.torli.top/AI/foundations/Context-Engineering-Guide" hreflang="zh-Hans"><link data-rh="true" rel="alternate" href="https://blog.torli.top/en/AI/foundations/Context-Engineering-Guide" hreflang="en"><link data-rh="true" rel="alternate" href="https://blog.torli.top/AI/foundations/Context-Engineering-Guide" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"基础能力","item":"https://blog.torli.top/en/AI/foundations/"},{"@type":"ListItem","position":2,"name":"Context Engineering","item":"https://blog.torli.top/en/AI/foundations/Context-Engineering-Guide"}]}</script><link rel="alternate" type="application/rss+xml" href="/en/blog/rss.xml" title="这里是 Torli&#39;s  RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/en/blog/atom.xml" title="这里是 Torli&#39;s  Atom Feed"><link rel="stylesheet" href="/en/assets/css/styles.a3b9aef2.css">
+<script src="/en/assets/js/runtime~main.56ff528f.js" defer="defer"></script>
+<script src="/en/assets/js/main.f68a3aad.js" defer="defer"></script>
+</head>
+<body>
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_U9sP" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top navbarHideable_PT2D"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/en/"><div class="navbar__logo"><img src="/en/img/logo2.png" alt="My Site Logo" class="themedComponent_QNor themedComponent--light_EqDK"><img src="/en/img/logo2.png" alt="My Site Logo" class="themedComponent_QNor themedComponent--dark_H0PK"></div><b class="navbar__title text--truncate">Torli&#x27;s Blog</b></a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a class="navbar__link" aria-haspopup="true" aria-expanded="false" role="button" href="/en/docs/intro">知识库</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/en/docs/foundations">基础语言</a></li><li><a class="dropdown__link" href="/en/docs/browser-network">浏览器与网络</a></li><li><a class="dropdown__link" href="/en/docs/engineering">工程化</a></li><li><a class="dropdown__link" href="/en/docs/frameworks">前端框架</a></li><li><a class="dropdown__link" href="/en/docs/node-server">Node 与服务端</a></li><li><a class="dropdown__link" href="/en/docs/data-backend">数据库与后端服务</a></li><li><a class="dropdown__link" href="/en/docs/state-management">状态管理</a></li><li><a class="dropdown__link" href="/en/docs/ui-interaction">UI 与交互</a></li><li><a class="dropdown__link" href="/en/docs/dev-tools">效率工具与开发环境</a></li><li><a class="dropdown__link" href="/en/docs/frontier">前沿专题</a></li></ul></div><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a aria-current="page" class="navbar__link active" aria-haspopup="true" aria-expanded="false" role="button" href="/en/AI">AI 学习</a><ul class="dropdown__menu"><li><a aria-current="page" class="dropdown__link dropdown__link--active" href="/en/AI">开始这里：AI 首页</a></li><li><a class="dropdown__link" href="/en/AI/AI-Agent-Docs-Index">专题索引：AI Agent 文档总索引</a></li><li><a class="dropdown__link" href="/en/AI/AI-Agent-Chapter-to-Framework-Map">专题索引：章节与框架映射</a></li><li><a class="dropdown__link" href="/en/AI/foundations/Prompt-Engineering-Glossary">基础能力：Prompt Engineering</a></li><li><a aria-current="page" class="dropdown__link dropdown__link--active" href="/en/AI/foundations/Context-Engineering-Guide">基础能力：Context Engineering</a></li><li><a class="dropdown__link" href="/en/AI/foundations/RAG-Intro-and-Practice">基础能力：RAG</a></li><li><a class="dropdown__link" href="/en/AI/agent-engineering/Agent-Engineering-Intro">Agent 与工程化：Agent Engineering</a></li><li><a class="dropdown__link" href="/en/AI/agent-engineering/Workflow-vs-Agent">Agent 与工程化：Workflow vs Agent</a></li><li><a class="dropdown__link" href="/en/AI/agent-engineering/Agent-Memory-and-State">Agent 与工程化：Memory and State</a></li><li><a class="dropdown__link" href="/en/AI/agent-engineering/Harness-Engineering-Guide">Agent 与工程化：Harness Engineering</a></li><li><a class="dropdown__link" href="/en/AI/frameworks/OpenAI-Agents-SDK-Guide">框架与 SDK：OpenAI Agents SDK</a></li><li><a class="dropdown__link" href="/en/AI/frameworks/LangGraph-Intro-and-Orchestration">框架与 SDK：LangGraph</a></li><li><a class="dropdown__link" href="/en/AI/frameworks/LangSmith-Observability-and-Evals">框架与 SDK：LangSmith</a></li><li><a class="dropdown__link" href="/en/AI/frameworks/Vercel-AI-SDK-Guide">框 架与 SDK：Vercel AI SDK</a></li><li><a class="dropdown__link" href="/en/AI/frameworks/Mastra-Guide">框架与 SDK：Mastra</a></li><li><a class="dropdown__link" href="/en/AI/frameworks/Google-ADK-Guide">框架与 SDK：Google ADK</a></li><li><a class="dropdown__link" href="/en/AI/overview/AI-App-Architecture-Map">全局视角：AI 应用整体架构</a></li><li><a class="dropdown__link" href="/en/AI/overview/Minimal-Agent-Demo-From-0-to-1">全局视角：最小 Agent Demo</a></li><li><a class="dropdown__link" href="/en/AI/overview/Minimal-Agent-Code-Implementation-Examples">全局视角：最小 Agent 代码示例</a></li><li><a class="dropdown__link" href="/en/AI/overview/AI-Agent-Tech-Stack-and-Framework-Comparison">全局视角：技术栈与框架对比</a></li></ul></div><a class="navbar__item navbar__link" href="/en/blog">日常 Blog</a><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a class="navbar__link" aria-haspopup="true" aria-expanded="false" role="button" href="/en/docs/engineering">工程化</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/en/docs/engineering/build-tools">构建与转译</a></li><li><a class="dropdown__link" href="/en/docs/engineering/code-quality">代码规范</a></li><li><a class="dropdown__link" href="/en/docs/engineering/package-management">包管理与环境管理</a></li><li><a class="dropdown__link" href="/en/docs/engineering/data-fetching">请求与数据层</a></li><li><a class="dropdown__link" href="/en/docs/engineering/package-management/pnpm">pnpm</a></li><li><a class="dropdown__link" href="/en/docs/engineering/package-management/fnm">fnm</a></li></ul></div><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a class="navbar__link" aria-haspopup="true" aria-expanded="false" role="button" href="/en/docs/dev-tools">工具与环境</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/en/docs/dev-tools/apps/KeyboardMaestro">Keyboard Maestro</a></li><li><a class="dropdown__link" href="/en/docs/dev-tools/apps/Warp">Warp</a></li><li><a class="dropdown__link" href="/en/docs/dev-tools/apps/Ghostty">Ghostty</a></li><li><a class="dropdown__link" href="/en/docs/dev-tools/apps/Zed">Zed</a></li><li><a class="dropdown__link" href="/en/docs/dev-tools/apps/GitButler">GitButler</a></li><li><a class="dropdown__link" href="/en/docs/dev-tools/apps/Switzy">Switzy</a></li><li><a class="dropdown__link" href="/en/docs/dev-tools/apps/Craft-Agents">Craft Agents</a></li></ul></div><a href="https://github.com/JamesLi-dev" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_BlfO"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_bW1k colorModeToggle_D8sl"><button class="clean-btn toggleButton_qiU8 toggleButtonDisabled_xinJ" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_X9Tk lightToggleIcon_y62u"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_X9Tk darkToggleIcon_Dj8C"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_X9Tk systemToggleIcon_T2ve"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_e2eJ"><div class="navbar__search searchBarContainer_Mqfy"><input placeholder="Search" aria-label="Search" class="navbar__search-input" value=""><div class="loadingRing_r319 searchBarLoadingRing_Kn2r"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_kzBE"><div class="docsWrapper_Jb1X"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_W_UZ" type="button"></button><div class="docRoot_AAe1"><aside class="theme-doc-sidebar-container docSidebarContainer_RSuS"><div class="sidebarViewport_pYEE"><div class="sidebar_G_8g sidebarWithHideableNavbar__FNA"><a tabindex="-1" class="sidebarLogo_hLnz" href="/en/"><img src="/en/img/logo2.png" alt="My Site Logo" class="themedComponent_QNor themedComponent--light_EqDK"><img src="/en/img/logo2.png" alt="My Site Logo" class="themedComponent_QNor themedComponent--dark_H0PK"><b>Torli&#x27;s Blog</b></a><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_k9TG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/en/AI"><span title="AI" class="linkLabel_vgcd">AI</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/en/AI/AI-Agent-Docs-Index"><span title="AI Agent 文档总索引" class="linkLabel_vgcd">AI Agent 文档总索引</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_jNm8 menu__link menu__link--sublist menu__link--active" href="/en/AI/foundations"><span title="基础能力" class="categoryLinkLabel_ayea">基础能力</span></a><button aria-label="Collapse sidebar category &#x27;基础能力&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/en/AI/foundations/Prompt-Engineering-Glossary"><span title="Prompt Engineering" class="linkLabel_vgcd">Prompt Engineering</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/en/AI/foundations/Prompt-Engineering-Guide"><span title="Prompt Engineering Guide" class="linkLabel_vgcd">Prompt Engineering Guide</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/en/AI/foundations/Context-Engineering-Guide"><span title="Context Engineering" class="linkLabel_vgcd">Context Engineering</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/en/AI/foundations/Prompt-vs-Context-Engineering"><span title="Prompt Engineering vs Context Engineering" class="linkLabel_vgcd">Prompt Engineering vs Context Engineering</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/en/AI/foundations/RAG-Intro-and-Practice"><span title="RAG 入门与实践" class="linkLabel_vgcd">RAG 入门与实践</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/en/AI/foundations/Tool-Use-and-Function-Calling"><span title="Tool Use / Function Calling" class="linkLabel_vgcd">Tool Use / Function Calling</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/en/AI/foundations/MCP-Intro-and-Practice"><span title="MCP 入门与实践" class="linkLabel_vgcd">MCP 入门与实践</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/en/AI/foundations/MCP-vs-Tool-Calling"><span title="MCP vs Tool Calling" class="linkLabel_vgcd">MCP vs Tool Calling</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/en/AI/foundations/A2A-Intro-and-Use-Cases"><span title="A2A 入门与使用场景" class="linkLabel_vgcd">A2A 入门与使用场景</span></a></li></ul></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/en/AI/AI-Agent-Chapter-to-Framework-Map"><span title="AI Agent 专题章节与框架映射" class="linkLabel_vgcd">AI Agent 专题章节与框架映射</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_jNm8 menu__link menu__link--sublist" href="/en/AI/agent-engineering"><span title="Agent 与工程化" class="categoryLinkLabel_ayea">Agent 与工程化</span></a><button aria-label="Expand sidebar category &#x27;Agent 与工程化&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_jNm8 menu__link menu__link--sublist" href="/en/AI/frameworks"><span title="框架与 SDK" class="categoryLinkLabel_ayea">框架与 SDK</span></a><button aria-label="Expand sidebar category &#x27;框架与 SDK&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_jNm8 menu__link menu__link--sublist" href="/en/AI/overview"><span title="全局视角" class="categoryLinkLabel_ayea">全局视角</span></a><button aria-label="Expand sidebar category &#x27;全局视角&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li></ul></nav><button type="button" data-torli-sidebar-toggle="collapse" title="Collapse sidebar" aria-label="Collapse sidebar" class="button button--secondary button--outline collapseSidebarButton_JQG6"><svg class="collapseSidebarButtonIcon_Iseg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"></rect><path d="M13 9L10 12L13 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></button></div></div></aside><main class="docMainContainer_hjYf"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_uYg3"><div class="docItemContainer_jngG"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_lBfN" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/en/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_ebxl"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/en/AI/foundations"><span>基础能力</span></a></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Context Engineering</span></li></ul></nav><div class="tocCollapsible_VI1r theme-doc-toc-mobile tocMobile_iude"><button type="button" class="clean-btn tocCollapsibleButton_LJEZ">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Context Engineering</h1></header>
+<p>如果说 <code>Prompt Engineering</code> 关注的是“怎么把一句指令写清楚”，那么 <code>Context Engineering</code> 关注的就是“在模型回答之前，到底应该把哪些信息送进上下文，以及这些信息该怎么组织”。</p>
+<p>它更接近给模型搭一个工作环境，而不是单纯写一句 prompt。</p>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="1-context-engineering-是什么">1. Context Engineering 是什么<a href="#1-context-engineering-是什么" class="hash-link" aria-label="Direct link to 1. Context Engineering 是什么" title="Direct link to 1. Context Engineering 是什么" translate="no">​</a></h2>
+<p><code>Context Engineering</code> 可以理解为：围绕模型每次调用时的全部输入信息，去做选择、组织、裁剪、增强和更新的一整套方法。</p>
+<p>这里的“context”不是只指用户最后一句话，而是模型真正能看到的整包信息，比如：</p>
+<ul>
+<li class="">系统规则</li>
+<li class="">开发者指令</li>
+<li class="">用户当 前问题</li>
+<li class="">历史对话</li>
+<li class="">示例</li>
+<li class="">检索资料</li>
+<li class="">工具调用结果</li>
+<li class="">用户偏好</li>
+<li class="">当前任务状态</li>
+<li class="">输出格式要求</li>
+</ul>
+<p>所以它解决的核心问题不是“怎么把问题问得更熟练”，而是：</p>
+<ul>
+<li class="">给模型什么信息最有用</li>
+<li class="">不该给什么信息</li>
+<li class="">信息该按什么顺序排列</li>
+<li class="">历史记录要保留到什么程度</li>
+<li class="">外部资料什么时候补进来</li>
+<li class="">如何让复杂任务在多轮中保持连续性</li>
+</ul>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="2-为什么它重要">2. 为什么它重要<a href="#2-为什么它重要" class="hash-link" aria-label="Direct link to 2. 为什么它重要" title="Direct link to 2. 为什么它重要" translate="no">​</a></h2>
+<p>很多复杂任务效果不好，不一定是 prompt 写得差，而是上下文出了问题。</p>
+<p>常见问题有：</p>
+<ul>
+<li class="">信息不够，模型只能猜</li>
+<li class="">信息太多，重点被淹没</li>
+<li class="">信息顺序混乱，模型抓不到主线</li>
+<li class="">历史对话太长，旧内容干扰当前问题</li>
+<li class="">检索资料不准，导致回答偏题</li>
+<li class="">工具结果杂乱，模型难以整合</li>
+<li class="">没有任务状态，模型每轮都像重新开始</li>
+</ul>
+<p>从工程角度看，复杂 AI 系统的上限，往往更多取决于 <code>context</code> 的设计质量，而不只是 prompt 本身。</p>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="3-它和-prompt-engineering-的区别">3. 它和 Prompt Engineering 的区别<a href="#3-它和-prompt-engineering-的区别" class="hash-link" aria-label="Direct link to 3. 它和 Prompt Engineering 的区别" title="Direct link to 3. 它和 Prompt Engineering 的区别" translate="no">​</a></h2>
+<p>二者可以这样区分：</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="31-prompt-engineering">3.1 Prompt Engineering<a href="#31-prompt-engineering" class="hash-link" aria-label="Direct link to 3.1 Prompt Engineering" title="Direct link to 3.1 Prompt Engineering" translate="no">​</a></h3>
+<p>更关注：</p>
+<ul>
+<li class="">指令怎么写</li>
+<li class="">角色怎么设</li>
+<li class="">示例怎么给</li>
+<li class="">输出格式怎么限制</li>
+</ul>
+<p>它处理的主要是“说法”。</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="32-context-engineering">3.2 Context Engineering<a href="#32-context-engineering" class="hash-link" aria-label="Direct link to 3.2 Context Engineering" title="Direct link to 3.2 Context Engineering" translate="no">​</a></h3>
+<p>更关注：</p>
+<ul>
+<li class="">上下文里放什么</li>
+<li class="">历史如何裁剪</li>
+<li class="">检索内容如何选</li>
+<li class="">工具结果如何注入</li>
+<li class="">状态如何维护</li>
+<li class="">多轮任务如何延续</li>
+</ul>
+<p>它处理的主要是“信息环境”。</p>
+<p>一个很直观的类比：</p>
+<ul>
+<li class=""><code>Prompt Engineering</code>：像给员工写任务单</li>
+<li class=""><code>Context Engineering</code>：像给员工准备资料、历史记录、工作台、工具和进度板</li>
+</ul>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="4-context-通常由哪些部分组成">4. Context 通常由哪些部分组成<a href="#4-context-通常由哪些部分组成" class="hash-link" aria-label="Direct link to 4. Context 通常由哪些部分组成" title="Direct link to 4. Context 通常由哪些部分组成" translate="no">​</a></h2>
+<p>一个比较完整的上下文，通常由下面几类信息组成。</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="41-instruction-context">4.1 Instruction Context<a href="#41-instruction-context" class="hash-link" aria-label="Direct link to 4.1 Instruction Context" title="Direct link to 4.1 Instruction Context" translate="no">​</a></h3>
+<p>也就是规则和任务要求，比如：</p>
+<ul>
+<li class="">你是谁</li>
+<li class="">职责是什么</li>
+<li class="">哪些边界不能越过</li>
+<li class="">最终要输出什么格式</li>
+</ul>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="42-user-context">4.2 User Context<a href="#42-user-context" class="hash-link" aria-label="Direct link to 4.2 User Context" title="Direct link to 4.2 User Context" translate="no">​</a></h3>
+<p>也就是当前用户的目标、偏好和约束，比如：</p>
+<ul>
+<li class="">用户到底要做什么</li>
+<li class="">用户希望中文还是英文</li>
+<li class="">用户偏好简洁还是详细</li>
+<li class="">当前输入内容是什么</li>
+</ul>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="43-conversational-context">4.3 Conversational Context<a href="#43-conversational-context" class="hash-link" aria-label="Direct link to 4.3 Conversational Context" title="Direct link to 4.3 Conversational Context" translate="no">​</a></h3>
+<p>也就是历史对话中仍然相关的部分，比如：</p>
+<ul>
+<li class="">已经确认的需求</li>
+<li class="">已经排除的方案</li>
+<li class="">当前轮还需要沿用的背景</li>
+</ul>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="44-knowledge-context">4.4 Knowledge Context<a href="#44-knowledge-context" class="hash-link" aria-label="Direct link to 4.4 Knowledge Context" title="Direct link to 4.4 Knowledge Context" translate="no">​</a></h3>
+<p>也就是外部知识，比如：</p>
+<ul>
+<li class="">RAG 检索出来的文档</li>
+<li class="">产品文档</li>
+<li class="">API 文档</li>
+<li class="">企业知识库</li>
+<li class="">网页资料</li>
+</ul>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="45-tool-context">4.5 Tool Context<a href="#45-tool-context" class="hash-link" aria-label="Direct link to 4.5 Tool Context" title="Direct link to 4.5 Tool Context" translate="no">​</a></h3>
+<p>也就是工具的返回结果，比如：</p>
+<ul>
+<li class="">搜索结果</li>
+<li class="">数据库查询结果</li>
+<li class="">函数调用返回值</li>
+<li class="">代码执行结果</li>
+</ul>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="46-state-context">4.6 State Context<a href="#46-state-context" class="hash-link" aria-label="Direct link to 4.6 State Context" title="Direct link to 4.6 State Context" translate="no">​</a></h3>
+<p>也就是任务当前所处的状态，比如：</p>
+<ul>
+<li class="">已完成什么</li>
+<li class="">正在做什么</li>
+<li class="">还差什么</li>
+<li class="">下一步是什么</li>
+</ul>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="47-memory-context">4.7 Memory Context<a href="#47-memory-context" class="hash-link" aria-label="Direct link to 4.7 Memory Context" title="Direct link to 4.7 Memory Context" translate="no">​</a></h3>
+<p>也就是跨轮保留的长期信息，比如：</p>
+<ul>
+<li class="">用户长期偏好</li>
+<li class="">稳定的项目背景</li>
+<li class="">常用输出风格</li>
+<li class="">已经确认的长期设定</li>
+</ul>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="5-context-engineering-的核心目标">5. Context Engineering 的核心目标<a href="#5-context-engineering-的核心目标" class="hash-link" aria-label="Direct link to 5. Context Engineering 的核心目标" title="Direct link to 5. Context Engineering 的核心目标" translate="no">​</a></h2>
+<p>一个好的上下文，通常要同时满足下面 5 点：</p>
+<ul>
+<li class=""><code>相关</code>：只放当前任务真正有用的信息</li>
+<li class=""><code>完整</code>：足够支持模型完成任务</li>
+<li class=""><code>紧凑</code>：尽量减少噪音和重复</li>
+<li class=""><code>结构化</code>：让模型能快速理解主次</li>
+<li class=""><code>动态更新</code>：任务推进时及时调整</li>
+</ul>
+<p>重点不是“越多越好”，而是“越合适越好”。</p>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="6-常见 技巧">6. 常见技巧<a href="#6-常见技巧" class="hash-link" aria-label="Direct link to 6. 常见技巧" title="Direct link to 6. 常见技巧" translate="no">​</a></h2>
+<p>下面这些技巧，在实战里可以优先掌握。</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="61-信息分层">6.1 信息分层<a href="#61-信息分层" class="hash-link" aria-label="Direct link to 6.1 信息分层" title="Direct link to 6.1 信息分层" translate="no">​</a></h3>
+<p>不要把所有内容堆成一个大段落，最好按层级组织。</p>
+<p>常见顺序是：</p>
+<ol>
+<li class="">系统规则</li>
+<li class="">当前任务</li>
+<li class="">背景事实</li>
+<li class="">外部资料</li>
+<li class="">工具结果</li>
+<li class="">输出要求</li>
+</ol>
+<p>这样模型更容易区分“什么是规则，什么是证据，什么是目标”。</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="62-历史裁剪">6.2 历史裁剪<a href="#62-历史裁剪" class="hash-link" aria-label="Direct link to 6.2 历史裁剪" title="Direct link to 6.2 历史裁剪" translate="no">​</a></h3>
+<p>不是所有历史消息都值得保留。</p>
+<p>应该优先保留：</p>
+<ul>
+<li class="">已确认需求</li>
+<li class="">当前问题依赖的背景</li>
+<li class="">已做出的关键决策</li>
+</ul>
+<p>可以删除或压缩：</p>
+<ul>
+<li class="">闲聊</li>
+<li class="">重复确认</li>
+<li class="">已经过时的信息</li>
+</ul>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="63-历史摘要">6.3 历史摘要<a href="#63-历史摘要" class="hash-link" aria-label="Direct link to 6.3 历史摘要" title="Direct link to 6.3 历史摘要" translate="no">​</a></h3>
+<p>长对话不要原样拼接，而要压缩成摘要。</p>
+<p>一个好摘要通常会保留：</p>
+<ul>
+<li class="">用户目标</li>
+<li class="">已确认约束</li>
+<li class="">已尝试方案</li>
+<li class="">当前阻塞点</li>
+<li class="">下一步方向</li>
+</ul>
+<p>这比直接把几十轮对话全塞进去更有效。</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="64-检索增强">6.4 检索增强<a href="#64-检索增强" class="hash-link" aria-label="Direct link to 6.4 检索增强" title="Direct link to 6.4 检索增强" translate="no">​</a></h3>
+<p>不要把所有知识长期塞进上下文里，而是在需要时做检索。</p>
+<p>这就是 RAG 在 Context Engineering 里的典型用法：</p>
+<ol>
+<li class="">根据问题检索相关资料</li>
+<li class="">选最相关的片段</li>
+<li class="">再把片段注入当前上下文</li>
+</ol>
+<p>这样可以降低噪音，也能利用更实时、更私有的知识。</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="65-控制检索粒度">6.5 控制检索粒度<a href="#65-控制检索粒度" class="hash-link" aria-label="Direct link to 6.5 控制检索粒度" title="Direct link to 6.5 控制检索粒度" translate="no">​</a></h3>
+<p>检索片段太大，噪音会多；太碎，又容易上下文断裂。</p>
+<p>所以常见做法包括：</p>
+<ul>
+<li class="">合理 chunk 切分</li>
+<li class="">去重</li>
+<li class="">排序</li>
+<li class="">截断</li>
+<li class="">相邻片段合并</li>
+</ul>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="66-给上下文打标签">6.6 给上下文打标签<a href="#66-给上下文打标签" class="hash-link" aria-label="Direct link to 6.6 给上下文打标签" title="Direct link to 6.6 给上下文打标签" translate="no">​</a></h3>
+<p>不同来源的信息最好显式标注，比如：</p>
+<ul>
+<li class=""><code>任务说明</code></li>
+<li class=""><code>背景事实</code></li>
+<li class=""><code>用户偏好</code></li>
+<li class=""><code>检索结果</code></li>
+<li class=""><code>工具返回</code></li>
+<li class=""><code>当前状态</code></li>
+</ul>
+<p>这样模型更容易判断每部分信息的用途和优先级。</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="67-设置信息优先级">6.7 设置信息优先级<a href="#67-设置信息优先级" class="hash-link" aria-label="Direct link to 6.7 设置信息优先级" title="Direct link to 6.7 设置信息优先级" translate="no">​</a></h3>
+<p>上下文里可能会出现冲突信息，所以最好明确优先级。</p>
+<p>常见优先顺序可以是：</p>
+<ol>
+<li class="">系统规则</li>
+<li class="">当前任务指令</li>
+<li class="">最新工具结果</li>
+<li class="">当前轮检索资料</li>
+<li class="">历史对话</li>
+<li class="">模型自身先验</li>
+</ol>
+<p>这能帮助模型在信息冲突时更稳定地取舍。</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="68-分离事实与指令">6.8 分离事实与指令<a href="#68-分离事实与指令" class="hash-link" aria-label="Direct link to 6.8 分离事实与指令" title="Direct link to 6.8 分离事实与指令" translate="no">​</a></h3>
+<p>很多上下文质量差，是因为把规则、目标、事实、示例全揉在一起。</p>
+<p>更好的方式是至少拆开：</p>
+<ul>
+<li class="">任务指令</li>
+<li class="">背景事实</li>
+<li class="">外部证据</li>
+<li class="">输出要求</li>
+</ul>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="69-动态装配上下文">6.9 动态装配上下文<a href="#69-动态装配上下文" class="hash-link" aria-label="Direct link to 6.9 动态装配上下文" title="Direct link to 6.9 动态装配上下文" translate="no">​</a></h3>
+<p>上下文不应该是一个固定模板永远不变，而应该在每次调用前按任务动态组装。</p>
+<p>例如：</p>
+<ul>
+<li class="">做总结时重点带原文和摘要规则</li>
+<li class="">做排障时重点带日志、错误信息和监控数据</li>
+<li class="">做规划时重点带目标、约束和当前进度</li>
+</ul>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="610-维护工作记忆">6.10 维护工作记忆<a href="#610-维护工作记忆" class="hash-link" aria-label="Direct link to 6.10 维护工作记忆" title="Direct link to 6.10 维护工作记忆" translate="no">​</a></h3>
+<p>复杂任务里，建议显式维护一份状态摘要，类似“工作记忆”：</p>
+<ul>
+<li class="">当前目标</li>
+<li class="">已完成步骤</li>
+<li class="">待办项</li>
+<li class="">风险点</li>
+<li class="">下一步行动</li>
+</ul>
+<p>这对长链路任务、Agent、自动化流程特别有帮助。</p>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="7-常见系统模式">7. 常见系统模式<a href="#7-常见系统模式" class="hash-link" aria-label="Direct link to 7. 常见系统模式" title="Direct link to 7. 常见系统模式" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="71-summarized-history">7.1 Summarized History<a href="#71-summarized-history" class="hash-link" aria-label="Direct link to 7.1 Summarized History" title="Direct link to 7.1 Summarized History" translate="no">​</a></h3>
+<p>保留最近几轮原始对话，再配一份历史摘要。</p>
+<p>这是长对话系统里最常见的模式之一。</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="72-rolling-context-window">7.2 Rolling Context Window<a href="#72-rolling-context-window" class="hash-link" aria-label="Direct link to 7.2 Rolling Context Window" title="Direct link to 7.2 Rolling Context Window" translate="no">​</a></h3>
+<p>只保留最近 <code>N</code> 轮消息，加上一个长期摘要。</p>
+<p>优点是：</p>
+<ul>
+<li class="">成本可控</li>
+<li class="">重点更集中</li>
+<li class="">不容易被老内容污染</li>
+</ul>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="73-retrieval-augmented-context">7.3 Retrieval-Augmented Context<a href="#73-retrieval-augmented-context" class="hash-link" aria-label="Direct link to 7.3 Retrieval-Augmented Context" title="Direct link to 7.3 Retrieval-Augmented Context" translate="no">​</a></h3>
+<p>按需把外部资料拉进上下文，而不是永久放进去。</p>
+<p>它适合：</p>
+<ul>
+<li class="">企业知识库问答</li>
+<li class="">文档助手</li>
+<li class="">实时信息问答</li>
+<li class="">私有数据问答</li>
+</ul>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="74-tool-augmented-context">7.4 Tool-Augmented Context<a href="#74-tool-augmented-context" class="hash-link" aria-label="Direct link to 7.4 Tool-Augmented Context" title="Direct link to 7.4 Tool-Augmented Context" translate="no">​</a></h3>
+<p>把工具结果结构化地纳入上下文。</p>
+<p>例如：</p>
+<ul>
+<li class="">搜索结果摘要</li>
+<li class="">数据库查询表格</li>
+<li class="">API 返回字段</li>
+<li class="">测试执行结果</li>
+</ul>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="75-state-buffer--scratchpad">7.5 State Buffer / Scratchpad<a href="#75-state-buffer--scratchpad" class="hash-link" aria-label="Direct link to 7.5 State Buffer / Scratchpad" title="Direct link to 7.5 State Buffer / Scratchpad" translate="no">​</a></h3>
+<p>维护一份中间状态，而不是每轮都从零开始理解任务。</p>
+<p>适合：</p>
+<ul>
+<li class="">多步任务</li>
+<li class="">Agent</li>
+<li class="">代码执行流程</li>
+<li class="">自动化编排</li>
+</ul>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="76-memory-augmented-context">7.6 Memory-Augmented Context<a href="#76-memory-augmented-context" class="hash-link" aria-label="Direct link to 7.6 Memory-Augmented Context" title="Direct link to 7.6 Memory-Augmented Context" translate="no">​</a></h3>
+<p>引入长期记忆来增强连续体验，比如：</p>
+<ul>
+<li class="">用户偏好中文回答</li>
+<li class="">用户常要 Markdown 表格</li>
+<li class="">当前项目是 React + TypeScript</li>
+</ul>
+<p>但长期记忆必须谨慎，不然会持续污染后续回答。</p>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="8-context-engineering-最重要的原则">8. Context Engineering 最重要的原则<a href="#8-context-engineering-最重要的原则" class="hash-link" aria-label="Direct link to 8. Context Engineering 最重要的原则" title="Direct link to 8. Context Engineering 最重要的原则" translate="no">​</a></h2>
+<p>先记住一句话：</p>
+<p><code>Context Engineering 的核心不是给更多信息，而是给更对的信息。</code></p>
+<p>很多系统的失败，不是因为缺少内容，而是因为上下文里混入了太多无关、过时、重复或低质量的信息。</p>
+<p>所以真正重要的是：</p>
+<ul>
+<li class="">选择</li>
+<li class="">裁剪</li>
+<li class="">组织</li>
+<li class="">更新</li>
+</ul>
+<p>而不是简单堆砌。</p>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="9-一个直观例子">9. 一个直观例子<a href="#9-一个直观例子" class="hash-link" aria-label="Direct link to 9. 一个直观例子" title="Direct link to 9. 一个直观例子" translate="no">​</a></h2>
+<p>假设用户要你分析一个接口超时问题。</p>
+<p>只写一个 prompt，可能是：</p>
+<div class="language-text codeBlockContainer_AXfa theme-code-block" style="--prism-color:#403f53;--prism-background-color:#FBFBFB"><div class="codeBlockContent_GInB"><pre tabindex="0" class="prism-code language-text codeBlock_vnrn thin-scrollbar" style="color:#403f53;background-color:#FBFBFB"><code class="codeBlockLines_YheM"><div class="token-line" style="color:#403f53"><span class="token plain">请分析这个接口超时的原因，并给出排查方案。</span><br></div></code></pre></div></div>
+<p>但如果做 Context Engineering，可以把输入组织成这样：</p>
+<div class="language-text codeBlockContainer_AXfa theme-code-block" style="--prism-color:#403f53;--prism-background-color:#FBFBFB"><div class="codeBlockContent_GInB"><pre tabindex="0" class="prism-code language-text codeBlock_vnrn thin-scrollbar" style="color:#403f53;background-color:#FBFBFB"><code class="codeBlockLines_YheM"><div class="token-line" style="color:#403f53"><span class="token plain">系统规则：</span><br></div><div class="token-line" style="color:#403f53"><span class="token plain">你是资深后端故障排查助手， 回答要准确、可执行。</span><br></div><div class="token-line" style="color:#403f53"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#403f53"><span class="token plain">当前任务：</span><br></div><div class="token-line" style="color:#403f53"><span class="token plain">分析某接口超时原因，并提供排查步骤。</span><br></div><div class="token-line" style="color:#403f53"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#403f53"><span class="token plain">已知事实：</span><br></div><div class="token-line" style="color:#403f53"><span class="token plain">- 接口平均响应时间从 200ms 升到 8s</span><br></div><div class="token-line" style="color:#403f53"><span class="token plain">- 问题发生在今天 14:20 之后</span><br></div><div class="token-line" style="color:#403f53"><span class="token plain">- 最近刚上线了缓存改动</span><br></div><div class="token-line" style="color:#403f53"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#403f53"><span class="token plain">日志摘要：</span><br></div><div class="token-line" style="color:#403f53"><span class="token plain">- 数据库连接等待时间显著上升</span><br></div><div class="token-line" style="color:#403f53"><span class="token plain">- 部分请求出现 Redis 超时</span><br></div><div class="token-line" style="color:#403f53"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#403f53"><span class="token plain">监控摘要：</span><br></div><div class="token-line" style="color:#403f53"><span class="token plain">- CPU 正常</span><br></div><div class="token-line" style="color:#403f53"><span class="token plain">- 数据库连接池接近耗尽</span><br></div><div class="token-line" style="color:#403f53"><span class="token plain">- Redis 延迟抖动</span><br></div><div class="token-line" style="color:#403f53"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#403f53"><span class="token plain">输出要求：</span><br></div><div class="token-line" style="color:#403f53"><span class="token plain">1. 先列出最可能的 3 个原因</span><br></div><div class="token-line" style="color:#403f53"><span class="token plain">2. 再给排查顺序</span><br></div><div class="token-line" style="color:#403f53"><span class="token plain">3. 最后给临时止损方案</span><br></div></code></pre></div></div>
+<p>这时候回答质量通常会明显更高，因为模型拿到的是“正确组织过的信息环境”。</p>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="10-常见误区">10. 常见误区<a href="#10-常见误区" class="hash-link" aria-label="Direct link to 10. 常见误区" title="Direct link to 10. 常见误区" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="101-上下文越长越好">10.1 上下文越长越好<a href="#101-上下文越长越好" class="hash-link" aria-label="Direct link to 10.1 上下文越长越好" title="Direct link to 10.1 上下文越长越好" translate="no">​</a></h3>
+<p>不是。长度只会增加成本，不一定增加效果。</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="102-历史消息要全部保留">10.2 历史消息要全部保留<a href="#102-历史消息要全部保留" class="hash-link" aria-label="Direct link to 10.2 历史消息要全部保留" title="Direct link to 10.2 历史消息要全部保留" translate="no">​</a></h3>
+<p>不是。很多历史内容已经失效，继续保留只会干扰当前任务。</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="103-检索结果越多越稳">10.3 检索结果越多越稳<a href="#103-检索结果越多越稳" class="hash-link" aria-label="Direct link to 10.3 检索结果越多越稳" title="Direct link to 10.3 检索结果越 多越稳" translate="no">​</a></h3>
+<p>不是。召回过多常常会引入噪音和冲突。</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="104-工具返回原样塞进去就行">10.4 工具返回原样塞进去就行<a href="#104-工具返回原样塞进去就行" class="hash-link" aria-label="Direct link to 10.4 工具返回原样塞进去就行" title="Direct link to 10.4 工具返回原样塞进去就行" translate="no">​</a></h3>
+<p>不是。工具返回通常需要清洗、摘要和结构化。</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="105-prompt-写好就够了">10.5 Prompt 写好就够了<a href="#105-prompt-写好就够了" class="hash-link" aria-label="Direct link to 10.5 Prompt 写好就够了" title="Direct link to 10.5 Prompt 写好就够了" translate="no">​</a></h3>
+<p>不是。复杂任务里，context 的影响往往比 prompt 更大。</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="106-记忆越多越聪明">10.6 记忆越多越聪明<a href="#106-记忆越多越聪明" class="hash-link" aria-label="Direct link to 10.6 记忆越多越聪明" title="Direct link to 10.6 记忆越多越聪明" translate="no">​</a></h3>
+<p>不是。低质量记忆会在后续每一轮都持续污染结果。</p>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="11-先掌握的-8-个点">11. 先掌握的 8 个点<a href="#11-先掌握的-8-个点" class="hash-link" aria-label="Direct link to 11. 先掌握的 8 个点" title="Direct link to 11. 先掌握的 8 个点" translate="no">​</a></h2>
+<p>如果刚开始系统学习 Context Engineering，可以先抓住这 8 个：</p>
+<ol>
+<li class="">区分“指令”和“上下文”</li>
+<li class="">学会做历史摘要</li>
+<li class="">学会筛选相关信息</li>
+<li class="">学会按层组织上下文</li>
+<li class="">学会按需检索外部知识</li>
+<li class="">学会维护任务状态</li>
+<li class="">学会处理工具返回结果</li>
+<li class="">学会控制长度和噪音</li>
+</ol>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="12-一句话总结">12. 一句话总结<a href="#12-一句话总结" class="hash-link" aria-label="Direct link to 12. 一句话总结" title="Direct link to 12. 一句话总结" translate="no">​</a></h2>
+<p><code>Context Engineering</code> 的本质，是为模型搭建一个“刚好够用、结构清晰、动态更新、信息可信”的工作环境，让它在有限上下文里更稳定地完成复杂任务。</p>
+<p>如果说 Prompt Engineering 是“怎么说”，那 Context Engineering 就是“模型在回答之前，到底看到了什么”。</p></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/en/AI/foundations/Prompt-Engineering-Guide"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Prompt Engineering Guide</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/en/AI/foundations/Prompt-vs-Context-Engineering"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Prompt Engineering vs Context Engineering</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_v08c thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#1-context-engineering-是什么" class="table-of-contents__link toc-highlight">1. Context Engineering 是什么</a></li><li><a href="#2-为什么它重要" class="table-of-contents__link toc-highlight">2. 为什么它重要</a></li><li><a href="#3-它和-prompt-engineering-的区别" class="table-of-contents__link toc-highlight">3. 它和 Prompt Engineering 的区别</a><ul><li><a href="#31-prompt-engineering" class="table-of-contents__link toc-highlight">3.1 Prompt Engineering</a></li><li><a href="#32-context-engineering" class="table-of-contents__link toc-highlight">3.2 Context Engineering</a></li></ul></li><li><a href="#4-context-通常由哪些部分组成" class="table-of-contents__link toc-highlight">4. Context 通常由哪些部分组成</a><ul><li><a href="#41-instruction-context" class="table-of-contents__link toc-highlight">4.1 Instruction Context</a></li><li><a href="#42-user-context" class="table-of-contents__link toc-highlight">4.2 User Context</a></li><li><a href="#43-conversational-context" class="table-of-contents__link toc-highlight">4.3 Conversational Context</a></li><li><a href="#44-knowledge-context" class="table-of-contents__link toc-highlight">4.4 Knowledge Context</a></li><li><a href="#45-tool-context" class="table-of-contents__link toc-highlight">4.5 Tool Context</a></li><li><a href="#46-state-context" class="table-of-contents__link toc-highlight">4.6 State Context</a></li><li><a href="#47-memory-context" class="table-of-contents__link toc-highlight">4.7 Memory Context</a></li></ul></li><li><a href="#5-context-engineering-的核心目标" class="table-of-contents__link toc-highlight">5. Context Engineering 的核心目标</a></li><li><a href="#6-常见技巧" class="table-of-contents__link toc-highlight">6. 常见技巧</a><ul><li><a href="#61-信息分层" class="table-of-contents__link toc-highlight">6.1 信息分层</a></li><li><a href="#62-历史裁剪" class="table-of-contents__link toc-highlight">6.2 历史裁剪</a></li><li><a href="#63-历史摘要" class="table-of-contents__link toc-highlight">6.3 历史摘要</a></li><li><a href="#64-检索增强" class="table-of-contents__link toc-highlight">6.4 检索增强</a></li><li><a href="#65-控制检索粒度" class="table-of-contents__link toc-highlight">6.5 控制检索粒度</a></li><li><a href="#66-给上下文打标签" class="table-of-contents__link toc-highlight">6.6 给上下文打标签</a></li><li><a href="#67-设置信息优先级" class="table-of-contents__link toc-highlight">6.7 设置信息优先级</a></li><li><a href="#68-分离事实与指令" class="table-of-contents__link toc-highlight">6.8 分离事实与指令</a></li><li><a href="#69-动态装配上下文" class="table-of-contents__link toc-highlight">6.9 动态装配上下文</a></li><li><a href="#610-维护工作记忆" class="table-of-contents__link toc-highlight">6.10 维护工作记忆</a></li></ul></li><li><a href="#7-常见系统模式" class="table-of-contents__link toc-highlight">7. 常见系统模式</a><ul><li><a href="#71-summarized-history" class="table-of-contents__link toc-highlight">7.1 Summarized History</a></li><li><a href="#72-rolling-context-window" class="table-of-contents__link toc-highlight">7.2 Rolling Context Window</a></li><li><a href="#73-retrieval-augmented-context" class="table-of-contents__link toc-highlight">7.3 Retrieval-Augmented Context</a></li><li><a href="#74-tool-augmented-context" class="table-of-contents__link toc-highlight">7.4 Tool-Augmented Context</a></li><li><a href="#75-state-buffer--scratchpad" class="table-of-contents__link toc-highlight">7.5 State Buffer / Scratchpad</a></li><li><a href="#76-memory-augmented-context" class="table-of-contents__link toc-highlight">7.6 Memory-Augmented Context</a></li></ul></li><li><a href="#8-context-engineering-最重要的原则" class="table-of-contents__link toc-highlight">8. Context Engineering 最重要的原则</a></li><li><a href="#9-一个直观例子" class="table-of-contents__link toc-highlight">9. 一个直观例子</a></li><li><a href="#10-常见误区" class="table-of-contents__link toc-highlight">10. 常见误区</a><ul><li><a href="#101-上下文越长越好" class="table-of-contents__link toc-highlight">10.1 上下文越长越好</a></li><li><a href="#102-历史消息要全部保留" class="table-of-contents__link toc-highlight">10.2 历史消息要全部保留</a></li><li><a href="#103-检索结果越多越稳" class="table-of-contents__link toc-highlight">10.3 检索结果越多越稳</a></li><li><a href="#104-工具返回原样塞进去就行" class="table-of-contents__link toc-highlight">10.4 工具返回原样塞进去就行</a></li><li><a href="#105-prompt-写好就够了" class="table-of-contents__link toc-highlight">10.5 Prompt 写好就够了</a></li><li><a href="#106-记忆越多越聪明" class="table-of-contents__link toc-highlight">10.6 记忆越多越聪明</a></li></ul></li><li><a href="#11-先掌握的-8-个点" class="table-of-contents__link toc-highlight">11. 先掌握的 8 个点</a></li><li><a href="#12-一句话总结" class="table-of-contents__link toc-highlight">12. 一句话总结</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">入口</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/en/docs/intro">知识库</a></li><li class="footer__item"><a class="footer__link-item" href="/en/blog">日常 Blog</a></li><li class="footer__item"><a class="footer__link-item" href="/en/docs/engineering">工程化</a></li><li class="footer__item"><a class="footer__link-item" href="/en/docs/dev-tools">工具与环境</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">更多</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/JamesLi-dev" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_BlfO"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Torli, Inc. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>

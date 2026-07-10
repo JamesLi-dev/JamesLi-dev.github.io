@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="zh-Hans" dir="ltr" class="docs-wrapper plugin-docs plugin-id-ai docs-version-current docs-doc-page docs-doc-id-foundations/Tool-Use-and-Function-Calling" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.10.1">
+<title data-rh="true">Tool Use / Function Calling | 这里是 Torli&#x27;s </title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://blog.torli.top/AI/foundations/Tool-Use-and-Function-Calling"><meta data-rh="true" property="og:locale" content="zh_Hans"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" name="docusaurus_locale" content="zh-Hans"><meta data-rh="true" name="docsearch:language" content="zh-Hans"><meta data-rh="true" name="keywords" content="cooking, blog"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-ai-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-ai-current"><meta data-rh="true" property="og:title" content="Tool Use / Function Calling | 这里是 Torli&#x27;s "><meta data-rh="true" name="description" content="学完 Prompt Engineering、Context Engineering 和 RAG 之后，下一步非常自然的主题就是 Tool Use / Function Calling。"><meta data-rh="true" property="og:description" content="学完 Prompt Engineering、Context Engineering 和 RAG 之后，下一步非常自然的主题就是 Tool Use / Function Calling。"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://blog.torli.top/AI/foundations/Tool-Use-and-Function-Calling"><link data-rh="true" rel="alternate" href="https://blog.torli.top/AI/foundations/Tool-Use-and-Function-Calling" hreflang="zh-Hans"><link data-rh="true" rel="alternate" href="https://blog.torli.top/en/AI/foundations/Tool-Use-and-Function-Calling" hreflang="en"><link data-rh="true" rel="alternate" href="https://blog.torli.top/AI/foundations/Tool-Use-and-Function-Calling" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"基础能力","item":"https://blog.torli.top/AI/foundations/"},{"@type":"ListItem","position":2,"name":"Tool Use / Function Calling","item":"https://blog.torli.top/AI/foundations/Tool-Use-and-Function-Calling"}]}</script><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="这里是 Torli&#39;s  RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="这里是 Torli&#39;s  Atom Feed"><link rel="stylesheet" href="/assets/css/styles.a3b9aef2.css">
+<script src="/assets/js/runtime~main.5a1d3d49.js" defer="defer"></script>
+<script src="/assets/js/main.41eb4bf8.js" defer="defer"></script>
+</head>
+<body>
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="跳到主要内容"><a class="skipToContent_U9sP" href="#__docusaurus_skipToContent_fallback">跳到主要内容</a></div><nav aria-label="主导航" class="theme-layout-navbar navbar navbar--fixed-top navbarHideable_PT2D"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="切换导航栏" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/logo2.png" alt="My Site Logo" class="themedComponent_QNor themedComponent--light_EqDK"><img src="/img/logo2.png" alt="My Site Logo" class="themedComponent_QNor themedComponent--dark_H0PK"></div><b class="navbar__title text--truncate">Torli&#x27;s Blog</b></a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a class="navbar__link" aria-haspopup="true" aria-expanded="false" role="button" href="/docs/intro">知识库</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/docs/foundations">基础语言</a></li><li><a class="dropdown__link" href="/docs/browser-network">浏览器与网络</a></li><li><a class="dropdown__link" href="/docs/engineering">工程化</a></li><li><a class="dropdown__link" href="/docs/frameworks">前端框架</a></li><li><a class="dropdown__link" href="/docs/node-server">Node 与服务端</a></li><li><a class="dropdown__link" href="/docs/data-backend">数据库与后端服务</a></li><li><a class="dropdown__link" href="/docs/state-management">状态管理</a></li><li><a class="dropdown__link" href="/docs/ui-interaction">UI 与交互</a></li><li><a class="dropdown__link" href="/docs/dev-tools">效率工具与开发环境</a></li><li><a class="dropdown__link" href="/docs/frontier">前沿专题</a></li></ul></div><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a aria-current="page" class="navbar__link active" aria-haspopup="true" aria-expanded="false" role="button" href="/AI">AI 学习</a><ul class="dropdown__menu"><li><a aria-current="page" class="dropdown__link dropdown__link--active" href="/AI">开始这里：AI 首页</a></li><li><a class="dropdown__link" href="/AI/AI-Agent-Docs-Index">专题索引：AI Agent 文档总索引</a></li><li><a class="dropdown__link" href="/AI/AI-Agent-Chapter-to-Framework-Map">专题索引：章节与框架映射</a></li><li><a class="dropdown__link" href="/AI/foundations/Prompt-Engineering-Glossary">基础能力：Prompt Engineering</a></li><li><a class="dropdown__link" href="/AI/foundations/Context-Engineering-Guide">基础能力：Context Engineering</a></li><li><a class="dropdown__link" href="/AI/foundations/RAG-Intro-and-Practice">基础能力：RAG</a></li><li><a class="dropdown__link" href="/AI/agent-engineering/Agent-Engineering-Intro">Agent 与工程化：Agent Engineering</a></li><li><a class="dropdown__link" href="/AI/agent-engineering/Workflow-vs-Agent">Agent 与工程化：Workflow vs Agent</a></li><li><a class="dropdown__link" href="/AI/agent-engineering/Agent-Memory-and-State">Agent 与工程化：Memory and State</a></li><li><a class="dropdown__link" href="/AI/agent-engineering/Harness-Engineering-Guide">Agent 与工程化：Harness Engineering</a></li><li><a class="dropdown__link" href="/AI/frameworks/OpenAI-Agents-SDK-Guide">框架与 SDK：OpenAI Agents SDK</a></li><li><a class="dropdown__link" href="/AI/frameworks/LangGraph-Intro-and-Orchestration">框架与 SDK：LangGraph</a></li><li><a class="dropdown__link" href="/AI/frameworks/LangSmith-Observability-and-Evals">框架与 SDK：LangSmith</a></li><li><a class="dropdown__link" href="/AI/frameworks/Vercel-AI-SDK-Guide">框架与 SDK：Vercel AI SDK</a></li><li><a class="dropdown__link" href="/AI/frameworks/Mastra-Guide">框架与 SDK：Mastra</a></li><li><a class="dropdown__link" href="/AI/frameworks/Google-ADK-Guide">框架与 SDK：Google ADK</a></li><li><a class="dropdown__link" href="/AI/overview/AI-App-Architecture-Map">全局视角：AI 应用整体架构</a></li><li><a class="dropdown__link" href="/AI/overview/Minimal-Agent-Demo-From-0-to-1">全局视角：最小 Agent Demo</a></li><li><a class="dropdown__link" href="/AI/overview/Minimal-Agent-Code-Implementation-Examples">全局视角：最小 Agent 代码示例</a></li><li><a class="dropdown__link" href="/AI/overview/AI-Agent-Tech-Stack-and-Framework-Comparison">全局视角：技术栈与框架对比</a></li></ul></div><a class="navbar__item navbar__link" href="/blog">日常 Blog</a><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a class="navbar__link" aria-haspopup="true" aria-expanded="false" role="button" href="/docs/engineering">工程化</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/docs/engineering/build-tools">构建与转译</a></li><li><a class="dropdown__link" href="/docs/engineering/code-quality">代码规范</a></li><li><a class="dropdown__link" href="/docs/engineering/package-management">包管理与环境管理</a></li><li><a class="dropdown__link" href="/docs/engineering/data-fetching">请求与数据层</a></li><li><a class="dropdown__link" href="/docs/engineering/package-management/pnpm">pnpm</a></li><li><a class="dropdown__link" href="/docs/engineering/package-management/fnm">fnm</a></li></ul></div><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a class="navbar__link" aria-haspopup="true" aria-expanded="false" role="button" href="/docs/dev-tools">工具与环境</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/docs/dev-tools/apps/KeyboardMaestro">Keyboard Maestro</a></li><li><a class="dropdown__link" href="/docs/dev-tools/apps/Warp">Warp</a></li><li><a class="dropdown__link" href="/docs/dev-tools/apps/Ghostty">Ghostty</a></li><li><a class="dropdown__link" href="/docs/dev-tools/apps/Zed">Zed</a></li><li><a class="dropdown__link" href="/docs/dev-tools/apps/GitButler">GitButler</a></li><li><a class="dropdown__link" href="/docs/dev-tools/apps/Switzy">Switzy</a></li><li><a class="dropdown__link" href="/docs/dev-tools/apps/Craft-Agents">Craft Agents</a></li></ul></div><a href="https://github.com/JamesLi-dev" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_BlfO"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_bW1k colorModeToggle_D8sl"><button class="clean-btn toggleButton_qiU8 toggleButtonDisabled_xinJ" type="button" disabled="" title="system mode" aria-label="切换浅色/暗黑模式（当前为system mode）"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_X9Tk lightToggleIcon_y62u"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_X9Tk darkToggleIcon_Dj8C"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_X9Tk systemToggleIcon_T2ve"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_e2eJ"><div class="navbar__search searchBarContainer_Mqfy"><input placeholder="搜索" aria-label="Search" class="navbar__search-input" value=""><div class="loadingRing_r319 searchBarLoadingRing_Kn2r"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_kzBE"><div class="docsWrapper_Jb1X"><button aria-label="回到顶部" class="clean-btn theme-back-to-top-button backToTopButton_W_UZ" type="button"></button><div class="docRoot_AAe1"><aside class="theme-doc-sidebar-container docSidebarContainer_RSuS"><div class="sidebarViewport_pYEE"><div class="sidebar_G_8g sidebarWithHideableNavbar__FNA"><a tabindex="-1" class="sidebarLogo_hLnz" href="/"><img src="/img/logo2.png" alt="My Site Logo" class="themedComponent_QNor themedComponent--light_EqDK"><img src="/img/logo2.png" alt="My Site Logo" class="themedComponent_QNor themedComponent--dark_H0PK"><b>Torli&#x27;s Blog</b></a><nav aria-label="文档侧边栏" class="menu thin-scrollbar menu_k9TG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/AI"><span title="AI" class="linkLabel_vgcd">AI</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/AI/AI-Agent-Docs-Index"><span title="AI Agent 文档总索引" class="linkLabel_vgcd">AI Agent 文档总索引</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_jNm8 menu__link menu__link--sublist menu__link--active" href="/AI/foundations"><span title="基础能力" class="categoryLinkLabel_ayea">基础能力</span></a><button aria-label="折叠侧边栏分类 &#x27;基础能力&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/AI/foundations/Prompt-Engineering-Glossary"><span title="Prompt Engineering" class="linkLabel_vgcd">Prompt Engineering</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/AI/foundations/Prompt-Engineering-Guide"><span title="Prompt Engineering Guide" class="linkLabel_vgcd">Prompt Engineering Guide</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/AI/foundations/Context-Engineering-Guide"><span title="Context Engineering" class="linkLabel_vgcd">Context Engineering</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/AI/foundations/Prompt-vs-Context-Engineering"><span title="Prompt Engineering vs Context Engineering" class="linkLabel_vgcd">Prompt Engineering vs Context Engineering</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/AI/foundations/RAG-Intro-and-Practice"><span title="RAG 入门与实践" class="linkLabel_vgcd">RAG 入门与实践</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/AI/foundations/Tool-Use-and-Function-Calling"><span title="Tool Use / Function Calling" class="linkLabel_vgcd">Tool Use / Function Calling</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/AI/foundations/MCP-Intro-and-Practice"><span title="MCP 入门与实践" class="linkLabel_vgcd">MCP 入门与实践</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/AI/foundations/MCP-vs-Tool-Calling"><span title="MCP vs Tool Calling" class="linkLabel_vgcd">MCP vs Tool Calling</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/AI/foundations/A2A-Intro-and-Use-Cases"><span title="A2A 入门与使用场景" class="linkLabel_vgcd">A2A 入门与使用场景</span></a></li></ul></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/AI/AI-Agent-Chapter-to-Framework-Map"><span title="AI Agent 专题章节与框架映射" class="linkLabel_vgcd">AI Agent 专题章节与框架映射</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_jNm8 menu__link menu__link--sublist" href="/AI/agent-engineering"><span title="Agent 与工程化" class="categoryLinkLabel_ayea">Agent 与工程化</span></a><button aria-label="展开侧边栏分类 &#x27;Agent 与工程化&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_jNm8 menu__link menu__link--sublist" href="/AI/frameworks"><span title="框架与 SDK" class="categoryLinkLabel_ayea">框架与 SDK</span></a><button aria-label="展开侧边栏分类 &#x27;框架与 SDK&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_jNm8 menu__link menu__link--sublist" href="/AI/overview"><span title="全局视角" class="categoryLinkLabel_ayea">全局视角</span></a><button aria-label="展开侧边栏分类 &#x27;全局视角&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li></ul></nav><button type="button" data-torli-sidebar-toggle="collapse" title="收起侧边栏" aria-label="收起侧边栏" class="button button--secondary button--outline collapseSidebarButton_JQG6"><svg class="collapseSidebarButtonIcon_Iseg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"></rect><path d="M13 9L10 12L13 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></button></div></div></aside><main class="docMainContainer_hjYf"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_uYg3"><div class="docItemContainer_jngG"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_lBfN" aria-label="页面路径"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="主页面" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_ebxl"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/AI/foundations"><span>基础能力</span></a></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Tool Use / Function Calling</span></li></ul></nav><div class="tocCollapsible_VI1r theme-doc-toc-mobile tocMobile_iude"><button type="button" class="clean-btn tocCollapsibleButton_LJEZ">本页总览</button></div><div class="theme-doc-markdown markdown"><header><h1>Tool Use / Function Calling</h1></header>
+<p>学完 <code>Prompt Engineering</code>、<code>Context Engineering</code> 和 <code>RAG</code> 之后，下一步非常自然的主题就是 <code>Tool Use / Function Calling</code>。</p>
+<p>因为从这一层开始，模型不再只是“会回答”，而是开始具备“会做事”的能力。</p>
+<p>比如它可以：</p>
+<ul>
+<li class="">查天气</li>
+<li class="">查数据库</li>
+<li class="">调接口</li>
+<li class="">搜索网页</li>
+<li class="">读取文档</li>
+<li class="">执行代码</li>
+<li class="">调用内部业务函数</li>
+</ul>
+<p>这也是很多 AI Agent、自动化助手、企业 AI 应用的基础能力。</p>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="1-tool-use-是什么">1. Tool Use 是什么<a href="#1-tool-use-是什么" class="hash-link" aria-label="1. Tool Use 是什么的直接链接" title="1. Tool Use 是什么的直接链接" translate="no">​</a></h2>
+<p><code>Tool Use</code> 可以理解为：让模型在需要时调用外部工具，而不是只依赖自身参数里的知识直接回答。</p>
+<p>这里的“工具”可以很广，比如：</p>
+<ul>
+<li class="">搜索工具</li>
+<li class="">数据库查询工具</li>
+<li class="">计算器</li>
+<li class="">地图服务</li>
+<li class="">邮件发送接口</li>
+<li class="">日历接口</li>
+<li class="">本地代码执行器</li>
+<li class="">企业内部 API</li>
+</ul>
+<p>一句话理解：</p>
+<p><code>Tool Use = 模型在回答过程中，能主动借助外部能力完成任务</code></p>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="2-function-calling-是什么">2. Function Calling 是什么<a href="#2-function-calling-是什么" class="hash-link" aria-label="2. Function Calling 是什么的直接链接" title="2. Function Calling 是什么的直接链接" translate="no">​</a></h2>
+<p><code>Function Calling</code> 是 Tool Use 最常见、最工程化的一种实现方式。</p>
+<p>它的核心思路是：</p>
+<ol>
+<li class="">开发者先定义一组函数</li>
+<li class="">每个函数有名字、作用、参数结构</li>
+<li class="">模型根据用户意图判断是否要调用某个函数</li>
+<li class="">如果要调用，就输出结构化参数</li>
+<li class="">系统执行该函数</li>
+<li class="">再把函数结果返回给模型</li>
+<li class="">模型结合结果给出最终回答</li>
+</ol>
+<p>所以：</p>
+<ul>
+<li class=""><code>Tool Use</code> 更偏概念</li>
+<li class=""><code>Function Calling</code> 更偏实现机制</li>
+</ul>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="3-为什么它重要">3. 为什么它重要<a href="#3-为什么它重要" class="hash-link" aria-label="3. 为什么它重要的直接链接" title="3. 为什么它重要的直接链接" translate="no">​</a></h2>
+<p>如果没有工具调用，模型通常只能：</p>
+<ul>
+<li class="">靠记忆回答</li>
+<li class="">靠上下文回答</li>
+<li class="">做一些文本层面的推理</li>
+</ul>
+<p>但很多真实任务必须访问外部世界，比如：</p>
+<ul>
+<li class="">“帮我查今天上海天气”</li>
+<li class="">“帮我查这个订单状态”</li>
+<li class="">“把这个会议安排到明天下午”</li>
+<li class="">“读取这份知识库文档并总结”</li>
+<li class="">“帮我运行一段代码看看结果”</li>
+</ul>
+<p>这些都不是单靠语言模型参数本身能可靠完成的。</p>
+<p>所以 Tool Use 的意义在于：</p>
+<ul>
+<li class="">获取实时信息</li>
+<li class="">获取私有数据</li>
+<li class="">执行真实动作</li>
+<li class="">把模型从“回答器”变成“执行器”</li>
+</ul>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="4-一个最直观的例子">4. 一个最直观的例子<a href="#4-一个最直观的例子" class="hash-link" aria-label="4. 一个最直观的例子的直接链接" title="4. 一个最直观的例子的直接链接" translate="no">​</a></h2>
+<p>假设用户问：</p>
+<div class="language-text codeBlockContainer_AXfa theme-code-block" style="--prism-color:#403f53;--prism-background-color:#FBFBFB"><div class="codeBlockContent_GInB"><pre tabindex="0" class="prism-code language-text codeBlock_vnrn thin-scrollbar" style="color:#403f53;background-color:#FBFBFB"><code class="codeBlockLines_YheM"><div class="token-line" style="color:#403f53"><span class="token plain">帮我查一下今天北京天气，并告诉我是否适合出门跑步。</span><br></div></code></pre></div></div>
+<p>如果没有 Tool Use，模型只能凭记忆猜。</p>
+<p>如果有 Tool Use，流程可能是：</p>
+<ol>
+<li class="">模型判断：这个问题需要实时天气数据</li>
+<li class="">调用 <code>get_weather(location=&quot;Beijing&quot;)</code></li>
+<li class="">系统返回天气结果</li>
+<li class="">模型根据温度、降雨、空气质量给出建议</li>
+</ol>
+<p>这时候模型的价值就不是“背出天气”，而是：</p>
+<ul>
+<li class="">知道什么时候该查</li>
+<li class="">知道该查哪个工具</li>
+<li class="">知道怎么用查到的结果组织回答</li>
+</ul>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="5-tool-use-的基本流程">5. Tool Use   的基本流程<a href="#5-tool-use-的基本流程" class="hash-link" aria-label="5. Tool Use 的基本流程的直接链接" title="5. Tool Use 的基本流程的直接链接" translate="no">​</a></h2>
+<p>一个最常见的工具调用流程是：</p>
+<ol>
+<li class=""><code>用户提出请求</code></li>
+<li class=""><code>模型判断是否需要调用工具</code></li>
+<li class=""><code>模型选择工具</code></li>
+<li class=""><code>模型生成工具参数</code></li>
+<li class=""><code>系统执行工具</code></li>
+<li class=""><code>系统返回执行结果</code></li>
+<li class=""><code>模型结合结果继续回答</code></li>
+</ol>
+<p>如果任务更复杂，这个流程可能会多轮循环：</p>
+<div class="language-text codeBlockContainer_AXfa theme-code-block" style="--prism-color:#403f53;--prism-background-color:#FBFBFB"><div class="codeBlockContent_GInB"><pre tabindex="0" class="prism-code language-text codeBlock_vnrn thin-scrollbar" style="color:#403f53;background-color:#FBFBFB"><code class="codeBlockLines_YheM"><div class="token-line" style="color:#403f53"><span class="token plain">Thought -&gt; Tool Call -&gt; Tool Result -&gt; Thought -&gt; Tool Call -&gt; Final Answer</span><br></div></code></pre></div></div>
+<p>这和 <code>ReAct</code> 的思想是非常接近的。</p>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="6-tool-use-和-rag-的区别">6. Tool Use 和 RAG 的区别<a href="#6-tool-use-和-rag-的区别" class="hash-link" aria-label="6. Tool Use 和 RAG 的区别的直接链接" title="6. Tool Use 和 RAG 的区别的直接链接" translate="no">​</a></h2>
+<p>这两个概念经常放在一起，但它们并不一样。</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="61-rag-更关注什么">6.1 RAG 更关注什么<a href="#61-rag-更关注什么" class="hash-link" aria-label="6.1 RAG 更关注什么的直接链接" title="6.1 RAG 更关注什么的直接链接" translate="no">​</a></h3>
+<p>RAG 更关注：</p>
+<ul>
+<li class="">从知识库 里检索相关资料</li>
+<li class="">把资料放进上下文</li>
+<li class="">让模型基于资料回答</li>
+</ul>
+<p>它主要解决的是“知识从哪里来”。</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="62-tool-use-更关注什么">6.2 Tool Use 更关注什么<a href="#62-tool-use-更关注什么" class="hash-link" aria-label="6.2 Tool Use 更关注什么的直接链接" title="6.2 Tool Use 更关注什么的直接链接" translate="no">​</a></h3>
+<p>Tool Use 更关注：</p>
+<ul>
+<li class="">调用外部能力</li>
+<li class="">获取实时信息</li>
+<li class="">执行动作</li>
+<li class="">和系统、服务、数据库交互</li>
+</ul>
+<p>它主要解决的是“模型怎么和外部世界互动”。</p>
+<p>简单说：</p>
+<ul>
+<li class=""><code>RAG</code>：先找资料再回答</li>
+<li class=""><code>Tool Use</code>：先调用能力再回答，甚至直接完成动作</li>
+</ul>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="7-function-calling-的核心组成">7. Function Calling 的核心组成<a href="#7-function-calling-的核心组成" class="hash-link" aria-label="7. Function Calling 的核心组成的直接链接" title="7. Function Calling 的核心组成的直接链接" translate="no">​</a></h2>
+<p>一个典型的函数调用机制，通常有下面几部分。</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="71-tool-definition">7.1 Tool Definition<a href="#71-tool-definition" class="hash-link" aria-label="7.1 Tool Definition的直接链接" title="7.1 Tool Definition的直接链接" translate="no">​</a></h3>
+<p>先定义工具或函数，包括：</p>
+<ul>
+<li class="">函数名</li>
+<li class="">函数用途</li>
+<li class="">参数字段</li>
+<li class="">参数类型</li>
+<li class="">必填项</li>
+<li class="">字段说明</li>
+</ul>
+<p>比如：</p>
+<div class="language-json codeBlockContainer_AXfa theme-code-block" style="--prism-color:#403f53;--prism-background-color:#FBFBFB"><div class="codeBlockContent_GInB"><pre tabindex="0" class="prism-code language-json codeBlock_vnrn thin-scrollbar" style="color:#403f53;background-color:#FBFBFB"><code class="codeBlockLines_YheM"><div class="token-line" style="color:#403f53"><span class="token punctuation" style="color:rgb(153, 76, 195)">{</span><span class="token plain"></span><br></div><div class="token-line" style="color:#403f53"><span class="token plain">  </span><span class="token property" style="color:rgb(12, 150, 155)">&quot;name&quot;</span><span class="token operator" style="color:rgb(12, 150, 155)">:</span><span class="token plain"> </span><span class="token string" style="color:rgb(72, 118, 214)">&quot;get_weather&quot;</span><span class="token punctuation" style="color:rgb(153, 76, 195)">,</span><span class="token plain"></span><br></div><div class="token-line" style="color:#403f53"><span class="token plain">  </span><span class="token property" style="color:rgb(12, 150, 155)">&quot;description&quot;</span><span class="token operator" style="color:rgb(12, 150, 155)">:</span><span class="token plain"> </span><span class="token string" style="color:rgb(72, 118, 214)">&quot;Get current weather by city name&quot;</span><span class="token punctuation" style="color:rgb(153, 76, 195)">,</span><span class="token plain"></span><br></div><div class="token-line" style="color:#403f53"><span class="token plain">  </span><span class="token property" style="color:rgb(12, 150, 155)">&quot;parameters&quot;</span><span class="token operator" style="color:rgb(12, 150, 155)">:</span><span class="token plain"> </span><span class="token punctuation" style="color:rgb(153, 76, 195)">{</span><span class="token plain"></span><br></div><div class="token-line" style="color:#403f53"><span class="token plain">    </span><span class="token property" style="color:rgb(12, 150, 155)">&quot;type&quot;</span><span class="token operator" style="color:rgb(12, 150, 155)">:</span><span class="token plain"> </span><span class="token string" style="color:rgb(72, 118, 214)">&quot;object&quot;</span><span class="token punctuation" style="color:rgb(153, 76, 195)">,</span><span class="token plain"></span><br></div><div class="token-line" style="color:#403f53"><span class="token plain">    </span><span class="token property" style="color:rgb(12, 150, 155)">&quot;properties&quot;</span><span class="token operator" style="color:rgb(12, 150, 155)">:</span><span class="token plain"> </span><span class="token punctuation" style="color:rgb(153, 76, 195)">{</span><span class="token plain"></span><br></div><div class="token-line" style="color:#403f53"><span class="token plain">      </span><span class="token property" style="color:rgb(12, 150, 155)">&quot;city&quot;</span><span class="token operator" style="color:rgb(12, 150, 155)">:</span><span class="token plain"> </span><span class="token punctuation" style="color:rgb(153, 76, 195)">{</span><span class="token plain"></span><br></div><div class="token-line" style="color:#403f53"><span class="token plain">        </span><span class="token property" style="color:rgb(12, 150, 155)">&quot;type&quot;</span><span class="token operator" style="color:rgb(12, 150, 155)">:</span><span class="token plain"> </span><span class="token string" style="color:rgb(72, 118, 214)">&quot;string&quot;</span><span class="token punctuation" style="color:rgb(153, 76, 195)">,</span><span class="token plain"></span><br></div><div class="token-line" style="color:#403f53"><span class="token plain">        </span><span class="token property" style="color:rgb(12, 150, 155)">&quot;description&quot;</span><span class="token operator" style="color:rgb(12, 150, 155)">:</span><span class="token plain"> </span><span class="token string" style="color:rgb(72, 118, 214)">&quot;City name&quot;</span><span class="token plain"></span><br></div><div class="token-line" style="color:#403f53"><span class="token plain">      </span><span class="token punctuation" style="color:rgb(153, 76, 195)">}</span><span class="token plain"></span><br></div><div class="token-line" style="color:#403f53"><span class="token plain">    </span><span class="token punctuation" style="color:rgb(153, 76, 195)">}</span><span class="token punctuation" style="color:rgb(153, 76, 195)">,</span><span class="token plain"></span><br></div><div class="token-line" style="color:#403f53"><span class="token plain">    </span><span class="token property" style="color:rgb(12, 150, 155)">&quot;required&quot;</span><span class="token operator" style="color:rgb(12, 150, 155)">:</span><span class="token plain"> </span><span class="token punctuation" style="color:rgb(153, 76, 195)">[</span><span class="token string" style="color:rgb(72, 118, 214)">&quot;city&quot;</span><span class="token punctuation" style="color:rgb(153, 76, 195)">]</span><span class="token plain"></span><br></div><div class="token-line" style="color:#403f53"><span class="token plain">  </span><span class="token punctuation" style="color:rgb(153, 76, 195)">}</span><span class="token plain"></span><br></div><div class="token-line" style="color:#403f53"><span class="token plain"></span><span class="token punctuation" style="color:rgb(153, 76, 195)">}</span><br></div></code></pre></div></div>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="72-tool-selection">7.2 Tool Selection<a href="#72-tool-selection" class="hash-link" aria-label="7.2 Tool Selection的直接链接" title="7.2 Tool Selection的直接链接" translate="no">​</a></h3>
+<p>模型要判断：</p>
+<ul>
+<li class="">需不需要调工具</li>
+<li class="">该调哪个工具</li>
+<li class="">是调一个还是多个</li>
+</ul>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="73-argument-extraction">7.3 Argument Extraction<a href="#73-argument-extraction" class="hash-link" aria-label="7.3 Argument Extraction的直接链接" title="7.3 Argument Extraction的直接链接" translate="no">​</a></h3>
+<p>也就是参数提取。</p>
+<p>模型要从用户语言里抽出结构化参数，比如：</p>
+<div class="language-text codeBlockContainer_AXfa theme-code-block" style="--prism-color:#403f53;--prism-background-color:#FBFBFB"><div class="codeBlockContent_GInB"><pre tabindex="0" class="prism-code language-text codeBlock_vnrn thin-scrollbar" style="color:#403f53;background-color:#FBFBFB"><code class="codeBlockLines_YheM"><div class="token-line" style="color:#403f53"><span class="token plain">“帮我查一下明天下午上海的天气”</span><br></div></code></pre></div></div>
+<p>可能提取成：</p>
+<div class="language-json codeBlockContainer_AXfa theme-code-block" style="--prism-color:#403f53;--prism-background-color:#FBFBFB"><div class="codeBlockContent_GInB"><pre tabindex="0" class="prism-code language-json codeBlock_vnrn thin-scrollbar" style="color:#403f53;background-color:#FBFBFB"><code class="codeBlockLines_YheM"><div class="token-line" style="color:#403f53"><span class="token punctuation" style="color:rgb(153, 76, 195)">{</span><span class="token plain"></span><br></div><div class="token-line" style="color:#403f53"><span class="token plain">  </span><span class="token property" style="color:rgb(12, 150, 155)">&quot;city&quot;</span><span class="token operator" style="color:rgb(12, 150, 155)">:</span><span class="token plain"> </span><span class="token string" style="color:rgb(72, 118, 214)">&quot;Shanghai&quot;</span><span class="token punctuation" style="color:rgb(153, 76, 195)">,</span><span class="token plain"></span><br></div><div class="token-line" style="color:#403f53"><span class="token plain">  </span><span class="token property" style="color:rgb(12, 150, 155)">&quot;date&quot;</span><span class="token operator" style="color:rgb(12, 150, 155)">:</span><span class="token plain"> </span><span class="token string" style="color:rgb(72, 118, 214)">&quot;tomorrow&quot;</span><span class="token punctuation" style="color:rgb(153, 76, 195)">,</span><span class="token plain"></span><br></div><div class="token-line" style="color:#403f53"><span class="token plain">  </span><span class="token property" style="color:rgb(12, 150, 155)">&quot;time_period&quot;</span><span class="token operator" style="color:rgb(12, 150, 155)">:</span><span class="token plain"> </span><span class="token string" style="color:rgb(72, 118, 214)">&quot;afternoon&quot;</span><span class="token plain"></span><br></div><div class="token-line" style="color:#403f53"><span class="token plain"></span><span class="token punctuation" style="color:rgb(153, 76, 195)">}</span><br></div></code></pre></div></div>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="74-tool-execution">7.4 Tool Execution<a href="#74-tool-execution" class="hash-link" aria-label="7.4 Tool Execution的直接链接" title="7.4 Tool Execution的直接链接" translate="no">​</a></h3>
+<p>系统真正去执行函数，比如：</p>
+<ul>
+<li class="">调 API</li>
+<li class="">查数据库</li>
+<li class="">跑脚本</li>
+<li class="">访问文件系统</li>
+</ul>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="75-result-injection">7.5 Result Injection<a href="#75-result-injection" class="hash-link" aria-label="7.5 Result Injection的直接链接" title="7.5 Result Injection的直接链接" translate="no">​</a></h3>
+<p>执行结果不能就此结束，还要重新喂回模型，让模型理解结果并生成最终答案。</p>
+<p>这个步骤就是：</p>
+<p><code>把工具结果重新注入上下文</code></p>
+<p>它本质上也是 Context Engineering 的一部分。</p>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="8-设计函数时最重要的原则">8. 设计函数时最重要的原则<a href="#8-设计函数时最重要的原则" class="hash-link" aria-label="8. 设计函数时最重要的原则的直接链接" title="8. 设计函数时最重要的原则的直接链接" translate="no">​</a></h2>
+<p>很多 Tool Use 效果差，不是模型不会用，而是函数定义本身设计得不好。</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="81-函数职责要单一">8.1 函数职责要单一<a href="#81-函数职责要单一" class="hash-link" aria-label="8.1 函数职责要单一的直接链接" title="8.1 函数职责要单一的 直接链接" translate="no">​</a></h3>
+<p>一个函数最好只做一类事，不要同时承担太多责任。</p>
+<p>比如优先这样设计：</p>
+<ul>
+<li class=""><code>search_docs</code></li>
+<li class=""><code>get_weather</code></li>
+<li class=""><code>query_order_status</code></li>
+<li class=""><code>create_calendar_event</code></li>
+</ul>
+<p>而不是设计一个万能函数：</p>
+<ul>
+<li class=""><code>do_everything</code></li>
+</ul>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="82-名字要清晰">8.2 名字要清晰<a href="#82-名字要清晰" class="hash-link" aria-label="8.2 名字要清晰的直接链接" title="8.2 名字要清晰的直接链接" translate="no">​</a></h3>
+<p>函数名最好让模型一看就知道用途。</p>
+<p>好的名字通常是：</p>
+<ul>
+<li class="">动词 + 对象</li>
+</ul>
+<p>例如：</p>
+<ul>
+<li class=""><code>get_order_status</code></li>
+<li class=""><code>search_knowledge_base</code></li>
+<li class=""><code>send_email</code></li>
+<li class=""><code>create_meeting</code></li>
+</ul>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="83-参数字段要明确">8.3 参数字段要明确<a href="#83-参数字段要明确" class="hash-link" aria-label="8.3 参数字段要明确的直接链接" title="8.3 参数字段要明确的直接链接" translate="no">​</a></h3>
+<p>参数命名和描述一定要清楚，不然模型容易误用。</p>
+<p>比如：</p>
+<ul>
+<li class=""><code>location</code> 比 <code>where</code> 更清楚</li>
+<li class=""><code>start_time</code> 比 <code>time</code> 更清楚</li>
+<li class=""><code>order_id</code> 比 <code>id</code> 更清楚</li>
+</ul>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="84-参数不要过多">8.4 参数不要过多<a href="#84-参数不要过多" class="hash-link" aria-label="8.4 参数不要过多的直接链接" title="8.4 参数不要过多的直接链接" translate="no">​</a></h3>
+<p>函数参数太多会显著增加调用错误率。</p>
+<p>能拆就拆，能默  认就默认。</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="85-描述要写清边界">8.5 描述要写清边界<a href="#85-描述要写清边界" class="hash-link" aria-label="8.5 描述要写清边界的直接链接" title="8.5 描述要写清边界的直接链接" translate="no">​</a></h3>
+<p>函数描述里最好说明：</p>
+<ul>
+<li class="">它做什么</li>
+<li class="">不做什么</li>
+<li class="">适合什么场景调用</li>
+</ul>
+<p>这样模型更容易在多个工具里选对。</p>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="9-一个常见的调用例子">9. 一个常见的调用例子<a href="#9-一个常见的调用例子" class="hash-link" aria-label="9. 一个常见的调用例子的直接链接" title="9. 一个常见的调用例子的直接链接" translate="no">​</a></h2>
+<p>假设系统有两个工具：</p>
+<ul>
+<li class=""><code>get_weather</code></li>
+<li class=""><code>create_calendar_event</code></li>
+</ul>
+<p>用户说：</p>
+<div class="language-text codeBlockContainer_AXfa theme-code-block" style="--prism-color:#403f53;--prism-background-color:#FBFBFB"><div class="codeBlockContent_GInB"><pre tabindex="0" class="prism-code language-text codeBlock_vnrn thin-scrollbar" style="color:#403f53;background-color:#FBFBFB"><code class="codeBlockLines_YheM"><div class="token-line" style="color:#403f53"><span class="token plain">如果明天下午上海不下雨，就帮我安排一个 5 点跑步提醒。</span><br></div></code></pre></div></div>
+<p>可能的流程是：</p>
+<ol>
+<li class="">模型先判断要查天气</li>
+<li class="">调 <code>get_weather(city=&quot;Shanghai&quot;, date=&quot;tomorrow&quot;, period=&quot;afternoon&quot;)</code></li>
+<li class="">如果结果显示无雨</li>
+<li class="">再调 <code>create_calendar_event(title=&quot;Run&quot;, time=&quot;17:00&quot;, city=&quot;Shanghai&quot;)</code></li>
+<li class="">最后告诉用户已创建提醒</li>
+</ol>
+<p>这类场景就已经不只是单次问答，而是多步工具协 作。</p>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="10-tool-result-回注为什么重要">10. Tool Result 回注为什么重要<a href="#10-tool-result-回注为什么重要" class="hash-link" aria-label="10. Tool Result 回注为什么重要的直接链接" title="10. Tool Result 回注为什么重要的直接链接" translate="no">​</a></h2>
+<p>很多初学者会忽略一个点：</p>
+<p>工具调用最关键的，不只是“能调用成功”，而是“结果回到模型之后，模型能不能正确使用它”。</p>
+<p>举个例子，工具返回：</p>
+<div class="language-json codeBlockContainer_AXfa theme-code-block" style="--prism-color:#403f53;--prism-background-color:#FBFBFB"><div class="codeBlockContent_GInB"><pre tabindex="0" class="prism-code language-json codeBlock_vnrn thin-scrollbar" style="color:#403f53;background-color:#FBFBFB"><code class="codeBlockLines_YheM"><div class="token-line" style="color:#403f53"><span class="token punctuation" style="color:rgb(153, 76, 195)">{</span><span class="token plain"></span><br></div><div class="token-line" style="color:#403f53"><span class="token plain">  </span><span class="token property" style="color:rgb(12, 150, 155)">&quot;temp&quot;</span><span class="token operator" style="color:rgb(12, 150, 155)">:</span><span class="token plain"> </span><span class="token number" style="color:rgb(170, 9, 130)">31</span><span class="token punctuation" style="color:rgb(153, 76, 195)">,</span><span class="token plain"></span><br></div><div class="token-line" style="color:#403f53"><span class="token plain">  </span><span class="token property" style="color:rgb(12, 150, 155)">&quot;rain&quot;</span><span class="token operator" style="color:rgb(12, 150, 155)">:</span><span class="token plain"> </span><span class="token boolean" style="color:rgb(188, 84, 84)">false</span><span class="token punctuation" style="color:rgb(153, 76, 195)">,</span><span class="token plain"></span><br></div><div class="token-line" style="color:#403f53"><span class="token plain">  </span><span class="token property" style="color:rgb(12, 150, 155)">&quot;aqi&quot;</span><span class="token operator" style="color:rgb(12, 150, 155)">:</span><span class="token plain"> </span><span class="token number" style="color:rgb(170, 9, 130)">158</span><span class="token plain"></span><br></div><div class="token-line" style="color:#403f53"><span class="token plain"></span><span class="token punctuation" style="color:rgb(153, 76, 195)">}</span><br></div></code></pre></div></div>
+<p>模型需要据此进一步判断：</p>
+<ul>
+<li class="">虽然不下雨</li>
+<li class="">但空气质量偏差</li>
+<li class="">所以不太适合跑步</li>
+</ul>
+<p>工具负责拿数据，模型负责解释数据和决策。</p>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="11-常见设计模式">11. 常见设计模式<a href="#11-常见设计模式" class="hash-link" aria-label="11. 常见设计模式的直接链接" title="11. 常见设计模式的直接链接" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="111-single-tool-call">11.1 Single Tool Call<a href="#111-single-tool-call" class="hash-link" aria-label="11.1 Single Tool Call的直接链接" title="11.1 Single Tool Call的直接链接" translate="no">​</a></h3>
+<p>最简单的模式，一次请求只调用一个工具。</p>
+<p>适合：</p>
+<ul>
+<li class="">查天气</li>
+<li class="">查订单</li>
+<li class="">查库存</li>
+<li class="">查汇率</li>
+</ul>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="112-multi-step-tool-use">11.2 Multi-step Tool Use<a href="#112-multi-step-tool-use" class="hash-link" aria-label="11.2 Multi-step Tool Use的直接链接" title="11.2 Multi-step Tool Use的直接链接" translate="no">​</a></h3>
+<p>一个请求需要连续调用多个工具。</p>
+<p>适合：</p>
+<ul>
+<li class="">先搜索，再读取详情</li>
+<li class="">先查用户，再查订单</li>
+<li class="">先看天气，再创建日历事件</li>
+</ul>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="113-tool--rag">11.3 Tool + RAG<a href="#113-tool--rag" class="hash-link" aria-label="11.3 Tool + RAG的直接链接" title="11.3 Tool + RAG的直接链接" translate="no">​</a></h3>
+<p>有些场景会把二者结合起来：</p>
+<ul>
+<li class="">先用搜索工具找到文档</li>
+<li class="">再用 RAG 阅读和生成答案</li>
+</ul>
+<p>或者：</p>
+<ul>
+<li class="">先检索知识库</li>
+<li class="">不够再调用其他工具补信息</li>
+</ul>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="114-tool--planning">11.4 Tool + Planning<a href="#114-tool--planning" class="hash-link" aria-label="11.4 Tool + Planning的直接链接" title="11.4 Tool + Planning的直接链接" translate="no">​</a></h3>
+<p>复杂任务里，模型可能先做计划，再按计划调用多个工具。</p>
+<p>这就是很多 Agent 系统的常见模式。</p>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="12-实战里最常见的问题">12. 实战里最常见的问题<a href="#12-实战里最常见的问题" class="hash-link" aria-label="12. 实战里最常见的问题的直接链接" title="12. 实战里最常见的问题的直接链接" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="121-选错工具">12.1 选错工具<a href="#121-选错工具" class="hash-link" aria-label="12.1 选错工具的直接链接" title="12.1 选错工具的直接链接" translate="no">​</a></h3>
+<p>表现：</p>
+<ul>
+<li class="">明明该查数据库，却去搜索网页</li>
+<li class="">明明只要查一个字段，却调用了复杂流程</li>
+</ul>
+<p>原因通常包括：</p>
+<ul>
+<li class="">工具描述不清</li>
+<li class="">多个工具边界重叠</li>
+<li class="">函数名不直观</li>
+</ul>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="122-参数提取错误">12.2 参数提取错误<a href="#122-参数提取错误" class="hash-link" aria-label="12.2 参数提取错误的直接链接" title="12.2 参数提取错误的直 接链接" translate="no">​</a></h3>
+<p>表现：</p>
+<ul>
+<li class="">城市提错</li>
+<li class="">日期理解错</li>
+<li class="">用户 ID 或订单 ID 提取错</li>
+</ul>
+<p>解决方向包括：</p>
+<ul>
+<li class="">参数定义更清晰</li>
+<li class="">对关键字段加校验</li>
+<li class="">必要时先追问用户</li>
+</ul>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="123-工具结果太乱">12.3 工具结果太乱<a href="#123-工具结果太乱" class="hash-link" aria-label="12.3 工具结果太乱的直接链接" title="12.3 工具结果太乱的直接链接" translate="no">​</a></h3>
+<p>表现：</p>
+<ul>
+<li class="">返回字段太多</li>
+<li class="">数据结构太深</li>
+<li class="">模型很难读懂重点</li>
+</ul>
+<p>所以工具返回最好：</p>
+<ul>
+<li class="">字段化</li>
+<li class="">精简</li>
+<li class="">稳定</li>
+<li class="">可解释</li>
+</ul>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="124-调用了工具但最终回答没用好结果">12.4 调用了工具，但最终回答没用好结果<a href="#124-调用了工具但最终回答没用好结果" class="hash-link" aria-label="12.4 调用了工具，但最终回答没用好结果的直接链接" title="12.4 调用了工具，但最终回答没用好结果的直接链接" translate="no">​</a></h3>
+<p>比如工具已经返回“库存为 0”，模型却仍然说“可能有库存”。</p>
+<p>这通常说明：</p>
+<ul>
+<li class="">结果回注不清晰</li>
+<li class="">上下文里存在冲突信息</li>
+<li class="">没有强约束模型优先依据工具结果</li>
+</ul>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="125-多步调用中间状态丢失">12.5 多步调用中间状态丢失<a href="#125-多步调用中间状态丢失" class="hash-link" aria-label="12.5 多步调用中间状态丢失的直接链接" title="12.5 多步调用中间状态丢失的直接链接" translate="no">​</a></h3>
+<p>复杂流程里，如果没有状态管理，模型可  能忘了：</p>
+<ul>
+<li class="">已经调用过什么</li>
+<li class="">上一步查到了什么</li>
+<li class="">下一步该做什么</li>
+</ul>
+<p>这时就需要：</p>
+<ul>
+<li class="">状态摘要</li>
+<li class="">工作记忆</li>
+<li class="">明确的多步流程控制</li>
+</ul>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="13-tool-use-的安全与边界">13. Tool Use 的安全与边界<a href="#13-tool-use-的安全与边界" class="hash-link" aria-label="13. Tool Use 的安全与边界的直接链接" title="13. Tool Use 的安全与边界的直接链接" translate="no">​</a></h2>
+<p>Tool Use 一旦涉及真实动作，就必须考虑安全问题。</p>
+<p>比如：</p>
+<ul>
+<li class="">发邮件</li>
+<li class="">下单</li>
+<li class="">删除数据</li>
+<li class="">修改日历</li>
+<li class="">写数据库</li>
+</ul>
+<p>这类工具最好增加额外控制，比如：</p>
+<ul>
+<li class="">权限检查</li>
+<li class="">参数校验</li>
+<li class="">高风险动作二次确认</li>
+<li class="">日志记录</li>
+<li class="">可回滚机制</li>
+</ul>
+<p>否则模型“会做事”也可能带来更大风险。</p>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="14-一个典型-prompt-模式">14. 一个典型 Prompt 模式<a href="#14-一个典型-prompt-模式" class="hash-link" aria-label="14. 一个典型 Prompt 模式的直接链接" title="14. 一个典型 Prompt 模式的直接链接" translate="no">​</a></h2>
+<p>在支持工具调用的系统里，常见的指令思路是：</p>
+<div class="language-text codeBlockContainer_AXfa theme-code-block" style="--prism-color:#403f53;--prism-background-color:#FBFBFB"><div class="codeBlockContent_GInB"><pre tabindex="0" class="prism-code language-text codeBlock_vnrn thin-scrollbar" style="color:#403f53;background-color:#FBFBFB"><code class="codeBlockLines_YheM"><div class="token-line" style="color:#403f53"><span class="token plain">你是一个智能助手。</span><br></div><div class="token-line" style="color:#403f53"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#403f53"><span class="token plain">当用户的问题需要实时信息、外部数据或执行动作时，请优先调用合适的工具。</span><br></div><div class="token-line" style="color:#403f53"><span class="token plain">如果工具结果已经足够回答，请基于工具结果生成最终答案。</span><br></div><div class="token-line" style="color:#403f53"><span class="token plain">如果信息仍不足，再明确说明缺少什么。</span><br></div></code></pre></div></div>
+<p>如果系统支持函数 schema，真正的关键通常不在这句提示本身，而在：</p>
+<ul>
+<li class="">工具列表设计得好不好</li>
+<li class="">参数结构清不清楚</li>
+<li class="">工具结果是否容易被模型消费</li>
+</ul>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="15-学习-tool-use-先掌握的-8-个点">15. 学习 Tool Use 先掌握的 8 个点<a href="#15-学习-tool-use-先掌握的-8-个点" class="hash-link" aria-label="15. 学习 Tool Use 先掌握的 8 个点的直接链接" title="15. 学习 Tool Use 先掌握的 8 个点的直接链接" translate="no">​</a></h2>
+<p>建议优先掌握下面这 8 个：</p>
+<ol>
+<li class="">区分 <code>Tool Use</code> 和普通问答</li>
+<li class="">理解 <code>Function Calling</code> 的完整流程</li>
+<li class="">学会设计清晰的函数 schema</li>
+<li class="">学会做参数提取和参数校验</li>
+<li class="">学会把工具结果重新注入上下文</li>
+<li class="">学会处理多步工具调用</li>
+<li class="">学会设置高风险动作边界</li>
+<li class="">学会把 Tool Use 和 RAG、Planning 结合起来</li>
+</ol>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="16-一个实用的学习顺序">16. 一个实用的学习顺序<a href="#16-一个实用的学习顺序" class="hash-link" aria-label="16. 一个实用的学习顺序的直接链接" title="16. 一个实用的学习顺序的直接链接" translate="no">​</a></h2>
+<p>如果要系统学这个主题，我建议按这个顺序来：</p>
+<ol>
+<li class="">先理解 Tool Use 的基本概念</li>
+<li class="">再理解 Function Calling 的调用流程</li>
+<li class="">学函数 schema 设计</li>
+<li class="">学参数提取和结果回注</li>
+<li class="">学多步调用</li>
+<li class="">学和 RAG、ReAct、Agent 的结合</li>
+<li class="">最后再学权限、安全和评估</li>
+</ol>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="17-它和-agent-的关系">17. 它和 Agent 的关系<a href="#17-它和-agent-的关系" class="hash-link" aria-label="17. 它和 Agent 的关系的直接链接" title="17. 它和 Agent 的关系的直接链接" translate="no">​</a></h2>
+<p>可以把 Tool Use 看成 Agent 的核心积木之一。</p>
+<p>因为一个 Agent 通常需要：</p>
+<ul>
+<li class="">理解任务</li>
+<li class="">决定下一步</li>
+<li class="">调用工具</li>
+<li class="">读取结果</li>
+<li class="">更新状态</li>
+<li class="">再继续执行</li>
+</ul>
+<p>如果没有 Tool Use，很多 Agent 只能停留在“会说”，而不能真正“会做”。</p>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="18-一句话总结">18. 一句话总结<a href="#18-一句话总结" class="hash-link" aria-label="18. 一句话总结的直接链接" title="18. 一句话总结的直接链接" translate="no">​</a></h2>
+<p><code>Tool Use / Function Calling</code> 的本质，是让模型不只靠语言和记忆回答问题，而是能在需要时调用外部能力、读取真实数据、执行实际动作，并把结果重新纳入推理过程。</p>
+<p>从这里开始，模型才真正从“问答系统”向“可执行系统”迈进。</p></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="文件选项卡"><a class="pagination-nav__link pagination-nav__link--prev" href="/AI/foundations/RAG-Intro-and-Practice"><div class="pagination-nav__sublabel">上一页</div><div class="pagination-nav__label">RAG 入门与实践</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/AI/foundations/MCP-Intro-and-Practice"><div class="pagination-nav__sublabel">下一页</div><div class="pagination-nav__label">MCP 入门与实践</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_v08c thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#1-tool-use-是什么" class="table-of-contents__link toc-highlight">1. Tool Use 是什么</a></li><li><a href="#2-function-calling-是什么" class="table-of-contents__link toc-highlight">2. Function Calling 是什么</a></li><li><a href="#3-为什么它重要" class="table-of-contents__link toc-highlight">3. 为什么它重要</a></li><li><a href="#4-一个最直观的例子" class="table-of-contents__link toc-highlight">4. 一个最直观的例子</a></li><li><a href="#5-tool-use-的基本流程" class="table-of-contents__link toc-highlight">5. Tool Use 的基本流程</a></li><li><a href="#6-tool-use-和-rag-的区别" class="table-of-contents__link toc-highlight">6. Tool Use 和 RAG 的区别</a><ul><li><a href="#61-rag-更关注什么" class="table-of-contents__link toc-highlight">6.1 RAG 更关注什么</a></li><li><a href="#62-tool-use-更关注什么" class="table-of-contents__link toc-highlight">6.2 Tool Use 更关注什么</a></li></ul></li><li><a href="#7-function-calling-的核心组成" class="table-of-contents__link toc-highlight">7. Function Calling 的核心组成</a><ul><li><a href="#71-tool-definition" class="table-of-contents__link toc-highlight">7.1 Tool Definition</a></li><li><a href="#72-tool-selection" class="table-of-contents__link toc-highlight">7.2 Tool Selection</a></li><li><a href="#73-argument-extraction" class="table-of-contents__link toc-highlight">7.3 Argument Extraction</a></li><li><a href="#74-tool-execution" class="table-of-contents__link toc-highlight">7.4 Tool Execution</a></li><li><a href="#75-result-injection" class="table-of-contents__link toc-highlight">7.5 Result Injection</a></li></ul></li><li><a href="#8-设计函数时最重要的原则" class="table-of-contents__link toc-highlight">8. 设计函数时最重要的原则</a><ul><li><a href="#81-函数职责要单一" class="table-of-contents__link toc-highlight">8.1 函数职责要单一</a></li><li><a href="#82-名字要清晰" class="table-of-contents__link toc-highlight">8.2 名字要清晰</a></li><li><a href="#83-参数字段要明确" class="table-of-contents__link toc-highlight">8.3 参数字段要明确</a></li><li><a href="#84-参数不要过多" class="table-of-contents__link toc-highlight">8.4 参数不要过多</a></li><li><a href="#85-描述要写清边界" class="table-of-contents__link toc-highlight">8.5 描述要写清边界</a></li></ul></li><li><a href="#9-一个常见的调用例子" class="table-of-contents__link toc-highlight">9. 一个常见的调用例子</a></li><li><a href="#10-tool-result-回注为什么重要" class="table-of-contents__link toc-highlight">10. Tool Result 回注为什么重要</a></li><li><a href="#11-常见设计模式" class="table-of-contents__link toc-highlight">11. 常见设计模式</a><ul><li><a href="#111-single-tool-call" class="table-of-contents__link toc-highlight">11.1 Single Tool Call</a></li><li><a href="#112-multi-step-tool-use" class="table-of-contents__link toc-highlight">11.2 Multi-step Tool Use</a></li><li><a href="#113-tool--rag" class="table-of-contents__link toc-highlight">11.3 Tool + RAG</a></li><li><a href="#114-tool--planning" class="table-of-contents__link toc-highlight">11.4 Tool + Planning</a></li></ul></li><li><a href="#12-实战里最常见的问题" class="table-of-contents__link toc-highlight">12. 实战里最常见的问题</a><ul><li><a href="#121-选错工具" class="table-of-contents__link toc-highlight">12.1 选错工具</a></li><li><a href="#122-参数提取错误" class="table-of-contents__link toc-highlight">12.2 参数提取错误</a></li><li><a href="#123-工具结果太乱" class="table-of-contents__link toc-highlight">12.3 工具结果太乱</a></li><li><a href="#124-调用了工具但最终回答没用好结果" class="table-of-contents__link toc-highlight">12.4 调用了工具，但最终回答没用好结果</a></li><li><a href="#125-多步调用中间状态丢失" class="table-of-contents__link toc-highlight">12.5 多步调用中间状态丢失</a></li></ul></li><li><a href="#13-tool-use-的安全与边界" class="table-of-contents__link toc-highlight">13. Tool Use 的安全与边界</a></li><li><a href="#14-一个典型-prompt-模式" class="table-of-contents__link toc-highlight">14. 一个典型 Prompt 模式</a></li><li><a href="#15-学习-tool-use-先掌握的-8-个点" class="table-of-contents__link toc-highlight">15. 学习 Tool Use 先掌握的 8 个点</a></li><li><a href="#16-一个实用的学习顺序" class="table-of-contents__link toc-highlight">16. 一个实用的学习顺序</a></li><li><a href="#17-它和-agent-的关系" class="table-of-contents__link toc-highlight">17. 它和 Agent 的关系</a></li><li><a href="#18-一句话总结" class="table-of-contents__link toc-highlight">18. 一句话总结</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">入口</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/intro">知识库</a></li><li class="footer__item"><a class="footer__link-item" href="/blog">日常 Blog</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/engineering">工程化</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/dev-tools">工具与环境</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">更多</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/JamesLi-dev" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_BlfO"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Torli, Inc. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>

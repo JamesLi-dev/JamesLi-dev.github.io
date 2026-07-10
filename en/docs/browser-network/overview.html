@@ -1,0 +1,561 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-browser-network/overview" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.10.1">
+<title data-rh="true">浏览器与网络 | 这里是 Torli&#x27;s </title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://blog.torli.top/en/docs/browser-network/overview"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" property="og:locale:alternate" content="zh_Hans"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="keywords" content="cooking, blog"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="浏览器与网络 | 这里是 Torli&#x27;s "><meta data-rh="true" name="description" content="关于浏览器相关知识点总结, 持续更新中……"><meta data-rh="true" property="og:description" content="关于浏览器相关知识点总结, 持续更新中……"><link data-rh="true" rel="icon" href="/en/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://blog.torli.top/en/docs/browser-network/overview"><link data-rh="true" rel="alternate" href="https://blog.torli.top/docs/browser-network/overview" hreflang="zh-Hans"><link data-rh="true" rel="alternate" href="https://blog.torli.top/en/docs/browser-network/overview" hreflang="en"><link data-rh="true" rel="alternate" href="https://blog.torli.top/docs/browser-network/overview" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"浏览器与网络","item":"https://blog.torli.top/en/docs/browser-network/"},{"@type":"ListItem","position":2,"name":"浏览器与网络","item":"https://blog.torli.top/en/docs/browser-network/overview"}]}</script><link rel="alternate" type="application/rss+xml" href="/en/blog/rss.xml" title="这里是 Torli&#39;s  RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/en/blog/atom.xml" title="这里是 Torli&#39;s  Atom Feed"><link rel="stylesheet" href="/en/assets/css/styles.a3b9aef2.css">
+<script src="/en/assets/js/runtime~main.56ff528f.js" defer="defer"></script>
+<script src="/en/assets/js/main.f68a3aad.js" defer="defer"></script>
+</head>
+<body>
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_U9sP" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top navbarHideable_PT2D"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/en/"><div class="navbar__logo"><img src="/en/img/logo2.png" alt="My Site Logo" class="themedComponent_QNor themedComponent--light_EqDK"><img src="/en/img/logo2.png" alt="My Site Logo" class="themedComponent_QNor themedComponent--dark_H0PK"></div><b class="navbar__title text--truncate">Torli&#x27;s Blog</b></a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a class="navbar__link" aria-haspopup="true" aria-expanded="false" role="button" href="/en/docs/intro">知识库</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/en/docs/foundations">基础语言</a></li><li><a aria-current="page" class="dropdown__link dropdown__link--active" href="/en/docs/browser-network">浏览器与网络</a></li><li><a class="dropdown__link" href="/en/docs/engineering">工程化</a></li><li><a class="dropdown__link" href="/en/docs/frameworks">前端框架</a></li><li><a class="dropdown__link" href="/en/docs/node-server">Node 与服务端</a></li><li><a class="dropdown__link" href="/en/docs/data-backend">数据库与后端服务</a></li><li><a class="dropdown__link" href="/en/docs/state-management">状态管理</a></li><li><a class="dropdown__link" href="/en/docs/ui-interaction">UI 与交互</a></li><li><a class="dropdown__link" href="/en/docs/dev-tools">效率工具与开发环境</a></li><li><a class="dropdown__link" href="/en/docs/frontier">前沿专题</a></li></ul></div><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a class="navbar__link" aria-haspopup="true" aria-expanded="false" role="button" href="/en/AI">AI 学习</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/en/AI">开始这里：AI 首页</a></li><li><a class="dropdown__link" href="/en/AI/AI-Agent-Docs-Index">专题索引：AI Agent 文档总索引</a></li><li><a class="dropdown__link" href="/en/AI/AI-Agent-Chapter-to-Framework-Map">专题索引：章节与框架映射</a></li><li><a class="dropdown__link" href="/en/AI/foundations/Prompt-Engineering-Glossary">基础能力：Prompt Engineering</a></li><li><a class="dropdown__link" href="/en/AI/foundations/Context-Engineering-Guide">基础能力：Context Engineering</a></li><li><a class="dropdown__link" href="/en/AI/foundations/RAG-Intro-and-Practice">基础能力：RAG</a></li><li><a class="dropdown__link" href="/en/AI/agent-engineering/Agent-Engineering-Intro">Agent 与工程化：Agent Engineering</a></li><li><a class="dropdown__link" href="/en/AI/agent-engineering/Workflow-vs-Agent">Agent 与工程化：Workflow vs Agent</a></li><li><a class="dropdown__link" href="/en/AI/agent-engineering/Agent-Memory-and-State">Agent 与工程化：Memory and State</a></li><li><a class="dropdown__link" href="/en/AI/agent-engineering/Harness-Engineering-Guide">Agent 与工程化：Harness Engineering</a></li><li><a class="dropdown__link" href="/en/AI/frameworks/OpenAI-Agents-SDK-Guide">框架与 SDK：OpenAI Agents SDK</a></li><li><a class="dropdown__link" href="/en/AI/frameworks/LangGraph-Intro-and-Orchestration">框架与 SDK：LangGraph</a></li><li><a class="dropdown__link" href="/en/AI/frameworks/LangSmith-Observability-and-Evals">框架与 SDK：LangSmith</a></li><li><a class="dropdown__link" href="/en/AI/frameworks/Vercel-AI-SDK-Guide">框架与 SDK：Vercel AI SDK</a></li><li><a class="dropdown__link" href="/en/AI/frameworks/Mastra-Guide">框架与 SDK：Mastra</a></li><li><a class="dropdown__link" href="/en/AI/frameworks/Google-ADK-Guide">框架与 SDK：Google ADK</a></li><li><a class="dropdown__link" href="/en/AI/overview/AI-App-Architecture-Map">全局视角：AI 应用整体架构</a></li><li><a class="dropdown__link" href="/en/AI/overview/Minimal-Agent-Demo-From-0-to-1">全局视角：最小 Agent Demo</a></li><li><a class="dropdown__link" href="/en/AI/overview/Minimal-Agent-Code-Implementation-Examples">全局视角：最小 Agent 代码示例</a></li><li><a class="dropdown__link" href="/en/AI/overview/AI-Agent-Tech-Stack-and-Framework-Comparison">全局视角：技术栈与框架对比</a></li></ul></div><a class="navbar__item navbar__link" href="/en/blog">日常 Blog</a><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a class="navbar__link" aria-haspopup="true" aria-expanded="false" role="button" href="/en/docs/engineering">工程化</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/en/docs/engineering/build-tools">构建与转译</a></li><li><a class="dropdown__link" href="/en/docs/engineering/code-quality">代码规范</a></li><li><a class="dropdown__link" href="/en/docs/engineering/package-management">包管理与环境管理</a></li><li><a class="dropdown__link" href="/en/docs/engineering/data-fetching">请求与数据层</a></li><li><a class="dropdown__link" href="/en/docs/engineering/package-management/pnpm">pnpm</a></li><li><a class="dropdown__link" href="/en/docs/engineering/package-management/fnm">fnm</a></li></ul></div><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a class="navbar__link" aria-haspopup="true" aria-expanded="false" role="button" href="/en/docs/dev-tools">工具与环境</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/en/docs/dev-tools/apps/KeyboardMaestro">Keyboard Maestro</a></li><li><a class="dropdown__link" href="/en/docs/dev-tools/apps/Warp">Warp</a></li><li><a class="dropdown__link" href="/en/docs/dev-tools/apps/Ghostty">Ghostty</a></li><li><a class="dropdown__link" href="/en/docs/dev-tools/apps/Zed">Zed</a></li><li><a class="dropdown__link" href="/en/docs/dev-tools/apps/GitButler">GitButler</a></li><li><a class="dropdown__link" href="/en/docs/dev-tools/apps/Switzy">Switzy</a></li><li><a class="dropdown__link" href="/en/docs/dev-tools/apps/Craft-Agents">Craft Agents</a></li></ul></div><a href="https://github.com/JamesLi-dev" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_BlfO"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_bW1k colorModeToggle_D8sl"><button class="clean-btn toggleButton_qiU8 toggleButtonDisabled_xinJ" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_X9Tk lightToggleIcon_y62u"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_X9Tk darkToggleIcon_Dj8C"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_X9Tk systemToggleIcon_T2ve"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_e2eJ"><div class="navbar__search searchBarContainer_Mqfy"><input placeholder="Search" aria-label="Search" class="navbar__search-input" value=""><div class="loadingRing_r319 searchBarLoadingRing_Kn2r"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_kzBE"><div class="docsWrapper_Jb1X"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_W_UZ" type="button"></button><div class="docRoot_AAe1"><aside class="theme-doc-sidebar-container docSidebarContainer_RSuS"><div class="sidebarViewport_pYEE"><div class="sidebar_G_8g sidebarWithHideableNavbar__FNA"><a tabindex="-1" class="sidebarLogo_hLnz" href="/en/"><img src="/en/img/logo2.png" alt="My Site Logo" class="themedComponent_QNor themedComponent--light_EqDK"><img src="/en/img/logo2.png" alt="My Site Logo" class="themedComponent_QNor themedComponent--dark_H0PK"><b>Torli&#x27;s Blog</b></a><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_k9TG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/en/docs/intro"><span title="前端知识库导览" class="linkLabel_vgcd">前端知识库导览</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_jNm8 menu__link menu__link--sublist" href="/en/docs/foundations"><span title="基础语言" class="categoryLinkLabel_ayea">基础语言</span></a><button aria-label="Expand sidebar category &#x27;基础语言&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_jNm8 menu__link menu__link--sublist menu__link--active" href="/en/docs/browser-network"><span title="浏览器与网络" class="categoryLinkLabel_ayea">浏览器与网络</span></a><button aria-label="Collapse sidebar category &#x27;浏览器与网络&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/en/docs/browser-network/overview"><span title="浏览器与网络" class="linkLabel_vgcd">浏览器与网络</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/en/docs/browser-network/dns-url-and-connection"><span title="URL、DNS 与连接建立" class="linkLabel_vgcd">URL、DNS 与连接建立</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/en/docs/browser-network/http-and-https"><span title="HTTP 与 HTTPS" class="linkLabel_vgcd">HTTP 与 HTTPS</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/en/docs/browser-network/rendering-pipeline"><span title="浏览器渲染流程" class="linkLabel_vgcd">浏览器渲染流程</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/en/docs/browser-network/caching"><span title="浏览器缓存" class="linkLabel_vgcd">浏览器缓存</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/en/docs/browser-network/performance-and-observers"><span title="浏览器性能指标与观察能力" class="linkLabel_vgcd">浏览器性能指标与观察能力</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/en/docs/browser-network/cross-origin-and-security"><span title="跨域与前端安全" class="linkLabel_vgcd">跨域与前端安全</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/en/docs/browser-network/service-worker-and-pwa"><span title="Service Worker 与 PWA" class="linkLabel_vgcd">Service Worker 与 PWA</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/en/docs/browser-network/broadcast-channel"><span title="BroadcastChannel 与多标签页通信" class="linkLabel_vgcd">BroadcastChannel 与多标签页通信</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/en/docs/browser-network/browser-storage"><span title="浏览器存储机制" class="linkLabel_vgcd">浏览器存储机制</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_jNm8 menu__link menu__link--sublist" href="/en/docs/engineering"><span title="工程化" class="categoryLinkLabel_ayea">工程化</span></a><button aria-label="Expand sidebar category &#x27;工程化&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_jNm8 menu__link menu__link--sublist" href="/en/docs/frameworks"><span title="前端框架" class="categoryLinkLabel_ayea">前端框架</span></a><button aria-label="Expand sidebar category &#x27;前端框架&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_jNm8 menu__link menu__link--sublist" href="/en/docs/category/node-与服务端"><span title="Node 与服务端" class="categoryLinkLabel_ayea">Node 与服务端</span></a><button aria-label="Expand sidebar category &#x27;Node 与服务端&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_jNm8 menu__link menu__link--sublist" href="/en/docs/category/bun-专题"><span title="Bun 专题" class="categoryLinkLabel_ayea">Bun 专题</span></a><button aria-label="Expand sidebar category &#x27;Bun 专题&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_jNm8 menu__link menu__link--sublist" href="/en/docs/data-backend"><span title="数据库与后端服务" class="categoryLinkLabel_ayea">数据库与后端服务</span></a><button aria-label="Expand sidebar category &#x27;数据库与后端服务&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_jNm8 menu__link menu__link--sublist" href="/en/docs/state-management"><span title="状态管理" class="categoryLinkLabel_ayea">状态管理</span></a><button aria-label="Expand sidebar category &#x27;状态管理&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_jNm8 menu__link menu__link--sublist" href="/en/docs/ui-interaction"><span title="UI 与交互" class="categoryLinkLabel_ayea">UI 与交互</span></a><button aria-label="Expand sidebar category &#x27;UI 与交互&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_jNm8 menu__link menu__link--sublist" href="/en/docs/dev-tools"><span title="效率工具与开发环境" class="categoryLinkLabel_ayea">效率工具与开发环境</span></a><button aria-label="Expand sidebar category &#x27;效率工具与开发环境&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_jNm8 menu__link menu__link--sublist" href="/en/docs/frontier"><span title="前沿专题" class="categoryLinkLabel_ayea">前沿专题</span></a><button aria-label="Expand sidebar category &#x27;前沿专题&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li></ul></nav><button type="button" data-torli-sidebar-toggle="collapse" title="Collapse sidebar" aria-label="Collapse sidebar" class="button button--secondary button--outline collapseSidebarButton_JQG6"><svg class="collapseSidebarButtonIcon_Iseg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"></rect><path d="M13 9L10 12L13 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></button></div></div></aside><main class="docMainContainer_hjYf"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_uYg3"><div class="docItemContainer_jngG"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_lBfN" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/en/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_ebxl"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/en/docs/browser-network"><span>浏览器与网络</span></a></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">浏览器与网络</span></li></ul></nav><div class="tocCollapsible_VI1r theme-doc-toc-mobile tocMobile_iude"><button type="button" class="clean-btn tocCollapsibleButton_LJEZ">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>浏览器与网络</h1></header>
+<blockquote>
+<p>关于浏览器相关知识点总结, 持续更新中……</p>
+</blockquote>
+<blockquote>
+<p><strong>文章主要包含以下内容：</strong></p>
+<ul>
+<li class="">互联网相关知识</li>
+<li class="">浏览器相关知识</li>
+</ul>
+</blockquote>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="互联网相关知识">互联网相关知识<a href="#互联网相关知识" class="hash-link" aria-label="Direct link to 互联网相关知识" title="Direct link to 互联网相关知识" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="http-是什么">HTTP 是什么？<a href="#http-是什么" class="hash-link" aria-label="Direct link to HTTP 是什么？" title="Direct link to HTTP 是什么？" translate="no">​</a></h3>
+<ul>
+<li class="">HTTP 是超文本传输协议，也就是HyperText Transfer Protocol。主要包含超文本、传输、协议。具体就不多介绍，网上资料还是很多的。</li>
+<li class="">HTTP 是一个在计算机世界里专门在「两点」之间「传输」文字、图片、音频、视频等「超文本」数据的「约定和规范」(协议)。
+<img decoding="async" loading="lazy" src="https://api2.mubu.com/v3/document_image/9f222b36-b89c-4244-adba-940b154a2c9a-3807603.jpg" alt="" class="img_BvmK"></li>
+</ul>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="http-的状态码有哪些">HTTP 的状态码有哪些？<a href="#http-的状态码有哪些" class="hash-link" aria-label="Direct link to HTTP 的状态码有哪些？" title="Direct link to HTTP 的状态码有哪些？" translate="no">​</a></h3>
+<ul>
+<li class="">1XX<!-- -->
+<ul>
+<li class="">接受，继续处理, 实际用到的很少</li>
+<li class="">【101】 切换请求协议</li>
+</ul>
+</li>
+<li class="">2XX<!-- -->
+<ul>
+<li class="">表示服务器成功处理了客户端的请求，也是我们最愿意看到的状态。</li>
+<li class="">【200】是最常见的成功状态码，表示一切正常。如果是非 HEAD 请求，服务器返回的响应头都会有 body 数据。</li>
+<li class="">【204】也是常见的成功状态码，与 200 OK 基本相同，但响应头没有 body 数据。</li>
+<li class="">【206】是应用于 HTTP 分块下载或断点续传，表示响应返回的 body 数据并不是资源的全部，而是其中的一部分，也是服务器处理成功的状态。</li>
+</ul>
+</li>
+<li class="">3XX<!-- -->
+<ul>
+<li class="">这类状态码表示客户端请求的资源发送了变动，需要客户端用新的 URL 重新发送请求获取资源，也就是重定向。</li>
+<li class="">【301】表示永久重定向，说明请求的资源已经不存在了，需改用新的 URL 再次访问。</li>
+<li class="">【302】表示临时重定向，说明请求的资源还在，但暂时需要用另一个 URL 来访问。</li>
+<li class="">【304】不具有跳转的含义，表示资源未修改，重定向已存在的缓冲文件，也称缓存重定向，用于缓存控制。</li>
+<li class="">【307】临时重定向，和302的唯一区别在于307 状态码会保证请求方法和消息主体不会改变</li>
+</ul>
+</li>
+<li class="">4XX<!-- -->
+<ul>
+<li class="">这类状态码表示客户端发送的报文有误，服务器无法处理，也就是错误码的含义。</li>
+<li class="">【400】请求语法错误</li>
+<li class="">【401】没权限，未授权</li>
+<li class="">【403】拒绝请求</li>
+<li class="">【404】资源不存在</li>
+</ul>
+</li>
+<li class="">5XX<!-- -->
+<ul>
+<li class="">【500】服务器报错</li>
+<li class="">【501】表示客户端请求的功能服务端还不支持，类似『开发中，敬请期待』的意思</li>
+<li class="">【502】通常是服务器作为网关或代理时返回的错误码，表示服务器自身工作正常，访问后端 服务器发生了错误。</li>
+<li class="">【503】表示服务器当前很忙，暂时无法响应服务器，类似『网络服务正忙，请稍后重试』的意思。</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="http-请求方式">HTTP 请求方式<a href="#http-请求方式" class="hash-link" aria-label="Direct link to HTTP 请求方式" title="Direct link to HTTP 请求方式" translate="no">​</a></h3>
+<ul>
+<li class=""><code>GET</code> 对服务器资源获取的简单请求</li>
+<li class=""><code>POST</code> 用于发送包含用户提交数据的请求</li>
+<li class=""><code>PUT</code> 向服务器提交数据, 以修改数据</li>
+<li class=""><code>DELETE</code> 删除服务器上的某些资源</li>
+<li class=""><code>HEAD</code> 请求页面的头部，获取资源的元信息</li>
+<li class=""><code>OPTIONS</code> 返回所有可用的方法，常用于跨域</li>
+<li class=""><code>CONNECT</code> 用于ssl隧道的基于代理的请求</li>
+<li class=""><code>TRACE</code> 追踪请求-响应传输的路径</li>
+</ul>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="常见http-请求头和响应头">常见HTTP 请求头和响应头<a href="#常见http-请求头和响应头" class="hash-link" aria-label="Direct link to 常见HTTP 请求头和响应头" title="Direct link to 常见HTTP 请求头和响应头" translate="no">​</a></h3>
+<ul>
+<li class="">请求头<!-- -->
+<ul>
+<li class="">Accept 浏览器能够处理的内容类型</li>
+<li class="">Accept-Charset 浏览器能够显示的字符集</li>
+<li class="">Accept-Encoding 浏览器能够处理的压缩编码</li>
+<li class="">Accept-Language 浏览器当前设置的语言</li>
+<li class="">Connection 浏览器和服务器之间的链接类型<!-- -->
+<ul>
+<li class="">keep-alive 是保证我们的http请求能建立一个持久连接, 也就是说建立一次TCP连接即可进行多次「请求和响应的交互。它的特点就是只要有一方没有明确提出断开连接，则保  持TCP连接状态，减少TCP连接和断开造成的额外开销。</li>
+</ul>
+</li>
+<li class="">Cookie 当前页面设置的cookie</li>
+<li class="">Host 发出请求页面的域</li>
+<li class="">Referer 发出请求页面的URL</li>
+<li class="">User-Agent 浏览器的用户代理字符串</li>
+</ul>
+</li>
+<li class="">响应头<!-- -->
+<ul>
+<li class="">Date 表示消息发送的时间，时间的描述格式由 rfc822 定义</li>
+<li class="">server 服务器名称</li>
+<li class="">Connection 浏览器与服务器之间连接的类型</li>
+<li class="">Cache-Control 控制http 缓存</li>
+<li class="">content-type 文档类型<!-- -->
+<ul>
+<li class="">application/json 服务器返回序列化厚的 JSON 字符串</li>
+<li class="">application/x-www-form-urlencoded 浏览器原生 form表单，注意是按照key=val&amp;key=value 的格式</li>
+<li class="">multipart/form-data 通常用于 post 请求上传文件时</li>
+<li class="">text/xml xml格式数据</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="常用了解的端口对应的服务">常用了解的端口对应的服务<a href="#常用了解的端口对应的服务" class="hash-link" aria-label="Direct link to 常用了解的端口对应的服务" title="Direct link to 常用了解的端口对应的服务" translate="no">​</a></h3>
+<ul>
+<li class="">21 FTP 文件传输协议</li>
+<li class="">22 ssh</li>
+<li class="">23 Telnet 远程登录服务</li>
+<li class="">25 SMTP 简单邮件传输协议</li>
+<li class="">53 DNS 域名服务器</li>
+<li class="">80 HTTP 超文本传输协议</li>
+<li class="">110 POP3 邮件传输协议3</li>
+<li class="">443 HTTPS</li>
+<li class="">1080 Sockets</li>
+<li class="">1521 Oracle 数据库默认端口</li>
+<li class="">3306 Mysql 数据库默认端口</li>
+</ul>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="http-演变过程">HTTP 演变过程<a href="#http-演变过程" class="hash-link" aria-label="Direct link to HTTP 演变过程" title="Direct link to HTTP 演变过程" translate="no">​</a></h3>
+<p>早期 HTTP/1.0 性能上的一个很大的问题，那就是每发起一个请求，都要新建一次 TCP 连接（三次握手），而且是串行请求，做了无畏的 TCP 连接建立和断开，增加了通信开销。</p>
+<p>下图为 HTTP/1.0 短链接 和 HTTP/1.1 长连接 keep-alive 的图解：
+<img decoding="async" loading="lazy" src="https://api2.mubu.com/v3/document_image/cadf8fc8-589e-47e3-8e76-8e04305de66d-3807603.jpg" alt="" class="img_BvmK"></p>
+<p>一张图来概括 HTTP 的演变过程，包括 HTTP/1.1、HTTPS、HTTP/2、HTTP/3 的区别
+<img decoding="async" loading="lazy" src="https://api2.mubu.com/v3/document_image/e2dd1349-b4ed-4ef8-8095-a2b5501252dc-3807603.jpg" alt="" class="img_BvmK"></p>
+<p>由上图可以看出，HTTP 和 HTTPS 的主要区别:</p>
+<ul>
+<li class="">在HTTP和TCP中插入了 SSL/TLS 安全协议;</li>
+<li class="">HTTP 连接建立相对简单， TCP 三次握手之后便可进行 HTTP 的报文传输。而 HTTPS 在 TCP 三次握手之后，还需进行 SSL/TLS 的握手过程，才可进入加密报文传输;</li>
+<li class="">除此之外，HTTP 的端口号是 80，HTTPS 的端口号是 443;</li>
+<li class="">HTTPS 协议需要向 CA（证书权威机构）申请数字证书，来保证服务器的身份是可信的。</li>
+</ul>
+<p>HTTP 的演变过程：</p>
+<ul>
+<li class="">HTTP/1.0<!-- -->
+<ul>
+<li class="">无法复用链接，完成即断开，重新慢启动和 TCP 3次握手</li>
+<li class="">head of line blocking: 线头阻塞，导致请求之间互相影响</li>
+</ul>
+</li>
+<li class="">HTTP/1.1<!-- -->
+<ul>
+<li class=""><code>keep-alive</code> 长连接 可复用,</li>
+<li class="">管道 <code>pipeline</code> 只要第一个请求发出去了，不必等其回来，就可以发第二个请求出去，可以减少整体的响应时间。当然管道是必须基于 <code>keep-alive</code> 确认之后才可以使用。</li>
+<li class="">新增了 断点续传 <code>Content-Range</code> 头、身份认证、状态管理、cache缓存(这点下面我们会仔细讲下HTTP的缓存)</li>
+<li class="">host 字段指定对应的虚拟站点</li>
+</ul>
+</li>
+<li class="">HTTP/2.0<!-- -->
+<ul>
+<li class="">多路复用<!-- -->
+<ul>
+<li class="">HTTP/2 是可以在一个连接中并发多个请求或回应，而不用按照顺序一一对应。</li>
+<li class="">多个请求也就造就了HTTP/2 的缺点，丢包现象发生，一旦丢包，就会触发 <code>TCP</code> 的重传机制，这样在一个 TCP 连接中的所有的 HTTP 请求都必须等待这个丢了的包被重传回来。</li>
+<li class="">移除了 HTTP/1.1 中的串行请求，不需要排队等待，也就不会再出现「队头阻塞」问题，降低了延迟，大幅度提高了连接的利用率。</li>
+</ul>
+</li>
+<li class="">二进制分帧层：应用层、传输层</li>
+<li class="">首部压缩<!-- -->
+<ul>
+<li class="">HTTP/2 会压缩头（Header）如果你同时发出多个请求，他们的头是一样的或是相似的，那么，协议会帮你消除重复的分</li>
+<li class="">这就是所谓的 <code>HPACK</code> 算法：在客户端和服务器同时维护一张头信息表，所有字段都会存入这个表，生成一个索引号，以后就不发送同样字段了，只发送索引号，这样就提高速度了。</li>
+</ul>
+</li>
+<li class="">服务端推送<!-- -->
+<ul>
+<li class="">HTTP/2 还在一定程度上改善了传统的「请求 - 应答」工作模式，服务不再是被动地响应，也可以主动向客户端发送消息。</li>
+<li class="">举例来说，在浏览器刚请求 HTML 的时候，就提前把可能会用到的 JS、CSS 文件等静态资源主动发给客户端，减少延时的等待，也就是服务器推送（Server Push，也叫 Cache Push）。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="">HTTP/3.0<!-- -->
+<ul>
+<li class="">基于2.0 出现的丢包现象，不过这都是基于 <code>TCP</code> 传输层的问题，所以 HTTP/3 把 HTTP 下层的 <code>TCP</code> 协议改成了 UDP！</li>
+<li class=""><code>UDP</code> 发生是不管顺序，也不管丢包的，所以不会出现 HTTP/1.1 的队头阻塞 和 HTTP/2 的一个丢包全部重传问题。</li>
+<li class="">大家都知道 <code>UDP</code> 是不可靠传输的，但基于 <code>UDP</code> 的 <code>QUIC</code> 协议 可以实现类似 <code>TCP</code> 的可靠性传输。<code>QUIC</code> 有自己的一套机制可以保证传输的可靠性的。当某个流发生丢包时，只会阻塞这个流，其他流不会受到影响。</li>
+<li class=""><code>TL3</code> 升级成了最新的 1.3 版本，头部压缩算法也升级成了 <code>QPack</code>。</li>
+<li class="">HTTPS 要建立一个连接，要花费 6 次交互，先是建立三次握手，然后是 TLS/1.3 的三次握手。<code>QUIC</code> 直接把以往的 <code>TCP</code> 和 TLS/1.3 的 6 次交互合并成了 3 次，减少了交互次数。</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="计算机网络体系结构">计算机网络体系结构<a href="#计算机网络体系结构" class="hash-link" aria-label="Direct link to 计算机网络体系结构" title="Direct link to 计算机网络体系结构" translate="no">​</a></h3>
+<p><img decoding="async" loading="lazy" src="/en/assets/images/browse1-41773af8c7171c9fdcb46bb7ddf6584d.png" width="944" height="810" class="img_BvmK">
+<img decoding="async" loading="lazy" src="/en/assets/images/OSI-2beeff46e7055c89cff4ac38d4da4914.png" width="745" height="400" class="img_BvmK"></p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="从输入-url-到展示的过程">从输入 url 到展示的过程<a href="#从输入-url-到展示的过程" class="hash-link" aria-label="Direct link to 从输入 url 到展示的过程" title="Direct link to 从输入 url 到展示的过程" translate="no">​</a></h3>
+<ul>
+<li class="">
+<p>DNS 解析</p>
+</li>
+<li class="">
+<p>TCP 三次握手</p>
+</li>
+<li class="">
+<p>发送请求，分析 url，设置请求报文(头 ，主体)</p>
+</li>
+<li class="">
+<p>服务器返回请求的文件 (html)</p>
+</li>
+<li class="">
+<p>浏览器渲染</p>
+<ul>
+<li class="">
+<p>HTML parser --&gt; DOM Tree</p>
+<ul>
+<li class="">标记化算法，进行元素状态的标记</li>
+<li class="">dom 树构建</li>
+</ul>
+</li>
+<li class="">
+<p>CSS parser --&gt; Style Tree</p>
+<ul>
+<li class="">解析 css 代码，生成样式树</li>
+</ul>
+</li>
+<li class="">
+<p>attachment --&gt; Render Tree</p>
+<ul>
+<li class="">结合 dom树 与 style树，生成渲染树</li>
+</ul>
+</li>
+<li class="">
+<p>layout: 布局</p>
+</li>
+<li class="">
+<p>GPU painting: 像素绘制页面</p>
+</li>
+</ul>
+</li>
+<li class="">
+<p>TCP 四次挥手</p>
+</li>
+</ul>
+<blockquote>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="这里涉及到的就是一些面试中常用的-tcp-三次握手四次挥手">这里涉及到的就是一些面试中常用的 <code>TCP</code> 三次握手、四次挥手：<a href="#这里涉及到的就是一些面试中常用的-tcp-三次握手四次挥手" class="hash-link" aria-label="Direct link to 这里涉及到的就是一些面试中常用的-tcp-三次握手四次挥手" title="Direct link to 这里涉及到的就是一些面试中常用的-tcp-三次握手四次挥手" translate="no">​</a></h3>
+</blockquote>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="tcp-三次握手"><code>TCP</code> 三次握手：<a href="#tcp-三次握手" class="hash-link" aria-label="Direct link to tcp-三次握手" title="Direct link to tcp-三次握手" translate="no">​</a></h3>
+<p>建立连接前，客户端和服务端需要通过握手来确认对方:</p>
+<ul>
+<li class="">客户端发送 syn(同步序列编号) 请求，进入 syn_send 状态，等待确认;</li>
+<li class="">服务端接收并确认 syn 包后发送 syn+ack 包，进入 syn_recv 状态;</li>
+<li class="">客户端接收 syn+ack 包后，发送 ack 包，双方进入 established 状态</li>
+</ul>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="tcp-四次挥手"><code>TCP</code> 四次挥手：<a href="#tcp-四次挥手" class="hash-link" aria-label="Direct link to tcp-四次挥手" title="Direct link to tcp-四次挥手" translate="no">​</a></h3>
+<p>所谓四次挥手，实际就是客户端和服务器连接结束之后，互相拆台，解除连接的这么一个过程</p>
+<ul>
+<li class="">客户端 -- FIN --&gt; 服务端， FIN—WAIT;</li>
+<li class="">服务端 -- ACK --&gt; 客户端， CLOSE-WAIT;</li>
+<li class="">服务端 -- ACK,FIN --&gt; 客户端， LAST-ACK;</li>
+<li class="">客户端 -- ACK --&gt; 服务端，CLOSED</li>
+</ul>
+<p><a href="https://lucifer.ren/fe-interview/#/topics/network/tcp" target="_blank" rel="noopener noreferrer" class="">推荐这篇文章，讲三次握手和四次挥手</a></p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="websocket">WebSocket<a href="#websocket" class="hash-link" aria-label="Direct link to WebSocket" title="Direct link to WebSocket" translate="no">​</a></h3>
+<blockquote>
+<p>现在已经单独拆到 <code>请求与数据层</code> 里，更适合和 SSE、鉴权、重连、消息协议一起看。</p>
+</blockquote>
+<p>WebSocket 是一种在单个TCP连接上进行全双工通信的协议。WebSocket 使得客户端和服务器之间的数据交换变得更加简单，允许服务端主动向客户端推送数据。</p>
+<p>在 WebSocket API 中，浏览器和服务器只需要完成一次握手，两者之间就直接可以创建持久性的连接， 并进行双向数据传输， 用来弥补http协议在持久通信能力上的不足。</p>
+<p>优点：</p>
+<ul>
+<li class="">支持双向通信，实时性更强。</li>
+<li class="">更好的二进制支持。</li>
+<li class="">较少的控制开销。连接创建后，ws客户端、服务端进行数据交换时，协议控制的数据包头部较小。在不包含头部的情况下，服务端到客户端的包头只有2~10字节（取决于数据包长度），客户端到服务端的的话，需要加上额外的4字节的掩码。而HTTP 协议每次通信都需要携带完整的头部。</li>
+<li class="">支持扩展。ws协议定义了扩展，用户可以扩展协议，或者实现自定义的子协议。（比如支持自定义压缩算法等）</li>
+</ul>
+<blockquote>
+<p>nodejs 的包 ws，或者使用socket.io</p>
+</blockquote>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="浏览器相关知识点">浏览器相关知识点<a href="#浏览器相关知识点" class="hash-link" aria-label="Direct link to 浏览器相关知识点" title="Direct link to 浏览器相关知识点" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="浏览器下事件循环event-loop">浏览器下事件循环(Event Loop)<a href="#浏览器下事件循环event-loop" class="hash-link" aria-label="Direct link to 浏览器下事件循环(Event Loop)" title="Direct link to 浏览器下事件循环(Event Loop)" translate="no">​</a></h3>
+<p>由于js 是单线程运行，在代码执行是，通过将不同的执行上下文压入执行栈来确保有序执行。在执行过程中，如果遇到异步事件，js并不会一直等待返回结果，而是会将这个事件挂起，继续执行其他执行栈中的任务，当异步执行栈完成后，js会将异步执行的回调放入一个任务队列中等待执行。这里也就意味着任务队列分为了 宏任务，微任务。</p>
+<p>事件循环是指：执行一个宏任务，然后执行清空微任务列表，循环再执行宏任务，再清微任务列表</p>
+<ul>
+<li class="">微任务：microtask(jobs): promise / ajax 等</li>
+<li class="">宏任务：macrotask(task): setTimout / script / IO / UI Rendering 等</li>
+</ul>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="重绘与回流">重绘与回流<a href="#重绘与回流" class="hash-link" aria-label="Direct link to 重绘与回流" title="Direct link to 重绘与回流" translate="no">​</a></h3>
+<ul>
+<li class="">重绘
+重绘是指：当元素样式的改变不影响布局时，浏览器将使用重绘对元素进行更新，此时由于只需要UI层面的重新像素绘制，因此 损耗较少。</li>
+<li class="">回流
+当元素的尺寸、结构或触发某些属性时，浏览器会重新渲染页面，称为回流。所以只要回流那必定会触发重绘，但是重绘不一定会触发回流，因此回流的代价比较大。
+此时，浏览器需要重新经过计算，计算后还需要重新页面布局，因此是较重的操作。会触发回流的操作：<!-- -->
+<ul>
+<li class="">页面初始化，首次加载</li>
+<li class="">浏览器窗口发生变化</li>
+<li class="">元素的尺寸、位置、内容、字体大小等发生改变</li>
+<li class="">添加，删除可见dom 元素</li>
+<li class="">激活 CSS 伪类，如：<code>:hover</code>, <code>:active</code> 等</li>
+<li class="">查询某些属性，或者调用一些方法<!-- -->
+<ul>
+<li class="">clientWidth、clientHeight、clientTop、clientLeft</li>
+<li class="">offsetWidth、offsetHeight、offsetTop、offsetLeft</li>
+<li class="">scrollWidth、scrollHeight、scrollTop、scrollLeft</li>
+<li class="">getComputedStyle(), getBoundingClientRect(), scrollTo()</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="浏览器存储">浏览器存储<a href="#浏览器存储" class="hash-link" aria-label="Direct link to 浏览器存储" title="Direct link to 浏览器存储" translate="no">​</a></h3>
+<p>我们经常需要对业务中的一些数据进行存储，通常可以分为 短暂性存储 和 持久性储存。</p>
+<ul>
+<li class="">短暂性的时候，我们只需要将数据存在内存中，只在运行时可用</li>
+<li class="">持久性存储，可以分为 浏览器端 与 服务器端<!-- -->
+<ul>
+<li class="">浏览器：<code>cookie</code>、<code>sessionStorage</code>、<code>localStorage</code>、 <code>indexDB</code>
+<ul>
+<li class=""><code>cookie</code> 通常用于存储用户身份，登录状态等</li>
+<li class=""><code>localStorage</code>/<code>sessionStorage</code> 长久储存/窗口关闭删除， 体积限制为 4~5M</li>
+</ul>
+</li>
+<li class="">服务器：分布式 <code>redis</code>、直接存储到数据库</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="web-worker">Web Worker<a href="#web-worker" class="hash-link" aria-label="Direct link to Web Worker" title="Direct link to Web Worker" translate="no">​</a></h3>
+<p>现代浏览器为 <code>JavaScript</code> 创造的 多线程环境。可以新建并将部分任务分配到 <code>worker</code> 线程并行运行，两个线程可 独立运行，互不干扰，可通过自带的 消息机制 相互通信。</p>
+<div class="language-JavaScript language-javascript codeBlockContainer_AXfa theme-code-block" style="--prism-color:#403f53;--prism-background-color:#FBFBFB"><div class="codeBlockContent_GInB"><pre tabindex="0" class="prism-code language-javascript codeBlock_vnrn thin-scrollbar" style="color:#403f53;background-color:#FBFBFB"><code class="codeBlockLines_YheM"><div class="token-line" style="color:#403f53"><span class="token comment" style="color:rgb(152, 159, 177);font-style:italic">// 创建 worker</span><span class="token plain"></span><br></div><div class="token-line" style="color:#403f53"><span class="token plain"></span><span class="token keyword" style="color:rgb(12, 150, 155)">const</span><span class="token plain"> worker </span><span class="token operator" style="color:rgb(12, 150, 155)">=</span><span class="token plain"> </span><span class="token keyword" style="color:rgb(12, 150, 155)">new</span><span class="token plain"> </span><span class="token class-name" style="color:rgb(17, 17, 17)">Worker</span><span class="token punctuation" style="color:rgb(153, 76, 195)">(</span><span class="token string" style="color:rgb(72, 118, 214)">&#x27;work.js&#x27;</span><span class="token punctuation" style="color:rgb(153, 76, 195)">)</span><span class="token punctuation" style="color:rgb(153, 76, 195)">;</span><span class="token plain"></span><br></div><div class="token-line" style="color:#403f53"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#403f53"><span class="token plain"></span><span class="token comment" style="color:rgb(152, 159, 177);font-style:italic">// 向 worker 线程推送消息</span><span class="token plain"></span><br></div><div class="token-line" style="color:#403f53"><span class="token plain">worker</span><span class="token punctuation" style="color:rgb(153, 76, 195)">.</span><span class="token method function property-access" style="color:rgb(153, 76, 195);font-style:italic">postMessage</span><span class="token punctuation" style="color:rgb(153, 76, 195)">(</span><span class="token string" style="color:rgb(72, 118, 214)">&#x27;Hello World&#x27;</span><span class="token punctuation" style="color:rgb(153, 76, 195)">)</span><span class="token punctuation" style="color:rgb(153, 76, 195)">;</span><span class="token plain"></span><br></div><div class="token-line" style="color:#403f53"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#403f53"><span class="token plain"></span><span class="token comment" style="color:rgb(152, 159, 177);font-style:italic">// 监听 worker 线程发送过来的消息</span><span class="token plain"></span><br></div><div class="token-line" style="color:#403f53"><span class="token plain">worker</span><span class="token punctuation" style="color:rgb(153, 76, 195)">.</span><span class="token method-variable function-variable method function property-access" style="color:rgb(153, 76, 195);font-style:italic">onmessage</span><span class="token plain"> </span><span class="token operator" style="color:rgb(12, 150, 155)">=</span><span class="token plain"> </span><span class="token keyword" style="color:rgb(12, 150, 155)">function</span><span class="token plain"> </span><span class="token punctuation" style="color:rgb(153, 76, 195)">(</span><span class="token parameter">event</span><span class="token punctuation" style="color:rgb(153, 76, 195)">)</span><span class="token plain"> </span><span class="token punctuation" style="color:rgb(153, 76, 195)">{</span><span class="token plain"></span><br></div><div class="token-line" style="color:#403f53"><span class="token plain">  </span><span class="token console class-name" style="color:rgb(17, 17, 17)">console</span><span class="token punctuation" style="color:rgb(153, 76, 195)">.</span><span class="token method function property-access" style="color:rgb(153, 76, 195);font-style:italic">log</span><span class="token punctuation" style="color:rgb(153, 76, 195)">(</span><span class="token string" style="color:rgb(72, 118, 214)">&#x27;Received message &#x27;</span><span class="token plain"> </span><span class="token operator" style="color:rgb(12, 150, 155)">+</span><span class="token plain"> event</span><span class="token punctuation" style="color:rgb(153, 76, 195)">.</span><span class="token property-access">data</span><span class="token punctuation" style="color:rgb(153, 76, 195)">)</span><span class="token punctuation" style="color:rgb(153, 76, 195)">;</span><span class="token plain"></span><br></div><div class="token-line" style="color:#403f53"><span class="token plain"></span><span class="token punctuation" style="color:rgb(153, 76, 195)">}</span><br></div></code></pre></div></div>
+<p>当然使用 <code>worker</code> 也是存在限制的：</p>
+<ul>
+<li class="">同源限制</li>
+<li class="">无法使用 <code>document</code> / <code>window</code> / <code>alert</code> / <code>confirm</code></li>
+<li class="">无法加载本地资源</li>
+</ul>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="v8垃圾回收机制">V8垃圾回收机制<a href="#v8垃圾回收机制" class="hash-link" aria-label="Direct link to V8垃圾回收机制" title="Direct link to V8垃圾回收机制" translate="no">​</a></h3>
+<p>垃圾回收: 将内存中不再使用的数据进行清理，释放出内存空间。V8 将内存分成 新生代空间 和 老生代空间。</p>
+<ul>
+<li class="">
+<p>新生代空间: 用于存活较短的对象，又分成两个空间: from 空间 与 to 空间</p>
+<ul>
+<li class="">
+<p>Scavenge GC算法: 当 from 空间被占满时，启动 GC 算法</p>
+</li>
+<li class="">
+<p>存活的对象从 from space 转移到 to space</p>
+</li>
+<li class="">
+<p>清空 from space</p>
+</li>
+<li class="">
+<p>from space 与 to space 互换</p>
+</li>
+<li class="">
+<p>完成一次新生代GC</p>
+</li>
+</ul>
+</li>
+<li class="">
+<p>老生代空间: 用于存活时间较长的对象</p>
+<ul>
+<li class="">
+<p>从 新生代空间 转移到 老生代空间 的条件</p>
+<ul>
+<li class="">经历过一次以上 Scavenge GC 的对象</li>
+<li class="">当 to space 体积超过25%</li>
+</ul>
+</li>
+<li class="">
+<p><strong>标记清除算法</strong>: 标记存活的对象，未被标记的则被释放</p>
+<ul>
+<li class="">增量标记: 小模块标记，在代码执行间隙执，GC 会影响性能</li>
+<li class="">并发标记(最新技术): 不阻塞 js 执行</li>
+</ul>
+</li>
+<li class="">
+<p>压缩算法: 将内存中清除后导致的碎片化对象往内存堆的一端移动，解决 内存的碎片化</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="内存泄露">内存泄露<a href="#内存泄露" class="hash-link" aria-label="Direct link to 内存泄露" title="Direct link to 内存泄露" translate="no">​</a></h3>
+<ul>
+<li class="">意外的全局变量: 无法被回收</li>
+<li class="">定时器: 未被正确关闭，导致所引用的外部变量无法被释放</li>
+<li class="">事件监听: 没有正确销毁 (低版本浏览器可能出现)</li>
+<li class="">闭包: 会导致父级中的变量无法被释放</li>
+<li class="">dom 引用: dom 元素被删除时，内存中的引用未被正确清空</li>
+</ul>
+<p>可用 chrome 中的 timeline 进行内存标记，可视化查看内存的变化情况，找出异常点。</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="浏览器缓存">浏览器缓存<a href="#浏览  器缓存" class="hash-link" aria-label="Direct link to 浏览器缓存" title="Direct link to 浏览器缓存" translate="no">​</a></h3>
+<p>所谓缓存，就是当我们第一次访问网站的时候，比如 torli.top，电脑会把网站上的图片和数据下载到电脑上，当我们再次访问该网站的时候，网站就会从电脑中直接加载出来，这就是缓存。</p>
+<blockquote>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="浏览器缓存分为-强缓存协商缓存">浏览器缓存分为： 强缓存、协商缓存<a href="#浏览器缓存分为-强缓存协商缓存" class="hash-link" aria-label="Direct link to 浏览器缓存分为： 强缓存、协商缓存" title="Direct link to 浏览器缓存分为： 强缓存、协商缓存" translate="no">​</a></h4>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="浏览器缓存位置一般分为四类-service-worker----memory-cache----disk-cache----push-cache">浏览器缓存位置一般分为四类： Service Worker --&gt; Memory Cache --&gt; Disk Cache --&gt; Push Cache。<a href="#浏览器缓存位置一般分为四类-service-worker----memory-cache----disk-cache----push-cache" class="hash-link" aria-label="Direct link to 浏览器缓存位置一般分为四类： Service Worker --&gt; Memory Cache --&gt; Disk Cache --&gt; Push Cache。" title="Direct link to 浏览器缓存位置一般分为四类： Service Worker --&gt; Memory Cache --&gt; Disk Cache --&gt; Push Cache。" translate="no">​</a></h4>
+<p><em>二者区别</em></p>
+<ol>
+<li class="">强缓存不发请求到服务器，所以有时候资源更新了浏览器还不知道，但是协商缓存会发请求到服务器，所以资源是否更新，服务器肯定知道。</li>
+<li class="">大部分web服务器都默认开启协商缓存。
+目前的项目大多使用这种缓存方案的： HTML: 协商缓存；css、js、图片：强缓存，文件名带上hash。</li>
+</ol>
+</blockquote>
+<ul>
+<li class="">
+<p><strong>强缓存</strong></p>
+<p>强缓存是当我们访问URL的时候，不会向服务器发送请求，直接从缓存中读取资源，但是会返回200的状态码。</p>
+<p>我们第一次进入页面，请求服务器，然后服务器进行应答，浏览器会根据response Header来判断是否对资源进行缓存，如果响应头中expires、pragma或者cache-control字段，代表这是强缓存，浏览器就会把资源缓存在memory cache 或 disk cache中。</p>
+<blockquote>
+<p>这里的 <code>expires</code> 是HTTP/1.0 中的，不过存在的问题是，缓存时间是根据浏览器客户端的时间来判断缓存是否过期，但是本地的时间呢是可以修改的;</p>
+</blockquote>
+<blockquote>
+<p><code>pragma</code> 是 HTTP/1.0 中的不可使用缓存，值为 <code>no-cache</code>，和 <code>cache-control</code>: <code>no-cache</code> 一样的效果</p>
+</blockquote>
+<blockquote>
+<p><code>cache-control</code> 是 HTTP/1.1 中控制网页缓存的字段，当Cache-Control都存在时，Cache-Control优先级更高，属性值有：</p>
+<ul>
+<li class=""><code>public</code> 资源客户端和服务器都可以缓存。</li>
+<li class=""><code>privite</code> 资源只有客户端可以缓存。</li>
+<li class=""><code>no-cache</code> 客户端缓存资源，但是是否缓存需要经过协商缓存来验证。</li>
+<li class=""><code>no-store</code> 不使用缓存。</li>
+<li class=""><code>max-age</code> 缓存保质期。使用它，解决了 <code>expires</code> 的问题</li>
+</ul>
+</blockquote>
+<p>第二次请求时，浏览器判断请求参数，如果符合强缓存条件就直接返回状态码200，从本地缓存中拿数据。否则把响应参数存在request header请求头中，看是否符合协商缓存，符合则返回状态码304，不符合则服务器会返回全新资源。</p>
+</li>
+<li class="">
+<p><strong>协商缓存</strong></p>
+<p>协商缓存就是强缓存失效后，浏览器携带缓存标识向服务器发送请求，由服务器根据缓存标识来决定是否使用缓存的过 程。主要有以下两种情况：</p>
+<ul>
+<li class="">协商缓存生效，返回304</li>
+<li class="">协商缓存失效，返回200和请求结果</li>
+</ul>
+<p><strong>设置协商缓存</strong></p>
+<ul>
+<li class="">
+<p><strong><code>Last-Modified / If-Modified-Since</code></strong></p>
+<ul>
+<li class=""><code>Last-Modified</code> 是服务器响应请求时，返回该资源文件在服务器最后被修改的时间。</li>
+<li class=""><code>If-Modified-Since</code> 则是客户端再次发起该请求时，携带上次请求返回的 <code>Last-Modified</code> 值，通过此字段值告诉服务器该资源上次请求返回的最后被修改时间。
+服务器收到该请求，发现请求头含有 <code>If-Modified-Since</code> 字段，则会根据 <code>If-Modified-Since</code> 的字段值与该资源在服务器的最后被修改时间做对比，
+若服务器的资源最后被修改时间大于 <code>If-Modified-Since</code> 的字段值，
+则重新返回资源，状态码为200；否则则返回304，代表资源无更新，可继续使用缓存文件。</li>
+</ul>
+</li>
+<li class="">
+<p><strong><code>Etag / If-None-Match</code></strong></p>
+<ul>
+<li class=""><code>Etag</code>
+Etag是服务器响应请求时，返回当前资源文件的一个唯一标识(由服务器生成)。</li>
+<li class=""><code>If-None-Match</code>
+<code>If-None-Match</code> 是客户端再次发起该请求时，携带上次请求返回的唯一标识 <code>Etag</code> 值，通过此字段值告诉服务器该资源上次请求返回的唯一标识值。服务器收到该请求后，发现该请求头中含有<code>If-None-Match</code> ，则会根据 <code>If-None-Match</code> 的字段值与该资源在服务器的Etag值做对比，一致则返回304，代表资源无更新，继续使用缓存文件；不一致则重新返回资源文件，状态码为200。</li>
+</ul>
+</li>
+</ul>
+<p><strong>刷新对于强缓存和协商缓存的影响</strong></p>
+<ul>
+<li class="">当ctrl+f5强制刷新网页时，直接从 服务器加载，跳过强缓存和协商缓存。</li>
+<li class="">当f5刷新网页时，跳过强缓存，但是会检查协商缓存。</li>
+<li class="">浏览器地址栏中写入URL，回车 浏览器发现缓存中有这个文件了，不用继续请求了，直接去缓存拿。（最快）</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="跨域">跨域<a href="#跨域" class="hash-link" aria-label="Direct link to 跨域" title="Direct link to 跨域" translate="no">​</a></h3>
+<p><strong>什么是同源策略</strong></p>
+<blockquote>
+<p>同源策略是指协议、端⼝、域名相同，也就是在同⼀个域中。</p>
+</blockquote>
+<p><strong>⾮同源受到的限制：</strong></p>
+<blockquote>
+<p>cookie⽆法读取、dom⽆法获取、ajax请求⽆法发送。</p>
+</blockquote>
+<p><strong>什么是跨域：</strong></p>
+<blockquote>
+<p>两个不同域（协议、端⼝、域名不同）之间进⾏请求。</p>
+</blockquote>
+<p><strong>解决跨域的⽅法：</strong></p>
+<ul>
+<li class="">JSONP，通过动态创建⼀个script标签，script标签的src属性是没有跨域的限制的。</li>
+<li class="">CORS，服务端在response时增加⼀些头信息: <code>Access-Control-Allow-Origin</code>: &quot;&quot;.</li>
+<li class="">Nginx做反向代理</li>
+<li class="">开发环境跨域使⽤ webpack-dev-server 的 proxy</li>
+<li class="">postMessage</li>
+</ul>
+<p>一般常用的是 <code>CORS</code> 和 Nginx 代理的方式</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="安全">安全<a href="#安全" class="hash-link" aria-label="Direct link to 安全" title="Direct link to 安全" translate="no">​</a></h3>
+<ul>
+<li class="">
+<p><strong>XSS</strong>攻击: 注入恶意代码</p>
+</li>
+<li class="">
+<p>常用防范措施：</p>
+<ul>
+<li class="">cookie 设置 httpOnly</li>
+<li class="">转义页面上的输入内容和输出内容</li>
+</ul>
+</li>
+<li class="">
+<p><strong>CSRF</strong>: 跨站请求伪造，防护</p>
+</li>
+<li class="">
+<p>常用防范措施：</p>
+<ul>
+<li class="">get 不修改数据</li>
+<li class="">不被第三方网站访问到用户的 cookie</li>
+<li class="">设置白名单，不被第三方网站请求</li>
+<li class="">请求校验</li>
+</ul>
+</li>
+<li class="">
+<p><strong>SQL 注入攻击</strong>
+来自用户的数据（GET、POST、Cookie 等）最好做到以下两种过滤校验：</p>
+<ul>
+<li class="">检查输入的数据是否具有所期望的数据格式。这种在参数是数字的时候特别有效，如果攻击者选择在参数中插入内容的话则会被转换成 NaN 导致攻击失败。</li>
+<li class="">使用数据库特定的敏感字符转义函数把用户提交上来的非数字数据进行转义。</li>
+<li class="">严格限制 Web 应用的数据库的操作权限，给此用户提供仅仅能够满足其工作的最低权限，从而最大限度的减少注入攻击对数据库的危害。</li>
+<li class="">日志处理，当数据库操作失败的时候，尽量不要将原始错误日志返回，比如类型错误、字段不匹配等，把代码里的 SQL 语句暴露出来，以防止攻击者利用这些错误信息进行 SQL 注入。</li>
+</ul>
+</li>
+<li class="">
+<p><strong>DDoS 攻击</strong>
+这个就不具体讲了，类型种类以及编种太多了。一言难尽呐！</p>
+<p>不过这类攻击判断方式也很简单：
+服务器 CPU 占用率很高；出现大量的 SYN_RECEIVED 的网络连接状态；网络恢复后，服务器负载瞬时变高。网络断开后瞬时负载下降。</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="点击刷新按钮或者f5按ctrl-f5强制刷新地址栏回车三种方式的区别">点击刷新按钮或者F5，按CTRL+ F5（强制刷新），地址栏回车三种方式的区别<a href="#点击刷新按钮或者f5按ctrl-f5强制刷新地址栏回车三种方式的区别" class="hash-link" aria-label="Direct link to 点击刷新按钮或者F5，按CTRL+ F5（强制刷新），地址栏回车三种方式的区 别" title="Direct link to 点击刷新按钮或者F5，按CTRL+ F5（强制刷新），地址栏回车三种方式的区别" translate="no">​</a></h3>
+<ul>
+<li class="">点击F5 刷新，浏览器会对本地的缓存文件过期，但是会带上 If-Modifed-Since，If-None-Match, 相当于服务器会对文件检查新鲜度，如果更新则请求返回200，如果没更新，则继续使用缓存，返回304。</li>
+<li class="">强制刷新，浏览器不会对本地文件过期，而且不会带上面的判断参数，相当于第一次请求，返回结果是200。</li>
+<li class="">地址栏回车，浏览器发起请求，按照正常流程，本地检查是否过期，然后服务器检查新鲜度，最后返回内容。</li>
+</ul>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="单点登录">单点登录<a href="#单点登录" class="hash-link" aria-label="Direct link to 单点登录" title="Direct link to 单点登录" translate="no">​</a></h3>
+<p>单点登录是一个身份验证机制，英文全称 Single Sign On，简称 SSO。它的定义是：在多个应用系统中，用户只需要登录一次，即可访问所有相互信任的应用系统，就像健康保一样，为你的身份做担保。</p>
+<p>单点登录 SSO 可以安全地确保员工只需要一组账号与密码，或通过标准协议认证、第三方身份源认证，就可以登录所有被授权的应用系统。例如，员工只需要登录个人 OA 系统的账号密码就可以访问飞书、销售易、客户系统等应用程序，无需再次输入账号和密码。</p>
+<p>SSO 一般都需要一个独立的认证中心（passport），子系统的登录均得通过 passport，子系统本身将不参与登录操作，当一个系统成功登录以后，passport 将会颁发一个令牌给各个子系统，子系统可以拿着令牌会获取各自的受保护资源，为了减少频繁认证，各个子系统在被 passport 授权以后，会建立一个局部会话，在一定时间内可以无需再  次向 passport 发起认证。</p>
+<p>具体流程是：</p>
+<ul>
+<li class="">用户访问系统 1 的受保护资源，系统 1 发现用户未登录，跳转至 sso 认证中心，并将自己的地址作为参数</li>
+<li class="">sso 认证中心发现用户未登录，将用户引导至登录页面</li>
+<li class="">用户输入用户名密码提交登录申请</li>
+<li class="">sso 认证中心校验用户信息，创建用户与 sso 认证中心之间的会话，称为全局会话，同时创建授权令牌</li>
+<li class="">sso 认证中心带着令牌跳转会最初的请求地址（系统 1）</li>
+<li class="">系统 1 拿到令牌，去 sso 认证中心校验令牌是否有效</li>
+<li class="">sso 认证中心校验令牌，返回有效，注册系统 1</li>
+<li class="">系统 1 使用该令牌创建与用户的会话，称为局部会话，返回受保护资源</li>
+<li class="">用户访问系统 2 的受保护资源</li>
+<li class="">系统 2 发现用户未登录，跳转至 sso 认证中心，并将自己的地址作为参数</li>
+<li class="">sso 认证中心发现用户已登录，跳转回系统 2 的地址，并附上令牌</li>
+<li class="">系统 2 拿到令牌，去 sso 认证中心校验令牌是否有效</li>
+<li class="">sso 认证中心校验令牌，返回有效，注册系统 2</li>
+<li class="">系统 2 使用该令牌创建与用户的局部会话，返回受保护资源</li>
+</ul></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/en/docs/browser-network"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">浏览器与网络总览</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/en/docs/browser-network/dns-url-and-connection"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">URL、DNS 与连接建立</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_v08c thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#互联网相关知识" class="table-of-contents__link toc-highlight">互联网相关知识</a><ul><li><a href="#http-是什么" class="table-of-contents__link toc-highlight">HTTP 是什么？</a></li><li><a href="#http-的状态码有哪些" class="table-of-contents__link toc-highlight">HTTP 的状态码有哪些？</a></li><li><a href="#http-请求方式" class="table-of-contents__link toc-highlight">HTTP 请求方式</a></li><li><a href="#常见http-请求头和响应头" class="table-of-contents__link toc-highlight">常见HTTP 请求头和响应头</a></li><li><a href="#常用了解的端口对应的服务" class="table-of-contents__link toc-highlight">常用了解的端口对应的服务</a></li><li><a href="#http-演变过程" class="table-of-contents__link toc-highlight">HTTP 演变过程</a></li><li><a href="#计算机网络体系结构" class="table-of-contents__link toc-highlight">计算机网络体系结构</a></li><li><a href="#从输入-url-到展示的过程" class="table-of-contents__link toc-highlight">从输入 url 到展示的过程</a></li><li><a href="#这里涉及到的就是一些面试中常用的-tcp-三次握手四次挥手" class="table-of-contents__link toc-highlight">这里涉及到的就是一些面试中常用的 <code>TCP</code> 三次握手、四次挥手：</a></li><li><a href="#tcp-三次握手" class="table-of-contents__link toc-highlight"><code>TCP</code> 三次握手：</a></li><li><a href="#tcp-四次挥手" class="table-of-contents__link toc-highlight"><code>TCP</code> 四次挥手：</a></li><li><a href="#websocket" class="table-of-contents__link toc-highlight">WebSocket</a></li></ul></li><li><a href="#浏览器相关知识点" class="table-of-contents__link toc-highlight">浏览器相关知识点</a><ul><li><a href="#浏览器下事件循环event-loop" class="table-of-contents__link toc-highlight">浏览器下事件循环(Event Loop)</a></li><li><a href="#重绘与  回流" class="table-of-contents__link toc-highlight">重绘与回流</a></li><li><a href="#浏览器存储" class="table-of-contents__link toc-highlight">浏览器存储</a></li><li><a href="#web-worker" class="table-of-contents__link toc-highlight">Web Worker</a></li><li><a href="#v8垃圾回收机制" class="table-of-contents__link toc-highlight">V8垃圾回收机制</a></li><li><a href="#内存泄露" class="table-of-contents__link toc-highlight">内存泄露</a></li><li><a href="#浏览器缓存" class="table-of-contents__link toc-highlight">浏览器缓存</a></li><li><a href="#跨域" class="table-of-contents__link toc-highlight">跨域</a></li><li><a href="#安全" class="table-of-contents__link toc-highlight">安全</a></li><li><a href="#点击刷新按钮或者f5按ctrl-f5强制刷新地址栏回车三种方式的区别" class="table-of-contents__link toc-highlight">点击刷新按钮或者F5，按CTRL+ F5（强制刷新），地址栏回车三种方式的区别</a></li><li><a href="#单点登录" class="table-of-contents__link toc-highlight">单点登录</a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">入口</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/en/docs/intro">知识库</a></li><li class="footer__item"><a class="footer__link-item" href="/en/blog">日常 Blog</a></li><li class="footer__item"><a class="footer__link-item" href="/en/docs/engineering">工程化</a></li><li class="footer__item"><a class="footer__link-item" href="/en/docs/dev-tools">工具与环境</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">更多</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/JamesLi-dev" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_BlfO"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Torli, Inc. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>

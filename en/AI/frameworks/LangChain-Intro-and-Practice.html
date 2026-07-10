@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-ai docs-version-current docs-doc-page docs-doc-id-frameworks/LangChain-Intro-and-Practice" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.10.1">
+<title data-rh="true">LangChain 入门与实践 | 这里是 Torli&#x27;s </title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://blog.torli.top/en/AI/frameworks/LangChain-Intro-and-Practice"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" property="og:locale:alternate" content="zh_Hans"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="keywords" content="cooking, blog"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-ai-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-ai-current"><meta data-rh="true" property="og:title" content="LangChain 入门与实践 | 这里是 Torli&#x27;s "><meta data-rh="true" name="description" content="这篇文档的目标不是把 LangChain 讲成一个“大而全”的框架百科，而是从工程视角回答几个更实际的问题："><meta data-rh="true" property="og:description" content="这篇文档的目标不是把 LangChain 讲成一个“大而全”的框架百科，而是从工程视角回答几个更实际的问题："><link data-rh="true" rel="icon" href="/en/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://blog.torli.top/en/AI/frameworks/LangChain-Intro-and-Practice"><link data-rh="true" rel="alternate" href="https://blog.torli.top/AI/frameworks/LangChain-Intro-and-Practice" hreflang="zh-Hans"><link data-rh="true" rel="alternate" href="https://blog.torli.top/en/AI/frameworks/LangChain-Intro-and-Practice" hreflang="en"><link data-rh="true" rel="alternate" href="https://blog.torli.top/AI/frameworks/LangChain-Intro-and-Practice" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"框架与 SDK","item":"https://blog.torli.top/en/AI/frameworks/"},{"@type":"ListItem","position":2,"name":"LangChain 入门与实践","item":"https://blog.torli.top/en/AI/frameworks/LangChain-Intro-and-Practice"}]}</script><link rel="alternate" type="application/rss+xml" href="/en/blog/rss.xml" title="这里是 Torli&#39;s  RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/en/blog/atom.xml" title="这里是 Torli&#39;s  Atom Feed"><link rel="stylesheet" href="/en/assets/css/styles.a3b9aef2.css">
+<script src="/en/assets/js/runtime~main.56ff528f.js" defer="defer"></script>
+<script src="/en/assets/js/main.f68a3aad.js" defer="defer"></script>
+</head>
+<body>
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_U9sP" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top navbarHideable_PT2D"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/en/"><div class="navbar__logo"><img src="/en/img/logo2.png" alt="My Site Logo" class="themedComponent_QNor themedComponent--light_EqDK"><img src="/en/img/logo2.png" alt="My Site Logo" class="themedComponent_QNor themedComponent--dark_H0PK"></div><b class="navbar__title text--truncate">Torli&#x27;s Blog</b></a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a class="navbar__link" aria-haspopup="true" aria-expanded="false" role="button" href="/en/docs/intro">知识库</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/en/docs/foundations">基础语言</a></li><li><a class="dropdown__link" href="/en/docs/browser-network">浏览器与网络</a></li><li><a class="dropdown__link" href="/en/docs/engineering">工程化</a></li><li><a class="dropdown__link" href="/en/docs/frameworks">前端框架</a></li><li><a class="dropdown__link" href="/en/docs/node-server">Node 与服务端</a></li><li><a class="dropdown__link" href="/en/docs/data-backend">数据库与后端服务</a></li><li><a class="dropdown__link" href="/en/docs/state-management">状态管理</a></li><li><a class="dropdown__link" href="/en/docs/ui-interaction">UI 与交互</a></li><li><a class="dropdown__link" href="/en/docs/dev-tools">效率工具与开发环境</a></li><li><a class="dropdown__link" href="/en/docs/frontier">前沿专题</a></li></ul></div><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a aria-current="page" class="navbar__link active" aria-haspopup="true" aria-expanded="false" role="button" href="/en/AI">AI 学习</a><ul class="dropdown__menu"><li><a aria-current="page" class="dropdown__link dropdown__link--active" href="/en/AI">开始这里：AI 首页</a></li><li><a class="dropdown__link" href="/en/AI/AI-Agent-Docs-Index">专题索引：AI Agent 文档总索引</a></li><li><a class="dropdown__link" href="/en/AI/AI-Agent-Chapter-to-Framework-Map">专题索引：章节与框架映射</a></li><li><a class="dropdown__link" href="/en/AI/foundations/Prompt-Engineering-Glossary">基础能力：Prompt Engineering</a></li><li><a class="dropdown__link" href="/en/AI/foundations/Context-Engineering-Guide">基础能力：Context Engineering</a></li><li><a class="dropdown__link" href="/en/AI/foundations/RAG-Intro-and-Practice">基础能力：RAG</a></li><li><a class="dropdown__link" href="/en/AI/agent-engineering/Agent-Engineering-Intro">Agent 与工程化：Agent Engineering</a></li><li><a class="dropdown__link" href="/en/AI/agent-engineering/Workflow-vs-Agent">Agent 与工程化：Workflow vs Agent</a></li><li><a class="dropdown__link" href="/en/AI/agent-engineering/Agent-Memory-and-State">Agent 与工程化：Memory and State</a></li><li><a class="dropdown__link" href="/en/AI/agent-engineering/Harness-Engineering-Guide">Agent 与工程化：Harness Engineering</a></li><li><a class="dropdown__link" href="/en/AI/frameworks/OpenAI-Agents-SDK-Guide">框架与 SDK：OpenAI Agents SDK</a></li><li><a class="dropdown__link" href="/en/AI/frameworks/LangGraph-Intro-and-Orchestration">框架与 SDK：LangGraph</a></li><li><a class="dropdown__link" href="/en/AI/frameworks/LangSmith-Observability-and-Evals">框架与 SDK：LangSmith</a></li><li><a class="dropdown__link" href="/en/AI/frameworks/Vercel-AI-SDK-Guide">框架与 SDK：Vercel AI SDK</a></li><li><a class="dropdown__link" href="/en/AI/frameworks/Mastra-Guide">框架与 SDK：Mastra</a></li><li><a class="dropdown__link" href="/en/AI/frameworks/Google-ADK-Guide">框架与 SDK：Google ADK</a></li><li><a class="dropdown__link" href="/en/AI/overview/AI-App-Architecture-Map">全局视角：AI 应用整体架构</a></li><li><a class="dropdown__link" href="/en/AI/overview/Minimal-Agent-Demo-From-0-to-1">全局视角：最小 Agent Demo</a></li><li><a class="dropdown__link" href="/en/AI/overview/Minimal-Agent-Code-Implementation-Examples">全局视角：最小 Agent 代码示例</a></li><li><a class="dropdown__link" href="/en/AI/overview/AI-Agent-Tech-Stack-and-Framework-Comparison">全局视角：技术栈与框架对比</a></li></ul></div><a class="navbar__item navbar__link" href="/en/blog">日常 Blog</a><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a class="navbar__link" aria-haspopup="true" aria-expanded="false" role="button" href="/en/docs/engineering">工程化</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/en/docs/engineering/build-tools">构建与转译</a></li><li><a class="dropdown__link" href="/en/docs/engineering/code-quality">代码规范</a></li><li><a class="dropdown__link" href="/en/docs/engineering/package-management">包管理与环境管理</a></li><li><a class="dropdown__link" href="/en/docs/engineering/data-fetching">请求与数据层</a></li><li><a class="dropdown__link" href="/en/docs/engineering/package-management/pnpm">pnpm</a></li><li><a class="dropdown__link" href="/en/docs/engineering/package-management/fnm">fnm</a></li></ul></div><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a class="navbar__link" aria-haspopup="true" aria-expanded="false" role="button" href="/en/docs/dev-tools">工具与环境</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/en/docs/dev-tools/apps/KeyboardMaestro">Keyboard Maestro</a></li><li><a class="dropdown__link" href="/en/docs/dev-tools/apps/Warp">Warp</a></li><li><a class="dropdown__link" href="/en/docs/dev-tools/apps/Ghostty">Ghostty</a></li><li><a class="dropdown__link" href="/en/docs/dev-tools/apps/Zed">Zed</a></li><li><a class="dropdown__link" href="/en/docs/dev-tools/apps/GitButler">GitButler</a></li><li><a class="dropdown__link" href="/en/docs/dev-tools/apps/Switzy">Switzy</a></li><li><a class="dropdown__link" href="/en/docs/dev-tools/apps/Craft-Agents">Craft Agents</a></li></ul></div><a href="https://github.com/JamesLi-dev" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_BlfO"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_bW1k colorModeToggle_D8sl"><button class="clean-btn toggleButton_qiU8 toggleButtonDisabled_xinJ" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_X9Tk lightToggleIcon_y62u"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_X9Tk darkToggleIcon_Dj8C"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_X9Tk systemToggleIcon_T2ve"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_e2eJ"><div class="navbar__search searchBarContainer_Mqfy"><input placeholder="Search" aria-label="Search" class="navbar__search-input" value=""><div class="loadingRing_r319 searchBarLoadingRing_Kn2r"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_kzBE"><div class="docsWrapper_Jb1X"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_W_UZ" type="button"></button><div class="docRoot_AAe1"><aside class="theme-doc-sidebar-container docSidebarContainer_RSuS"><div class="sidebarViewport_pYEE"><div class="sidebar_G_8g sidebarWithHideableNavbar__FNA"><a tabindex="-1" class="sidebarLogo_hLnz" href="/en/"><img src="/en/img/logo2.png" alt="My Site Logo" class="themedComponent_QNor themedComponent--light_EqDK"><img src="/en/img/logo2.png" alt="My Site Logo" class="themedComponent_QNor themedComponent--dark_H0PK"><b>Torli&#x27;s Blog</b></a><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_k9TG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/en/AI"><span title="AI" class="linkLabel_vgcd">AI</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/en/AI/AI-Agent-Docs-Index"><span title="AI Agent 文档总索引" class="linkLabel_vgcd">AI Agent 文档总索引</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_jNm8 menu__link menu__link--sublist" href="/en/AI/foundations"><span title="基础能力" class="categoryLinkLabel_ayea">基础能力</span></a><button aria-label="Expand sidebar category &#x27;基础能力&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/en/AI/AI-Agent-Chapter-to-Framework-Map"><span title="AI Agent 专题章节与框架映射" class="linkLabel_vgcd">AI Agent 专题章节与框架映射</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_jNm8 menu__link menu__link--sublist" href="/en/AI/agent-engineering"><span title="Agent 与工程化" class="categoryLinkLabel_ayea">Agent 与工程化</span></a><button aria-label="Expand sidebar category &#x27;Agent 与工程化&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_jNm8 menu__link menu__link--sublist menu__link--active" href="/en/AI/frameworks"><span title="框架与 SDK" class="categoryLinkLabel_ayea">框架与 SDK</span></a><button aria-label="Collapse sidebar category &#x27;框架与 SDK&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/en/AI/frameworks/OpenAI-Agents-SDK-Guide"><span title="OpenAI Agents SDK 指南" class="linkLabel_vgcd">OpenAI Agents SDK 指南</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/en/AI/frameworks/LangChain-Intro-and-Practice"><span title="LangChain 入门与实践" class="linkLabel_vgcd">LangChain 入门与实践</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/en/AI/frameworks/LangGraph-Intro-and-Orchestration"><span title="LangGraph 入门与编排设计" class="linkLabel_vgcd">LangGraph 入门与编排设计</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/en/AI/frameworks/LangSmith-Observability-and-Evals"><span title="LangSmith：Observability、Evals 与 Deployment 指南" class="linkLabel_vgcd">LangSmith：Observability、Evals 与 Deployment 指南</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/en/AI/frameworks/Microsoft-Agent-Framework-and-AutoGen-Status"><span title="Microsoft Agent Framework / AutoGen 状态指南" class="linkLabel_vgcd">Microsoft Agent Framework / AutoGen 状态指南</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/en/AI/frameworks/CrewAI-Intro-and-Workflow-Guide"><span title="CrewAI 入门与 Workflow 实战定位" class="linkLabel_vgcd">CrewAI 入门与 Workflow 实战定位</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/en/AI/frameworks/Vercel-AI-SDK-Guide"><span title="Vercel AI SDK 指南" class="linkLabel_vgcd">Vercel AI SDK 指南</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/en/AI/frameworks/Mastra-Guide"><span title="Mastra 指南" class="linkLabel_vgcd">Mastra 指南</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/en/AI/frameworks/Google-ADK-Guide"><span title="Google ADK 指南" class="linkLabel_vgcd">Google ADK 指南</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/en/AI/frameworks/LlamaIndex-Agent-and-Workflow-Guide"><span title="LlamaIndex Agent / Workflow 指南" class="linkLabel_vgcd">LlamaIndex Agent / Workflow 指南</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/en/AI/frameworks/Azure-AI-Foundry-Agent-Service-Guide"><span title="Azure AI Foundry Agent Service 指南" class="linkLabel_vgcd">Azure AI Foundry Agent Service 指南</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_jNm8 menu__link menu__link--sublist" href="/en/AI/overview"><span title="全局视角" class="categoryLinkLabel_ayea">全局视角</span></a><button aria-label="Expand sidebar category &#x27;全局视角&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li></ul></nav><button type="button" data-torli-sidebar-toggle="collapse" title="Collapse sidebar" aria-label="Collapse sidebar" class="button button--secondary button--outline collapseSidebarButton_JQG6"><svg class="collapseSidebarButtonIcon_Iseg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"></rect><path d="M13 9L10 12L13 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></button></div></div></aside><main class="docMainContainer_hjYf"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_uYg3"><div class="docItemContainer_jngG"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_lBfN" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/en/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_ebxl"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/en/AI/frameworks"><span>框架与 SDK</span></a></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">LangChain 入门与实践</span></li></ul></nav><div class="tocCollapsible_VI1r theme-doc-toc-mobile tocMobile_iude"><button type="button" class="clean-btn tocCollapsibleButton_LJEZ">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>LangChain 入门与实践</h1></header>
+<p>这篇文档的目标不是把 LangChain 讲成一个“大而全”的框架百科，而是从工程视角回答几个更实际的问题：</p>
+<ul>
+<li class=""><code>LangChain 到底是什么？</code></li>
+<li class=""><code>它适合当前处在哪个阶段？</code></li>
+<li class=""><code>它和 LangGraph、LangSmith 分别是什么关系？</code></li>
+<li class=""><code>什么时候该直接上 LangChain，什么时候自己手写更合适？</code></li>
+<li class=""><code>如果要快速跑一个最小 agent，应该怎么开始？</code></li>
+<li class=""><code>它和本专题里已经有的章节，应该怎么对照着看？</code></li>
+</ul>
+<p>本文内容以 LangChain 官方文档为主，尤其参考：</p>
+<ul>
+<li class="">LangChain overview</li>
+<li class="">LangGraph overview</li>
+<li class="">LangSmith docs</li>
+</ul>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="1-langchain-是什么">1. LangChain 是什么<a href="#1-langchain-是什么" class="hash-link" aria-label="Direct link to 1. LangChain 是什么" title="Direct link to 1. LangChain 是什么" translate="no">​</a></h2>
+<p>先说一句最重要的话：</p>
+<p><code>LangChain 不是模型，也不是“自动帮你做完 AI Agent”的黑盒。</code></p>
+<p>按照官方文档现在的表述，LangChain 是一个 <code>open source framework</code>，核心定位是：</p>
+<ul>
+<li class="">提供 <code>prebuilt agent architecture</code></li>
+<li class="">提供统一的 <code>model interface</code></li>
+<li class="">提供大量 <code>tool / model integrations</code></li>
+<li class="">让你能更快搭起可运行的 agent 或 LLM application</li>
+</ul>
+<p>如果用更工程化的话来翻译，它做的事情大致是：</p>
+<ol>
+<li class="">帮你把不同模型厂商的调用方式统一起来。</li>
+<li class="">帮你把消息、工具、结构化输出、流式输出等常见能力组织成较一致的接口。</li>
+<li class="">帮你减少“自己反复写 agent loop、tool registration、message plumbing”的重复劳动。</li>
+<li class="">在需要的时候，往下可以衔接 LangGraph 的编排能力，往外可以接 LangSmith 的调试、追踪和评测能力。</li>
+</ol>
+<p>所以 LangChain 适合被理解成：</p>
+<p><code>一个偏应用层、偏 agent 开发体验的框架层。</code></p>
+<p>它不是最低层，也不是最高层，更不是唯一正确答案。它的价值主要在于：</p>
+<ul>
+<li class=""><code>起步快</code></li>
+<li class=""><code>抽象适中</code></li>
+<li class=""><code>可先简单，后续再逐步加复杂度</code></li>
+</ul>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="11-官方文档强调的几个核心收益">1.1 官方文档强调的几个核心收益<a href="#11-官方文档强调的几个核心收益" class="hash-link" aria-label="Direct link to 1.1 官方文档强调的几个核心收益" title="Direct link to 1.1 官方文档强调的几个核心收益" translate="no">​</a></h3>
+<p>根据官方 overview，LangChain 现在重点强调的能力主要有：</p>
+<ul>
+<li class=""><code>Standard model interface</code>：不同模型提供商接口差异很大，LangChain 帮你统一交互方式，降低切换成本。</li>
+<li class=""><code>Easy to use, highly flexible agent</code>：可以很快写出一个最小 agent，同时又保留一定灵活性。</li>
+<li class=""><code>Built on top of LangGraph</code>：LangChain 的 agents 建在 LangGraph 之上，因此天然可以接上更底层的执行能力。</li>
+<li class=""><code>Debug with LangSmith</code>：方便接入 tracing、debugging、evaluation。</li>
+</ul>
+<p>如果只看一句总结，可以记成：</p>
+<p><code>LangChain 解决的是“更快把 agent 应用搭起来”这件事。</code></p>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="2-langchain-适合什么阶段">2. LangChain 适合什么阶段<a href="#2-langchain-适合什么阶段" class="hash-link" aria-label="Direct link to 2. LangChain 适合什么阶段" title="Direct link to 2. LangChain 适合什么阶段" translate="no">​</a></h2>
+<p>很多人第一次接触 Agent 框架时，真正的问题不是“LangChain 好不好”，而是：</p>
+<p><code>我现在这个阶段，是否已经适合用它？</code></p>
+<p>我更建议按下面三个阶段来判断。</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="21-阶段一刚理解模型prompt工具调用">2.1 阶段一：刚理解模型、Prompt、工具调用<a href="#21-阶段一刚理解模型prompt工具调用" class="hash-link" aria-label="Direct link to 2.1 阶段一：刚理解模型、Prompt、工具调用" title="Direct link to 2.1 阶段一：刚理解模型、Prompt、工具调用" translate="no">​</a></h3>
+<p>如果还在学习这些基础：</p>
+<ul>
+<li class="">prompt 是怎么影响输出的</li>
+<li class="">messages 是怎么组织的</li>
+<li class="">tool calling 的输入输出长什么样</li>
+<li class="">一个最小 loop 是怎么跑起来的</li>
+</ul>
+<p>这时 <code>可以用 LangChain，但不要过度依赖它的抽象</code>。</p>
+<p>更具体地说：</p>
+<ul>
+<li class="">可以用 LangChain 快速搭 demo</li>
+<li class="">但同时最好知道底层到底发了什么消息、工具 schema 长什么样、返回结果怎么进入下一轮上下文</li>
+</ul>
+<p>这一阶段更稳妥的做法，不是“完全不用框架”，也不是“只会调框架 API”，而是：</p>
+<p><code>把 LangChain 当作一个帮助你减少样板代码的练习平台。</code></p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="22-阶段二开始做自己的第一个可用-agent">2.2 阶段二：开始做自己的第一个可用 agent<a href="#22-阶段二开始做自己的第一个可用-agent" class="hash-link" aria-label="Direct link to 2.2 阶段二：开始做自己的第一个可用 agent" title="Direct link to 2.2 阶段二：开始做自己的第一个可用 agent" translate="no">​</a></h3>
+<p>如果已经开始进入这些需求：</p>
+<ul>
+<li class="">接一个或多个工具</li>
+<li class="">做多轮对话</li>
+<li class="">想要结构化输出</li>
+<li class="">想加简单 memory</li>
+<li class="">想把代码做成最小可运行项目</li>
+</ul>
+<p>这通常就是 LangChain 非常合适的阶段。</p>
+<p>因为这时候你最需要的不是“极致底层控制”，而是：</p>
+<ul>
+<li class="">尽快把系统搭起来</li>
+<li class="">把模型、工具、消息、状态这些核心部件串起来</li>
+<li class="">保持代码可读、可改、可调试</li>
+</ul>
+<p>LangChain 的价值，会在这一阶段最明显。</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="23-阶段三进入更复杂的-agent-工程化">2.3 阶段三：进入更复杂的 agent 工程化<a href="#23-阶段三进入更复杂的-agent-工程化" class="hash-link" aria-label="Direct link to 2.3 阶段三：进入更复杂的 agent 工程化" title="Direct link to 2.3 阶段三：进入更复杂的 agent 工程化" translate="no">​</a></h3>
+<p>当你开始需要这些能力时：</p>
+<ul>
+<li class="">更长生命周期的状态流转</li>
+<li class="">更复杂的多步编排</li>
+<li class="">deterministic workflow 和 agentic workflow 混合</li>
+<li class="">human-in-the-loop</li>
+<li class="">durable execution</li>
+<li class="">更细颗粒度的节点控制</li>
+</ul>
+<p>这时就要开始考虑：</p>
+<ul>
+<li class="">继续用 LangChain agent 抽象是否够用</li>
+<li class="">是否要下沉到 LangGraph</li>
+<li class="">是否要把 observability、evaluation、deployment 单独体系化</li>
+</ul>
+<p>这并不代表 LangChain 失效了，而是说明：</p>
+<p><code>这通常说明系统正在从“快速搭应用”进入“精细编排系统”阶段。</code></p>
+<p>官方文档也明确给出这个建议：</p>
+<ul>
+<li class="">如果是刚开始做 agent，或希望用更高层抽象，优先用 <code>LangChain agents</code></li>
+<li class="">如果需要更高级的、低层次的编排能力，再考虑 <code>LangGraph</code></li>
+</ul>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="3-langchainlanggraphlangsmith-的关系">3. LangChain、LangGraph、LangSmith 的关系<a href="#3-langchainlanggraphlangsmith-的关系" class="hash-link" aria-label="Direct link to 3. LangChain、LangGraph、LangSmith 的关系" title="Direct link to 3. LangChain、LangGraph、LangSmith 的关系" translate="no">​</a></h2>
+<p>这三个名字经常一起出现，但它们解决的问题并不相同。</p>
+<p>最简单的理解方式是：</p>
+<ul>
+<li class=""><code>LangChain</code>：偏开发框架，负责更快构建 agent / LLM 应用</li>
+<li class=""><code>LangGraph</code>：偏底层编排运行时，负责复杂、长时、可控的 agent orchestration</li>
+<li class=""><code>LangSmith</code>：偏观测、评测、调试、部署平台，负责把系统从“能跑”推进到“可看、可测、可上线”</li>
+</ul>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="31-langchain-和-langgraph-的关系">3.1 LangChain 和 LangGraph 的关系<a href="#31-langchain-和-langgraph-的关系" class="hash-link" aria-label="Direct link to 3.1 LangChain 和 LangGraph 的关系" title="Direct link to 3.1 LangChain 和 LangGraph 的关系" translate="no">​</a></h3>
+<p>官方文档里有两个非常关键的点：</p>
+<ol>
+<li class=""><code>LangChain agents are built on top of LangGraph</code></li>
+<li class=""><code>You do not need to know LangGraph for basic LangChain agent usage</code></li>
+</ol>
+<p>把这两句话翻译成工程语言就是：</p>
+<ul>
+<li class="">LangChain 并不是和 LangGraph 平行对立的替代品</li>
+<li class="">LangChain 的 agent 能力，本身就是构建在 LangGraph 提供的底层能力之上的</li>
+<li class="">但你在做基础 agent 时，不需要先把 LangGraph 学完再开始</li>
+</ul>
+<p>可以把它们理解成：</p>
+<ul>
+<li class=""><code>LangChain</code> 给你高层、开箱更快的开发入口</li>
+<li class=""><code>LangGraph</code> 给你低层、可控性更强的编排与运行能力</li>
+</ul>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="32-langgraph-更适合什么">3.2 LangGraph 更适合什么<a href="#32-langgraph-更适合什么" class="hash-link" aria-label="Direct link to 3.2 LangGraph 更适合什么" title="Direct link to 3.2 LangGraph 更适合什么" translate="no">​</a></h3>
+<p>根据官方 LangGraph overview，LangGraph 更强调这些点：</p>
+<ul>
+<li class=""><code>durable execution</code></li>
+<li class=""><code>human-in-the-loop</code></li>
+<li class=""><code>memory</code></li>
+<li class=""><code>streaming</code></li>
+<li class=""><code>production-ready deployment</code></li>
+</ul>
+<p>并且官方明确说：LangGraph 是一个 <code>very low-level</code>、专注于 <code>agent orchestration</code> 的框架。</p>
+<p>因此：</p>
+<ul>
+<li class="">如果只是要一个最小工具型 agent，直接从 LangChain 起步通常更省力</li>
+<li class="">如果已经开始需要“图式状态流转、节点级控制、长流程恢复、复杂状态管理”，LangGraph 会更对口</li>
+</ul>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="33-langsmith-更适合什么">3.3 LangSmith 更适合什么<a href="#33-langsmith-更适合什么" class="hash-link" aria-label="Direct link to 3.3 LangSmith 更适合什么" title="Direct link to 3.3 LangSmith 更适合什么" translate="no">​</a></h3>
+<p>LangSmith 官方现在的定位很清楚：它是一个 <code>framework-agnostic platform</code>，也就是：</p>
+<p><code>它不是只服务 LangChain，也不是必须和 LangChain 绑定。</code></p>
+<p>它主要做这些事：</p>
+<ul>
+<li class=""><code>Trace requests</code></li>
+<li class=""><code>Evaluate outputs</code></li>
+<li class=""><code>Test prompts</code></li>
+<li class=""><code>Manage deployments</code></li>
+</ul>
+<p>因此：</p>
+<ul>
+<li class="">可以用 LangChain + LangSmith</li>
+<li class="">也可以用手写 agent + LangSmith</li>
+<li class="">也可以用其他 agent stack + LangSmith</li>
+</ul>
+<p>所以三者关系最稳妥的理解应该是：</p>
+<ul>
+<li class=""><code>LangChain</code>：帮你搭</li>
+<li class=""><code>LangGraph</code>：帮你编排和控制</li>
+<li class=""><code>LangSmith</code>：帮你观察、评测、部署</li>
+</ul>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="34-一张最简关系图">3.4 一张最简关系图<a href="#34-一张最简关系图" class="hash-link" aria-label="Direct link to 3.4 一张最简关系图" title="Direct link to 3.4 一张最简关系图" translate="no">​</a></h3>
+<div class="language-text codeBlockContainer_AXfa theme-code-block" style="--prism-color:#403f53;--prism-background-color:#FBFBFB"><div class="codeBlockContent_GInB"><pre tabindex="0" class="prism-code language-text codeBlock_vnrn thin-scrollbar" style="color:#403f53;background-color:#FBFBFB"><code class="codeBlockLines_YheM"><div class="token-line" style="color:#403f53"><span class="token plain">应用代码</span><br></div><div class="token-line" style="color:#403f53"><span class="token plain">  ↓</span><br></div><div class="token-line" style="color:#403f53"><span class="token plain">LangChain（高层 agent / model / tools 抽象）</span><br></div><div class="token-line" style="color:#403f53"><span class="token plain">  ↓</span><br></div><div class="token-line" style="color:#403f53"><span class="token plain">LangGraph（更底层的 orchestration/runtime 能力）</span><br></div><div class="token-line" style="color:#403f53"><span class="token plain">  ↓</span><br></div><div class="token-line" style="color:#403f53"><span class="token plain">模型、工具、状态流转</span><br></div><div class="token-line" style="color:#403f53"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#403f53"><span class="token plain">LangSmith（横向接入 tracing / evals / deployment）</span><br></div></code></pre></div></div>
+<p>这个图不表示它们必须一起用，而是表示：</p>
+<ul>
+<li class="">LangChain 常常会建在 LangGraph 能力之上</li>
+<li class="">LangSmith 则偏横向增强层</li>
+</ul>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="4-什么时候用-langchain比自己搭更合适">4. 什么时候用 LangChain，比自己搭更合适<a href="#4-什么时候用-langchain比自己搭更合适" class="hash-link" aria-label="Direct link to 4. 什么时候用 LangChain，比自己搭更合适" title="Direct link to 4. 什么时候用 LangChain，比自己搭更合适" translate="no">​</a></h2>
+<p>这是最容易问错的问题。</p>
+<p>真正该问的不是：</p>
+<p><code>LangChain 强不强？</code></p>
+<p>而是：</p>
+<p><code>在当前这个问题里，LangChain 能不能省掉足够多、且不会让系统失去关键控制权的重复工作？</code></p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="41-适合直接用-langchain-的场景">4.1 适合直接用 LangChain 的场景<a href="#41-适合直接用-langchain-的场景" class="hash-link" aria-label="Direct link to 4.1 适合直接用 LangChain 的场景" title="Direct link to 4.1 适合直接用 LangChain 的场景" translate="no">​</a></h3>
+<p>下面这些情况，通常都可以直接考虑 LangChain：</p>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="411-要尽快做出第一个可运行-agent">4.1.1 要尽快做出第一个可运行 agent<a href="#411-要尽快做出第一个可运行-agent" class="hash-link" aria-label="Direct link to 4.1.1 要尽快做出第一个可运行 agent" title="Direct link to 4.1.1 要尽快做出第一个可运行 agent" translate="no">​</a></h4>
+<p>比如你现在想做的是：</p>
+<ul>
+<li class="">一个带 1 到 3 个工具的问答 agent</li>
+<li class="">一个带检索的最小 RAG agent</li>
+<li class="">一个内部效率工具 agent</li>
+<li class="">一个实验性质的 demo 或 PoC</li>
+</ul>
+<p>这时 LangChain 最有价值的地方是：</p>
+<ul>
+<li class="">帮你统一模型接口</li>
+<li class="">帮你减少 tool wiring 的重复代码</li>
+<li class="">帮你更快从“空项目”到“能跑起来”</li>
+</ul>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="412-你希望保留一定抽象但不想一开始就自己拼全套">4.1.2 你希望保留一定抽象，但不想一开始就自己拼全套<a href="#412-你希望保留一定抽象但不想一开始就自己拼全套" class="hash-link" aria-label="Direct link to 4.1.2 你希望保留一定抽象，但不想一开始就自己拼全套" title="Direct link to 4.1.2 你希望保留一定抽象，但不想一开始就自己拼全套" translate="no">​</a></h4>
+<p>很多人早期会遇到一个误区：</p>
+<ul>
+<li class="">要么全手写</li>
+<li class="">要么上特别重的框架</li>
+</ul>
+<p>其实 LangChain 常常正好在中间。</p>
+<p>它不是最底层，但也不是完全封死的黑盒。对于很多单 agent、轻多步 agent、轻量工具编排场景，它提供的是一种比较平衡的抽象层。</p>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="413-你需要快速切模型或接更多-provider">4.1.3 你需要快速切模型或接更多 provider<a href="#413-你需要快速切模型或接更多-provider" class="hash-link" aria-label="Direct link to 4.1.3 你需要快速切模型或接更多 provider" title="Direct link to 4.1.3 你需要快速切模型或接更多 provider" translate="no">​</a></h4>
+<p>官方文档非常强调统一模型接口的价值。</p>
+<p>如果场景会频繁遇到：</p>
+<ul>
+<li class="">OpenAI 和 Anthropic 来回切</li>
+<li class="">不同任务试不同模型</li>
+<li class="">临时换 provider 做成本或效果比较</li>
+</ul>
+<p>LangChain 会明显减少“换一家就重写一层”的摩擦。</p>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="414-你准备后续接-langsmith-或进一步下沉-langgraph">4.1.4 你准备后续接 LangSmith 或进一步下沉 LangGraph<a href="#414-你准备后续接-langsmith-或进一步下沉-langgraph" class="hash-link" aria-label="Direct link to 4.1.4 你准备后续接 LangSmith 或进一步下沉 LangGraph" title="Direct link to 4.1.4 你准备后续接 LangSmith 或进一步下沉 LangGraph" translate="no">​</a></h4>
+<p>如果明确知道项目后面大概率会进入：</p>
+<ul>
+<li class="">tracing / evals</li>
+<li class="">更复杂编排</li>
+<li class="">更长生命周期状态管理</li>
+</ul>
+<p>那  从 LangChain 起步，通常比从零手写一套自定义抽象更平滑。</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="42-更适合自己手写的场景">4.2 更适合自己手写的场景<a href="#42-更适合自己手写的场景" class="hash-link" aria-label="Direct link to 4.2 更适合自己手写的场景" title="Direct link to 4.2 更适合自己手写的场景" translate="no">​</a></h3>
+<p>下面这些情况，往往更建议先自己搭最小闭环。</p>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="421-你现在的目标是学习底层原理">4.2.1 你现在的目标是学习底层原理<a href="#421-你现在的目标是学习底层原理" class="hash-link" aria-label="Direct link to 4.2.1 你现在的目标是学习底层原理" title="Direct link to 4.2.1 你现在的目标是学习底层原理" translate="no">​</a></h4>
+<p>如果主要目标是搞懂：</p>
+<ul>
+<li class="">tool calling 实际协议</li>
+<li class="">消息历史如何回注</li>
+<li class="">loop 如何停止</li>
+<li class="">工具错误如何处理</li>
+</ul>
+<p>那先自己手写一版最小 agent，学习价值通常更高。</p>
+<p>因为一旦你一开始就只使用高层抽象，可能会：</p>
+<ul>
+<li class="">会调用 API</li>
+<li class="">但不清楚系统为什么这样运行</li>
+<li class="">出问题时难以判断是模型问题、prompt 问题、工具问题，还是框架抽象问题</li>
+</ul>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="422-流程非常简单框架反而增加认知负担">4.2.2 流程非常简单，框架反而增加认知负担<a href="#422-流程非常简单框架反而增加认知负担" class="hash-link" aria-label="Direct link to 4.2.2 流程非常简单，框架反而增加认知负担" title="Direct link to 4.2.2 流程非常简单，框架反而增加认知负担" translate="no">​</a></h4>
+<p>比如你只需要：</p>
+<ul>
+<li class="">一次模型调用</li>
+<li class="">一个结构化输出</li>
+<li class="">一个简单  函数工具</li>
+</ul>
+<p>那也许根本不需要 agent framework。</p>
+<p>这时用原生模型 SDK 加少量手写 glue code，可能更直接。</p>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="423-你需要极端可控极端透明的执行过程">4.2.3 你需要极端可控、极端透明的执行过程<a href="#423-你需要极端可控极端透明的执行过程" class="hash-link" aria-label="Direct link to 4.2.3 你需要极端可控、极端透明的执行过程" title="Direct link to 4.2.3 你需要极端可控、极端透明的执行过程" translate="no">​</a></h4>
+<p>有些业务场景很强调：</p>
+<ul>
+<li class="">每一步状态必须完全可解释</li>
+<li class="">每个节点和分支都必须显式定义</li>
+<li class="">不希望有太多高层默认行为</li>
+</ul>
+<p>这时你可能更适合：</p>
+<ul>
+<li class="">手写编排</li>
+<li class="">或直接下沉到 LangGraph</li>
+</ul>
+<p>而不是停留在 LangChain agent 的更高层抽象上。</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="43-一个简单判断公式">4.3 一个简单判断公式<a href="#43-一个简单判断公式" class="hash-link" aria-label="Direct link to 4.3 一个简单判断公式" title="Direct link to 4.3 一个简单判断公式" translate="no">​</a></h3>
+<p>可以用下面这个经验判断：</p>
+<p><code>如果框架帮你省下的重复工作 &gt; 你为理解和调试框架额外付出的复杂度，那就值得用。</code></p>
+<p>对大多数“第一版可用 agent”来说，LangChain 往往是划算的。</p>
+<p>对特别简单的实验，或者特别复杂的可控编排系统，则不一定。</p>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="5-最小-agent-示例">5. 最小 Agent 示例<a href="#5-最小-agent-示例" class="hash-link" aria-label="Direct link to 5. 最小 Agent 示例" title="Direct link to 5. 最小 Agent 示例" translate="no">​</a></h2>
+<p>这里给一个非常接近官方 overview 的最小示例，使用 Python 版 <code>create_agent</code> 风格。</p>
+<p>这个例子的重点不是功能强，而是帮助你快速理解 LangChain 的最小使用方式：</p>
+<ul>
+<li class="">选一个模型</li>
+<li class="">定义一个工具</li>
+<li class="">创建 agent</li>
+<li class="">用 <code>messages</code> 调用它</li>
+</ul>
+<div class="language-python codeBlockContainer_AXfa theme-code-block" style="--prism-color:#403f53;--prism-background-color:#FBFBFB"><div class="codeBlockContent_GInB"><pre tabindex="0" class="prism-code language-python codeBlock_vnrn thin-scrollbar" style="color:#403f53;background-color:#FBFBFB"><code class="codeBlockLines_YheM"><div class="token-line" style="color:#403f53"><span class="token comment" style="color:rgb(152, 159, 177);font-style:italic"># 安装示例：pip install -qU langchain &quot;langchain[openai]&quot;</span><span class="token plain"></span><br></div><div class="token-line" style="color:#403f53"><span class="token plain"></span><span class="token keyword" style="color:rgb(12, 150, 155)">from</span><span class="token plain"> langchain</span><span class="token punctuation" style="color:rgb(153, 76, 195)">.</span><span class="token plain">agents </span><span class="token keyword" style="color:rgb(12, 150, 155)">import</span><span class="token plain"> create_agent</span><br></div><div class="token-line" style="color:#403f53"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#403f53"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#403f53"><span class="token plain"></span><span class="token keyword" style="color:rgb(12, 150, 155)">def</span><span class="token plain"> </span><span class="token function" style="color:rgb(153, 76, 195);font-style:italic">get_weather</span><span class="token punctuation" style="color:rgb(153, 76, 195)">(</span><span class="token plain">city</span><span class="token punctuation" style="color:rgb(153, 76, 195)">:</span><span class="token plain"> </span><span class="token builtin" style="color:rgb(72, 118, 214)">str</span><span class="token punctuation" style="color:rgb(153, 76, 195)">)</span><span class="token plain"> </span><span class="token operator" style="color:rgb(12, 150, 155)">-</span><span class="token operator" style="color:rgb(12, 150, 155)">&gt;</span><span class="token plain"> </span><span class="token builtin" style="color:rgb(72, 118, 214)">str</span><span class="token punctuation" style="color:rgb(153, 76, 195)">:</span><span class="token plain"></span><br></div><div class="token-line" style="color:#403f53"><span class="token plain">    </span><span class="token triple-quoted-string string" style="color:rgb(72, 118, 214)">&quot;&quot;&quot;获取指定城市天气。这里先用 mock 数据代替真实 API。&quot;&quot;&quot;</span><span class="token plain"></span><br></div><div class="token-line" style="color:#403f53"><span class="token plain">    </span><span class="token keyword" style="color:rgb(12, 150, 155)">return</span><span class="token plain"> </span><span class="token string-interpolation string" style="color:rgb(72, 118, 214)">f&quot;</span><span class="token string-interpolation interpolation punctuation" style="color:rgb(153, 76, 195)">{</span><span class="token string-interpolation interpolation">city</span><span class="token string-interpolation interpolation punctuation" style="color:rgb(153, 76, 195)">}</span><span class="token string-interpolation string" style="color:rgb(72, 118, 214)"> 是晴天，气温 25 度。&quot;</span><span class="token plain"></span><br></div><div class="token-line" style="color:#403f53"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#403f53"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#403f53"><span class="token plain">agent </span><span class="token operator" style="color:rgb(12, 150, 155)">=</span><span class="token plain"> create_agent</span><span class="token punctuation" style="color:rgb(153, 76, 195)">(</span><span class="token plain"></span><br></div><div class="token-line" style="color:#403f53"><span class="token plain">    model</span><span class="token operator" style="color:rgb(12, 150, 155)">=</span><span class="token string" style="color:rgb(72, 118, 214)">&quot;openai:gpt-5.4&quot;</span><span class="token punctuation" style="color:rgb(153, 76, 195)">,</span><span class="token plain"></span><br></div><div class="token-line" style="color:#403f53"><span class="token plain">    tools</span><span class="token operator" style="color:rgb(12, 150, 155)">=</span><span class="token punctuation" style="color:rgb(153, 76, 195)">[</span><span class="token plain">get_weather</span><span class="token punctuation" style="color:rgb(153, 76, 195)">]</span><span class="token punctuation" style="color:rgb(153, 76, 195)">,</span><span class="token plain"></span><br></div><div class="token-line" style="color:#403f53"><span class="token plain">    system_prompt</span><span class="token operator" style="color:rgb(12, 150, 155)">=</span><span class="token string" style="color:rgb(72, 118, 214)">&quot;你是一个简洁、可靠的中文助手。&quot;</span><span class="token punctuation" style="color:rgb(153, 76, 195)">,</span><span class="token plain"></span><br></div><div class="token-line" style="color:#403f53"><span class="token plain"></span><span class="token punctuation" style="color:rgb(153, 76, 195)">)</span><span class="token plain"></span><br></div><div class="token-line" style="color:#403f53"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#403f53"><span class="token plain">result </span><span class="token operator" style="color:rgb(12, 150, 155)">=</span><span class="token plain"> agent</span><span class="token punctuation" style="color:rgb(153, 76, 195)">.</span><span class="token plain">invoke</span><span class="token punctuation" style="color:rgb(153, 76, 195)">(</span><span class="token plain"></span><br></div><div class="token-line" style="color:#403f53"><span class="token plain">    </span><span class="token punctuation" style="color:rgb(153, 76, 195)">{</span><span class="token plain"></span><br></div><div class="token-line" style="color:#403f53"><span class="token plain">        </span><span class="token string" style="color:rgb(72, 118, 214)">&quot;messages&quot;</span><span class="token punctuation" style="color:rgb(153, 76, 195)">:</span><span class="token plain"> </span><span class="token punctuation" style="color:rgb(153, 76, 195)">[</span><span class="token plain"></span><br></div><div class="token-line" style="color:#403f53"><span class="token plain">            </span><span class="token punctuation" style="color:rgb(153, 76, 195)">{</span><span class="token plain"></span><br></div><div class="token-line" style="color:#403f53"><span class="token plain">                </span><span class="token string" style="color:rgb(72, 118, 214)">&quot;role&quot;</span><span class="token punctuation" style="color:rgb(153, 76, 195)">:</span><span class="token plain"> </span><span class="token string" style="color:rgb(72, 118, 214)">&quot;user&quot;</span><span class="token punctuation" style="color:rgb(153, 76, 195)">,</span><span class="token plain"></span><br></div><div class="token-line" style="color:#403f53"><span class="token plain">                </span><span class="token string" style="color:rgb(72, 118, 214)">&quot;content&quot;</span><span class="token punctuation" style="color:rgb(153, 76, 195)">:</span><span class="token plain"> </span><span class="token string" style="color:rgb(72, 118, 214)">&quot;帮我查一下上海天气，然后用一句话总结。&quot;</span><span class="token punctuation" style="color:rgb(153, 76, 195)">,</span><span class="token plain"></span><br></div><div class="token-line" style="color:#403f53"><span class="token plain">            </span><span class="token punctuation" style="color:rgb(153, 76, 195)">}</span><span class="token plain"></span><br></div><div class="token-line" style="color:#403f53"><span class="token plain">        </span><span class="token punctuation" style="color:rgb(153, 76, 195)">]</span><span class="token plain"></span><br></div><div class="token-line" style="color:#403f53"><span class="token plain">    </span><span class="token punctuation" style="color:rgb(153, 76, 195)">}</span><span class="token plain"></span><br></div><div class="token-line" style="color:#403f53"><span class="token plain"></span><span class="token punctuation" style="color:rgb(153, 76, 195)">)</span><span class="token plain"></span><br></div><div class="token-line" style="color:#403f53"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#403f53"><span class="token plain"></span><span class="token keyword" style="color:rgb(12, 150, 155)">print</span><span class="token punctuation" style="color:rgb(153, 76, 195)">(</span><span class="token plain">result</span><span class="token punctuation" style="color:rgb(153, 76, 195)">[</span><span class="token string" style="color:rgb(72, 118, 214)">&quot;messages&quot;</span><span class="token punctuation" style="color:rgb(153, 76, 195)">]</span><span class="token punctuation" style="color:rgb(153, 76, 195)">[</span><span class="token operator" style="color:rgb(12, 150, 155)">-</span><span class="token number" style="color:rgb(170, 9, 130)">1</span><span class="token punctuation" style="color:rgb(153, 76, 195)">]</span><span class="token punctuation" style="color:rgb(153, 76, 195)">.</span><span class="token plain">content</span><span class="token punctuation" style="color:rgb(153, 76, 195)">)</span><br></div></code></pre></div></div>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="51-这个例子里发生了什么">5.1 这个例子里发生了什么<a href="#51-这个例子里发生了什么" class="hash-link" aria-label="Direct link to 5.1 这个例子里发生了什么" title="Direct link to 5.1 这个例子里发生了什么" translate="no">​</a></h3>
+<p>可以拆成四件事来看：</p>
+<ol>
+<li class="">
+<p><code>model</code>
+这里选择了一个 LangChain 支持的模型标识。LangChain 会按统一接口去适配底层 provider。</p>
+</li>
+<li class="">
+<p><code>tools</code>
+这里把 <code>get_weather</code> 注册成 agent 可用工具。对模型来说，这相当于“模型可以调用这个能力”。</p>
+</li>
+<li class="">
+<p><code>system_prompt</code>
+这里定义 agent 的全局行为边界，比如输出风格、角色、约束。</p>
+</li>
+<li class="">
+<p><code>messages</code>
+真正的输入不是一段裸字符串，而是一组消息。这个设计和现代 chat / agent 接口是一致的。</p>
+</li>
+</ol>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="52-为什么这个例子适合作为第一步">5.2 为什么这个例子适合作为第一步<a href="#52-为什么这个例子适合作为第一步" class="hash-link" aria-label="Direct link to 5.2 为什么这个例子适合作为第一步" title="Direct link to 5.2 为什么这个例子适合作为第一步" translate="no">​</a></h3>
+<p>因为它刚好能让你看到 LangChain 最重要的三层拼接：</p>
+<ul>
+<li class=""><code>模型</code></li>
+<li class=""><code>工具</code></li>
+<li class=""><code>agent loop</code></li>
+</ul>
+<p>一旦这个例子跑通，你下一步通常就可以自然扩展到：</p>
+<ul>
+<li class="">多个工具</li>
+<li class="">结构化输出</li>
+<li class="">检索</li>
+<li class="">memory</li>
+<li class="">tracing</li>
+</ul>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="53-一个很重要的实践建议">5.3 一个很重要的实践建议<a href="#53-一个很重要的实践建议" class="hash-link" aria-label="Direct link to 5.3 一个很重要的实践建议" title="Direct link to 5.3 一个很重要的实践建议" translate="no">​</a></h3>
+<p>刚开始时，不要一上来就做太多“高级能力叠加”。</p>
+<p>更稳的节奏通常是：</p>
+<ol>
+<li class="">先跑通一个单工具 agent</li>
+<li class="">再观察它什么时候会调工具、什么时候不会</li>
+<li class="">再补 structured output 或 retrieval</li>
+<li class="">再接 LangSmith 做 tracing</li>
+<li class="">真正需要更复杂状态编排时，再考虑 LangGraph</li>
+</ol>
+<p>这个顺序通常比“一开始把所有抽象都堆满”更容易学明白，也更容易调试。</p>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="6-和本专题现有章节怎么对应">6. 和本专题现有章节怎么对应<a href="#6-和本专题现有章节怎么对应" class="hash-link" aria-label="Direct link to 6. 和本专题现有章节怎么对应" title="Direct link to 6. 和本专题现有章节怎么对应" translate="no">​</a></h2>
+<p>如果把这个 AI 专题理解成一条学习路径，那么 LangChain 最适合放在“已经理解基础能力，准备开始把这些能力装进一个框架里”的位置。</p>
+<p>可以这样对照看。</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="61-先补基础再看-langchain">6.1 先补基础，再看 LangChain<a href="#61-先补基础再看-langchain" class="hash-link" aria-label="Direct link to 6.1 先补基础，再看 LangChain" title="Direct link to 6.1 先补基础，再看 LangChain" translate="no">​</a></h3>
+<p>先看这些基础章节，再看本文，会更容易理解 LangChain 在封装什么：</p>
+<ul>
+<li class=""><a class="" href="/en/AI/foundations/Prompt-Engineering-Glossary">Prompt Engineering Glossary</a></li>
+<li class=""><a class="" href="/en/AI/foundations/Context-Engineering-Guide">Context Engineering Guide</a></li>
+<li class=""><a class="" href="/en/AI/foundations/RAG-Intro-and-Practice">RAG Intro and Practice</a></li>
+<li class=""><a class="" href="/en/AI/foundations/Tool-Use-and-Function-Calling">Tool Use and Function Calling</a></li>
+</ul>
+<p>对应关系可以理解成：</p>
+<ul>
+<li class=""><code>Prompt / Context</code>：决定 agent 怎么想、怎么拿上下文</li>
+<li class=""><code>Tool Use</code>：决定 agent 怎么和 外界交互</li>
+<li class=""><code>RAG</code>：决定 agent 怎么拿外部知识</li>
+<li class=""><code>LangChain</code>：把这些能力更快组装进一个应用框架里</li>
+</ul>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="62-和-agent-工程章节的关系">6.2 和 Agent 工程章节的关系<a href="#62-和-agent-工程章节的关系" class="hash-link" aria-label="Direct link to 6.2 和 Agent 工程章节的关系" title="Direct link to 6.2 和 Agent 工程章节的关系" translate="no">​</a></h3>
+<p>往工程化继续推进时，本文和这些内容一起看会更顺：</p>
+<ul>
+<li class=""><a class="" href="/en/AI/agent-engineering/Agent-Engineering-Intro">Agent Engineering Intro</a></li>
+<li class=""><a class="" href="/en/AI/agent-engineering/Workflow-vs-Agent">Workflow vs Agent</a></li>
+<li class=""><a class="" href="/en/AI/agent-engineering/Agent-Memory-and-State">Agent Memory and State</a></li>
+<li class=""><a class="" href="/en/AI/agent-engineering/Evaluation-and-Evals-Intro">Evaluation and Evals Intro</a></li>
+<li class=""><a class="" href="/en/AI/agent-engineering/Agent-Observability-and-Debugging">Agent Observability and Debugging</a></li>
+</ul>
+<p>对应方式大致是：</p>
+<ul>
+<li class="">本文回答 <code>用什么框架更快起步</code></li>
+<li class="">Agent Engineering 系列回答 <code>系统应该怎么设计和落地</code></li>
+<li class="">Observability / Evals 系列回答 <code>系统上线前后怎么验证和排查</code></li>
+</ul>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="63-和现有代码示例章节的关系">6.3 和现有代码示例章节的关系<a href="#63-和现有代码示例章节的关系" class="hash-link" aria-label="Direct link to 6.3 和现有代码示例章节的关系" title="Direct link to 6.3 和现有代码示例章节的关系" translate="no">​</a></h3>
+<p>直接动手写代码时，本文和这些章节可以顺着读下去：</p>
+<ul>
+<li class=""><a class="" href="/en/AI/overview/Minimal-Agent-Code-Implementation-Examples">Minimal Agent Code Implementation Examples</a></li>
+<li class=""><a class="" href="/en/AI/overview/Tool-Using-Agent-Code-Implementation-Examples">Tool-Using Agent Code Implementation Examples</a></li>
+<li class=""><a class="" href="/en/AI/overview/RAG-Agent-Code-Implementation-Examples">RAG Agent Code Implementation Examples</a></li>
+<li class=""><a class="" href="/en/AI/overview/AI-Agent-Tech-Stack-and-Framework-Comparison">AI Agent Tech Stack and Framework Comparison</a></li>
+</ul>
+<p>一个很实用的阅读顺序是：</p>
+<ol>
+<li class="">先读本文，搞清楚 LangChain 在整个栈里的位置</li>
+<li class="">再看 <code>AI Agent 技术栈与框架对比</code>，建立整体选型判断</li>
+<li class="">再看 <code>Minimal Agent</code> 和 <code>Tool-Using Agent</code> 示例，把抽象落到代码</li>
+<li class="">如果需要引入知识库，再看 <code>RAG Agent</code> 示例</li>
+<li class="">如果要上线、调试、评测，再串到 observability 和 evals 章节</li>
+</ol>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="64-在这个专题里本文最适合充当什么角色">6.4 在这个专题里，本文最适合充当什么角色<a href="#64-在这个专题里本文最适合充当什么角色" class="hash-link" aria-label="Direct link to 6.4 在这个专题里，本文最适合充当什么角色" title="Direct link to 6.4 在这个专题里，本文最适合充当什么角色" translate="no">​</a></h3>
+<p>如果要给本文定一个位置，我会把它定义成：</p>
+<p><code>从“基础概念”过渡到“框架落地”的那一篇桥接文档。</code></p>
+<p>它不是最底层原理文，也不是最完整的工程实战文，而是帮助你回答：</p>
+<ul>
+<li class="">现在要不要上 LangChain</li>
+<li class="">上了之后它到底替我解决了什么</li>
+<li class="">后面如果继续深入，该往 LangGraph 和 LangSmith 哪个方向走</li>
+</ul>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="7-一份务实的选型建议">7. 一份务实的选型建议<a href="#7-一份务实的选型建议" class="hash-link" aria-label="Direct link to 7. 一份务实的选型建议" title="Direct link to 7. 一份务实的选型建议" translate="no">​</a></h2>
+<p>如果还在犹豫到底该怎么开始，可以先按一个务实顺序来：</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="71-你是初学者">7.1 你是初学者<a href="#71-你是初学者" class="hash-link" aria-label="Direct link to 7.1 你是初学者" title="Direct link to 7.1 你是初学者" translate="no">​</a></h3>
+<p>建议路线：</p>
+<ol>
+<li class="">先理解 prompt、tool calling、RAG 这些基础</li>
+<li class="">手写一个极小 demo</li>
+<li class="">再用 LangChain 重写同样的 demo</li>
+<li class="">对比两版代码的差异</li>
+</ol>
+<p>这样你最容易真正理解 LangChain 的价值，而不是把它当黑盒。</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="72-已经想开始做第一个可用-agent">7.2 已经想开始做第一个可用 agent<a href="#72-已经想开始做第一个可用-agent" class="hash-link" aria-label="Direct link to 7.2 已经想开始做第一个可用 agent" title="Direct link to 7.2 已经想开始做第一个可用 agent" translate="no">​</a></h3>
+<p>建议路线：</p>
+<ol>
+<li class="">直接用 LangChain 起步</li>
+<li class="">先做一个单 agent、少量工具、少量状态的版本</li>
+<li class="">尽早接 LangSmith tracing</li>
+<li class="">等系统复杂度上来，再决定是否下沉到 LangGraph</li>
+</ol>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="73-已经在做复杂-agent-系统">7.3 已经在做复杂 agent 系统<a href="#73-已经在做复杂-agent-系统" class="hash-link" aria-label="Direct link to 7.3 已经在做复杂 agent 系统" title="Direct link to 7.3 已经在做复杂 agent 系统" translate="no">​</a></h3>
+<p>建议路线：</p>
+<ol>
+<li class="">把 LangChain 当作高层开发入口</li>
+<li class="">对需要精细控制的部分考虑 LangGraph</li>
+<li class="">把 LangSmith 当作长期工程基础设施，而不是“最后才补”的可选项</li>
+</ol>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="8-结论">8. 结论<a href="#8-结论" class="hash-link" aria-label="Direct link to 8. 结论" title="Direct link to 8. 结论" translate="no">​</a></h2>
+<p>最后把这篇文档压缩成几句话：</p>
+<ul>
+<li class=""><code>LangChain</code> 的核心价值，是帮你更快构建 agent 和 LLM application。</li>
+<li class="">它最适合“已经懂一点基础、准备把系统真正搭起来”的阶段。</li>
+<li class=""><code>LangChain</code> 和 <code>LangGraph</code> 不是非此即彼的关系，前者更高层，后者更底层，且前者的 agents 本身就建立在后者之上。</li>
+<li class=""><code>LangSmith</code> 则偏横向平台层，负责 tracing、evaluation、debugging、deployment。</li>
+<li class="">如果现在要做第一个真正可运行的 agent，LangChain 往往是一个非常务实的起点。</li>
+<li class="">如果目标是学习底层原理，或者你需要极端透明、极端可控的流程，自己手写或直接用 LangGraph 可能更合适。</li>
+</ul>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="9-官方参考链接">9. 官方参考链接<a href="#9-官方参考链接" class="hash-link" aria-label="Direct link to 9. 官方参考链接" title="Direct link to 9. 官方参考链接" translate="no">​</a></h2>
+<ul>
+<li class=""><a href="https://docs.langchain.com/oss/python/langchain/overview" target="_blank" rel="noopener noreferrer" class="">LangChain Overview</a></li>
+<li class=""><a href="https://docs.langchain.com/oss/python/langgraph/overview" target="_blank" rel="noopener noreferrer" class="">LangGraph Overview</a></li>
+<li class=""><a href="https://docs.langchain.com/langsmith" target="_blank" rel="noopener noreferrer" class="">LangSmith Docs</a></li>
+</ul></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/en/AI/frameworks/OpenAI-Agents-SDK-Guide"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">OpenAI Agents SDK 指南</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/en/AI/frameworks/LangGraph-Intro-and-Orchestration"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">LangGraph 入门与编排设计</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_v08c thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#1-langchain-是什么" class="table-of-contents__link toc-highlight">1. LangChain 是什么</a><ul><li><a href="#11-官方文档强调的几个核心收益" class="table-of-contents__link toc-highlight">1.1 官方文档强调的几个核心收益</a></li></ul></li><li><a href="#2-langchain-适合什么阶段" class="table-of-contents__link toc-highlight">2. LangChain 适合什么阶段</a><ul><li><a href="#21-阶段一刚理解模型prompt工具调用" class="table-of-contents__link toc-highlight">2.1 阶段一：刚理解模型、Prompt、工具调用</a></li><li><a href="#22-阶段二开始做自己的第一个可用-agent" class="table-of-contents__link toc-highlight">2.2 阶段二：开始做自己的第一个可用 agent</a></li><li><a href="#23-阶段三进入更复杂的-agent-工程化" class="table-of-contents__link toc-highlight">2.3 阶段三：进入更复杂的 agent 工程化</a></li></ul></li><li><a href="#3-langchainlanggraphlangsmith-的关系" class="table-of-contents__link toc-highlight">3. LangChain、LangGraph、LangSmith 的关系</a><ul><li><a href="#31-langchain-和-langgraph-的关系" class="table-of-contents__link toc-highlight">3.1 LangChain 和 LangGraph 的关系</a></li><li><a href="#32-langgraph-更适合什么" class="table-of-contents__link toc-highlight">3.2 LangGraph 更适合什么</a></li><li><a href="#33-langsmith-更适合什么" class="table-of-contents__link toc-highlight">3.3 LangSmith 更适合什么</a></li><li><a href="#34-一张最简关系图" class="table-of-contents__link toc-highlight">3.4 一张最简关系图</a></li></ul></li><li><a href="#4-什么时候用-langchain比自己搭更合适" class="table-of-contents__link toc-highlight">4. 什么时候用 LangChain，比自己搭更合适</a><ul><li><a href="#41-适合直接用-langchain-的场景" class="table-of-contents__link toc-highlight">4.1 适合直接用 LangChain 的场景</a></li><li><a href="#42-更适合自己手写的场景" class="table-of-contents__link toc-highlight">4.2 更适合自己手写的场景</a></li><li><a href="#43-一个简单判断公式" class="table-of-contents__link toc-highlight">4.3 一个简单判断公式</a></li></ul></li><li><a href="#5-最小-agent-示例" class="table-of-contents__link toc-highlight">5. 最小 Agent 示例</a><ul><li><a href="#51-这个例子里发生了什么" class="table-of-contents__link toc-highlight">5.1 这个例子里发生了什么</a></li><li><a href="#52-为什么这个例子适合作为第一步" class="table-of-contents__link toc-highlight">5.2 为什么这个例子适合作为第一步</a></li><li><a href="#53-一个很重要的实践建议" class="table-of-contents__link toc-highlight">5.3 一个很重要的实践建议</a></li></ul></li><li><a href="#6-和本专题现有章节怎么对应" class="table-of-contents__link toc-highlight">6. 和本专题现有章节怎么对应</a><ul><li><a href="#61-先补基础再看-langchain" class="table-of-contents__link toc-highlight">6.1 先补基础，再看 LangChain</a></li><li><a href="#62-和-agent-工程章节的关系" class="table-of-contents__link toc-highlight">6.2 和 Agent 工程章节的关系</a></li><li><a href="#63-和现有代码示例章节的关系" class="table-of-contents__link toc-highlight">6.3 和现有代码示例章节的关系</a></li><li><a href="#64-在这个专题里本文最适合充当什么角色" class="table-of-contents__link toc-highlight">6.4 在这个专题里，本文最适合充当什么角色</a></li></ul></li><li><a href="#7-一份务实的选型建议" class="table-of-contents__link toc-highlight">7. 一份务实的选型建议</a><ul><li><a href="#71-你是初学者" class="table-of-contents__link toc-highlight">7.1 你是初学者</a></li><li><a href="#72-已经想开始做第一个可用-agent" class="table-of-contents__link toc-highlight">7.2 已经想开始做第一个可用 agent</a></li><li><a href="#73-已经在做复杂-agent-系统" class="table-of-contents__link toc-highlight">7.3 已经在做复杂 agent 系统</a></li></ul></li><li><a href="#8-结论" class="table-of-contents__link toc-highlight">8. 结论</a></li><li><a href="#9-官方参考链接" class="table-of-contents__link toc-highlight">9. 官方参考链接</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">入口</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/en/docs/intro">知识库</a></li><li class="footer__item"><a class="footer__link-item" href="/en/blog">日常 Blog</a></li><li class="footer__item"><a class="footer__link-item" href="/en/docs/engineering">工程化</a></li><li class="footer__item"><a class="footer__link-item" href="/en/docs/dev-tools">工具与环境</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">更多</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/JamesLi-dev" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_BlfO"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Torli, Inc. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>

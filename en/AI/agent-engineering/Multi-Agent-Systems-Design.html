@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-ai docs-version-current docs-doc-page docs-doc-id-agent-engineering/Multi-Agent-Systems-Design" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.10.1">
+<title data-rh="true">多 Agent 系统设计 | 这里是 Torli&#x27;s </title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://blog.torli.top/en/AI/agent-engineering/Multi-Agent-Systems-Design"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" property="og:locale:alternate" content="zh_Hans"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="keywords" content="cooking, blog"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-ai-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-ai-current"><meta data-rh="true" property="og:title" content="多 Agent 系统设计 | 这里是 Torli&#x27;s "><meta data-rh="true" name="description" content="单 Agent 能解决很多问题，但系统一旦变复杂，很快就会出现一个新问题："><meta data-rh="true" property="og:description" content="单 Agent 能解决很多问题，但系统一旦变复杂，很快就会出现一个新问题："><link data-rh="true" rel="icon" href="/en/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://blog.torli.top/en/AI/agent-engineering/Multi-Agent-Systems-Design"><link data-rh="true" rel="alternate" href="https://blog.torli.top/AI/agent-engineering/Multi-Agent-Systems-Design" hreflang="zh-Hans"><link data-rh="true" rel="alternate" href="https://blog.torli.top/en/AI/agent-engineering/Multi-Agent-Systems-Design" hreflang="en"><link data-rh="true" rel="alternate" href="https://blog.torli.top/AI/agent-engineering/Multi-Agent-Systems-Design" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Agent 与工程化","item":"https://blog.torli.top/en/AI/agent-engineering/"},{"@type":"ListItem","position":2,"name":"多 Agent 系统设计","item":"https://blog.torli.top/en/AI/agent-engineering/Multi-Agent-Systems-Design"}]}</script><link rel="alternate" type="application/rss+xml" href="/en/blog/rss.xml" title="这里是 Torli&#39;s  RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/en/blog/atom.xml" title="这里是 Torli&#39;s  Atom Feed"><link rel="stylesheet" href="/en/assets/css/styles.a3b9aef2.css">
+<script src="/en/assets/js/runtime~main.56ff528f.js" defer="defer"></script>
+<script src="/en/assets/js/main.f68a3aad.js" defer="defer"></script>
+</head>
+<body>
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_U9sP" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top navbarHideable_PT2D"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/en/"><div class="navbar__logo"><img src="/en/img/logo2.png" alt="My Site Logo" class="themedComponent_QNor themedComponent--light_EqDK"><img src="/en/img/logo2.png" alt="My Site Logo" class="themedComponent_QNor themedComponent--dark_H0PK"></div><b class="navbar__title text--truncate">Torli&#x27;s Blog</b></a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a class="navbar__link" aria-haspopup="true" aria-expanded="false" role="button" href="/en/docs/intro">知识库</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/en/docs/foundations">基础语言</a></li><li><a class="dropdown__link" href="/en/docs/browser-network">浏览器与网络</a></li><li><a class="dropdown__link" href="/en/docs/engineering">工程化</a></li><li><a class="dropdown__link" href="/en/docs/frameworks">前端框架</a></li><li><a class="dropdown__link" href="/en/docs/node-server">Node 与服务端</a></li><li><a class="dropdown__link" href="/en/docs/data-backend">数据库与后端服务</a></li><li><a class="dropdown__link" href="/en/docs/state-management">状态管理</a></li><li><a class="dropdown__link" href="/en/docs/ui-interaction">UI 与交互</a></li><li><a class="dropdown__link" href="/en/docs/dev-tools">效率工具与开发环境</a></li><li><a class="dropdown__link" href="/en/docs/frontier">前沿专题</a></li></ul></div><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a aria-current="page" class="navbar__link active" aria-haspopup="true" aria-expanded="false" role="button" href="/en/AI">AI 学习</a><ul class="dropdown__menu"><li><a aria-current="page" class="dropdown__link dropdown__link--active" href="/en/AI">开始这里：AI 首页</a></li><li><a class="dropdown__link" href="/en/AI/AI-Agent-Docs-Index">专题索引：AI Agent 文档总索引</a></li><li><a class="dropdown__link" href="/en/AI/AI-Agent-Chapter-to-Framework-Map">专题索引：章节与框架映射</a></li><li><a class="dropdown__link" href="/en/AI/foundations/Prompt-Engineering-Glossary">基础能力：Prompt Engineering</a></li><li><a class="dropdown__link" href="/en/AI/foundations/Context-Engineering-Guide">基础能力：Context Engineering</a></li><li><a class="dropdown__link" href="/en/AI/foundations/RAG-Intro-and-Practice">基础能力：RAG</a></li><li><a class="dropdown__link" href="/en/AI/agent-engineering/Agent-Engineering-Intro">Agent 与工程化：Agent Engineering</a></li><li><a class="dropdown__link" href="/en/AI/agent-engineering/Workflow-vs-Agent">Agent 与工程化：Workflow vs Agent</a></li><li><a class="dropdown__link" href="/en/AI/agent-engineering/Agent-Memory-and-State">Agent 与工程化：Memory and State</a></li><li><a class="dropdown__link" href="/en/AI/agent-engineering/Harness-Engineering-Guide">Agent 与工程化：Harness Engineering</a></li><li><a class="dropdown__link" href="/en/AI/frameworks/OpenAI-Agents-SDK-Guide">框架与 SDK：OpenAI Agents SDK</a></li><li><a class="dropdown__link" href="/en/AI/frameworks/LangGraph-Intro-and-Orchestration">框架与 SDK：LangGraph</a></li><li><a class="dropdown__link" href="/en/AI/frameworks/LangSmith-Observability-and-Evals">框架与 SDK：LangSmith</a></li><li><a class="dropdown__link" href="/en/AI/frameworks/Vercel-AI-SDK-Guide">框架与 SDK：Vercel AI SDK</a></li><li><a class="dropdown__link" href="/en/AI/frameworks/Mastra-Guide">框架与 SDK：Mastra</a></li><li><a class="dropdown__link" href="/en/AI/frameworks/Google-ADK-Guide">框架与 SDK：Google ADK</a></li><li><a class="dropdown__link" href="/en/AI/overview/AI-App-Architecture-Map">全局视角：AI 应用整体架构</a></li><li><a class="dropdown__link" href="/en/AI/overview/Minimal-Agent-Demo-From-0-to-1">全局视角：最小 Agent Demo</a></li><li><a class="dropdown__link" href="/en/AI/overview/Minimal-Agent-Code-Implementation-Examples">全局视角：最小 Agent 代码示例</a></li><li><a class="dropdown__link" href="/en/AI/overview/AI-Agent-Tech-Stack-and-Framework-Comparison">全局视角：技术栈与框架对比</a></li></ul></div><a class="navbar__item navbar__link" href="/en/blog">日常 Blog</a><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a class="navbar__link" aria-haspopup="true" aria-expanded="false" role="button" href="/en/docs/engineering">工程化</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/en/docs/engineering/build-tools">构建与转译</a></li><li><a class="dropdown__link" href="/en/docs/engineering/code-quality">代码规范</a></li><li><a class="dropdown__link" href="/en/docs/engineering/package-management">包管理与环境管理</a></li><li><a class="dropdown__link" href="/en/docs/engineering/data-fetching">请求与数据层</a></li><li><a class="dropdown__link" href="/en/docs/engineering/package-management/pnpm">pnpm</a></li><li><a class="dropdown__link" href="/en/docs/engineering/package-management/fnm">fnm</a></li></ul></div><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a class="navbar__link" aria-haspopup="true" aria-expanded="false" role="button" href="/en/docs/dev-tools">工具与环境</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/en/docs/dev-tools/apps/KeyboardMaestro">Keyboard Maestro</a></li><li><a class="dropdown__link" href="/en/docs/dev-tools/apps/Warp">Warp</a></li><li><a class="dropdown__link" href="/en/docs/dev-tools/apps/Ghostty">Ghostty</a></li><li><a class="dropdown__link" href="/en/docs/dev-tools/apps/Zed">Zed</a></li><li><a class="dropdown__link" href="/en/docs/dev-tools/apps/GitButler">GitButler</a></li><li><a class="dropdown__link" href="/en/docs/dev-tools/apps/Switzy">Switzy</a></li><li><a class="dropdown__link" href="/en/docs/dev-tools/apps/Craft-Agents">Craft Agents</a></li></ul></div><a href="https://github.com/JamesLi-dev" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_BlfO"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_bW1k colorModeToggle_D8sl"><button class="clean-btn toggleButton_qiU8 toggleButtonDisabled_xinJ" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_X9Tk lightToggleIcon_y62u"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_X9Tk darkToggleIcon_Dj8C"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_X9Tk systemToggleIcon_T2ve"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_e2eJ"><div class="navbar__search searchBarContainer_Mqfy"><input placeholder="Search" aria-label="Search" class="navbar__search-input" value=""><div class="loadingRing_r319 searchBarLoadingRing_Kn2r"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_kzBE"><div class="docsWrapper_Jb1X"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_W_UZ" type="button"></button><div class="docRoot_AAe1"><aside class="theme-doc-sidebar-container docSidebarContainer_RSuS"><div class="sidebarViewport_pYEE"><div class="sidebar_G_8g sidebarWithHideableNavbar__FNA"><a tabindex="-1" class="sidebarLogo_hLnz" href="/en/"><img src="/en/img/logo2.png" alt="My Site Logo" class="themedComponent_QNor themedComponent--light_EqDK"><img src="/en/img/logo2.png" alt="My Site Logo" class="themedComponent_QNor themedComponent--dark_H0PK"><b>Torli&#x27;s Blog</b></a><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_k9TG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/en/AI"><span title="AI" class="linkLabel_vgcd">AI</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/en/AI/AI-Agent-Docs-Index"><span title="AI Agent 文档总索引" class="linkLabel_vgcd">AI Agent 文档总索引</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_jNm8 menu__link menu__link--sublist" href="/en/AI/foundations"><span title="基础能力" class="categoryLinkLabel_ayea">基础能力</span></a><button aria-label="Expand sidebar category &#x27;基础能力&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/en/AI/AI-Agent-Chapter-to-Framework-Map"><span title="AI Agent 专题章节与框架映射" class="linkLabel_vgcd">AI Agent 专题章节与框架映射</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_jNm8 menu__link menu__link--sublist menu__link--active" href="/en/AI/agent-engineering"><span title="Agent 与工程化" class="categoryLinkLabel_ayea">Agent 与工程化</span></a><button aria-label="Collapse sidebar category &#x27;Agent 与工程化&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/en/AI/agent-engineering/Agent-Engineering-Intro"><span title="Agent Engineering" class="linkLabel_vgcd">Agent Engineering</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/en/AI/agent-engineering/Evaluation-and-Evals-Intro"><span title="Evaluation / Evals" class="linkLabel_vgcd">Evaluation / Evals</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/en/AI/agent-engineering/Workflow-vs-Agent"><span title="Workflow vs Agent" class="linkLabel_vgcd">Workflow vs Agent</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/en/AI/agent-engineering/Router-and-Triage-Design"><span title="Router 与 Triage 设计" class="linkLabel_vgcd">Router 与 Triage 设计</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/en/AI/agent-engineering/Agent-Memory-and-State"><span title="Agent Memory and State" class="linkLabel_vgcd">Agent Memory and State</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/en/AI/agent-engineering/Prompt-Injection-and-Agent-Security"><span title="Prompt Injection 与 Agent 安全" class="linkLabel_vgcd">Prompt Injection 与 Agent 安全</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/en/AI/agent-engineering/Agent-Planning-Patterns"><span title="Agent Planning Patterns" class="linkLabel_vgcd">Agent Planning Patterns</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/en/AI/agent-engineering/Multi-Agent-Systems-Design"><span title="多 Agent 系统设计" class="linkLabel_vgcd">多 Agent 系统设  计</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/en/AI/agent-engineering/Agent-Handoffs-Agents-as-Tools-and-A2A"><span title="Handoff、Agents as Tools 与 A2A" class="linkLabel_vgcd">Handoff、Agents as Tools 与 A2A</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/en/AI/agent-engineering/Harness-Engineering-Guide"><span title="Harness Engineering" class="linkLabel_vgcd">Harness Engineering</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/en/AI/agent-engineering/Agent-Memory-and-RAG-Data-Governance"><span title="Agent Memory 与 RAG 数据治理" class="linkLabel_vgcd">Agent Memory 与 RAG 数据治理</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/en/AI/agent-engineering/Agent-Latency-Cost-and-Reliability"><span title="AI Agent 的延迟、成本与稳定性优化" class="linkLabel_vgcd">AI Agent 的延迟、成本与稳定性优化</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/en/AI/agent-engineering/Agent-Observability-and-Debugging"><span title="Agent Observability and Debugging" class="linkLabel_vgcd">Agent Observability and Debugging</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/en/AI/agent-engineering/Multi-Agent-Evaluations"><span title="Multi-Agent Evaluations" class="linkLabel_vgcd">Multi-Agent Evaluations</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/en/AI/agent-engineering/Agent-Failure-Triage"><span title="Agent Failure Triage" class="linkLabel_vgcd">Agent Failure Triage</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/en/AI/agent-engineering/Guardrails-and-Human-in-the-Loop"><span title="Guardrails and Human-in-the-Loop" class="linkLabel_vgcd">Guardrails and Human-in-the-Loop</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/en/AI/agent-engineering/Agent-Runtime-State-Machine"><span title="Agent Runtime State Machine" class="linkLabel_vgcd">Agent Runtime State Machine</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/en/AI/agent-engineering/Long-Running-Agents-and-Durable-Execution"><span title="Long-Running Agents 与 Durable Execution" class="linkLabel_vgcd">Long-Running Agents 与 Durable Execution</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/en/AI/agent-engineering/Queues-Retry-Backoff-and-Dead-Letter"><span title="Queues、Retry、Backoff 与 Dead Letter" class="linkLabel_vgcd">Queues、Retry、Backoff 与 Dead Letter</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/en/AI/agent-engineering/Approval-and-Human-Review-Workflows"><span title="Approval 与 Human Review Workflow" class="linkLabel_vgcd">Approval 与 Human Review Workflow</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/en/AI/agent-engineering/Tool-Approval-Interrupt-and-Resume"><span title="Tool Approval、Interrupt 与 Resume" class="linkLabel_vgcd">Tool Approval、Interrupt 与 Resume</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/en/AI/agent-engineering/Browser-and-Computer-Use-Agents"><span title="Browser and Computer Use Agents" class="linkLabel_vgcd">Browser and Computer Use Agents</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/en/AI/agent-engineering/AI-Agent-Anti-Patterns"><span title="AI Agent 常见反模式" class="linkLabel_vgcd">AI Agent 常见反模式</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/en/AI/agent-engineering/Agent-Evals-and-Harness-Templates"><span title="Agent Evals / Harness 模板" class="linkLabel_vgcd">Agent Evals / Harness 模板</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/en/AI/agent-engineering/Agent-Evals-Markdown-Table-Templates"><span title="Agent Evals Markdown 表格模板" class="linkLabel_vgcd">Agent Evals Markdown 表格模板</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/en/AI/agent-engineering/Harness-Markdown-Table-Templates"><span title="Harness Markdown 表格模板" class="linkLabel_vgcd">Harness Markdown 表格模板</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/en/AI/agent-engineering/Minimal-Agent-TypeScript-Template"><span title="Minimal Agent TypeScript 模板" class="linkLabel_vgcd">Minimal Agent TypeScript 模板</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/en/AI/agent-engineering/Tool-Using-Agent-TypeScript-Template"><span title="Tool-Using Agent TypeScript 模板" class="linkLabel_vgcd">Tool-Using Agent TypeScript 模板</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/en/AI/agent-engineering/RAG-Agent-TypeScript-Template"><span title="RAG Agent TypeScript 模板" class="linkLabel_vgcd">RAG Agent TypeScript 模板</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/en/AI/agent-engineering/Research-Agent-TypeScript-Template"><span title="Research Agent TypeScript 模板" class="linkLabel_vgcd">Research Agent TypeScript 模板</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/en/AI/agent-engineering/TypeScript-in-Agent-Projects"><span title="Agent 项目里的 TypeScript 落地实践" class="linkLabel_vgcd">Agent 项目里的 TypeScript 落地实践</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_jNm8 menu__link menu__link--sublist" href="/en/AI/frameworks"><span title="框架与 SDK" class="categoryLinkLabel_ayea">框架与 SDK</span></a><button aria-label="Expand sidebar category &#x27;框架与 SDK&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_jNm8 menu__link menu__link--sublist" href="/en/AI/overview"><span title="全局视角" class="categoryLinkLabel_ayea">全局视角</span></a><button aria-label="Expand sidebar category &#x27;全局视角&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li></ul></nav><button type="button" data-torli-sidebar-toggle="collapse" title="Collapse sidebar" aria-label="Collapse sidebar" class="button button--secondary button--outline collapseSidebarButton_JQG6"><svg class="collapseSidebarButtonIcon_Iseg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"></rect><path d="M13 9L10 12L13 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></button></div></div></aside><main class="docMainContainer_hjYf"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_uYg3"><div class="docItemContainer_jngG"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_lBfN" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/en/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_ebxl"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/en/AI/agent-engineering"><span>Agent 与工程化</span></a></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">多 Agent 系统设计</span></li></ul></nav><div class="tocCollapsible_VI1r theme-doc-toc-mobile tocMobile_iude"><button type="button" class="clean-btn tocCollapsibleButton_LJEZ">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>多 Agent 系统设计</h1></header>
+<p>单 Agent 能解决很多问题，但系统一旦变复杂，很快就会出现一个新问题：</p>
+<p><code>是不是应该拆成多个 Agent。</code></p>
+<p>这件事常被理解成能力升级，但本质上是架构选择。</p>
+<p>拆成多个 Agent 之后，系统往往会同时得到：</p>
+<ul>
+<li class="">更清晰的职责边界</li>
+<li class="">更复杂的协作开销</li>
+<li class="">更高的观察与治理要求</li>
+</ul>
+<p>这一页主要回答 6 件事：</p>
+<ul>
+<li class="">多 Agent 系统什么时候值得做</li>
+<li class="">常见的多 Agent 结构有哪些</li>
+<li class=""><code>Handoff / Agents as Tools / Workflow / Crew / A2A</code> 分别适合什么问题</li>
+<li class="">多 Agent 系统最容易失控的地方在哪里</li>
+<li class="">第一版设计时最该先定什么</li>
+<li class="">在这个模块里，多 Agent 应该接在哪些章节后面去学</li>
+</ul>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="1-多-agent-不是默认答案">1. 多 Agent 不是默认答案<a href="#1-多-agent-不是默认答案" class="hash-link" aria-label="Direct link to 1. 多 Agent 不是默认答案" title="Direct link to 1. 多 Agent 不是默认答案" translate="no">​</a></h2>
+<p>可以先把核心判断放在前面：</p>
+<p><code>单 Agent 能解决的问题，通常不要急着拆成多 Agent。</code></p>
+<p>原因很直接。</p>
+<p>一旦进入多 Agent，系统就会多出这些额外复杂度：</p>
+<ul>
+<li class="">角色划分</li>
+<li class="">协作协议</li>
+<li class="">状态传递</li>
+<li class="">失败恢复</li>
+<li class="">观察与评估</li>
+<li class="">成本与延迟放大</li>
+</ul>
+<p>所以多 Agent 的价值，不在于“看起来更高级”，而在于：</p>
+<p><code>单 Agent 已经不足以清晰承载任务边界。</code></p>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="2-什么时候值得考虑多-agent">2. 什么时候值得考虑多 Agent<a href="#2-什么时候值得考虑多-agent" class="hash-link" aria-label="Direct link to 2. 什么时候值得考虑多 Agent" title="Direct link to 2. 什么时候值得考虑多 Agent" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="21-任务天然可以拆成稳定角色">2.1 任务天然可以拆成稳定角色<a href="#21-任务天然可以拆成稳定角色" class="hash-link" aria-label="Direct link to 2.1 任务天然可以拆成稳定角色" title="Direct link to 2.1 任务天然可以拆成稳定角色" translate="no">​</a></h3>
+<p>例如：</p>
+<ul>
+<li class="">调研</li>
+<li class="">规划</li>
+<li class="">执行</li>
+<li class="">审核</li>
+</ul>
+<p>如果这些角色本身边界比较稳定，拆成多个 Agent 会更自然一些。</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="22-一个-agent-需要频繁切换不同工作模式">2.2 一个 Agent 需要频繁切换不同工作模式<a href="#22-一个-agent-需要频繁切换不同工作模式" class="hash-link" aria-label="Direct link to 2.2 一个 Agent 需要频繁切换不同工作模式" title="Direct link to 2.2 一个 Agent 需要频繁切换不同工作模式" translate="no">​</a></h3>
+<p>例如同一个系统既要：</p>
+<ul>
+<li class="">做问题分流</li>
+<li class="">处理专业领域推理</li>
+<li class="">执行高风险动作</li>
+<li class="">做最后复核</li>
+</ul>
+<p>把所有逻辑都塞进一个 Agent，提示和上下文很容易膨胀。</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="23-下游能力已经是独立服务">2.3 下游能力已经是独立服务<a href="#23-下游能力已经是独立服务" class="hash-link" aria-label="Direct link to 2.3 下游能力已经是独立服务" title="Direct link to 2.3 下游能力已经是独立服务" translate="no">​</a></h3>
+<p>如果某些能力本来就是独立 Agent 服务，系统设计自然会更接近多 Agent。</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="24-协作过程本身就需要显式观察">2.4 协作过程本身就需要显式观察<a href="#24-协作过程本身就需要显式观察" class="hash-link" aria-label="Direct link to 2.4 协作过程本身就需要显式观察" title="Direct link to 2.4 协作过程本身就需要显式观察" translate="no">​</a></h3>
+<p>例如：</p>
+<ul>
+<li class="">谁负责决策</li>
+<li class="">谁负责执行</li>
+<li class="">谁负责审批</li>
+<li class="">谁负责最终输出</li>
+</ul>
+<p>如果这些边界需要显式审计和回溯，多 Agent 通常会更清楚一些。</p>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="3-什么时候不值得拆">3. 什么时候不值得拆<a href="#3-什么时候不值得拆" class="hash-link" aria-label="Direct link to 3. 什么时候不值得拆" title="Direct link to 3. 什么时候不值得拆" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="31-只是想让系统看起来更智能">3.1 只是想让系统看起来更智能<a href="#31-只是想让系统看起来更智能" class="hash-link" aria-label="Direct link to 3.1 只是想让系统看起来更智能" title="Direct link to 3.1 只是想让系统看起来更智能" translate="no">​</a></h3>
+<p>这是常见误区之一。</p>
+<p>很多场景里，真正需要的只是：</p>
+<ul>
+<li class="">单 Agent + tools</li>
+<li class="">或 workflow + 少量模型步骤</li>
+</ul>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="32-角色只是提示词差异没有真正边界">3.2 角色只是提示词差异，没有真正边界<a href="#32-角色只是提示词差异没有真正边界" class="hash-link" aria-label="Direct link to 3.2 角色只是提示词差异，没有真正边界" title="Direct link to 3.2 角色只是提示词差异，没有真正边界" translate="no">​</a></h3>
+<p>如果所谓“多个 Agent”本质上只是：</p>
+<ul>
+<li class="">换个名字</li>
+<li class="">换段 prompt</li>
+<li class="">用同样工具</li>
+<li class="">读同样上下文</li>
+</ul>
+<p>那通常还没到值得拆的程度。</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="33-当前连单-agent-都还没跑稳">3.3 当前连单 Agent 都还没跑稳<a href="#33-当前连单-agent-都还没跑稳" class="hash-link" aria-label="Direct link to 3.3 当前连单 Agent 都还没跑稳" title="Direct link to 3.3 当前连单 Agent 都还没跑稳" translate="no">​</a></h3>
+<p>单 Agent 的停止条件、状态、工具选择都还没稳定时，直接上多 Agent 往往只会把问题放大。</p>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="4-常见的多-agent-结构">4. 常见的多 Agent 结构<a href="#4-常见的多-agent-结构" class="hash-link" aria-label="Direct link to 4. 常见的多 Agent 结构" title="Direct link to 4. 常见的多 Agent 结构" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="41-triage--specialist">4.1 Triage + Specialist<a href="#41-triage--specialist" class="hash-link" aria-label="Direct link to 4.1 Triage + Specialist" title="Direct link to 4.1 Triage + Specialist" translate="no">​</a></h3>
+<p>这是最常见、也最容易上手的一种结构。</p>
+<p>结构是：</p>
+<ul>
+<li class="">一个总控或分流 Agent</li>
+<li class="">多个专长 Agent</li>
+</ul>
+<p>适合：</p>
+<ul>
+<li class="">客服</li>
+<li class="">问题分流</li>
+<li class="">多领域问答</li>
+</ul>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="42-manager--workers">4.2 Manager + Workers<a href="#42-manager--workers" class="hash-link" aria-label="Direct link to 4.2 Manager + Workers" title="Direct link to 4.2 Manager + Workers" translate="no">​</a></h3>
+<p>结构是：</p>
+<ul>
+<li class="">一个 manager 负责拆任务和汇总</li>
+<li class="">多个 worker 执行子任务</li>
+</ul>
+<p>适合：</p>
+<ul>
+<li class="">research</li>
+<li class="">分工明确的长任务</li>
+<li class="">并行子问题处理</li>
+</ul>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="43-reviewer--approver-pattern">4.3 Reviewer / Approver Pattern<a href="#43-reviewer--approver-pattern" class="hash-link" aria-label="Direct link to 4.3 Reviewer / Approver Pattern" title="Direct link to 4.3 Reviewer / Approver Pattern" translate="no">​</a></h3>
+<p>结构是：</p>
+<ul>
+<li class="">执行 Agent 负责做事</li>
+<li class="">审查 Agent 或人工节点负责复核</li>
+</ul>
+<p>适合：</p>
+<ul>
+<li class="">高风险动作</li>
+<li class="">文档生成</li>
+<li class="">合规审查</li>
+</ul>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="44-workflow-wrapped-multi-agent">4.4 Workflow-wrapped Multi-Agent<a href="#44-workflow-wrapped-multi-agent" class="hash-link" aria-label="Direct link to 4.4 Workflow-wrapped Multi-Agent" title="Direct link to 4.4 Workflow-wrapped Multi-Agent" translate="no">​</a></h3>
+<p>结构是：</p>
+<ul>
+<li class="">多个 Agent 作为 workflow 里的节点</li>
+<li class="">执行路径由 graph 或 flow 控制</li>
+</ul>
+<p>适合：</p>
+<ul>
+<li class="">多步骤业务流程</li>
+<li class="">明确的条件分支</li>
+<li class="">需要 checkpoint / resume 的任务</li>
+</ul>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="5-几种常见协作方式分别适合什么">5. 几种常见协作方式分别适合什么<a href="#5-几种常见协作方式分别适合什么" class="hash-link" aria-label="Direct link to 5. 几种常见协作方式分别适合什么" title="Direct link to 5. 几种常见协作方式分别适合什么" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="51-handoff">5.1 Handoff<a href="#51-handoff" class="hash-link" aria-label="Direct link to 5.1 Handoff" title="Direct link to 5.1 Handoff" translate="no">​</a></h3>
+<p>最适合：</p>
+<ul>
+<li class="">一个 Agent 判断谁应该接手</li>
+<li class="">接手后由下一个 Agent 主导后续对话</li>
+</ul>
+<p>这类模式在 <code>OpenAI Agents SDK</code> 里很典型。官方 handoffs 文档明确把它定义成“一个 agent delegate part of a conversation to another agent”。</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="52-agents-as-tools">5.2 Agents as Tools<a href="#52-agents-as-tools" class="hash-link" aria-label="Direct link to 5.2 Agents as Tools" title="Direct link to 5.2 Agents as Tools" translate="no">​</a></h3>
+<p>最适合：</p>
+<ul>
+<li class="">主 Agent 仍然掌控流程</li>
+<li class="">下游 Agent 只是一个被调用的专长能力</li>
+</ul>
+<p>这种模式通常更稳，也更容易把复杂度控制在单条运行链里。</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="53-workflow-orchestration">5.3 Workflow Orchestration<a href="#53-workflow-orchestration" class="hash-link" aria-label="Direct link to 5.3 Workflow Orchestration" title="Direct link to 5.3 Workflow Orchestration" translate="no">​</a></h3>
+<p>最适合：</p>
+<ul>
+<li class="">多 Agent 只是执行节点</li>
+<li class="">流程顺序、并发、分支需要显式控制</li>
+</ul>
+<p>这类模式在 <code>LangGraph</code>、<code>Microsoft Agent Framework Workflows</code>、<code>CrewAI Flows</code> 里都不少见。</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="54-crew--team--group-chat">5.4 Crew / Team / Group Chat<a href="#54-crew--team--group-chat" class="hash-link" aria-label="Direct link to 5.4 Crew / Team / Group Chat" title="Direct link to 5.4 Crew / Team / Group Chat" translate="no">​</a></h3>
+<p>最适合：</p>
+<ul>
+<li class="">希望显式表达多角色协作</li>
+<li class="">多个 Agent 会围绕同一目标互动</li>
+</ul>
+<p>这类模式表达力强，但控制难度也更高。</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="55-a2a">5.5 A2A<a href="#55-a2a" class="hash-link" aria-label="Direct link to 5.5 A2A" title="Direct link to 5.5 A2A" translate="no">​</a></h3>
+<p>最适合：</p>
+<ul>
+<li class="">下游对象已经是独立 Agent 服务</li>
+<li class="">需要跨系统协作</li>
+<li class="">需要任务状态、产物和异步更新</li>
+</ul>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="6-多-agent-系统最容易出问题的地方">6. 多 Agent 系统最容易出问题的地方<a href="#6-多-agent-系统最容易出问题的地方" class="hash-link" aria-label="Direct link to 6. 多 Agent 系统最容易出问题的地方" title="Direct link to 6. 多 Agent 系统最容易出问题的地方" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="61-角色边界不清">6.1 角色边界不清<a href="#61-角色边界不清" class="hash-link" aria-label="Direct link to 6.1 角色边界不清" title="Direct link to 6.1 角色边界不清" translate="no">​</a></h3>
+<p>如果多个 Agent 都能做差不多的事，系统很快就会出现：</p>
+<ul>
+<li class="">路由混乱</li>
+<li class="">上下文重复</li>
+<li class="">相互覆盖</li>
+</ul>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="62-责任链不清">6.2 责任链不清<a href="#62-责任链不清" class="hash-link" aria-label="Direct link to 6.2 责任链不清" title="Direct link to 6.2 责任链不清" translate="no">​</a></h3>
+<p>很多系统能跑，但很难说清：</p>
+<ul>
+<li class="">谁做了最后决策</li>
+<li class="">谁发起了写操作</li>
+<li class="">谁负责最终输出质量</li>
+</ul>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="63-状态传递失控">6.3 状态传递失控<a href="#63-状态传递失控" class="hash-link" aria-label="Direct link to 6.3 状态传递失控" title="Direct link to 6.3 状态传递失控" translate="no">​</a></h3>
+<p>多 Agent 一旦共享：</p>
+<ul>
+<li class="">历史</li>
+<li class="">中间结果</li>
+<li class="">memory</li>
+<li class="">检索材料</li>
+</ul>
+<p>很容易出现上下文膨胀与污染。</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="64-延迟和成本成倍放大">6.4 延迟和成本成倍放大<a href="#64-延迟和成本成倍放大" class="hash-link" aria-label="Direct link to 6.4 延迟和成本成倍放大" title="Direct link to 6.4 延迟和成本成倍放大" translate="no">​</a></h3>
+<p>多 Agent 常见副作用是：</p>
+<ul>
+<li class="">步数变多</li>
+<li class="">模型调用变多</li>
+<li class="">工具调用变多</li>
+<li class="">观察和调试成本变高</li>
+</ul>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="65-评估变难">6.5 评估变难<a href="#65-评估变难" class="hash-link" aria-label="Direct link to 6.5 评估变难" title="Direct link to 6.5 评估变难" translate="no">​</a></h3>
+<p>单 Agent 时只要看：</p>
+<ul>
+<li class="">是否答对</li>
+<li class="">是否调对工具</li>
+</ul>
+<p>多 Agent 时还要看：</p>
+<ul>
+<li class="">路由对不对</li>
+<li class="">协作链有没有多余步骤</li>
+<li class="">哪个 Agent 拉低了成功率</li>
+</ul>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="7-第一版多-agent-设计最该先定什么">7. 第一版多 Agent 设计最该先定什么<a href="#7-第一版多-agent-设计最该先定什么" class="hash-link" aria-label="Direct link to 7. 第一版多 Agent 设计最该先定什么" title="Direct link to 7. 第一版多 Agent 设计最该先定什么" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="71-先定角色而不是先定框架">7.1 先定角色，而不是先定框架<a href="#71-先定角色而不是先定框架" class="hash-link" aria-label="Direct link to 7.1 先定角色，而不是先定框架" title="Direct link to 7.1 先定角色，而不是先定框架" translate="no">​</a></h3>
+<p>先回答：</p>
+<ul>
+<li class="">这个角色为什么必须独立</li>
+<li class="">独立后上下游边界是什么</li>
+<li class="">不独立会出现什么问题</li>
+</ul>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="72-先定协作方式">7.2 先定协作方式<a href="#72-先定协作方式" class="hash-link" aria-label="Direct link to 7.2 先定协作方式" title="Direct link to 7.2 先定协作方式" translate="no">​</a></h3>
+<p>至少要明确：</p>
+<ul>
+<li class="">handoff</li>
+<li class="">as tool</li>
+<li class="">workflow node</li>
+<li class="">remote agent via A2A</li>
+</ul>
+<p>到底是哪一种。</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="73-先定状态和上下文交接规则">7.3 先定状态和上下文交接规则<a href="#73-先定状态和上下文交接规则" class="hash-link" aria-label="Direct link to 7.3 先定状态和上下文交接规则" title="Direct link to 7.3 先定状态和上下文交接规则" translate="no">​</a></h3>
+<p>包括：</p>
+<ul>
+<li class="">谁能看到全部历史</li>
+<li class="">谁只看摘要</li>
+<li class="">谁拿到工具结果</li>
+<li class="">哪些内容不能跨角色传递</li>
+</ul>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="74-先定停止与升级条件">7.4 先定停止与升级条件<a href="#74-先定停止与升级条件" class="hash-link" aria-label="Direct link to 7.4 先定停止与升级条件" title="Direct link to 7.4 先定停止与升级条件" translate="no">​</a></h3>
+<p>例如：</p>
+<ul>
+<li class="">什么时候路由给 specialist</li>
+<li class="">什么时候回到 manager</li>
+<li class="">什么时候转人工</li>
+<li class="">什么时候任务失败</li>
+</ul>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="8-一个很实用的演进顺序">8. 一个很实用的演进顺序<a href="#8-一个很实用的演进顺序" class="hash-link" aria-label="Direct link to 8. 一个很实用的演进顺序" title="Direct link to 8. 一个很实用的演进顺序" translate="no">​</a></h2>
+<p>一个更稳的顺序是：</p>
+<ol>
+<li class="">单 Agent 跑通主任务</li>
+<li class="">找出最稳定的专长边界</li>
+<li class="">先拆成 <code>triage + specialist</code></li>
+<li class="">再决定是否需要 workflow 化</li>
+<li class="">最后才考虑跨系统 <code>A2A</code></li>
+</ol>
+<p>这个顺序的好处是：</p>
+<ul>
+<li class="">先把复杂度压住</li>
+<li class="">再按真实边界拆分</li>
+<li class="">避免一开始就进入全栈多 Agent</li>
+</ul>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="9-和这个专题里的哪些内容最该一起看">9. 和这个专题里的哪些内容最该一起看<a href="#9-和这个专题里的哪些内容最该一起看" class="hash-link" aria-label="Direct link to 9. 和这个专题里的哪些内容最该一起看" title="Direct link to 9. 和这个专题里的哪些内容最该一起看" translate="no">​</a></h2>
+<p>最适合一起看的有：</p>
+<ul>
+<li class=""><a class="" href="/en/AI/agent-engineering/Workflow-vs-Agent">Workflow vs Agent</a></li>
+<li class=""><a class="" href="/en/AI/agent-engineering/Agent-Planning-Patterns">Agent Planning Patterns</a></li>
+<li class=""><a class="" href="/en/AI/foundations/A2A-Intro-and-Use-Cases">A2A 入门与典型场景</a></li>
+<li class=""><a class="" href="/en/AI/overview/Tool-Calling-MCP-and-A2A-Map">Tool Calling、MCP 与 A2A 的关系图</a></li>
+<li class=""><a class="" href="/en/AI/frameworks/OpenAI-Agents-SDK-Guide">OpenAI Agents SDK 指南</a></li>
+<li class=""><a class="" href="/en/AI/frameworks/CrewAI-Intro-and-Workflow-Guide">CrewAI 入门与 Workflow 实战定位</a></li>
+<li class=""><a class="" href="/en/AI/frameworks/Microsoft-Agent-Framework-and-AutoGen-Status">Microsoft Agent Framework 与 AutoGen 现状</a></li>
+</ul>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_sWVP" id="10-小结">10. 小结<a href="#10-小结" class="hash-link" aria-label="Direct link to 10. 小结" title="Direct link to 10. 小结" translate="no">​</a></h2>
+<p>多 Agent 最有价值的地方，不是让系统显得像团队协作，而是把真实存在的职责边界显式化。</p>
+<p>一个更稳的判断标准是：</p>
+<ul>
+<li class="">单 Agent 是否已经承载过多角色</li>
+<li class="">协作是否真的需要分开观察、分开治理</li>
+<li class="">下游能力是否已经是独立协作者，而不只是一个工具</li>
+</ul>
+<p>如果这些问题都已经开始出现，多 Agent 才值得认真设计。</p></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/en/AI/agent-engineering/Agent-Planning-Patterns"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Agent Planning Patterns</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/en/AI/agent-engineering/Agent-Handoffs-Agents-as-Tools-and-A2A"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Handoff、Agents as Tools 与 A2A</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_v08c thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#1-多-agent-不是默认答案" class="table-of-contents__link toc-highlight">1. 多 Agent 不是默认答案</a></li><li><a href="#2-什么时候值得考虑多-agent" class="table-of-contents__link toc-highlight">2. 什么时候值得考虑多 Agent</a><ul><li><a href="#21-任务天然可以拆成稳定角色" class="table-of-contents__link toc-highlight">2.1 任务天然可以拆成稳定角色</a></li><li><a href="#22-一个-agent-需要频繁切换不同工作模式" class="table-of-contents__link toc-highlight">2.2 一个 Agent 需要频繁切换不同工作模式</a></li><li><a href="#23-下游能力已经是独立服务" class="table-of-contents__link toc-highlight">2.3 下游能力已经是独立服务</a></li><li><a href="#24-协作过程本身就需要显式观察" class="table-of-contents__link toc-highlight">2.4 协作过程本身就需要显式观察</a></li></ul></li><li><a href="#3-什么时候不值得拆" class="table-of-contents__link toc-highlight">3. 什么时候不值得拆</a><ul><li><a href="#31-只是想让系统看起来更智能" class="table-of-contents__link toc-highlight">3.1 只是想让系统看起来更智能</a></li><li><a href="#32-角色只是提示词差异没有真正边界" class="table-of-contents__link toc-highlight">3.2 角色只是提示词差异，没有真正边界</a></li><li><a href="#33-当前连单-agent-都还没跑稳" class="table-of-contents__link toc-highlight">3.3 当前连单 Agent 都还没跑稳</a></li></ul></li><li><a href="#4-常见的多-agent-结构" class="table-of-contents__link toc-highlight">4. 常见的多 Agent 结构</a><ul><li><a href="#41-triage--specialist" class="table-of-contents__link toc-highlight">4.1 Triage + Specialist</a></li><li><a href="#42-manager--workers" class="table-of-contents__link toc-highlight">4.2 Manager + Workers</a></li><li><a href="#43-reviewer--approver-pattern" class="table-of-contents__link toc-highlight">4.3 Reviewer / Approver Pattern</a></li><li><a href="#44-workflow-wrapped-multi-agent" class="table-of-contents__link toc-highlight">4.4 Workflow-wrapped Multi-Agent</a></li></ul></li><li><a href="#5-几种常见协作方式分别适合什么" class="table-of-contents__link toc-highlight">5. 几种常见协作方式分别适合什么</a><ul><li><a href="#51-handoff" class="table-of-contents__link toc-highlight">5.1 Handoff</a></li><li><a href="#52-agents-as-tools" class="table-of-contents__link toc-highlight">5.2 Agents as Tools</a></li><li><a href="#53-workflow-orchestration" class="table-of-contents__link toc-highlight">5.3 Workflow Orchestration</a></li><li><a href="#54-crew--team--group-chat" class="table-of-contents__link toc-highlight">5.4 Crew / Team / Group Chat</a></li><li><a href="#55-a2a" class="table-of-contents__link toc-highlight">5.5 A2A</a></li></ul></li><li><a href="#6-多-agent-系统最容易出问题的地方" class="table-of-contents__link toc-highlight">6. 多 Agent 系统最容易出问题的地方</a><ul><li><a href="#61-角色边界不清" class="table-of-contents__link toc-highlight">6.1 角色边界不清</a></li><li><a href="#62-责任链不清" class="table-of-contents__link toc-highlight">6.2 责任链不清</a></li><li><a href="#63-状态传递失控" class="table-of-contents__link toc-highlight">6.3 状态传递失控</a></li><li><a href="#64-延迟和成本成倍放大" class="table-of-contents__link toc-highlight">6.4 延迟和成本成倍放大</a></li><li><a href="#65-评估变难" class="table-of-contents__link toc-highlight">6.5 评估变难</a></li></ul></li><li><a href="#7-第一版多-agent-设计最该先定什么" class="table-of-contents__link toc-highlight">7. 第一版多 Agent 设 计最该先定什么</a><ul><li><a href="#71-先定角色而不是先定框架" class="table-of-contents__link toc-highlight">7.1 先定角色，而不是先定框架</a></li><li><a href="#72-先定协作方式" class="table-of-contents__link toc-highlight">7.2 先定协作方式</a></li><li><a href="#73-先定状态和上下文交接规则" class="table-of-contents__link toc-highlight">7.3 先定状态和上下文交接规则</a></li><li><a href="#74-先定停止与升级条件" class="table-of-contents__link toc-highlight">7.4 先定停止与升级条件</a></li></ul></li><li><a href="#8-一个很实用的演进顺序" class="table-of-contents__link toc-highlight">8. 一个很实用的演进顺序</a></li><li><a href="#9-和这个专题里的哪些内容最该一起看" class="table-of-contents__link toc-highlight">9. 和这个专题里的哪些内容最该一起看</a></li><li><a href="#10-小结" class="table-of-contents__link toc-highlight">10. 小结</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">入口</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/en/docs/intro">知识库</a></li><li class="footer__item"><a class="footer__link-item" href="/en/blog">日常 Blog</a></li><li class="footer__item"><a class="footer__link-item" href="/en/docs/engineering">工程化</a></li><li class="footer__item"><a class="footer__link-item" href="/en/docs/dev-tools">工具与环境</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">更多</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/JamesLi-dev" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_BlfO"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Torli, Inc. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>
